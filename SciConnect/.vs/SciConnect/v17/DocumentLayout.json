@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{553CC6BA-B182-4046-9AD6-CA16ED1E68FB}|docker-compose.dcproj|c:\\users\\korisnik\\desktop\\rs2\\sciconnect\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{553CC6BA-B182-4046-9AD6-CA16ED1E68FB}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{553CC6BA-B182-4046-9AD6-CA16ED1E68FB}|docker-compose.dcproj|c:\\users\\korisnik\\desktop\\rs2\\sciconnect\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{553CC6BA-B182-4046-9AD6-CA16ED1E68FB}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29635DC3-83FD-433A-94A3-1E6F5D5C4A6F}|IdentityServer\\IdentityService\\IdentityService.csproj|c:\\users\\korisnik\\desktop\\rs2\\sciconnect\\identityserver\\identityservice\\identityservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{29635DC3-83FD-433A-94A3-1E6F5D5C4A6F}|IdentityServer\\IdentityService\\IdentityService.csproj|solutionrelative:identityserver\\identityservice\\identityservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29635DC3-83FD-433A-94A3-1E6F5D5C4A6F}|IdentityServer\\IdentityService\\IdentityService.csproj|c:\\users\\korisnik\\desktop\\rs2\\sciconnect\\identityserver\\identityservice\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29635DC3-83FD-433A-94A3-1E6F5D5C4A6F}|IdentityServer\\IdentityService\\IdentityService.csproj|solutionrelative:identityserver\\identityservice\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29635DC3-83FD-433A-94A3-1E6F5D5C4A6F}|IdentityServer\\IdentityService\\IdentityService.csproj|c:\\users\\korisnik\\desktop\\rs2\\sciconnect\\identityserver\\identityservice\\identityservice.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{29635DC3-83FD-433A-94A3-1E6F5D5C4A6F}|IdentityServer\\IdentityService\\IdentityService.csproj|solutionrelative:identityserver\\identityservice\\identityservice.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-12-24T20:20:17.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-12-24T20:20:04.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\IdentityServer\\IdentityService\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\IdentityService\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\IdentityServer\\IdentityService\\Entities\\User.cs",
+              "RelativeToolTip": "IdentityServer\\IdentityService\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:50:08.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IdentityService.csproj",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\IdentityServer\\IdentityService\\IdentityService.csproj",
+              "RelativeDocumentMoniker": "IdentityServer\\IdentityService\\IdentityService.csproj",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\IdentityServer\\IdentityService\\IdentityService.csproj",
+              "RelativeToolTip": "IdentityServer\\IdentityService\\IdentityService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-24T19:41:45.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IdentityService",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\IdentityServer\\IdentityService\\IdentityService.csproj",
+              "RelativeDocumentMoniker": "IdentityServer\\IdentityService\\IdentityService.csproj",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\rs2\\SciConnect\\IdentityServer\\IdentityService\\IdentityService.csproj",
+              "RelativeToolTip": "IdentityServer\\IdentityService\\IdentityService.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-24T19:36:34.764Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
