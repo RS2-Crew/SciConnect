@@ -1,0 +1,46 @@
+# Svi build i obj fajlovi
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.cach
+*.log
+
+# Visual Studio specifično
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+
+# Docker specifično
+docker-compose.override.yml
+docker-compose.override.*
+*.log
+.env
+
+# Migracije i EF Core artefakti
+Migrations/
+
+# Baza podataka
+*.mdf
+*.ldf
+
+# Secrets i konfiguracije
+secrets.json
+appsettings.Development.json
+appsettings.Production.json
+*.bak
+
+# Sistem specifično
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+
+# Git specifično
+!.gitignore
+.git/
