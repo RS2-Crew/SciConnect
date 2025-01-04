@@ -1,0 +1,22 @@
+services:
+  identityservice:
+    container_name: identityservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - "ConnectionStrings:IdentityConnectionString=Server=mssql;Database=IdentityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
+    depends_on: 
+      - mssql
+    ports:
+      - "4000:8080"
+  mssql:
+    container_name: mssql
+    restart: always
+    ports:
+      - "1433:1433"
+    environment:
+     #NAPRAVITI ENVIRONMENT PROMENLJIVU ZA PASS
+      - SA_PASSWORD=MATF12345678rs2
+      - ACCEPT_EULA=Y
+    volumes:
+      - mssql_data:/var/opt/mssql/data
