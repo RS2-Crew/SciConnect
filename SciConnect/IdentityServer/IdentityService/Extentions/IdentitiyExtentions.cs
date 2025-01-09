@@ -3,11 +3,13 @@ using System.Text;
 using IdentityServer.Entities;
 using IdentityService.Data;
 //using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using IdentityService.Services;
+
 namespace IdentityService.Extentions
 {
     public static class IdentitiyExtentions
