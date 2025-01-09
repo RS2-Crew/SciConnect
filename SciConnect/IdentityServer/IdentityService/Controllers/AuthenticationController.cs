@@ -2,6 +2,7 @@
 using IdentityServer.Entities;
 using IdentityService.Controllers.Base;
 using IdentityService.DTOs;
+using IdentityService.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,11 @@ namespace IdentityService.Controllers
 
     public class AuthenticationController : RegistrationController
     {
-        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache memoryCache) : 
-            base(logger, mapper, userManager, roleManager, memoryCache)
+        private readonly IAuthenticationService _authService;
+        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache _memoryCache, IAuthenticationService authService)
+       : base(logger, mapper, userManager, roleManager, _memoryCache)
         {
+            _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         }
 
         [HttpPost("[action]")]
@@ -61,6 +64,21 @@ namespace IdentityService.Controllers
             return await RegisterNewUserWithRoles(newUser, new[] { "Administrator" });
         }
 
+
+        [HttpPost("[action]")]
+        [ProducesResponseType(typeof(AuthenticationModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> Login([FromBody] UserCredentialsDTO userCredentials)
+        {
+            var user = await _authService.ValidateUser(userCredentials);
+            if (user is null)
+            {
+                _logger.LogWarning("{Login}: Authentication failed. Wrong username or password.", nameof(Login));
+                return Unauthorized();
+            }
+
+            return Ok(await _authService.CreateAuthenticationModel(user));
+        }
     }
 
 }
