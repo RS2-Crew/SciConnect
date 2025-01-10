@@ -3,6 +3,7 @@ using IdentityServer.Entities;
 using IdentityService.Controllers.Base;
 using IdentityService.DTOs;
 using IdentityService.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ namespace IdentityService.Controllers
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
         }
-
+        [Authorize(Roles = "PM")]
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
