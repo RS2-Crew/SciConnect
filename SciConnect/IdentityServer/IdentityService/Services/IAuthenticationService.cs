@@ -7,5 +7,7 @@ namespace IdentityService.Services
     {
         Task<User?> ValidateUser(UserCredentialsDTO userCredentials);
         Task<AuthenticationModel> CreateAuthenticationModel(User user);
+
+        Task RemoveRefreshToken(User user, string refreshToken);
     }
 }

@@ -4,6 +4,7 @@ using IdentityService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IdentityService.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250109101154_AddedPM")]
+    partial class AddedPM
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,29 +96,26 @@ namespace IdentityService.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
 
-            modelBuilder.Entity("IdentityService.Entities.RefreshToken", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("ExpiryTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("RefreshTokens");
+                    b.HasData(
+                        new
+                        {
+                            Id = "b69fd164-62c0-43ae-8c6a-12d071bd45b8",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8eeb348a-7158-48ff-a678-4195c93a41b8",
+                            Email = "pm1@example.com",
+                            EmailConfirmed = true,
+                            FirstName = "PM",
+                            LastName = "User",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "PM1@EXAMPLE.COM",
+                            NormalizedUserName = "PM1@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAED4ofFPoaGzfxY6/1hWzNFo6GH3rhNZ0zkE9xO6gMU+c6PhZrfqwiEBxrEId7PxJpA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "1c14826a-1b61-47b3-a2a8-8e4a7c482efc",
+                            TwoFactorEnabled = false,
+                            UserName = "pm1@example.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -147,19 +147,19 @@ namespace IdentityService.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "74dda4e3-596e-4f4f-8811-23f99307dda5",
+                            Id = "04eaadd9-fa59-44f9-881b-23fbb0851e3f",
                             Name = "Guest",
                             NormalizedName = "GUEST"
                         },
                         new
                         {
-                            Id = "9d8a6ae3-af5f-4715-ac46-62196c64c08f",
+                            Id = "a4a2ce71-a9d8-4198-af29-e709934716fb",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "c7b4ca5c-36e6-4172-90b6-f7264bc9c9f6",
+                            Id = "62e40349-08b0-44c4-9f39-47411e8047f7",
                             Name = "PM",
                             NormalizedName = "PM"
                         });
@@ -271,13 +271,6 @@ namespace IdentityService.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("IdentityService.Entities.RefreshToken", b =>
-                {
-                    b.HasOne("IdentityServer.Entities.User", null)
-                        .WithMany("RefreshTokens")
-                        .HasForeignKey("UserId");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -327,11 +320,6 @@ namespace IdentityService.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("IdentityServer.Entities.User", b =>
-                {
-                    b.Navigation("RefreshTokens");
                 });
 #pragma warning restore 612, 618
         }
