@@ -14,7 +14,6 @@ namespace IdentityService.Data
         public ApplicationContext(DbContextOptions options)
             : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -24,23 +23,6 @@ namespace IdentityService.Data
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
 
-            //var pmUserId1 = Guid.NewGuid().ToString();
-
-            //var hasher = new PasswordHasher<User>();
-            //builder.Entity<User>().HasData(
-            //    new User
-            //    {
-            //        Id = pmUserId1,
-            //        UserName = "pm1@example.com",
-            //        NormalizedUserName = "PM1@EXAMPLE.COM",
-            //        Email = "pm1@example.com",
-            //        NormalizedEmail = "PM1@EXAMPLE.COM",
-            //        EmailConfirmed = true,
-            //        PasswordHash = hasher.HashPassword(null, "PMPassword123!"),
-            //        FirstName = "PM",
-            //        LastName = "User"
-            //    }
-            //);
         }
     }
 }

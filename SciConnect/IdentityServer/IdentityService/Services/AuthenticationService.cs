@@ -113,18 +113,16 @@ namespace IdentityService.Services
             var randomNumber = new byte[32];
             using var rng = RandomNumberGenerator.Create();
             rng.GetBytes(randomNumber);
-            //var refreshTokenExpires = _configuration.GetValue<string>("RefreshTokenExpires");
-            //Console.WriteLine($"Configured refresh token expiration value: {refreshTokenExpires}");
-            
-            //Console.WriteLine($"Calculated Expiry Time: {DateTime.UtcNow.AddDays(Convert.ToDouble(refreshTokenExpires))}");
+            var refreshTokenExpires = _configuration.GetValue<string>("RefreshTokenExpires");
+
+            Console.WriteLine($"Configured refresh token expiration value: {refreshTokenExpires}");
+
+            Console.WriteLine($"Calculated Expiry Time: {DateTime.UtcNow.AddDays(Convert.ToDouble(refreshTokenExpires))}");
             var token = new RefreshToken
             {
 
-
-                
                 Token = Convert.ToBase64String(randomNumber),
-                ExpiryTime = DateTime.UtcNow.AddDays(30)
-  
+                ExpiryTime = DateTime.UtcNow.AddDays(Convert.ToDouble(refreshTokenExpires))
                 
             };
             Console.WriteLine(token.ExpiryTime);

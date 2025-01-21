@@ -17,10 +17,12 @@ namespace IdentityService.Controllers
     public class AuthenticationController : RegistrationController
     {
         private readonly IAuthenticationService _authService;
-        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache _memoryCache, IAuthenticationService authService)
-       : base(logger, mapper, userManager, roleManager, _memoryCache)
+        private readonly IConfiguration _configuration;
+        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache memoryCache, IAuthenticationService authService, IConfiguration configuration)
+       : base(logger, mapper, userManager, roleManager, memoryCache)
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(_configuration));
         }
         [Authorize(Roles = "PM")]
         [HttpPost("[action]")]
@@ -63,6 +65,22 @@ namespace IdentityService.Controllers
             }
 
             return await RegisterNewUserWithRoles(newUser, new[] { "Administrator" });
+        }
+        [HttpPost("[action]")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> RegisterPM([FromBody] NewUserDTO newUser)
+        {
+            var hashedPasswordFromSettings = _configuration.GetValue<string>("PMSettings:RegistrationPassword");
+            var hasher = new PasswordHasher<string>();
+            var result = hasher.VerifyHashedPassword(null, hashedPasswordFromSettings, newUser.Password);
+
+            if (result != PasswordVerificationResult.Success)
+            {
+                return BadRequest("Invalid registration password.");
+            }
+
+            return await RegisterNewUserWithRoles(newUser, new[] { "PM" });
         }
 
 
@@ -128,6 +146,20 @@ namespace IdentityService.Controllers
 
             return Accepted();
         }
+
+        [HttpGet("[action]")]
+        public IActionResult GeneratePasswordHash([FromQuery] string password)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                return BadRequest("Password is required.");
+            }
+
+            var hasher = new PasswordHasher<IdentityUser>();
+            var hashedPassword = hasher.HashPassword(null, password);
+            return Ok(new { Password = password, HashedPassword = hashedPassword });
+        }
+
     }
 
 }
