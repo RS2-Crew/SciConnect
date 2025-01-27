@@ -146,20 +146,5 @@ namespace IdentityService.Controllers
 
             return Accepted();
         }
-
-        [HttpGet("[action]")]
-        public IActionResult GeneratePasswordHash([FromQuery] string password)
-        {
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                return BadRequest("Password is required.");
-            }
-
-            var hasher = new PasswordHasher<IdentityUser>();
-            var hashedPassword = hasher.HashPassword(null, password);
-            return Ok(new { Password = password, HashedPassword = hashedPassword });
-        }
-
     }
-
 }
