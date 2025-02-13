@@ -1,0 +1,38 @@
+﻿using DB.Application.Features.Institutions.Commands.CreateInstitution;
+using DB.Application.Features.Institutions.Queries.GetListOfInstitutions;
+using DB.Application.Features.Institutions.Queries.ViewModels;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
+namespace DB.API.Controllers
+{
+    [ApiController]
+    [Route("api/v1/[controller]")]
+    public class DBController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+
+        public DBController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        [HttpGet("{name}")]
+        [ProducesResponseType(typeof(IEnumerable<InstitutionViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetInstitutionByName(string name)
+        {
+            var query = new GetListOfInstitutionsQuery(name);
+            var orders = await _mediator.Send(query);
+
+            return Ok(orders);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateInstitution(CreateInstitutionCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+    }
+}

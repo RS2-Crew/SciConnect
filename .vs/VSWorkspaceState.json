@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SciConnect",
+    "\\SciConnect\\Services",
+    "\\SciConnect\\Services\\DB",
+    "\\SciConnect\\Services\\DB\\DB.API",
+    "\\SciConnect\\Services\\DB\\DB.Infrastructure",
+    "\\SciConnect\\Services\\DB\\DB.Infrastructure\\DB.Infrastructure"
+  ],
+  "SelectedNode": "\\SciConnect\\Services\\DB\\DB.Infrastructure\\DB.Infrastructure\\DB.Infrastructure.csproj",
+  "PreviewInSolutionExplorer": false
+}
