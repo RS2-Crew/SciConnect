@@ -1673,7 +1673,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "DB.Application": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
         },
         "compile": {
           "bin/placeholder/DB.Infrastructure.dll": {}

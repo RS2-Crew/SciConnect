@@ -21,7 +21,7 @@ namespace DB.Infrastructure.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new InstituitionEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new InstitutionEntityTypeConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -24,8 +24,8 @@ namespace DB.Infrastructure
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IInstitutionRepository, InstitutionRepository>();
 
-            services.AddScoped<IInstitutionFactory, InstituitionFactory>();
-            services.AddScoped<IInstitutionViewModelFactory, InstituitionViewModelFactory>();
+            services.AddScoped<IInstitutionFactory, InstitutionFactory>();
+            services.AddScoped<IInstitutionViewModelFactory, InstitutionViewModelFactory>();
 
             return services;
         }

@@ -9,7 +9,7 @@ using DB.Domain.Entities;
 
 namespace DB.Infrastructure.Factories
 {
-    public class InstituitionViewModelFactory : IInstitutionViewModelFactory
+    public class InstitutionViewModelFactory : IInstitutionViewModelFactory
     {
         public InstitutionViewModel CreateViewModel(Institution institution)
         {

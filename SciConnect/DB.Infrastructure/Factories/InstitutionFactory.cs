@@ -10,7 +10,7 @@ using DB.Domain.Entities;
 
 namespace DB.Infrastructure.Factories
 {
-    public class InstituitionFactory : IInstitutionFactory
+    public class InstitutionFactory : IInstitutionFactory
     {
         public Institution Create(CreateInstitutionCommand command)
         {

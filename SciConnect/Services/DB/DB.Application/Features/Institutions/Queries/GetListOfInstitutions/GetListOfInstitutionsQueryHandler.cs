@@ -19,7 +19,7 @@ namespace DB.Application.Features.Institutions.Queries.GetListOfInstitutions
         public async Task<List<InstitutionViewModel>> Handle(GetListOfInstitutionsQuery request, CancellationToken cancellationToken)
         {
             var institutionsList = await _repository.GetInstitutionByName(request.Name);
-            return institutionsList.Select(order => _factory.CreateViewModel(order)).ToList();
+            return institutionsList.Select(i => _factory.CreateViewModel(i)).ToList();
         }
     }
 }

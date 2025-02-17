@@ -23,7 +23,7 @@ namespace DB.Application
                 cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehavior<,>));
                 cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             });
-            // Ne radi komanda, zakomentarisacu za sada
+            //Ne radi komanda, zakomentarisacu za sada
             //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return services;

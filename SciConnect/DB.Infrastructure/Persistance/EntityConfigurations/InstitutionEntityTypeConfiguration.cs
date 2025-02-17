@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DB.Infrastructure.Persistance.EntityConfigurations
 {
-    public class InstituitionEntityTypeConfiguration : IEntityTypeConfiguration<Institution>
+    public class InstitutionEntityTypeConfiguration : IEntityTypeConfiguration<Institution>
     {
         public void Configure(EntityTypeBuilder<Institution> builder)
         {
-            builder.ToTable("Instituition");
+            builder.ToTable("Institution");
             builder.HasKey(o => o.Id);
-            builder.Property(o => o.Id).UseHiLo("instituitionseq");
+            builder.Property(o => o.Id).UseHiLo("institutionseq");
 
             //builder.Property(o => o.Id).UseIdentityColumn();
 
