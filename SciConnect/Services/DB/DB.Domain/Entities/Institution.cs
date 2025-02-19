@@ -19,7 +19,7 @@ namespace DB.Domain.Entities
         public string? Email { get; private set; }
         public string? Website { get; private set; }
 
-        //private Institution() { }
+
 
         public Institution(string name, string street, string streetNumber, string city, string country, string? phone, string? email, string? website)
         {
