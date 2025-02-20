@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DB.Infrastructure.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    [Migration("20250219143034_InitialCreate")]
+    [Migration("20250220161907_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -92,6 +92,67 @@ namespace DB.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Institution", (string)null);
+                });
+
+            modelBuilder.Entity("DB.Domain.Entities.Instrument", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Instrument", (string)null);
+                });
+
+            modelBuilder.Entity("UstanovaInstrument", b =>
+                {
+                    b.Property<int>("instrument_id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ustanova_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("instrument_id", "ustanova_id");
+
+                    b.HasIndex("ustanova_id");
+
+                    b.ToTable("UstanovaInstrument");
+                });
+
+            modelBuilder.Entity("UstanovaInstrument", b =>
+                {
+                    b.HasOne("DB.Domain.Entities.Instrument", null)
+                        .WithMany()
+                        .HasForeignKey("instrument_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DB.Domain.Entities.Institution", null)
+                        .WithMany()
+                        .HasForeignKey("ustanova_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

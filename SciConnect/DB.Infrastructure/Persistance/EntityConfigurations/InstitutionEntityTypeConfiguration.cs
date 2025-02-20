@@ -50,6 +50,22 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
 
             builder.HasIndex(o => o.Name).IsUnique();
 
+            builder.HasMany(i => i.Instruments)
+            .WithMany(i => i.Institutions)
+            .UsingEntity<Dictionary<string, object>>(
+                "UstanovaInstrument",
+                j => j
+                    .HasOne<Instrument>()
+                    .WithMany()
+                    .HasForeignKey("instrument_id")
+                    .OnDelete(DeleteBehavior.Cascade),
+                j => j
+                    .HasOne<Institution>()
+                    .WithMany()
+                    .HasForeignKey("ustanova_id")
+                    .OnDelete(DeleteBehavior.Cascade)
+            );
+
         }
     }
 }

@@ -28,7 +28,7 @@
   {
     "ContainingType": "DB.API.Controllers.DBController",
     "Method": "GetInstitutionByName",
-    "RelativePath": "api/v1/DB/{name}",
+    "RelativePath": "api/v1/DB/institution/{name}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -42,6 +42,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel, DB.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DB.API.Controllers.DBController",
+    "Method": "GetInstrumentByName",
+    "RelativePath": "api/v1/DB/instrument/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel, DB.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

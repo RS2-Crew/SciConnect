@@ -22,10 +22,14 @@ namespace DB.Infrastructure
                 options.UseSqlServer(configuration.GetConnectionString("SqlServerConnectionString")));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-            services.AddScoped<IInstitutionRepository, InstitutionRepository>();
 
+            services.AddScoped<IInstitutionRepository, InstitutionRepository>();
             services.AddScoped<IInstitutionFactory, InstitutionFactory>();
             services.AddScoped<IInstitutionViewModelFactory, InstitutionViewModelFactory>();
+
+            services.AddScoped<IInstrumentRepository, InstrumentRepository>();
+            services.AddScoped<IInstrumentFactory, InstrumentFactory>();
+            services.AddScoped<IInstrumentViewModelFactory, InstrumentViewModelFactory>();
 
             return services;
         }

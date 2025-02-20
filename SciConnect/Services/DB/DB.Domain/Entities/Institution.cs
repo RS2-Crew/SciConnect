@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace DB.Domain.Entities
 {
     public class Institution : AggregateRoot
     {
+        private readonly List<Instrument> _instruments = new();
+        public IReadOnlyCollection<Instrument> Instruments => _instruments.AsReadOnly();
         public int Id { get; private set; }
         public string Name { get; private set; }
         public string Street { get; private set; }
@@ -31,6 +34,14 @@ namespace DB.Domain.Entities
             Phone = phone;
             Email = email;
             Website = website;
+        }
+
+        public void AddInstrument(Instrument instrument)
+        {
+            if (!_instruments.Contains(instrument))
+            {
+                _instruments.Add(instrument);
+            }
         }
     }
 

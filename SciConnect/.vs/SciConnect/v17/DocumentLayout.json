@@ -1,88 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DADA82D7-1F21-4924-8EBF-66BAFDAC18C3}|DB.Infrastructure\\DB.Infrastructure.csproj|c:\\users\\dida\\source\\repos\\rs2-crew\\sciconnect\\sciconnect\\db.infrastructure\\persistance\\sqlservercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DADA82D7-1F21-4924-8EBF-66BAFDAC18C3}|DB.Infrastructure\\DB.Infrastructure.csproj|solutionrelative:db.infrastructure\\persistance\\sqlservercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8CBB6F01-9B50-49D3-9D41-77CCDFF3AE40}|Services\\DB\\DB.Domain\\DB.Domain.csproj|c:\\users\\dida\\source\\repos\\rs2-crew\\sciconnect\\sciconnect\\services\\db\\db.domain\\common\\entitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CBB6F01-9B50-49D3-9D41-77CCDFF3AE40}|Services\\DB\\DB.Domain\\DB.Domain.csproj|solutionrelative:services\\db\\db.domain\\common\\entitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8CBB6F01-9B50-49D3-9D41-77CCDFF3AE40}|Services\\DB\\DB.Domain\\DB.Domain.csproj|c:\\users\\dida\\source\\repos\\rs2-crew\\sciconnect\\sciconnect\\services\\db\\db.domain\\entities\\institution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CBB6F01-9B50-49D3-9D41-77CCDFF3AE40}|Services\\DB\\DB.Domain\\DB.Domain.csproj|solutionrelative:services\\db\\db.domain\\entities\\institution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8CBB6F01-9B50-49D3-9D41-77CCDFF3AE40}|Services\\DB\\DB.Domain\\DB.Domain.csproj|c:\\users\\dida\\source\\repos\\rs2-crew\\sciconnect\\sciconnect\\services\\db\\db.domain\\common\\aggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CBB6F01-9B50-49D3-9D41-77CCDFF3AE40}|Services\\DB\\DB.Domain\\DB.Domain.csproj|solutionrelative:services\\db\\db.domain\\common\\aggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SqlServerContext.cs",
-              "DocumentMoniker": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\DB.Infrastructure\\Persistance\\SqlServerContext.cs",
-              "RelativeDocumentMoniker": "DB.Infrastructure\\Persistance\\SqlServerContext.cs",
-              "ToolTip": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\DB.Infrastructure\\Persistance\\SqlServerContext.cs",
-              "RelativeToolTip": "DB.Infrastructure\\Persistance\\SqlServerContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T15:14:13.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EntityBase.cs",
-              "DocumentMoniker": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\Services\\DB\\DB.Domain\\Common\\EntityBase.cs",
-              "RelativeDocumentMoniker": "Services\\DB\\DB.Domain\\Common\\EntityBase.cs",
-              "ToolTip": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\Services\\DB\\DB.Domain\\Common\\EntityBase.cs",
-              "RelativeToolTip": "Services\\DB\\DB.Domain\\Common\\EntityBase.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T15:03:40.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AggregateRoot.cs",
-              "DocumentMoniker": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\Services\\DB\\DB.Domain\\Common\\AggregateRoot.cs",
-              "RelativeDocumentMoniker": "Services\\DB\\DB.Domain\\Common\\AggregateRoot.cs",
-              "ToolTip": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\Services\\DB\\DB.Domain\\Common\\AggregateRoot.cs",
-              "RelativeToolTip": "Services\\DB\\DB.Domain\\Common\\AggregateRoot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T15:03:37.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Institution.cs",
-              "DocumentMoniker": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\Services\\DB\\DB.Domain\\Entities\\Institution.cs",
-              "RelativeDocumentMoniker": "Services\\DB\\DB.Domain\\Entities\\Institution.cs",
-              "ToolTip": "C:\\Users\\Dida\\source\\repos\\RS2-Crew\\SciConnect\\SciConnect\\Services\\DB\\DB.Domain\\Entities\\Institution.cs",
-              "RelativeToolTip": "Services\\DB\\DB.Domain\\Entities\\Institution.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T15:03:19.791Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

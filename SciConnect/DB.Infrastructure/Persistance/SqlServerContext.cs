@@ -13,6 +13,7 @@ namespace DB.Infrastructure.Persistance
     public class SqlServerContext : DbContext
     {
         public DbSet<Institution> Institutions { get; set; } = null!;
+        public DbSet<Instrument> Instruments { get; set; } = null!;
 
         public SqlServerContext(DbContextOptions options)
             : base(options)
@@ -43,6 +44,7 @@ namespace DB.Infrastructure.Persistance
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new InstitutionEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new InstrumentEntityTypeConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
