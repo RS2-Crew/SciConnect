@@ -1,0 +1,82 @@
+# Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+# Build output
+bin/
+obj/
+apphost.exe
+*.pdb
+*.exe
+*.dll
+*.log
+*.cache
+
+# Entity Framework Migrations
+Migrations/
+
+# NuGet packages
+*.nupkg
+packages/
+project.lock.json
+global.json
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Resharper
+*.DotSettings.user
+_ReSharper.Caches/
+
+# Generated files
+*.Generated.cs
+ApiEndpoints.json
+EndpointInfo/
+
+# Logs & debug files
+logs/
+*.log
+*.tlog
+*.cache
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Visual Studio / .NET build fajlovi
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+
+# Debug i cache fajlovi
+*.log
+*.cache
+*.pdb
+*.db
+*.lock
+
+# Temporary i runtime fajlovi
+*.tmp
+*.bak
+*.swp
+*.pid
+*.seed
+*.ncb
+*.opendb
+*.sdf
+*.psess
+*.vsp
+*.vspx
