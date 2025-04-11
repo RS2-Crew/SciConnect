@@ -1,4 +1,5 @@
 ﻿using DB.Application.Features.Institutions.Commands.CreateInstitution;
+using DB.Application.Features.Institutions.Commands.DeleteInstitution;
 using DB.Application.Features.Institutions.Queries.GetAllInstitutions;
 using DB.Application.Features.Institutions.Queries.GetListOfInstitutions;
 using DB.Application.Features.Institutions.Queries.ViewModels;
@@ -48,6 +49,22 @@ namespace DB.API.Controllers
             var institutions = await _mediator.Send(query);
 
             return Ok(institutions);
+        }
+
+        [HttpDelete("institutions/{name}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteInstitution(string name)
+        {
+            var command = new DeleteInstitutionCommand(name);
+            var result = await _mediator.Send(command);
+
+            if (result == Unit.Value)
+            {
+                return NoContent();  // Status 204 - uspešno obrisano, ali nema sadržaja u odgovoru
+            }
+
+            return NotFound();  // Status 404 - ako nije pronađena institucija
         }
 
         [HttpGet("instruments/{name}")]

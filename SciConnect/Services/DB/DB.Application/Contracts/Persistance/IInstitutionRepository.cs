@@ -9,6 +9,7 @@ namespace DB.Application.Contracts.Persistance
 {
     public interface IInstitutionRepository : IAsyncRepository<Institution>
     {
+        Task<Institution?> GetByNameAsync(string name);
 
         //Task<IEnumerable<Institution>> GetInstitutionByName(string name);
         Task<IReadOnlyCollection<Institution>> GetInstitutionByName(string name);

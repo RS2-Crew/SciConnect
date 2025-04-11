@@ -29,5 +29,11 @@ namespace DB.Infrastructure.Repositories
 
             return institutions.AsReadOnly();
         }
+
+        public async Task<Institution?> GetByNameAsync(string name)
+        {
+            return await _dbContext.Institutions
+                                   .FirstOrDefaultAsync(i => i.Name.ToLower() == name.ToLower());
+        }
     }
 }
