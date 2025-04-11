@@ -2,6 +2,7 @@
 using DB.Application.Features.Institutions.Queries.GetAllInstitutions;
 using DB.Application.Features.Institutions.Queries.GetListOfInstitutions;
 using DB.Application.Features.Institutions.Queries.ViewModels;
+using DB.Application.Features.Instruments.Commands.CreateInstrument;
 using DB.Application.Features.Instruments.Queries.GetAllInstruments;
 using DB.Application.Features.Instruments.Queries.GetListOfInstruments;
 using DB.Application.Features.Instruments.Queries.ViewModels;
@@ -68,6 +69,14 @@ namespace DB.API.Controllers
             var institutions = await _mediator.Send(query);
 
             return Ok(institutions);
+        }
+
+        [HttpPost("instruments")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateInstrument(CreateInstrumentCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
 
     }
