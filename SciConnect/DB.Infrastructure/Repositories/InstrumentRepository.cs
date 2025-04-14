@@ -17,6 +17,12 @@ namespace DB.Infrastructure.Repositories
 
         }
 
+        public async Task<Instrument?> GetByNameAsync(string name)
+        {
+            return await _dbContext.Instruments
+                                   .FirstOrDefaultAsync(i => i.Name.ToLower() == name.ToLower());
+        }
+
         public async Task<IReadOnlyCollection<Instrument>> GetInstrumentByName(string name)
         {
             var instruments = await _dbContext.Instruments

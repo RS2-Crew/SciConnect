@@ -4,6 +4,7 @@ using DB.Application.Features.Institutions.Queries.GetAllInstitutions;
 using DB.Application.Features.Institutions.Queries.GetListOfInstitutions;
 using DB.Application.Features.Institutions.Queries.ViewModels;
 using DB.Application.Features.Instruments.Commands.CreateInstrument;
+using DB.Application.Features.Instruments.Commands.DeleteInstrument;
 using DB.Application.Features.Instruments.Queries.GetAllInstruments;
 using DB.Application.Features.Instruments.Queries.GetListOfInstruments;
 using DB.Application.Features.Instruments.Queries.ViewModels;
@@ -94,6 +95,27 @@ namespace DB.API.Controllers
         {
             var result = await _mediator.Send(command);
             return Ok(result);
+        }
+
+        [HttpDelete("instruments/{name}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteInstrument(string name)
+        {
+            var command = new DeleteInstrumentCommand(name);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent(); // 204 - uspešno obrisano
+                }
+                return NotFound(); // fallback, mada neće se ovde stići
+            }
+            catch (ArgumentException)
+            {
+                return NotFound(); // 404 - instrument nije pronađen
+            }
         }
 
     }

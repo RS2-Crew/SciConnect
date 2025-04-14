@@ -10,5 +10,6 @@ namespace DB.Application.Contracts.Persistance
     public interface IInstrumentRepository : IAsyncRepository<Instrument>
     {
         Task<IReadOnlyCollection<Instrument>> GetInstrumentByName(string name);
+        Task<Instrument?> GetByNameAsync(string name);
     }
 }
