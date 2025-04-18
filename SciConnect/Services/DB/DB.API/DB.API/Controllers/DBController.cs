@@ -8,6 +8,11 @@ using DB.Application.Features.Instruments.Commands.DeleteInstrument;
 using DB.Application.Features.Instruments.Queries.GetAllInstruments;
 using DB.Application.Features.Instruments.Queries.GetListOfInstruments;
 using DB.Application.Features.Instruments.Queries.ViewModels;
+using DB.Application.Features.Microorganisms.Commands.CreateMicroorganism;
+using DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism;
+using DB.Application.Features.Microorganisms.Queries;
+using DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms;
+using DB.Application.Features.Microorganisms.Queries.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -103,6 +108,56 @@ namespace DB.API.Controllers
         public async Task<IActionResult> DeleteInstrument(string name)
         {
             var command = new DeleteInstrumentCommand(name);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent(); // 204 - uspešno obrisano
+                }
+                return NotFound(); // fallback, mada neće se ovde stići
+            }
+            catch (ArgumentException)
+            {
+                return NotFound(); // 404 - instrument nije pronađen
+            }
+        }
+
+        [HttpGet("microorganisms/{name}")]
+        [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetMicroorganismByName(string name)
+        {
+            var query = new GetListOfMicroorganismsQuery(name);
+
+            var microorganisms = await _mediator.Send(query);
+
+            return Ok(microorganisms);
+        }
+
+        [HttpGet("microorganisms")]
+        [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetAllMicroorganisms()
+        {
+            var query = new GetAllMicroorganismsQuery();
+            var microorganisms = await _mediator.Send(query);
+
+            return Ok(microorganisms);
+        }
+
+        [HttpPost("microorganisms")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateMicroorganism(CreateMicroorganismCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete("microorganisms/{name}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteMicroorgnaism(string name)
+        {
+            var command = new DeleteMicroorganismCommand(name);
             try
             {
                 var result = await _mediator.Send(command);

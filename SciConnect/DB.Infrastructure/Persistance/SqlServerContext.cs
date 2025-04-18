@@ -13,7 +13,9 @@ namespace DB.Infrastructure.Persistance
     public class SqlServerContext : DbContext
     {
         public DbSet<Institution> Institutions { get; set; } = null!;
-        public DbSet<Instrument> Instruments { get; set; } = null!;
+        public DbSet<Instrument> Instruments { get; set; } = null;
+        public DbSet<Microorganism> Microorganisms { get; set; } = null!;
+
 
         public SqlServerContext(DbContextOptions options)
             : base(options)
@@ -45,6 +47,8 @@ namespace DB.Infrastructure.Persistance
         {
             modelBuilder.ApplyConfiguration(new InstitutionEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new InstrumentEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MicroorganismEntityTypeConfiguration());
+
 
             base.OnModelCreating(modelBuilder);
         }

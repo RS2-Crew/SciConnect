@@ -13,22 +13,42 @@ namespace DB.Infrastructure.Persistance
     {
         public static async Task SeedAsync(SqlServerContext context, ILogger<SqlServerContextSeed> logger)
         {
-            if (!context.Institutions.Any() && !context.Instruments.Any())
+            if (!context.Institutions.Any() && !context.Instruments.Any() && !context.Microorganisms.Any())
             {
                 List<Institution> institutions = GetPreconfiguredInstitutions();
                 List<Instrument> instruments = GetPreconfiguredInstruments();
+                List<Microorganism> microorganisms = GetPreconfiguredMicroorganisms();
+
 
                 institutions[0].AddInstrument(instruments[0]); // Tech University ↔ Microscope
                 institutions[0].AddInstrument(instruments[1]); // Tech University ↔ Spectrometer
                 institutions[1].AddInstrument(instruments[2]); // Global Research Center ↔ PCR Machine
                 institutions[2].AddInstrument(instruments[1]); // AI Institute ↔ Spectrometer
 
+                institutions[0].AddMicroorgnaism(microorganisms[1]); // Tech University ↔ Cytomegalovirus
+                institutions[0].AddMicroorgnaism(microorganisms[2]); // Tech University ↔ Chlamydia sp.
+                institutions[1].AddMicroorgnaism(microorganisms[2]); // Global Research Center ↔ Chlamydia sp.
+                institutions[2].AddMicroorgnaism(microorganisms[0]); // AI Institute ↔ SARS-CoV-2
+
+
+
                 context.Institutions.AddRange(institutions);
                 context.Instruments.AddRange(instruments);
+                context.Microorganisms.AddRange(microorganisms);
 
                 await context.SaveChangesAsync();
                 logger.LogInformation("Seeding database associated with context {DbContextName}", nameof(SqlServerContext));
             }
+        }
+
+        private static List<Microorganism> GetPreconfiguredMicroorganisms()
+        {
+            return new List<Microorganism>
+        {
+            new Microorganism("SARS-CoV-2"),
+            new Microorganism("Cytomegalovirus"),
+            new Microorganism("Chlamydia sp.")
+        };
         }
 
         private static List<Institution> GetPreconfiguredInstitutions()

@@ -31,6 +31,10 @@ namespace DB.Infrastructure
             services.AddScoped<IInstrumentFactory, InstrumentFactory>();
             services.AddScoped<IInstrumentViewModelFactory, InstrumentViewModelFactory>();
 
+            services.AddScoped<IMicroorganismRepository, MicroorganismRepository>();
+            services.AddScoped<IMicroorganismFactory, MicroorganismFactory>();
+            services.AddScoped<IMicroorganismViewModelFactory, MicroorganismViewModelFactory>();
+
             return services;
         }
     }

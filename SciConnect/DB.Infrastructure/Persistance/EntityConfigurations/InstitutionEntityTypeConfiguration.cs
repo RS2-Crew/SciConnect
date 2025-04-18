@@ -53,7 +53,7 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
             builder.HasMany(i => i.Instruments)
             .WithMany(i => i.Institutions)
             .UsingEntity<Dictionary<string, object>>(
-                "UstanovaInstrument",
+                "InstitutionInstrument",
                 j => j
                     .HasOne<Instrument>()
                     .WithMany()
@@ -62,9 +62,28 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
                 j => j
                     .HasOne<Institution>()
                     .WithMany()
-                    .HasForeignKey("ustanova_id")
+                    .HasForeignKey("institution_id")
                     .OnDelete(DeleteBehavior.Cascade)
             );
+
+            // Microorganism <-> Institution
+            builder.HasMany(i => i.Microorganisms)
+                .WithMany(i => i.Institutions)
+                .UsingEntity<Dictionary<string, object>>(
+                    "InstitutionMicroorganism",
+                    j => j
+                        .HasOne<Microorganism>()
+                        .WithMany()
+                        .HasForeignKey("microorganism_id")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    j => j
+                        .HasOne<Institution>()
+                        .WithMany()
+                        .HasForeignKey("institution_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                );
+
+
 
         }
     }

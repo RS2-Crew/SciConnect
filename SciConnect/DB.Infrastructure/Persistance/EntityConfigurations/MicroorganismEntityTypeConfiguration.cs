@@ -9,11 +9,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DB.Infrastructure.Persistance.EntityConfigurations
 {
-    public class InstrumentEntityTypeConfiguration : IEntityTypeConfiguration<Instrument>
+    public class MicroorganismEntityTypeConfiguration : IEntityTypeConfiguration<Microorganism>
     {
-        public void Configure(EntityTypeBuilder<Instrument> builder)
+        public void Configure(EntityTypeBuilder<Microorganism> builder)
         {
-            builder.ToTable("Instrument");
+
+            // TODO Configure
+            builder.ToTable("Microorganism");
 
             builder.HasKey(i => i.Id);
 
@@ -24,20 +26,20 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
                 .IsRequired()
                 .HasMaxLength(50);
 
-            // Konfiguracija relacije Instrument <-> Institutions (N:M)
+            // Konfiguracija relacije Microorganisms <-> Institutions (N:M)
             builder.HasMany(i => i.Institutions)
-                .WithMany(i => i.Instruments)
+                .WithMany(i => i.Microorganisms)
                 .UsingEntity<Dictionary<string, object>>(
-                    "InstitutionInstrument",
+                    "InstitutionMicroorganism",
                     j => j
                         .HasOne<Institution>()
                         .WithMany()
                         .HasForeignKey("institution_id")
                         .OnDelete(DeleteBehavior.Cascade),
                     j => j
-                        .HasOne<Instrument>()
+                        .HasOne<Microorganism>()
                         .WithMany()
-                        .HasForeignKey("instrument_id")
+                        .HasForeignKey("microorganism_id")
                         .OnDelete(DeleteBehavior.Cascade)
                 );
         }
