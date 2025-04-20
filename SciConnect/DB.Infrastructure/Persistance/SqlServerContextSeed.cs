@@ -18,6 +18,8 @@ namespace DB.Infrastructure.Persistance
                 List<Institution> institutions = GetPreconfiguredInstitutions();
                 List<Instrument> instruments = GetPreconfiguredInstruments();
                 List<Microorganism> microorganisms = GetPreconfiguredMicroorganisms();
+                List<Keyword> keywords = GetPreconfiguredKeywords();
+
 
 
                 institutions[0].AddInstrument(instruments[0]); // Tech University ↔ Microscope
@@ -30,25 +32,40 @@ namespace DB.Infrastructure.Persistance
                 institutions[1].AddMicroorgnaism(microorganisms[2]); // Global Research Center ↔ Chlamydia sp.
                 institutions[2].AddMicroorgnaism(microorganisms[0]); // AI Institute ↔ SARS-CoV-2
 
-
+                institutions[0].AddKeyword(keywords[1]); // Tech University ↔ Chlamydia sp.
+                institutions[0].AddKeyword(keywords[2]); // Tech University ↔ Sequencing
+                institutions[1].AddKeyword(keywords[2]); // Global Research Center ↔ Sequencing
+                institutions[2].AddKeyword(keywords[0]); // AI Institute ↔ Cytomegalovirus
 
                 context.Institutions.AddRange(institutions);
                 context.Instruments.AddRange(instruments);
                 context.Microorganisms.AddRange(microorganisms);
+                context.Keywords.AddRange(keywords);
+
 
                 await context.SaveChangesAsync();
                 logger.LogInformation("Seeding database associated with context {DbContextName}", nameof(SqlServerContext));
             }
         }
 
+        private static List<Keyword> GetPreconfiguredKeywords()
+        {
+            return new List<Keyword>
+            {
+                new Keyword("Cytomegalovirus"),
+                new Keyword("Chlamydia sp."),
+                new Keyword("Sequencing")
+            };
+        }
+
         private static List<Microorganism> GetPreconfiguredMicroorganisms()
         {
             return new List<Microorganism>
-        {
-            new Microorganism("SARS-CoV-2"),
-            new Microorganism("Cytomegalovirus"),
-            new Microorganism("Chlamydia sp.")
-        };
+            {
+                new Microorganism("SARS-CoV-2"),
+                new Microorganism("Cytomegalovirus"),
+                new Microorganism("Chlamydia sp.")
+            };
         }
 
         private static List<Institution> GetPreconfiguredInstitutions()

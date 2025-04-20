@@ -23,8 +23,8 @@ namespace DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
 
         public async Task<IReadOnlyList<MicroorganismViewModel>> Handle(GetAllMicroorganismsQuery request, CancellationToken cancellationToken)
         {
-            var instruments = await _microorganismRepository.GetAllAsync();
-            return instruments.Select(_viewModelFactory.CreateViewModel).ToList();
+            var microorganisms = await _microorganismRepository.GetAllAsync();
+            return microorganisms.Select(_viewModelFactory.CreateViewModel).ToList();
         }
 
     }

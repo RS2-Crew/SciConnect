@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DB.Domain.Entities;
+﻿using DB.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DB.Infrastructure.Persistance.EntityConfigurations
 {
-    public class MicroorganismEntityTypeConfiguration : IEntityTypeConfiguration<Microorganism>
+    public class KeywordEntityTypeConfiguration : IEntityTypeConfiguration<Keyword>
     {
-        public void Configure(EntityTypeBuilder<Microorganism> builder)
+        public void Configure(EntityTypeBuilder<Keyword> builder)
         {
-
             // TODO Configure
-            builder.ToTable("Microorganism");
+            builder.ToTable("Keyword");
 
             builder.HasKey(i => i.Id);
 
@@ -26,21 +20,21 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
                 .IsRequired()
                 .HasMaxLength(50);
 
-            // Konfiguracija relacije Microorganisms <-> Institutions (N:M) / samo za testiranje
-            // TODO: Ovde treba Microorganisms <-> Analisys (N,M)
+            // Konfiguracija relacije Keywords <-> Institutions (N:M) / samo za testiranje
+            // TODO: Ovde treba odnos Keywords <-> Employee (N,M)
             builder.HasMany(i => i.Institutions)
-                .WithMany(i => i.Microorganisms)
+                .WithMany(i => i.Keywords)
                 .UsingEntity<Dictionary<string, object>>(
-                    "InstitutionMicroorganism",
+                    "InstitutionKeyword",
                     j => j
                         .HasOne<Institution>()
                         .WithMany()
                         .HasForeignKey("institution_id")
                         .OnDelete(DeleteBehavior.Cascade),
                     j => j
-                        .HasOne<Microorganism>()
+                        .HasOne<Keyword>()
                         .WithMany()
-                        .HasForeignKey("microorganism_id")
+                        .HasForeignKey("keyword_id")
                         .OnDelete(DeleteBehavior.Cascade)
                 );
         }

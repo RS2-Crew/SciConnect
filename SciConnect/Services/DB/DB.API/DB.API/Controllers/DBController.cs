@@ -8,6 +8,11 @@ using DB.Application.Features.Instruments.Commands.DeleteInstrument;
 using DB.Application.Features.Instruments.Queries.GetAllInstruments;
 using DB.Application.Features.Instruments.Queries.GetListOfInstruments;
 using DB.Application.Features.Instruments.Queries.ViewModels;
+using DB.Application.Features.Keywords.Commands.CreateKeyword;
+using DB.Application.Features.Keywords.Commands.DeleteKeyword;
+using DB.Application.Features.Keywords.Queries.GetAllKeywords;
+using DB.Application.Features.Keywords.Queries.GetListOfKeywords;
+using DB.Application.Features.Keywords.Queries.ViewModels;
 using DB.Application.Features.Microorganisms.Commands.CreateMicroorganism;
 using DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism;
 using DB.Application.Features.Microorganisms.Queries;
@@ -158,6 +163,56 @@ namespace DB.API.Controllers
         public async Task<IActionResult> DeleteMicroorgnaism(string name)
         {
             var command = new DeleteMicroorganismCommand(name);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent(); // 204 - uspešno obrisano
+                }
+                return NotFound(); // fallback, mada neće se ovde stići
+            }
+            catch (ArgumentException)
+            {
+                return NotFound(); // 404 - instrument nije pronađen
+            }
+        }
+
+        [HttpGet("keywords/{name}")]
+        [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetKeywordByName(string name)
+        {
+            var query = new GetListOfKeywordsQuery(name);
+
+            var keywords = await _mediator.Send(query);
+
+            return Ok(keywords);
+        }
+
+        [HttpGet("keywords")]
+        [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetAllKeywords()
+        {
+            var query = new GetAllKeywordsQuery();
+            var keywords = await _mediator.Send(query);
+
+            return Ok(keywords);
+        }
+
+        [HttpPost("keywords")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateKeyword(CreateKeywordCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete("keywords/{name}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteKeyword(string name)
+        {
+            var command = new DeleteKeywordCommand(name);
             try
             {
                 var result = await _mediator.Send(command);

@@ -35,6 +35,10 @@ namespace DB.Infrastructure
             services.AddScoped<IMicroorganismFactory, MicroorganismFactory>();
             services.AddScoped<IMicroorganismViewModelFactory, MicroorganismViewModelFactory>();
 
+            services.AddScoped<IKeywordRepository, KeywordRepository>();
+            services.AddScoped<IKeywordFactory, KeywordFactory>();
+            services.AddScoped<IKeywordViewModelFactory, KeywordViewModelFactory>();
+
             return services;
         }
     }
