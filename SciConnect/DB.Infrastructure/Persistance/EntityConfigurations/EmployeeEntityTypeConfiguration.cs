@@ -26,14 +26,14 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
             // Jedan Employee pripada jednoj Institution (1:1 ili N:1 ako više zaposlenih može u istoj ustanovi)
             builder
                 .HasOne(e => e.Institution)
-                .WithMany() // unidirekcionalno – Institution ne zna za zaposlene
-                .OnDelete(DeleteBehavior.Restrict); // ili .Cascade, po potrebi
+                .WithMany() 
+                .OnDelete(DeleteBehavior.Restrict); 
 
-            // Jedan Employee ima više Keyword-ova (1:N unidirekcionalno)
+            
             builder
                 .HasMany(e => e.Keywords)
-                .WithOne() // Keyword ne zna za Employee
-                .OnDelete(DeleteBehavior.Cascade); // brišu se i povezani keywords ako je potrebno
+                .WithOne() 
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
