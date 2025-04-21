@@ -39,6 +39,10 @@ namespace DB.Infrastructure
             services.AddScoped<IKeywordFactory, KeywordFactory>();
             services.AddScoped<IKeywordViewModelFactory, KeywordViewModelFactory>();
 
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeeFactory, EmployeeFactory>();
+            services.AddScoped<IEmployeeViewModelFactory, EmployeeViewModelFactory>();
+
             return services;
         }
     }

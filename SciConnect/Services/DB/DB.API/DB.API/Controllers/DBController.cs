@@ -18,6 +18,11 @@ using DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism;
 using DB.Application.Features.Microorganisms.Queries;
 using DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms;
 using DB.Application.Features.Microorganisms.Queries.ViewModels;
+using DB.Application.Features.Employees.Commands.CreateEmployee;
+using DB.Application.Features.Employees.Commands.DeleteEmployee;
+using DB.Application.Features.Employees.Queries.GetAllEmployees;
+using DB.Application.Features.Employees.Queries.GetListOfEmployees;
+using DB.Application.Features.Employees.Queries.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,13 +39,13 @@ namespace DB.API.Controllers
             _mediator = mediator;
         }
 
+        // ---------- INSTITUTIONS ----------
         [HttpGet("institutions/{name}")]
         [ProducesResponseType(typeof(IEnumerable<InstitutionViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetInstitutionByName(string name)
         {
             var query = new GetListOfInstitutionsQuery(name);
             var orders = await _mediator.Send(query);
-
             return Ok(orders);
         }
 
@@ -58,7 +63,6 @@ namespace DB.API.Controllers
         {
             var query = new GetAllInstitutionsQuery();
             var institutions = await _mediator.Send(query);
-
             return Ok(institutions);
         }
 
@@ -72,31 +76,29 @@ namespace DB.API.Controllers
 
             if (result == Unit.Value)
             {
-                return NoContent();  // Status 204 - uspešno obrisano, ali nema sadržaja u odgovoru
+                return NoContent();
             }
 
-            return NotFound();  // Status 404 - ako nije pronađena institucija
+            return NotFound();
         }
 
+        // ---------- INSTRUMENTS ----------
         [HttpGet("instruments/{name}")]
         [ProducesResponseType(typeof(IEnumerable<InstrumentViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstrumentViewModel>>> GetInstrumentByName(string name)
         {
             var query = new GetListOfInstrumentsQuery(name);
-
             var instruments = await _mediator.Send(query);
-
             return Ok(instruments);
         }
 
         [HttpGet("instruments")]
         [ProducesResponseType(typeof(IEnumerable<InstrumentViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetAllInstruments()
+        public async Task<ActionResult<IEnumerable<InstrumentViewModel>>> GetAllInstruments()
         {
             var query = new GetAllInstrumentsQuery();
-            var institutions = await _mediator.Send(query);
-
-            return Ok(institutions);
+            var instruments = await _mediator.Send(query);
+            return Ok(instruments);
         }
 
         [HttpPost("instruments")]
@@ -118,24 +120,23 @@ namespace DB.API.Controllers
                 var result = await _mediator.Send(command);
                 if (result == Unit.Value)
                 {
-                    return NoContent(); // 204 - uspešno obrisano
+                    return NoContent();
                 }
-                return NotFound(); // fallback, mada neće se ovde stići
+                return NotFound();
             }
             catch (ArgumentException)
             {
-                return NotFound(); // 404 - instrument nije pronađen
+                return NotFound();
             }
         }
 
+        // ---------- MICROORGANISMS ----------
         [HttpGet("microorganisms/{name}")]
         [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetMicroorganismByName(string name)
         {
             var query = new GetListOfMicroorganismsQuery(name);
-
             var microorganisms = await _mediator.Send(query);
-
             return Ok(microorganisms);
         }
 
@@ -145,7 +146,6 @@ namespace DB.API.Controllers
         {
             var query = new GetAllMicroorganismsQuery();
             var microorganisms = await _mediator.Send(query);
-
             return Ok(microorganisms);
         }
 
@@ -168,24 +168,23 @@ namespace DB.API.Controllers
                 var result = await _mediator.Send(command);
                 if (result == Unit.Value)
                 {
-                    return NoContent(); // 204 - uspešno obrisano
+                    return NoContent();
                 }
-                return NotFound(); // fallback, mada neće se ovde stići
+                return NotFound();
             }
             catch (ArgumentException)
             {
-                return NotFound(); // 404 - instrument nije pronađen
+                return NotFound();
             }
         }
 
+        // ---------- KEYWORDS ----------
         [HttpGet("keywords/{name}")]
         [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetKeywordByName(string name)
         {
             var query = new GetListOfKeywordsQuery(name);
-
             var keywords = await _mediator.Send(query);
-
             return Ok(keywords);
         }
 
@@ -195,7 +194,6 @@ namespace DB.API.Controllers
         {
             var query = new GetAllKeywordsQuery();
             var keywords = await _mediator.Send(query);
-
             return Ok(keywords);
         }
 
@@ -218,15 +216,62 @@ namespace DB.API.Controllers
                 var result = await _mediator.Send(command);
                 if (result == Unit.Value)
                 {
-                    return NoContent(); // 204 - uspešno obrisano
+                    return NoContent();
                 }
-                return NotFound(); // fallback, mada neće se ovde stići
+                return NotFound();
             }
             catch (ArgumentException)
             {
-                return NotFound(); // 404 - instrument nije pronađen
+                return NotFound();
             }
         }
 
+        // ---------- EMPLOYEES ----------
+        [HttpGet("employees/{firstName}/{lastName}")]
+        [ProducesResponseType(typeof(IEnumerable<EmployeeViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<EmployeeViewModel>>> GetEmployeeByName(string firstName, string lastName)
+        {
+            var query = new GetListOfEmployeesQuery(firstName, lastName);
+            var employees = await _mediator.Send(query);
+            return Ok(employees);
+        }
+
+        [HttpGet("employees")]
+        [ProducesResponseType(typeof(IEnumerable<EmployeeViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<EmployeeViewModel>>> GetAllEmployees()
+        {
+            var query = new GetAllEmployeesQuery();
+            var employees = await _mediator.Send(query);
+            return Ok(employees);
+        }
+
+        [HttpPost("employees")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateEmployee(CreateEmployeeCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete("employees/{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var command = new DeleteEmployeeCommand(id);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent();
+                }
+                return NotFound();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound();
+            }
+        }
     }
 }
