@@ -14,6 +14,7 @@ namespace DB.Infrastructure.Persistance
     {
         public DbSet<Institution> Institutions { get; set; } = null!;
         public DbSet<Instrument> Instruments { get; set; } = null!;
+        public DbSet<Analysis> Analysis { get; set; } = null!;
 
         public SqlServerContext(DbContextOptions options)
             : base(options)
@@ -45,6 +46,7 @@ namespace DB.Infrastructure.Persistance
         {
             modelBuilder.ApplyConfiguration(new InstitutionEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new InstrumentEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new AnalysisEntityTypeConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

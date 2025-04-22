@@ -1,4 +1,9 @@
-﻿using DB.Application.Features.Institutions.Commands.CreateInstitution;
+﻿using DB.Application.Features.Analyses.Commands.CreateAnalysis;
+using DB.Application.Features.Analyses.Commands.DeleteAnalysis;
+using DB.Application.Features.Analyses.Queries.GetAllAnalyses;
+using DB.Application.Features.Analysis.Queries.GetListOfAnalysis;
+using DB.Application.Features.Analysis.Queries.ViewModels;
+using DB.Application.Features.Institutions.Commands.CreateInstitution;
 using DB.Application.Features.Institutions.Commands.DeleteInstitution;
 using DB.Application.Features.Institutions.Queries.GetAllInstitutions;
 using DB.Application.Features.Institutions.Queries.GetListOfInstitutions;
@@ -62,10 +67,10 @@ namespace DB.API.Controllers
 
             if (result == Unit.Value)
             {
-                return NoContent();  // Status 204 - uspešno obrisano, ali nema sadržaja u odgovoru
+                return NoContent(); 
             }
 
-            return NotFound();  // Status 404 - ako nije pronađena institucija
+            return NotFound();  
         }
 
         [HttpGet("instruments/{name}")]
@@ -108,15 +113,65 @@ namespace DB.API.Controllers
                 var result = await _mediator.Send(command);
                 if (result == Unit.Value)
                 {
-                    return NoContent(); // 204 - uspešno obrisano
+                    return NoContent();
                 }
-                return NotFound(); // fallback, mada neće se ovde stići
+                return NotFound();
             }
             catch (ArgumentException)
             {
-                return NotFound(); // 404 - instrument nije pronađen
+                return NotFound(); 
             }
         }
 
+        [HttpGet("analyses")]
+        [ProducesResponseType(typeof(IEnumerable<AnalysisViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<AnalysisViewModel>>> GetAllAnalyses()
+        {
+            var query = new GetAllAnalysesQuery();
+            var analyses = await _mediator.Send(query);
+            return Ok(analyses);
+        }
+        [HttpGet("analyses/{name}")]
+        [ProducesResponseType(typeof(IEnumerable<AnalysisViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<AnalysisViewModel>>> GetAnalysisByName(string name)
+        {
+            var query = new GetListOfAnalysisQuery(name);
+            var analyses = await _mediator.Send(query);
+            return Ok(analyses);
+        }
+
+        
+        [HttpPost("analyses")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateAnalysis(CreateAnalysisCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        
+        [HttpDelete("analyses/{name}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteAnalysis(string name)
+        {
+            var command = new DeleteAnalysisCommand(name);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent(); 
+                }
+                return NotFound(); 
+            }
+            catch (ArgumentException)
+            {
+                return NotFound(); 
+            }
+        }
+
+
     }
+
 }

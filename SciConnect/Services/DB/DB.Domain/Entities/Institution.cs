@@ -12,6 +12,12 @@ namespace DB.Domain.Entities
     {
         private readonly List<Instrument> _instruments = new();
         public IReadOnlyCollection<Instrument> Instruments => _instruments.AsReadOnly();
+
+        private readonly List<Analysis> _analyses = new();
+        public IReadOnlyCollection<Analysis> Analyses => _analyses.AsReadOnly();
+
+        
+
         public int Id { get; private set; }
         public string Name { get; private set; }
         public string Street { get; private set; }

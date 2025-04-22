@@ -31,6 +31,9 @@ namespace DB.Infrastructure
             services.AddScoped<IInstrumentFactory, InstrumentFactory>();
             services.AddScoped<IInstrumentViewModelFactory, InstrumentViewModelFactory>();
 
+            services.AddScoped<IAnalysisRepository, AnalysisRepository>();
+            services.AddScoped<IAnalysisFactory, AnalysisFactory>();
+            services.AddScoped<IAnalysisViewModelFactory, AnalysisViewModelFactory>();
             return services;
         }
     }

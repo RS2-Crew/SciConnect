@@ -52,5 +52,16 @@ namespace DB.Infrastructure.Persistance
             new Instrument("PCR Machine")
         };
         }
+
+        private static List<Analysis> GetPreconfiguredAnalyses()
+        {
+            return new List<Analysis>
+        {
+            new Analysis("PCR"),
+            new Analysis("Real-Time PCR"),
+            new Analysis("Serologija")
+        };
+        }
+
     }
 }
