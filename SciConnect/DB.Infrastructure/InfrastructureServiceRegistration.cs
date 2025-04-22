@@ -31,9 +31,22 @@ namespace DB.Infrastructure
             services.AddScoped<IInstrumentFactory, InstrumentFactory>();
             services.AddScoped<IInstrumentViewModelFactory, InstrumentViewModelFactory>();
 
+            services.AddScoped<IMicroorganismRepository, MicroorganismRepository>();
+            services.AddScoped<IMicroorganismFactory, MicroorganismFactory>();
+            services.AddScoped<IMicroorganismViewModelFactory, MicroorganismViewModelFactory>();
+
+            services.AddScoped<IKeywordRepository, KeywordRepository>();
+            services.AddScoped<IKeywordFactory, KeywordFactory>();
+            services.AddScoped<IKeywordViewModelFactory, KeywordViewModelFactory>();
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeeFactory, EmployeeFactory>();
+            services.AddScoped<IEmployeeViewModelFactory, EmployeeViewModelFactory>();
+
             services.AddScoped<IAnalysisRepository, AnalysisRepository>();
             services.AddScoped<IAnalysisFactory, AnalysisFactory>();
             services.AddScoped<IAnalysisViewModelFactory, AnalysisViewModelFactory>();
+
             return services;
         }
     }

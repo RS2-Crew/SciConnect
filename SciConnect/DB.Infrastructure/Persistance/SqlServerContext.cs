@@ -14,12 +14,13 @@ namespace DB.Infrastructure.Persistance
     {
         public DbSet<Institution> Institutions { get; set; } = null!;
         public DbSet<Instrument> Instruments { get; set; } = null!;
+        public DbSet<Microorganism> Microorganisms { get; set; } = null!;
+        public DbSet<Keyword> Keywords { get; set; } = null!;
+        public DbSet<Employee> Employees { get; set; } = null!; // ✅ Dodato
         public DbSet<Analysis> Analysis { get; set; } = null!;
-
         public SqlServerContext(DbContextOptions options)
             : base(options)
         {
-
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -46,7 +47,10 @@ namespace DB.Infrastructure.Persistance
         {
             modelBuilder.ApplyConfiguration(new InstitutionEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new InstrumentEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new AnalysisEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MicroorganismEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new KeywordEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new AnalysisEntityTypeConfiguration()); 
 
             base.OnModelCreating(modelBuilder);
         }

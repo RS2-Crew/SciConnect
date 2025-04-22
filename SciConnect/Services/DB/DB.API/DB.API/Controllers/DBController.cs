@@ -13,6 +13,21 @@ using DB.Application.Features.Instruments.Commands.DeleteInstrument;
 using DB.Application.Features.Instruments.Queries.GetAllInstruments;
 using DB.Application.Features.Instruments.Queries.GetListOfInstruments;
 using DB.Application.Features.Instruments.Queries.ViewModels;
+using DB.Application.Features.Keywords.Commands.CreateKeyword;
+using DB.Application.Features.Keywords.Commands.DeleteKeyword;
+using DB.Application.Features.Keywords.Queries.GetAllKeywords;
+using DB.Application.Features.Keywords.Queries.GetListOfKeywords;
+using DB.Application.Features.Keywords.Queries.ViewModels;
+using DB.Application.Features.Microorganisms.Commands.CreateMicroorganism;
+using DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism;
+using DB.Application.Features.Microorganisms.Queries;
+using DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms;
+using DB.Application.Features.Microorganisms.Queries.ViewModels;
+using DB.Application.Features.Employees.Commands.CreateEmployee;
+using DB.Application.Features.Employees.Commands.DeleteEmployee;
+using DB.Application.Features.Employees.Queries.GetAllEmployees;
+using DB.Application.Features.Employees.Queries.GetListOfEmployees;
+using DB.Application.Features.Employees.Queries.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,13 +44,13 @@ namespace DB.API.Controllers
             _mediator = mediator;
         }
 
+        // ---------- INSTITUTIONS ----------
         [HttpGet("institutions/{name}")]
         [ProducesResponseType(typeof(IEnumerable<InstitutionViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetInstitutionByName(string name)
         {
             var query = new GetListOfInstitutionsQuery(name);
             var orders = await _mediator.Send(query);
-
             return Ok(orders);
         }
 
@@ -53,7 +68,6 @@ namespace DB.API.Controllers
         {
             var query = new GetAllInstitutionsQuery();
             var institutions = await _mediator.Send(query);
-
             return Ok(institutions);
         }
 
@@ -67,31 +81,29 @@ namespace DB.API.Controllers
 
             if (result == Unit.Value)
             {
-                return NoContent(); 
+                return NoContent();
             }
 
-            return NotFound();  
+            return NotFound();
         }
 
+        // ---------- INSTRUMENTS ----------
         [HttpGet("instruments/{name}")]
         [ProducesResponseType(typeof(IEnumerable<InstrumentViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstrumentViewModel>>> GetInstrumentByName(string name)
         {
             var query = new GetListOfInstrumentsQuery(name);
-
             var instruments = await _mediator.Send(query);
-
             return Ok(instruments);
         }
 
         [HttpGet("instruments")]
         [ProducesResponseType(typeof(IEnumerable<InstrumentViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetAllInstruments()
+        public async Task<ActionResult<IEnumerable<InstrumentViewModel>>> GetAllInstruments()
         {
             var query = new GetAllInstrumentsQuery();
-            var institutions = await _mediator.Send(query);
-
-            return Ok(institutions);
+            var instruments = await _mediator.Send(query);
+            return Ok(instruments);
         }
 
         [HttpPost("instruments")]
@@ -119,10 +131,156 @@ namespace DB.API.Controllers
             }
             catch (ArgumentException)
             {
-                return NotFound(); 
+                return NotFound();
             }
         }
 
+        // ---------- MICROORGANISMS ----------
+        [HttpGet("microorganisms/{name}")]
+        [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetMicroorganismByName(string name)
+        {
+            var query = new GetListOfMicroorganismsQuery(name);
+            var microorganisms = await _mediator.Send(query);
+            return Ok(microorganisms);
+        }
+
+        [HttpGet("microorganisms")]
+        [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetAllMicroorganisms()
+        {
+            var query = new GetAllMicroorganismsQuery();
+            var microorganisms = await _mediator.Send(query);
+            return Ok(microorganisms);
+        }
+
+        [HttpPost("microorganisms")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateMicroorganism(CreateMicroorganismCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete("microorganisms/{name}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteMicroorgnaism(string name)
+        {
+            var command = new DeleteMicroorganismCommand(name);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent();
+                }
+                return NotFound();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound();
+            }
+        }
+
+        // ---------- KEYWORDS ----------
+        [HttpGet("keywords/{name}")]
+        [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetKeywordByName(string name)
+        {
+            var query = new GetListOfKeywordsQuery(name);
+            var keywords = await _mediator.Send(query);
+            return Ok(keywords);
+        }
+
+        [HttpGet("keywords")]
+        [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetAllKeywords()
+        {
+            var query = new GetAllKeywordsQuery();
+            var keywords = await _mediator.Send(query);
+            return Ok(keywords);
+        }
+
+        [HttpPost("keywords")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateKeyword(CreateKeywordCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete("keywords/{name}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteKeyword(string name)
+        {
+            var command = new DeleteKeywordCommand(name);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent();
+                }
+                return NotFound();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound();
+            }
+        }
+
+        // ---------- EMPLOYEES ----------
+        [HttpGet("employees/{firstName}/{lastName}")]
+        [ProducesResponseType(typeof(IEnumerable<EmployeeViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<EmployeeViewModel>>> GetEmployeeByName(string firstName, string lastName)
+        {
+            var query = new GetListOfEmployeesQuery(firstName, lastName);
+            var employees = await _mediator.Send(query);
+            return Ok(employees);
+        }
+
+        [HttpGet("employees")]
+        [ProducesResponseType(typeof(IEnumerable<EmployeeViewModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<EmployeeViewModel>>> GetAllEmployees()
+        {
+            var query = new GetAllEmployeesQuery();
+            var employees = await _mediator.Send(query);
+            return Ok(employees);
+        }
+
+        [HttpPost("employees")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        public async Task<ActionResult<int>> CreateEmployee(CreateEmployeeCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete("employees/{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var command = new DeleteEmployeeCommand(id);
+            try
+            {
+                var result = await _mediator.Send(command);
+                if (result == Unit.Value)
+                {
+                    return NoContent();
+                }
+                return NotFound();
+            }
+            catch (ArgumentException)
+            {
+                return NotFound();
+            }
+        }
+    }
+
+    
         [HttpGet("analyses")]
         [ProducesResponseType(typeof(IEnumerable<AnalysisViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<AnalysisViewModel>>> GetAllAnalyses()
@@ -140,7 +298,7 @@ namespace DB.API.Controllers
             return Ok(analyses);
         }
 
-        
+
         [HttpPost("analyses")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> CreateAnalysis(CreateAnalysisCommand command)
@@ -149,7 +307,7 @@ namespace DB.API.Controllers
             return Ok(result);
         }
 
-        
+
         [HttpDelete("analyses/{name}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -161,13 +319,13 @@ namespace DB.API.Controllers
                 var result = await _mediator.Send(command);
                 if (result == Unit.Value)
                 {
-                    return NoContent(); 
+                    return NoContent();
                 }
-                return NotFound(); 
+                return NotFound();
             }
             catch (ArgumentException)
             {
-                return NotFound(); 
+                return NotFound();
             }
         }
 

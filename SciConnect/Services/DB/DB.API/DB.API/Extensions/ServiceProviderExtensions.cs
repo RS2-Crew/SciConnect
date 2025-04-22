@@ -21,7 +21,7 @@ namespace DB.API.Extensions
 
                 var retry = Policy.Handle<SqlException>()
                     .WaitAndRetry(
-                        retryCount: 5,
+                        retryCount: 2,
                         sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
                         onRetry: (exception, retryCount, ctx) =>
                         {

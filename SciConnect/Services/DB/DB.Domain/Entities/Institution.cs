@@ -13,10 +13,14 @@ namespace DB.Domain.Entities
         private readonly List<Instrument> _instruments = new();
         public IReadOnlyCollection<Instrument> Instruments => _instruments.AsReadOnly();
 
+        private readonly List<Microorganism> _microorganisms = new();
+        public IReadOnlyCollection<Microorganism> Microorganisms => _microorganisms.AsReadOnly();
+
+        private readonly List<Keyword> _keywords = new();
+        public IReadOnlyCollection<Keyword> Keywords => _keywords.AsReadOnly();
+
         private readonly List<Analysis> _analyses = new();
         public IReadOnlyCollection<Analysis> Analyses => _analyses.AsReadOnly();
-
-        
 
         public int Id { get; private set; }
         public string Name { get; private set; }
@@ -47,6 +51,22 @@ namespace DB.Domain.Entities
             if (!_instruments.Contains(instrument))
             {
                 _instruments.Add(instrument);
+            }
+        }
+
+        public void AddMicroorgnaism(Microorganism microorganism)
+        {
+            if (!_microorganisms.Contains(microorganism))
+            {
+                _microorganisms.Add(microorganism);
+            }
+        }
+
+        public void AddKeyword(Keyword keyword)
+        {
+            if (!_keywords.Contains(keyword))
+            {
+                _keywords.Add(keyword);
             }
         }
     }
