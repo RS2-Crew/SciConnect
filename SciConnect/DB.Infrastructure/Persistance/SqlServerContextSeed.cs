@@ -14,14 +14,16 @@ namespace DB.Infrastructure.Persistance
             if (!context.Institutions.Any() &&
                 !context.Instruments.Any() &&
                 !context.Microorganisms.Any() &&
-                !context.Employees.Any())
+                !context.Employees.Any() 
+                )
             {
                 List<Institution> institutions = GetPreconfiguredInstitutions();
                 List<Instrument> instruments = GetPreconfiguredInstruments();
                 List<Microorganism> microorganisms = GetPreconfiguredMicroorganisms();
                 List<Keyword> keywords = GetPreconfiguredKeywords();
                 List<Employee> employees = GetPreconfiguredEmployees(institutions, keywords);
-
+                List<Analysis> analyses = GetPreconfiguredAnalysis();
+                Console.WriteLine("analysesL:" + analyses);
                 // Povezivanje entiteta
                 institutions[0].AddInstrument(instruments[0]); // Tech University ↔ Microscope
                 institutions[0].AddInstrument(instruments[1]); // Tech University ↔ Spectrometer
@@ -44,12 +46,18 @@ namespace DB.Infrastructure.Persistance
                 context.Microorganisms.AddRange(microorganisms);
                 context.Keywords.AddRange(keywords);
                 context.Employees.AddRange(employees);
+                context.Analyses.AddRange(analyses);
+               
+              
+
 
                 await context.SaveChangesAsync();
                 logger.LogInformation("Seeding database associated with context {DbContextName}", nameof(SqlServerContext));
+                logger.LogInformation("ANaliza {Analyses}", analyses);
             }
         }
 
+       
         private static List<Keyword> GetPreconfiguredKeywords()
         {
             return new List<Keyword>
@@ -104,7 +112,7 @@ namespace DB.Infrastructure.Persistance
             return new List<Employee> { e1, e2, e3 };
         }
 
-        private static List<Analysis> GetPreconfiguredAnalyses()
+        private static List<Analysis> GetPreconfiguredAnalysis()
         {
             return new List<Analysis>
         {

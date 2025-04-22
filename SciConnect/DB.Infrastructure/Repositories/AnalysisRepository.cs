@@ -17,12 +17,12 @@ namespace DB.Infrastructure.Repositories
 
         public async Task<Analysis?> GetByNameAsync(string name)
         {
-            return await _dbContext.Analysis.FirstOrDefaultAsync(a => a.Name.ToLower() == name.ToLower());
+            return await _dbContext.Analyses.FirstOrDefaultAsync(a => a.Name.ToLower() == name.ToLower());
         }
 
         public async Task<IReadOnlyCollection<Analysis>> GetAnalysisByName(string name)
         {
-            var analysis = await _dbContext.Analysis
+            var analysis = await _dbContext.Analyses
                 .Where(a => a.Name == name)
                 .ToListAsync();
 
@@ -31,7 +31,7 @@ namespace DB.Infrastructure.Repositories
 
         public async Task<IReadOnlyList<Analysis>> GetAllAsync()
         {
-            return await _dbContext.Analysis
+            return await _dbContext.Analyses
                 .AsNoTracking()
                 .ToListAsync();
         }

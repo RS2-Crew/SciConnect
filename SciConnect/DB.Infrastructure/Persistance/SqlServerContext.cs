@@ -17,7 +17,7 @@ namespace DB.Infrastructure.Persistance
         public DbSet<Microorganism> Microorganisms { get; set; } = null!;
         public DbSet<Keyword> Keywords { get; set; } = null!;
         public DbSet<Employee> Employees { get; set; } = null!; // ✅ Dodato
-        public DbSet<Analysis> Analysis { get; set; } = null!;
+        public DbSet<Analysis> Analyses { get; set; } = null!;
         public SqlServerContext(DbContextOptions options)
             : base(options)
         {

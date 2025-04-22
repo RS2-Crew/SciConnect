@@ -278,7 +278,7 @@ namespace DB.API.Controllers
                 return NotFound();
             }
         }
-    }
+    
 
     
         [HttpGet("analyses")]
