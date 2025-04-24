@@ -30,6 +30,11 @@ using DB.Application.Features.Employees.Queries.GetListOfEmployees;
 using DB.Application.Features.Employees.Queries.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments;
+using DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees;
+using DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses;
+using DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords;
+using DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms;
 
 namespace DB.API.Controllers
 {
@@ -86,6 +91,67 @@ namespace DB.API.Controllers
 
             return NotFound();
         }
+
+        [HttpGet("with-instruments/{institutionName}")]
+        public async Task<IActionResult> GetInstitutionWithInstruments(string institutionName)
+        {
+            var query = new GetInstrumentsByInstitutionQuery(institutionName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("with-employees/{institutionName}")]
+        public async Task<IActionResult> GetInstitutionWithEmployees(string institutionName)
+        {
+            var query = new GetEmployeesByInstitutionQuery(institutionName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("with-analyses/{institutionName}")]
+        public async Task<IActionResult> GetInstitutionWithAnalyses(string institutionName)
+        {
+            var query = new GetAnalysesByInstitutionQuery(institutionName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("with-keywords/{institutionName}")]
+        public async Task<IActionResult> GetInstitutionWithKeywords(string institutionName)
+        {
+            var query = new GetKeywordsByInstitutionQuery(institutionName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("with-microorganisms/{institutionName}")]
+        public async Task<IActionResult> GetInstitutionWithMicroorganisms(string institutionName)
+        {
+            var query = new GetMicroorganismsByInstitutionQuery(institutionName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
 
         // ---------- INSTRUMENTS ----------
         [HttpGet("instruments/{name}")]

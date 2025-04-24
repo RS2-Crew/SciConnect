@@ -91,6 +91,12 @@ namespace DB.Infrastructure.Repositories
             _dbContext.Set<T>().Remove(entity);
             await _dbContext.SaveChangesAsync();
         }
+
+        public IQueryable<T> GetQueryable(bool disableTracking = true)
+        {
+            IQueryable<T> query = _dbContext.Set<T>();
+            return disableTracking ? query.AsNoTracking() : query;
+        }
     }
     
 }

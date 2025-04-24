@@ -14,7 +14,9 @@ namespace DB.Infrastructure.Persistance
             if (!context.Institutions.Any() &&
                 !context.Instruments.Any() &&
                 !context.Microorganisms.Any() &&
-                !context.Employees.Any() 
+                !context.Employees.Any() &&
+                !context.Keywords.Any() &&
+                !context.Analyses.Any()
                 )
             {
                 List<Institution> institutions = GetPreconfiguredInstitutions();
@@ -23,7 +25,6 @@ namespace DB.Infrastructure.Persistance
                 List<Keyword> keywords = GetPreconfiguredKeywords();
                 List<Employee> employees = GetPreconfiguredEmployees(institutions, keywords);
                 List<Analysis> analyses = GetPreconfiguredAnalysis();
-                Console.WriteLine("analysesL:" + analyses);
                 // Povezivanje entiteta
                 institutions[0].AddInstrument(instruments[0]); // Tech University ↔ Microscope
                 institutions[0].AddInstrument(instruments[1]); // Tech University ↔ Spectrometer
@@ -39,6 +40,16 @@ namespace DB.Infrastructure.Persistance
                 institutions[0].AddKeyword(keywords[2]); // Tech University ↔ Sequencing
                 institutions[1].AddKeyword(keywords[2]); // Global Research Center ↔ Sequencing
                 institutions[2].AddKeyword(keywords[0]); // AI Institute ↔ Cytomegalovirus
+
+                institutions[0].AddEmployee(employees[1]); // Tech University ↔ Jane Smith
+                institutions[0].AddEmployee(employees[2]); // Tech University ↔ Alice Johnson
+                institutions[2].AddEmployee(employees[0]); // AI Institute ↔ John Doe
+
+                institutions[0].AddAnalysis(analyses[1]); // Tech University ↔ Jane Smith
+                institutions[0].AddAnalysis(analyses[2]); // Tech University ↔ Alice Johnson
+                institutions[1].AddAnalysis(analyses[0]); // AI Institute ↔ John Doe
+                institutions[2].AddAnalysis(analyses[0]); // AI Institute ↔ John Doe
+
 
                 // Dodavanje u kontekst
                 context.Institutions.AddRange(institutions);

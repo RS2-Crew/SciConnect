@@ -83,6 +83,48 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
                         .OnDelete(DeleteBehavior.Cascade)
                 );
 
+            builder.HasMany(i => i.Analyses)
+            .WithMany(i => i.Institutions)
+            .UsingEntity<Dictionary<string, object>>(
+                "InstitutionAnalyses",
+                j => j
+                    .HasOne<Analysis>()
+                    .WithMany()
+                    .HasForeignKey("analysis_id")
+                    .OnDelete(DeleteBehavior.Cascade),
+                j => j
+                    .HasOne<Institution>()
+                    .WithMany()
+                    .HasForeignKey("institution_id")
+                    .OnDelete(DeleteBehavior.Cascade)
+            );
+
+            // Employee <-> Institution
+            builder
+                .HasMany(i => i.Employees)
+                .WithOne(e => e.Institution)
+                .HasForeignKey("institution_id")
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            // Microorganism <-> Institution
+            builder.HasMany(i => i.Keywords)
+                .WithMany(i => i.Institutions)
+                .UsingEntity<Dictionary<string, object>>(
+                    "InstitutionKeyword",
+                    j => j
+                        .HasOne<Keyword>()
+                        .WithMany()
+                        .HasForeignKey("keyword_id")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    j => j
+                        .HasOne<Institution>()
+                        .WithMany()
+                        .HasForeignKey("institution_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                );
+
+
 
 
         }

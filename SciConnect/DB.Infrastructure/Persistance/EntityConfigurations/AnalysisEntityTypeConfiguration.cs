@@ -23,7 +23,7 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
             builder.HasMany(a => a.Institutions)
                 .WithMany(i => i.Analyses)
                 .UsingEntity<Dictionary<string, object>>(
-                    "AnalysisInstitution",
+                    "InstitutionAnalyses",
                     j => j
                         .HasOne<Institution>()
                         .WithMany()

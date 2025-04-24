@@ -26,14 +26,27 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
             // Jedan Employee pripada jednoj Institution (1:1 ili N:1 ako više zaposlenih može u istoj ustanovi)
             builder
                 .HasOne(e => e.Institution)
-                .WithMany() 
-                .OnDelete(DeleteBehavior.Restrict); 
+                .WithMany(i => i.Employees) 
+                .HasForeignKey("institution_id")
+                .OnDelete(DeleteBehavior.Restrict);
 
-            
-            builder
-                .HasMany(e => e.Keywords)
-                .WithOne() 
-                .OnDelete(DeleteBehavior.Cascade);
+
+            // Konfiguracija relacije Instrument <-> Institutions (N:M)
+            builder.HasMany(i => i.Keywords)
+                .WithMany(i => i.Employees)
+                .UsingEntity<Dictionary<string, object>>(
+                    "EmployeeKeyword",
+                    j => j
+                        .HasOne<Keyword>()
+                        .WithMany()
+                        .HasForeignKey("keyword_id")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    j => j
+                        .HasOne<Employee>()
+                        .WithMany()
+                        .HasForeignKey("employee_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                );
         }
     }
 }

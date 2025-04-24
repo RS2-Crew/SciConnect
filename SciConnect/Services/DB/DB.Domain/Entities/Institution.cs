@@ -22,6 +22,10 @@ namespace DB.Domain.Entities
         private readonly List<Analysis> _analyses = new();
         public IReadOnlyCollection<Analysis> Analyses => _analyses.AsReadOnly();
 
+        private readonly List<Employee> _employees = new();
+        public IReadOnlyCollection<Employee> Employees => _employees.AsReadOnly();
+
+
         public int Id { get; private set; }
         public string Name { get; private set; }
         public string Street { get; private set; }
@@ -54,6 +58,7 @@ namespace DB.Domain.Entities
             }
         }
 
+
         public void AddMicroorgnaism(Microorganism microorganism)
         {
             if (!_microorganisms.Contains(microorganism))
@@ -67,6 +72,22 @@ namespace DB.Domain.Entities
             if (!_keywords.Contains(keyword))
             {
                 _keywords.Add(keyword);
+            }
+        }
+
+        public void AddEmployee(Employee employee)
+        {
+            if (!_employees.Contains(employee))
+            {
+                _employees.Add(employee);
+            }
+        }
+
+        public void AddAnalysis(Analysis analysis)
+        {
+            if (!_analyses.Contains(analysis))
+            {
+                _analyses.Add(analysis);
             }
         }
     }
