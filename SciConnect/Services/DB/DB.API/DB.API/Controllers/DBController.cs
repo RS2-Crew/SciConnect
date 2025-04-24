@@ -35,6 +35,8 @@ using DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees;
 using DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses;
 using DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords;
 using DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms;
+using DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism;
+using DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution;
 
 namespace DB.API.Controllers
 {
@@ -92,7 +94,7 @@ namespace DB.API.Controllers
             return NotFound();
         }
 
-        [HttpGet("with-instruments/{institutionName}")]
+        [HttpGet("institution/with-instruments/{institutionName}")]
         public async Task<IActionResult> GetInstitutionWithInstruments(string institutionName)
         {
             var query = new GetInstrumentsByInstitutionQuery(institutionName);
@@ -104,7 +106,7 @@ namespace DB.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("with-employees/{institutionName}")]
+        [HttpGet("institution/with-employees/{institutionName}")]
         public async Task<IActionResult> GetInstitutionWithEmployees(string institutionName)
         {
             var query = new GetEmployeesByInstitutionQuery(institutionName);
@@ -116,7 +118,7 @@ namespace DB.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("with-analyses/{institutionName}")]
+        [HttpGet("institution/with-analyses/{institutionName}")]
         public async Task<IActionResult> GetInstitutionWithAnalyses(string institutionName)
         {
             var query = new GetAnalysesByInstitutionQuery(institutionName);
@@ -128,7 +130,7 @@ namespace DB.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("with-keywords/{institutionName}")]
+        [HttpGet("institution/with-keywords/{institutionName}")]
         public async Task<IActionResult> GetInstitutionWithKeywords(string institutionName)
         {
             var query = new GetKeywordsByInstitutionQuery(institutionName);
@@ -140,7 +142,7 @@ namespace DB.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("with-microorganisms/{institutionName}")]
+        [HttpGet("institution/with-microorganisms/{institutionName}")]
         public async Task<IActionResult> GetInstitutionWithMicroorganisms(string institutionName)
         {
             var query = new GetMicroorganismsByInstitutionQuery(institutionName);
@@ -393,6 +395,34 @@ namespace DB.API.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [HttpGet("analysis/with-microorganisms/{analysisName}")]
+        [ProducesResponseType(typeof(AnalysisViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAnalysisWithMicroorganisms(string analysisName)
+        {
+            var query = new GetMicroorganismsByAnalysisQuery(analysisName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("analysis/with-institutions/{analysisName}")]
+        [ProducesResponseType(typeof(AnalysisViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAnalysisWithInstitutions(string analysisName)
+        {
+            var query = new GetInstitutionsByAnalysisQuery(analysisName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
         }
 
 

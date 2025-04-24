@@ -43,6 +43,22 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
                         .HasForeignKey("microorganism_id")
                         .OnDelete(DeleteBehavior.Cascade)
                 );
+
+                builder.HasMany(a => a.Analyses)
+                   .WithMany(i => i.Microorganisms)
+                   .UsingEntity<Dictionary<string, object>>(
+                       "AnalysisMicroorganism",
+                       j => j
+                           .HasOne<Analysis>()
+                           .WithMany()
+                           .HasForeignKey("analysis_id")
+                           .OnDelete(DeleteBehavior.Cascade),
+                       j => j
+                           .HasOne<Microorganism>()
+                           .WithMany()
+                           .HasForeignKey("microorganism_id")
+                           .OnDelete(DeleteBehavior.Cascade)
+               );
         }
     }
 }

@@ -50,6 +50,11 @@ namespace DB.Infrastructure.Persistance
                 institutions[1].AddAnalysis(analyses[0]); // AI Institute ↔ John Doe
                 institutions[2].AddAnalysis(analyses[0]); // AI Institute ↔ John Doe
 
+                analyses[0].AddMicroorgnaism(microorganisms[1]);
+                analyses[0].AddMicroorgnaism(microorganisms[2]);
+                analyses[1].AddMicroorgnaism(microorganisms[0]);
+                analyses[2].AddMicroorgnaism(microorganisms[0]);
+
 
                 // Dodavanje u kontekst
                 context.Institutions.AddRange(institutions);

@@ -14,6 +14,9 @@ namespace DB.Domain.Entities
         private readonly List<Institution> _institutions = new List<Institution>();
         public IReadOnlyCollection<Institution> Institutions => _institutions.AsReadOnly();
 
+        private readonly List<Analysis> _analyses = new();
+        public IReadOnlyCollection<Analysis> Analyses => _analyses.AsReadOnly();
+
         private Microorganism() { }
 
         public Microorganism(string name)
@@ -23,6 +26,13 @@ namespace DB.Domain.Entities
         public void AddInstitution(Institution institution)
         {
             _institutions.Add(institution);
+        }
+        public void AddAnalysis(Analysis analysis)
+        {
+            if (!_analyses.Contains(analysis))
+            {
+                _analyses.Add(analysis);
+            }
         }
     }
 }

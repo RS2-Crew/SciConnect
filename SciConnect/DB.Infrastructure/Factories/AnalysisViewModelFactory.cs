@@ -8,7 +8,14 @@ namespace DB.Infrastructure.Factories
     {
         public AnalysisViewModel CreateViewModel(Analysis analysis)
         {
-            return new AnalysisViewModel(analysis.Id, analysis.Name);
+            var analysisVM =  new AnalysisViewModel();
+
+            analysisVM.Id = analysis.Id;
+            analysisVM.Name = analysis.Name;
+
+            return analysisVM;
+
+
         }
     }
 }
