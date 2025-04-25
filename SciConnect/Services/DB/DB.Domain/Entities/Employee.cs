@@ -29,5 +29,7 @@ namespace DB.Domain.Entities
             if (!_keywords.Contains(keyword))
                 _keywords.Add(keyword);
         }
+
+       
     }
 }

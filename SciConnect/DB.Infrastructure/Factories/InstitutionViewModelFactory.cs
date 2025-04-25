@@ -14,7 +14,7 @@ namespace DB.Infrastructure.Factories
         public InstitutionViewModel CreateViewModel(Institution institution)
         {
             var institutionVM = new InstitutionViewModel();
-
+            institutionVM.Id =institution.Id;
             institutionVM.Name = institution.Name;
             institutionVM.Street = institution.Street;
             institutionVM.StreetNumber = institution.StreetNumber;

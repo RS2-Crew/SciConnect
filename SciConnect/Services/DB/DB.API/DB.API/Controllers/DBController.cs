@@ -37,6 +37,11 @@ using DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords;
 using DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms;
 using DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism;
 using DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution;
+using DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses;
+using DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions;
+using DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution;
+using DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords;
+
 
 namespace DB.API.Controllers
 {
@@ -424,6 +429,66 @@ namespace DB.API.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet("microorganism/with-analysis/{microorganismName}")]
+        [ProducesResponseType(typeof(MicroorganismViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetMicroorganismWithAnalysis(string microorganismName)
+        {
+            var query = new GetAnalysisByMicroorganismQuery(microorganismName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("microorganism/with-institution/{microorganismName}")]
+        [ProducesResponseType(typeof(MicroorganismViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetMicroorganismWithInstituions(string microorganismName)
+        {
+            var query = new GetInstitutionByMicroorganismQuery(microorganismName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("employee/with-institution/{employeeFirstName}/{employeeLastName}")]
+        [ProducesResponseType(typeof(EmployeeViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetEmployeeWithInstituions(string employeeFirstName, string employeeLastName)
+        {
+            var query = new GetInstitutionByEmployeeQuery(employeeFirstName, employeeLastName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("employee/with-keywords/{employeeFirstName}/{employeeLastName}")]
+        [ProducesResponseType(typeof(EmployeeViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetEmployeeWithKeywords(string employeeFirstName, string employeeLastName)
+        {
+            var query = new GetKeywordsByEmployeeQuery(employeeFirstName, employeeLastName);
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+
+
+
 
 
     }

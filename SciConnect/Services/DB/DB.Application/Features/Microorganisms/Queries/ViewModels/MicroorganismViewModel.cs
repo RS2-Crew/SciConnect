@@ -1,8 +1,11 @@
-﻿using System;
+﻿using DB.Application.Features.Institutions.Queries.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using DB.Application.Features.Analysis.Queries.ViewModels;
 
 namespace DB.Application.Features.Microorganisms.Queries.ViewModels
 {
@@ -20,6 +23,8 @@ namespace DB.Application.Features.Microorganisms.Queries.ViewModels
             Name = name;
         }
 
+        public IEnumerable<AnalysisViewModel> Analyses { get; set; }
+        public IEnumerable<InstitutionViewModel> Institutions { get; set; }
 
     }
 }
