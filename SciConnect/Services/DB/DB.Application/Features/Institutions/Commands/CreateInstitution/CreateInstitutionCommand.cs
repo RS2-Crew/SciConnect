@@ -18,5 +18,18 @@ namespace DB.Application.Features.Institutions.Commands.CreateInstitution
         public string? Phone { get; private set; }
         public string? Email { get; private set; }
         public string? Website { get; private set; }
+
+        public CreateInstitutionCommand(int id, string name, string street, string streetNumber, string city, string country, string? phone, string? email, string? website)
+        {
+            Id = id;
+            Name = name;
+            Street = street;
+            StreetNumber = streetNumber;
+            City = city;
+            Country = country;
+            Phone = phone;
+            Email = email;
+            Website = website;
+        }
     }
 }

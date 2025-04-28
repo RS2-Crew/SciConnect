@@ -11,9 +11,13 @@ namespace DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
     public class CreateMicroorganismCommand : IRequest<int>
     {
         public string Name { get; set; }
-        public CreateMicroorganismCommand(string name)
+
+        public List<string> Analisys { get; set; }
+
+        public CreateMicroorganismCommand(string name, List<string> analisys)
         {
             Name = name;
+            Analisys = analisys;
         }
     }
 }

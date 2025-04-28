@@ -12,7 +12,7 @@ namespace DB.Application.Features.Analysis.Commands.CreateAnalysis
     {
         public CreateAnalysisCommandValidator()
         {
-            RuleFor(instrument => instrument.Name)
+            RuleFor(analisys => analisys.Name)
                 .NotEmpty().WithMessage("Name is required.")
                 .NotNull()
                 .MaximumLength(50).WithMessage("Name must not exceed 50 characters.");
