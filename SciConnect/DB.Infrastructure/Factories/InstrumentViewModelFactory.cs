@@ -14,12 +14,16 @@ namespace DB.Infrastructure.Factories
     {
         public InstrumentViewModel CreateViewModel(Instrument instrument)
         {
-            var instrumentVM = new InstrumentViewModel();
-
-            instrumentVM.Id = instrument.Id;
-            instrumentVM.Name = instrument.Name;
-
-            return instrumentVM;
+            return new InstrumentViewModel
+            {
+                Id = instrument.Id,
+                Name = instrument.Name,
+                Institutions = instrument.Institutions.Select(i => new InstitutionBasicViewModel
+                {
+                    Id = i.Id,
+                    Name = i.Name
+                }).ToList()
+            };
         }
     }
 }

@@ -23,7 +23,7 @@ namespace DB.Application.Features.Institutions.Queries.ViewModels
         public string? Email { get; set; }
         public string? Website { get; set; }
 
-        public IEnumerable<InstrumentViewModel> Instruments { get; set; }
+        public IEnumerable<InstrumentBasicViewModel> Instruments { get; set; }
 
         public IEnumerable<EmployeeViewModel> Employees { get; set; }
         public IEnumerable<AnalysisViewModel> Analyses { get; set; }

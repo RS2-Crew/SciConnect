@@ -52,10 +52,11 @@ namespace DB.Domain.Entities
 
         public void AddInstrument(Instrument instrument)
         {
-            if (!_instruments.Contains(instrument))
-            {
-                _instruments.Add(instrument);
-            }
+            if (_instruments.Contains(instrument)) return;
+
+            _instruments.Add(instrument);
+            instrument.AddInstitution(this);
+            
         }
 
 

@@ -23,7 +23,10 @@ namespace DB.Domain.Entities
 
         public void AddInstitution(Institution institution)
         {
+            if (_institutions.Contains(institution)) return;
+
             _institutions.Add(institution);
+            institution.AddInstrument(this);
         }
     }
 }

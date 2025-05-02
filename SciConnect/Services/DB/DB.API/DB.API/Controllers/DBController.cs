@@ -41,6 +41,8 @@ using DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses;
 using DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions;
 using DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution;
 using DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords;
+using DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument;
+using DB.Application.Features.Institutions.Commands.AddInstrument;
 
 
 namespace DB.API.Controllers
@@ -110,6 +112,7 @@ namespace DB.API.Controllers
 
             return Ok(result);
         }
+       
 
         [HttpGet("institution/with-employees/{institutionName}")]
         public async Task<IActionResult> GetInstitutionWithEmployees(string institutionName)
@@ -159,6 +162,16 @@ namespace DB.API.Controllers
             return Ok(result);
         }
 
+        [HttpPost("institutions/{institutionId}/instruments/{instrumentId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddInstrumentToInstitution(int institutionId, int instrumentId)
+        {
+            var command = new AddInstrumentToInstitutionCommand(institutionId, instrumentId);
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
 
         // ---------- INSTRUMENTS ----------
         [HttpGet("instruments/{name}")]
@@ -206,6 +219,18 @@ namespace DB.API.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [HttpGet("instrument/with-institutions/{name}")]
+        public async Task<IActionResult> GetInstitutionsByInstrumentName(string name)
+        {
+            var query = new GetInstitutionsByInstrumentQuery(name);
+            var result = await _mediator.Send(query);
+
+            if (result == null || !result.Any())
+                return NotFound();
+
+            return Ok(result);
         }
 
         // ---------- MICROORGANISMS ----------

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Factories;
 using DB.Application.Features.Institutions.Queries.ViewModels;
+using DB.Application.Features.Instruments.Queries.ViewModels;
 using DB.Domain.Entities;
 
 namespace DB.Infrastructure.Factories
@@ -13,18 +14,23 @@ namespace DB.Infrastructure.Factories
     {
         public InstitutionViewModel CreateViewModel(Institution institution)
         {
-            var institutionVM = new InstitutionViewModel();
-            institutionVM.Id =institution.Id;
-            institutionVM.Name = institution.Name;
-            institutionVM.Street = institution.Street;
-            institutionVM.StreetNumber = institution.StreetNumber;
-            institutionVM.City = institution.City;
-            institutionVM.Country = institution.Country;
-            institutionVM.Phone = institution.Phone;
-            institutionVM.Email = institution.Email;
-            institutionVM.Website = institution.Website;
-
-            return institutionVM;
+            return new InstitutionViewModel
+            {
+                Id = institution.Id,
+                Name = institution.Name,
+                Street = institution.Street,
+                StreetNumber = institution.StreetNumber,
+                City = institution.City,
+                Country = institution.Country,
+                Phone = institution.Phone,
+                Email = institution.Email,
+                Website = institution.Website,
+                Instruments = institution.Instruments.Select(instr => new InstrumentBasicViewModel
+                {
+                    Id = instr.Id,
+                    Name = instr.Name
+                }).ToList()
+            };
         }
     }
 }
