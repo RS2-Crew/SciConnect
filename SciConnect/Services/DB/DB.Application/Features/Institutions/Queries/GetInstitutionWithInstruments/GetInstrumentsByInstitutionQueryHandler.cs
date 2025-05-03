@@ -53,12 +53,12 @@ namespace DB.Application.Features.Institutions.Queries.GetInstitutionWithInstrum
                 Email = institution.Email,
                 Website = institution.Website,
                 Instruments = institution.Instruments
-    .Select(i => new InstrumentBasicViewModel
-    {
-        Id = i.Id,
-        Name = i.Name
-    })
-    .ToList()
+                            .Select(i => new InstrumentBasicViewModel
+                            {
+                                Id = i.Id,
+                                Name = i.Name
+                            })
+                            .ToList()
             };
 
             return viewModel;

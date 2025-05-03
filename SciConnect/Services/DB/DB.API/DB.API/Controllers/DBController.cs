@@ -43,6 +43,7 @@ using DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution;
 using DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords;
 using DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument;
 using DB.Application.Features.Institutions.Commands.AddInstrument;
+using DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword;
 
 
 namespace DB.API.Controllers
@@ -327,6 +328,18 @@ namespace DB.API.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [HttpGet("keywords/{keywordName}/employees")]
+        public async Task<IActionResult> GetEmployeesByKeyword(string keywordName)
+        {
+            var query = new GetEmployeesByKeywordQuery(keywordName);
+            var result = await _mediator.Send(query);
+
+            if (result == null || !result.Any())
+                return NotFound();
+
+            return Ok(result);
         }
 
         // ---------- EMPLOYEES ----------
