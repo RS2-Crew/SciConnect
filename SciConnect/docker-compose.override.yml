@@ -20,3 +20,14 @@ services:
       - ACCEPT_EULA=Y
     volumes:
       - mssql_data:/var/opt/mssql/data
+
+  db.api:
+    container_name: mainservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:IdentityConnectionString=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
+    depends_on: 
+      - mssql
+    ports:
+      - "4001:8080"
+
