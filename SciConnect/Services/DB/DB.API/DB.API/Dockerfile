@@ -16,7 +16,10 @@ COPY ["DB.Infrastructure/DB.Infrastructure.csproj", "DB.Infrastructure/"]
 COPY ["Services/DB/DB.Application/DB.Application.csproj", "Services/DB/DB.Application/"]
 COPY ["Services/DB/DB.Domain/DB.Domain.csproj", "Services/DB/DB.Domain/"]
 RUN dotnet restore "./Services/DB/DB.API/DB.API/DB.API.csproj"
-COPY . .
+
+COPY Services/DB ./Services/DB
+COPY DB.Infrastructure ./DB.Infrastructure
+
 WORKDIR "/src/Services/DB/DB.API/DB.API"
 RUN dotnet build "./DB.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
