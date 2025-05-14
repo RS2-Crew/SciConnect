@@ -4,6 +4,7 @@ using DB.Application;
 using DB.Infrastructure;
 using DB.Infrastructure.Persistance;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -51,7 +52,23 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ReadAccess", policy =>
+        policy.RequireRole("Guest", "Administrator", "PM"));
+
+    options.AddPolicy("WriteAccess", policy =>
+        policy.RequireRole("Administrator", "PM"));
+});
+
+
 var app = builder.Build();
+
+
+
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

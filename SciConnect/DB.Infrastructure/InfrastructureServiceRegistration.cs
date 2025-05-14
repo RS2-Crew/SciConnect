@@ -19,7 +19,7 @@ namespace DB.Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<SqlServerContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("SqlServerConnectionString")));
+                options.UseSqlServer(configuration.GetConnectionString("EntityConnectionString")));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
 

@@ -44,12 +44,15 @@ using DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords;
 using DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument;
 using DB.Application.Features.Institutions.Commands.AddInstrument;
 using DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace DB.API.Controllers
-{
+{   
     [ApiController]
     [Route("api/v1/[controller]")]
+
+
     public class DBController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -61,6 +64,7 @@ namespace DB.API.Controllers
 
         // ---------- INSTITUTIONS ----------
         [HttpGet("institutions/{name}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<InstitutionViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetInstitutionByName(string name)
         {
@@ -70,6 +74,7 @@ namespace DB.API.Controllers
         }
 
         [HttpPost("institutions")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> CreateInstitution(CreateInstitutionCommand command)
         {
@@ -78,6 +83,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("institutions")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<InstitutionViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetAllInstitutions()
         {
@@ -87,6 +93,7 @@ namespace DB.API.Controllers
         }
 
         [HttpDelete("institutions/{name}")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteInstitution(string name)
@@ -103,6 +110,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("institution/with-instruments/{institutionName}")]
+        [Authorize(Policy = "ReadAccess")]
         public async Task<IActionResult> GetInstitutionWithInstruments(string institutionName)
         {
             var query = new GetInstrumentsByInstitutionQuery(institutionName);
@@ -116,6 +124,7 @@ namespace DB.API.Controllers
        
 
         [HttpGet("institution/with-employees/{institutionName}")]
+        [Authorize(Policy = "ReadAccess")]
         public async Task<IActionResult> GetInstitutionWithEmployees(string institutionName)
         {
             var query = new GetEmployeesByInstitutionQuery(institutionName);
@@ -128,6 +137,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("institution/with-analyses/{institutionName}")]
+        [Authorize(Policy = "ReadAccess")]
         public async Task<IActionResult> GetInstitutionWithAnalyses(string institutionName)
         {
             var query = new GetAnalysesByInstitutionQuery(institutionName);
@@ -140,6 +150,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("institution/with-keywords/{institutionName}")]
+        [Authorize(Policy = "ReadAccess")]
         public async Task<IActionResult> GetInstitutionWithKeywords(string institutionName)
         {
             var query = new GetKeywordsByInstitutionQuery(institutionName);
@@ -152,6 +163,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("institution/with-microorganisms/{institutionName}")]
+        [Authorize(Policy = "ReadAccess")]
         public async Task<IActionResult> GetInstitutionWithMicroorganisms(string institutionName)
         {
             var query = new GetMicroorganismsByInstitutionQuery(institutionName);
@@ -164,6 +176,7 @@ namespace DB.API.Controllers
         }
 
         [HttpPost("institutions/{institutionId}/instruments/{instrumentId}")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> AddInstrumentToInstitution(int institutionId, int instrumentId)
         {
@@ -176,6 +189,7 @@ namespace DB.API.Controllers
 
         // ---------- INSTRUMENTS ----------
         [HttpGet("instruments/{name}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<InstrumentViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstrumentViewModel>>> GetInstrumentByName(string name)
         {
@@ -185,6 +199,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("instruments")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<InstrumentViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<InstrumentViewModel>>> GetAllInstruments()
         {
@@ -194,6 +209,7 @@ namespace DB.API.Controllers
         }
 
         [HttpPost("instruments")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> CreateInstrument(CreateInstrumentCommand command)
         {
@@ -202,6 +218,7 @@ namespace DB.API.Controllers
         }
 
         [HttpDelete("instruments/{name}")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteInstrument(string name)
@@ -223,6 +240,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("instrument/with-institutions/{name}")]
+        [Authorize(Policy = "ReadAccess")]
         public async Task<IActionResult> GetInstitutionsByInstrumentName(string name)
         {
             var query = new GetInstitutionsByInstrumentQuery(name);
@@ -236,6 +254,7 @@ namespace DB.API.Controllers
 
         // ---------- MICROORGANISMS ----------
         [HttpGet("microorganisms/{name}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetMicroorganismByName(string name)
         {
@@ -245,6 +264,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("microorganisms")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetAllMicroorganisms()
         {
@@ -254,6 +274,7 @@ namespace DB.API.Controllers
         }
 
         [HttpPost("microorganisms")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> CreateMicroorganism(CreateMicroorganismCommand command)
         {
@@ -262,6 +283,7 @@ namespace DB.API.Controllers
         }
 
         [HttpDelete("microorganisms/{name}")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteMicroorgnaism(string name)
@@ -284,6 +306,7 @@ namespace DB.API.Controllers
 
         // ---------- KEYWORDS ----------
         [HttpGet("keywords/{name}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetKeywordByName(string name)
         {
@@ -293,6 +316,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("keywords")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetAllKeywords()
         {
@@ -302,6 +326,7 @@ namespace DB.API.Controllers
         }
 
         [HttpPost("keywords")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> CreateKeyword(CreateKeywordCommand command)
         {
@@ -310,6 +335,7 @@ namespace DB.API.Controllers
         }
 
         [HttpDelete("keywords/{name}")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteKeyword(string name)
@@ -331,6 +357,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("keywords/{keywordName}/employees")]
+        [Authorize(Policy = "ReadAccess")]
         public async Task<IActionResult> GetEmployeesByKeyword(string keywordName)
         {
             var query = new GetEmployeesByKeywordQuery(keywordName);
@@ -344,6 +371,7 @@ namespace DB.API.Controllers
 
         // ---------- EMPLOYEES ----------
         [HttpGet("employees/{firstName}/{lastName}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<EmployeeViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<EmployeeViewModel>>> GetEmployeeByName(string firstName, string lastName)
         {
@@ -353,6 +381,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("employees")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<EmployeeViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<EmployeeViewModel>>> GetAllEmployees()
         {
@@ -362,6 +391,7 @@ namespace DB.API.Controllers
         }
 
         [HttpPost("employees")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> CreateEmployee(CreateEmployeeCommand command)
         {
@@ -370,6 +400,7 @@ namespace DB.API.Controllers
         }
 
         [HttpDelete("employees/{id}")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteEmployee(int id)
@@ -393,6 +424,7 @@ namespace DB.API.Controllers
 
     
         [HttpGet("analyses")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<AnalysisViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<AnalysisViewModel>>> GetAllAnalyses()
         {
@@ -401,6 +433,7 @@ namespace DB.API.Controllers
             return Ok(analyses);
         }
         [HttpGet("analyses/{name}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<AnalysisViewModel>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<AnalysisViewModel>>> GetAnalysisByName(string name)
         {
@@ -411,6 +444,7 @@ namespace DB.API.Controllers
 
 
         [HttpPost("analyses")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public async Task<ActionResult<int>> CreateAnalysis(CreateAnalysisCommand command)
         {
@@ -420,6 +454,7 @@ namespace DB.API.Controllers
 
 
         [HttpDelete("analyses/{name}")]
+        [Authorize(Policy = "WriteAccess")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteAnalysis(string name)
@@ -441,6 +476,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("analysis/with-microorganisms/{analysisName}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(AnalysisViewModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAnalysisWithMicroorganisms(string analysisName)
@@ -455,6 +491,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("analysis/with-institutions/{analysisName}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(AnalysisViewModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAnalysisWithInstitutions(string analysisName)
@@ -469,6 +506,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("microorganism/with-analysis/{microorganismName}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(MicroorganismViewModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetMicroorganismWithAnalysis(string microorganismName)
@@ -483,6 +521,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("microorganism/with-institution/{microorganismName}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(MicroorganismViewModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetMicroorganismWithInstituions(string microorganismName)
@@ -497,6 +536,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("employee/with-institution/{employeeFirstName}/{employeeLastName}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(EmployeeViewModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetEmployeeWithInstituions(string employeeFirstName, string employeeLastName)
@@ -511,6 +551,7 @@ namespace DB.API.Controllers
         }
 
         [HttpGet("employee/with-keywords/{employeeFirstName}/{employeeLastName}")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(EmployeeViewModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetEmployeeWithKeywords(string employeeFirstName, string employeeLastName)
