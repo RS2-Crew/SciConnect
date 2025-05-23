@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\InstitutionInstrument\**" />
     <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Features\InstitutionInstrument\**" />
     <EmbeddedResource Remove="Models\**" />
+    <None Remove="Features\InstitutionInstrument\**" />
     <None Remove="Models\**" />
   </ItemGroup>
 
@@ -26,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Infrastructure\" />
-    <Folder Include="Features\InstitutionInstrument\" />
   </ItemGroup>
 
 </Project>

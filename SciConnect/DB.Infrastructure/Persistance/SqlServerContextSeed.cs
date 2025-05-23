@@ -109,14 +109,14 @@ namespace DB.Infrastructure.Persistance
 
         private static List<Employee> GetPreconfiguredEmployees(List<Institution> institutions, List<Keyword> keywords)
         {
-            var e1 = new Employee("john.doe", "John", "Doe", institutions[0]);
+            var e1 = new Employee("John", "Doe", institutions[0]);
             e1.AddKeyword(keywords[0]);
             e1.AddKeyword(keywords[2]);
 
-            var e2 = new Employee("jane.smith", "Jane", "Smith", institutions[1]);
+            var e2 = new Employee("Jane", "Smith", institutions[1]);
             e2.AddKeyword(keywords[1]);
 
-            var e3 = new Employee("alice.johnson", "Alice", "Johnson", institutions[2]);
+            var e3 = new Employee("Alice", "Johnson", institutions[2]);
             e3.AddKeyword(keywords[2]);
 
             return new List<Employee> { e1, e2, e3 };

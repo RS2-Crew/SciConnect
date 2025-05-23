@@ -7,7 +7,6 @@ namespace DB.Domain.Entities
 {
     public class Employee : AggregateRoot
     {
-        public string Username { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public Institution Institution { get; private set; }
@@ -17,9 +16,8 @@ namespace DB.Domain.Entities
 
         private Employee() { }
 
-        public Employee(string username, string firstName, string lastName, Institution institution)
+        public Employee(string firstName, string lastName, Institution institution)
         {
-            Username = username;
             FirstName = firstName;
             LastName = lastName;
             Institution = institution ?? throw new ArgumentNullException(nameof(institution));

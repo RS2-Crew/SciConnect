@@ -1,7 +1,6 @@
 using System.Text;
 using DB.API.Extensions;
 using DB.Application;
-using DB.Application.Common;
 using DB.Infrastructure;
 using DB.Infrastructure.Persistance;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -62,18 +61,7 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole("Administrator", "PM"));
 });
 
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
-
-
-
 var app = builder.Build();
-
-
-
-
-
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

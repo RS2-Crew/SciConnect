@@ -10,14 +10,14 @@ namespace DB.Application.Features.Analyses.Commands.CreateAnalysis
 {
     public class CreateAnalysisCommand : IRequest<int>
     {
-        public CreateAnalysisCommand(string name, List<string> microorganism)
+        public CreateAnalysisCommand(string name)//, List<string> microorganism)
         {
             Name = name;
-            Microorganism = microorganism;
+            //Microorganism = microorganism;
         }
 
         public string Name { get; set; }
-        public List<string> Microorganism { get; set; }
+        //public List<string> Microorganism { get; set; }
 
 
 

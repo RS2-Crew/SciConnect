@@ -8,8 +8,7 @@ namespace DB.Infrastructure.Factories
     {
         public Employee Create(CreateEmployeeCommand command, Institution institution)
         {
-            if (string.IsNullOrWhiteSpace(command.Username) ||
-                string.IsNullOrWhiteSpace(command.FirstName) ||
+            if (string.IsNullOrWhiteSpace(command.FirstName) ||
                 string.IsNullOrWhiteSpace(command.LastName))
             {
                 throw new ArgumentException("Username, first name, and last name must be provided.");
@@ -20,7 +19,7 @@ namespace DB.Infrastructure.Factories
                 throw new ArgumentNullException(nameof(institution), "Institution must be provided.");
             }
 
-            return new Employee(command.Username, command.FirstName, command.LastName, institution);
+            return new Employee(command.FirstName, command.LastName, institution);
         }
     }
 }

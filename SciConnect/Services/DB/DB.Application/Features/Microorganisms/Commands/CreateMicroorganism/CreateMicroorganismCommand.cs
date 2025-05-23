@@ -12,12 +12,12 @@ namespace DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
     {
         public string Name { get; set; }
 
-        public List<string> Analisys { get; set; }
+        //public List<string> Analisys { get; set; }
 
-        public CreateMicroorganismCommand(string name, List<string> analisys)
+        public CreateMicroorganismCommand(string name)//, List<string> analisys)
         {
             Name = name;
-            Analisys = analisys;
+            //Analisys = analisys;
         }
     }
 }
