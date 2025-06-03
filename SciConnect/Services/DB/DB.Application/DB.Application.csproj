@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Infrastructure\" />
+    <Folder Include="Features\Analysis\Commands\AddKeywordToAnalysis\" />
   </ItemGroup>
 
 </Project>

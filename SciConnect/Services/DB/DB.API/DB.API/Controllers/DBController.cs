@@ -45,6 +45,10 @@ using DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument;
 using DB.Application.Features.Institutions.Commands.AddInstrument;
 using DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword;
 using Microsoft.AspNetCore.Authorization;
+using DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution;
+using DB.Application.Features.Institutions.Commands.AddKeywordToInstitution;
+using DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis;
+using DB.Application.Features.Employees.Commands.AddKeywordToEmploye;
 
 
 namespace DB.API.Controllers
@@ -185,6 +189,64 @@ namespace DB.API.Controllers
 
             return Ok();
         }
+
+        [HttpPost("institutions/{institutionId}/analysis/{analysisId}")]
+        [Authorize(Policy = "WriteAccess")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddAnalysisToInstitution(int institutionId, int analysisId)
+        {
+            var command = new AddAnalysisToInstitutionCommand(institutionId, analysisId);
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
+        [HttpPost("institutions/{institutionId}/microorganism/{microorganismId}")]
+        [Authorize(Policy = "WriteAccess")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddMicroorganismToInstitution(int institutionId, int microorganismId)
+        {
+            var command = new AddInstrumentToInstitutionCommand(institutionId, microorganismId);
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
+
+        [HttpPost("institutions/{institutionId}/keyword/{keywordId}")]
+        [Authorize(Policy = "WriteAccess")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddKeywordToInstitution(int institutionId, int keywordId)
+        {
+            var command = new AddKeywordToInstitutionCommand(institutionId, keywordId);
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
+        [HttpPost("analysis/{analysisId}/microorganism/{microorganismId}")]
+        [Authorize(Policy = "WriteAccess")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddMicroorganismToAnalysis(int analysisId, int microorganismId)
+        {
+            var command = new AddMicroorganismToAnalysisCommand(analysisId, microorganismId);
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
+        [HttpPost("employee/{employeeId}/keyword/{keywordId}")]
+        [Authorize(Policy = "WriteAccess")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddKeywordToEmployee(int employeeId, int keywordId)
+        {
+            var command = new AddKeywordToEmployeCommand(employeeId, keywordId);
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
+
 
 
         // ---------- INSTRUMENTS ----------
