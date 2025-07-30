@@ -5,6 +5,14 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - "ConnectionStrings:IdentityConnectionString=Server=mssql;Database=IdentityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
+      - EmailSettings__From=noreply.sciconnect@gmail.com
+      - EmailSettings__DisplayName=SciConnect Notifications
+      - EmailSettings__Password=eoss mnhj aobm pcjs
+      - EmailSettings__SmtpServer=smtp.gmail.com
+      - EmailSettings__Port=587
+      - EmailSettings__UseSSL=false
+      - EmailSettings__UseStartTls=true
     depends_on: 
       - mssql
     ports:
@@ -20,6 +28,13 @@ services:
       - ACCEPT_EULA=Y
     volumes:
       - mssql_data:/var/opt/mssql/data
+  
+  rabbitmq: 
+    container_name: rabbitmq 
+    restart: always 
+    ports: 
+      - "5672:5672" 
+      - "15672:15672" 
 
   db.api:
     container_name: mainservice
