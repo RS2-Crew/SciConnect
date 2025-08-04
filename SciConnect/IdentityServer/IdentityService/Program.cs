@@ -1,4 +1,5 @@
 using IdentityService.Consumers;
+using IdentityService.Consumers.EntityCreated;
 using IdentityService.Extentions;
 using IdentityService.Services;
 using MassTransit;
@@ -22,15 +23,27 @@ builder.Services.ConfigureMiscellaneousServices();
 
 builder.Services.AddMassTransit(config => {
     config.AddConsumer<EmailConsumer>();
+    config.AddConsumer<InstitutionCreatedConsumer>();
+    config.AddConsumer<EmployeeCreatedConsumer>();
+    config.AddConsumer<SimpleEntityCreatedConsumer>();
     //config.AddConsumers(typeof(Program).Assembly);
     config.UsingRabbitMq((ctx, cfg) => {
         cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
-        cfg.ReceiveEndpoint("notify_queue", e =>
+        cfg.ReceiveEndpoint("notify_validation_queue", e =>
         {
             e.ConfigureConsumer<EmailConsumer>(ctx);
             //e.ConfigureConsumers(ctx); // <- configures all discovered consumers
         });
+
+        cfg.ReceiveEndpoint("notify_broadcast_queue", e =>
+        {
+            e.ConfigureConsumer<InstitutionCreatedConsumer>(ctx);
+            e.ConfigureConsumer<EmployeeCreatedConsumer>(ctx);
+            e.ConfigureConsumer<SimpleEntityCreatedConsumer>(ctx);
+        });
     });
+
+
 });
 
 builder.Services.AddScoped<IEmailSender, EmailSender>();

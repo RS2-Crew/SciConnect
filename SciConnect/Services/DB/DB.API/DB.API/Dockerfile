@@ -15,10 +15,13 @@ COPY ["Services/DB/DB.API/DB.API/DB.API.csproj", "Services/DB/DB.API/DB.API/"]
 COPY ["DB.Infrastructure/DB.Infrastructure.csproj", "DB.Infrastructure/"]
 COPY ["Services/DB/DB.Application/DB.Application.csproj", "Services/DB/DB.Application/"]
 COPY ["Services/DB/DB.Domain/DB.Domain.csproj", "Services/DB/DB.Domain/"]
+COPY ["Common/EventBus.Messages/EventBus.Messages.csproj", "Common/EventBus.Messages/"]
 RUN dotnet restore "./Services/DB/DB.API/DB.API/DB.API.csproj"
+
 
 COPY Services/DB ./Services/DB
 COPY DB.Infrastructure ./DB.Infrastructure
+COPY Common ./Common
 
 WORKDIR "/src/Services/DB/DB.API/DB.API"
 RUN dotnet build "./DB.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
