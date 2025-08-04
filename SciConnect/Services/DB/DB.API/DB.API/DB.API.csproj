@@ -14,6 +14,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.5.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
@@ -30,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\EventBus.Messages\EventBus.Messages.csproj" />
     <ProjectReference Include="..\..\..\..\DB.Infrastructure\DB.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\..\IdentityServer\IdentityService\IdentityService.csproj" />
     <ProjectReference Include="..\..\DB.Application\DB.Application.csproj" />
