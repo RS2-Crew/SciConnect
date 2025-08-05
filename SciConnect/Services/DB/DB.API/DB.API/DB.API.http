@@ -1,0 +1,6 @@
+@DB.API_HostAddress = http://localhost:5204
+
+GET {{DB.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

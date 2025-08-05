@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IdentityService.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250120204158_IdentityMigration")]
-    partial class IdentityMigration
+    [Migration("20250522172834_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -150,19 +150,19 @@ namespace IdentityService.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "65a84b90-6383-4f35-b32b-f26ad5e3e7bf",
+                            Id = "29617565-93ea-4932-b73b-5139bde636ac",
                             Name = "Guest",
                             NormalizedName = "GUEST"
                         },
                         new
                         {
-                            Id = "fc70d213-2b22-4119-9dc2-3e013f795cbb",
+                            Id = "4c162941-18ee-4d5a-8c09-014efad7a21b",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "8bc508d0-a168-4414-895a-466e5ce05d37",
+                            Id = "532919c1-2208-4505-9b12-a38031bd4283",
                             Name = "PM",
                             NormalizedName = "PM"
                         });

@@ -3,6 +3,8 @@ using IdentityServer.Entities;
 using IdentityService.Controllers.Base;
 using IdentityService.DTOs;
 using IdentityService.Services;
+using MassTransit;
+using MassTransit.Transports;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,17 +20,19 @@ namespace IdentityService.Controllers
     {
         private readonly IAuthenticationService _authService;
         private readonly IConfiguration _configuration;
-        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache memoryCache, IAuthenticationService authService, IConfiguration configuration)
+        private readonly IPublishEndpoint _publishEndpoint;
+        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache memoryCache, IAuthenticationService authService, IConfiguration configuration, IPublishEndpoint publishEndpoint)
        : base(logger, mapper, userManager, roleManager, memoryCache)
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
-            _configuration = configuration ?? throw new ArgumentNullException(nameof(_configuration));
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _publishEndpoint = publishEndpoint ?? throw new ArgumentNullException(nameof(publishEndpoint));
         }
         [Authorize(Roles = "PM")]
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GenerateVerificationCode([FromBody] string email)
+        public async Task<IActionResult> GenerateVerificationCode([FromBody] string email)
         {
             if (string.IsNullOrWhiteSpace(email))
             {
@@ -41,7 +45,15 @@ namespace IdentityService.Controllers
             // Simulacija slanja koda (možete povezati sa email servisom)
             _logger.LogInformation($"Verification code for {email}: {verificationCode}");
 
-            return Ok("Verification code generated and stored.");
+            await _publishEndpoint.Publish(new EmailMessage
+            {
+                To = email,
+                Subject = "SciConnect Verification Code",
+                Body = $"Your verification code is: <b>{verificationCode}</b><br>Please enter this code during registration."
+            });
+
+
+            return Ok("Verification code generated, stored, and sent to the admin.");
         }
 
 
@@ -51,6 +63,28 @@ namespace IdentityService.Controllers
         public async Task<IActionResult> RegisterGuest([FromBody] NewUserDTO newUser)
         {
             return await RegisterNewUserWithRoles(newUser, new string[] { "Guest" });
+        }
+
+
+
+        [HttpPost("[action]")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> RequestAdminRegistration([FromBody] string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return BadRequest("Email is required.");
+
+            // Send email to PMs
+            await _publishEndpoint.Publish(new EmailMessage
+            {
+                To = "vukvuk21@gmail.com", // Replace with real PM emails
+                Subject = "New Admin Registration Request",
+                Body = $"An Admin with email <b>{email}</b> has requested access. Please generate and send them a verification code."
+            });
+
+
+            return Ok("Registration request sent to PMs.");
         }
 
         [HttpPost("[action]")]
