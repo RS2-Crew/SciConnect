@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 import { AuthentificationFacadeService } from '../../domain/application-services/authentification-facade.service';
 interface ILoginFormData {
   username: string;
@@ -16,7 +15,9 @@ interface ILoginFormData {
 export class LoginFormComponent {
   public loginForm: FormGroup;
 
-  constructor(private routerService: Router) {
+  constructor(private routerService: Router,
+    private authentificationService: AuthentificationFacadeService
+  ) {
     this.loginForm = new FormGroup(
       {
         username: new FormControl("", [Validators.required, Validators.minLength(3)]),
@@ -33,8 +34,10 @@ export class LoginFormComponent {
 
     const data: ILoginFormData = this.loginForm.value as ILoginFormData;
 
-    this.loginForm.reset;
-    this.routerService.navigate(['/identity', 'profile']);
+    this.authentificationService.login(data.username, data.password).subscribe((success: boolean) => {
+      window.alert(`Login ${success ? 'is': 'is not'} successful!`);
+      this.loginForm.reset;
+    })
 
   }
 }

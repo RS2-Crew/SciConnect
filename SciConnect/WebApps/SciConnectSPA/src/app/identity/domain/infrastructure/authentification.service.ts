@@ -21,19 +21,6 @@ export class AuthentificationService {
   public logout(request: ILogoutRequest): Observable<any>{
     return this.httpClient.post(`${this.url}/logout`, request);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
