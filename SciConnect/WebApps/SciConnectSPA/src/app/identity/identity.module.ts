@@ -3,17 +3,20 @@ import { IdentityComponent } from "./identity.component";
 import { CommonModule } from "@angular/common";
 import { IdentityRoutingModule } from "./identity-routing.module";
 import { LoginFormComponent } from "./feature-authentification/login-form/login-form.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { RegisterFormComponent } from "./feature-authentification/register-form/register-form.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     IdentityComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     CommonModule,
     IdentityRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
 })
 export class IdentityModule {}

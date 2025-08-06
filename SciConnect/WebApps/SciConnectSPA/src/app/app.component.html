@@ -1,10 +1,16 @@
 <!-- app.component.html -->
 <div class="app-wrapper">
-  <header class="app-header d-flex justify-content-center align-items-center">
-    <h1 class="app-title text-center">Sci Connect</h1>
+  <header class="app-header" *ngIf="showHeader">
+    <div class="header-content">
+      <div class="header-logo">
+        <i class="fas fa-heartbeat"></i>
+        <h1 class="app-title">SciConnect</h1>
+      </div>
+      <div class="header-subtitle">Medical Research Platform</div>
+    </div>
   </header>
 
-  <main class="container mt-4">
+  <main class="app-main">
     <router-outlet></router-outlet>
   </main>
 </div>

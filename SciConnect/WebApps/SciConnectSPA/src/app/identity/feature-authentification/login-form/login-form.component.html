@@ -1,15 +1,108 @@
-<h3>Enter your credentials:</h3>
+<div class="login-container" [class.dark-theme]="isDarkTheme">
+  <div class="login-card">
+    <div class="theme-toggle">
+      <button class="theme-btn" (click)="toggleTheme()" [attr.aria-label]="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'">
+        <i class="fas" [class.fa-sun]="isDarkTheme" [class.fa-moon]="!isDarkTheme"></i>
+      </button>
+    </div>
+    
+    <div class="security-badge">
+      <i class="fas fa-shield-alt"></i> Secure
+    </div>
+    
+    <div class="login-header">
+      <div class="login-logo medical-icon">
+        <i class="fas fa-heartbeat"></i>
+      </div>
+      <h1 class="login-title">SciConnect</h1>
+      <p class="login-subtitle">Medical Research Platform</p>
+    </div>
 
-<form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
-  <div class="form-group">
-    <label class="form-label">Username</label>
-    <input type="text" formControlName="username" class="form-control">
+    <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="username">
+          <i class="fas fa-user"></i> Username
+        </label>
+        <input 
+          type="text" 
+          id="username"
+          formControlName="username" 
+          class="form-control"
+          placeholder="Enter your username"
+          [class.ng-invalid]="isFieldInvalid('username')"
+          [class.ng-touched]="isFieldTouched('username')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('username') && isFieldTouched('username')">
+          <i class="fas fa-exclamation-circle"></i>
+          <span *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</span>
+          <span *ngIf="loginForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">
+          <i class="fas fa-lock"></i> Password
+        </label>
+        <div class="password-input-container">
+          <input 
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password" 
+            class="form-control"
+            placeholder="Enter your password"
+            [class.ng-invalid]="isFieldInvalid('password')"
+            [class.ng-touched]="isFieldTouched('password')"
+          >
+          <button 
+            type="button" 
+            class="password-toggle"
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'"
+          >
+            <i class="fas" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword"></i>
+          </button>
+        </div>
+        <div class="error-message" *ngIf="isFieldInvalid('password') && isFieldTouched('password')">
+          <i class="fas fa-exclamation-circle"></i>
+          <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
+          <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters</span>
+        </div>
+      </div>
+
+      <button 
+        type="submit" 
+        class="btn-login"
+        [disabled]="loginForm.invalid || isLoading"
+      >
+        <span class="loading-spinner" *ngIf="isLoading"></span>
+        <span *ngIf="!isLoading">
+          <i class="fas fa-sign-in-alt"></i> Sign In
+        </span>
+        <span *ngIf="isLoading">Signing In...</span>
+      </button>
+    </form>
+
+    <div class="error-message" *ngIf="loginError" style="margin-top: 15px; text-align: center;">
+      <i class="fas fa-exclamation-triangle"></i>
+      {{ loginError }}
+    </div>
+
+    <div class="success-message" *ngIf="loginSuccess" style="margin-top: 15px; text-align: center;">
+      <i class="fas fa-check-circle"></i>
+      {{ loginSuccess }}
+    </div>
+
+    <div class="forgot-password">
+      <a href="#" (click)="onForgotPassword($event)">
+        <i class="fas fa-question-circle"></i> Forgot Password?
+      </a>
+    </div>
+
+    <div class="register-link">
+      <span>Don't have an account? </span>
+      <a routerLink="/identity/register">
+        <i class="fas fa-user-plus"></i> Register
+      </a>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label class="form-label">Password</label>
-    <input type="password" formControlName="password" class="form-control">
-  </div>
-
-  <button type="submit" class="btn btn-primary mt-3">Login</button>
-</form>
+</div>
