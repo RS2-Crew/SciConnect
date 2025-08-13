@@ -9,6 +9,7 @@ interface IRegisterFormData {
   lastName: string;
   userName: string;
   email: string;
+  role: string;
   password: string;
   confirmPassword: string;
   verificationCode?: string;
@@ -27,7 +28,6 @@ export class RegisterFormComponent implements OnInit {
   public showPassword: boolean = false;
   public showConfirmPassword: boolean = false;
   public isDarkTheme: boolean = false;
-  public selectedRole: string = 'guest';
   public showVerificationCode: boolean = false;
 
   constructor(
@@ -54,6 +54,9 @@ export class RegisterFormComponent implements OnInit {
       email: new FormControl("", [
         Validators.required,
         Validators.email
+      ]),
+      role: new FormControl("guest", [
+        Validators.required
       ]),
       password: new FormControl("", [
         Validators.required,
@@ -109,7 +112,8 @@ export class RegisterFormComponent implements OnInit {
   }
 
   public onRoleChange(): void {
-    this.showVerificationCode = this.selectedRole === 'administrator';
+    const selectedRole = this.registerForm.get('role')?.value;
+    this.showVerificationCode = selectedRole === 'administrator';
     if (this.showVerificationCode) {
       this.registerForm.get('verificationCode')?.setValidators([Validators.required]);
     } else {
@@ -135,6 +139,7 @@ export class RegisterFormComponent implements OnInit {
 
     // For now, we'll simulate registration since the service doesn't have a register method
     // In a real implementation, you would call the actual registration service
+    console.log('Registration data:', registrationData);
     setTimeout(() => {
       this.isLoading = false;
       this.registerSuccess = 'Registration successful! Redirecting to login...';

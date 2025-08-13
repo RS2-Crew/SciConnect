@@ -107,7 +107,7 @@
         <select 
           id="role"
           class="form-control"
-          [(ngModel)]="selectedRole"
+          formControlName="role"
           (change)="onRoleChange()"
         >
           <option value="guest">Guest</option>
