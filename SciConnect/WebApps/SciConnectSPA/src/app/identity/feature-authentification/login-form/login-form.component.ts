@@ -72,26 +72,23 @@ export class LoginFormComponent implements OnInit {
   }
 
   public onLoginFormSubmit(): void {
-    this.clearMessages();
-    
     if (this.loginForm.invalid) {
       this.markFormGroupTouched();
-      this.loginError = 'Please correct the errors above before submitting.';
       return;
     }
 
     this.isLoading = true;
-    const data: ILoginFormData = this.loginForm.value as ILoginFormData;
+    this.clearMessages();
 
-    this.authentificationService.login(data.username, data.password).subscribe({
-      next: (success: boolean) => {
+    const loginData: ILoginFormData = this.loginForm.value as ILoginFormData;
+
+    this.authentificationService.login(loginData.username, loginData.password).subscribe({
+      next: (success) => {
         this.isLoading = false;
         if (success) {
-          this.loginSuccess = 'Login successful! Redirecting...';
-          this.loginForm.reset();
-          // Redirect to dashboard or main page after successful login
+          this.loginSuccess = 'Login successful! Redirecting to homepage...';
           setTimeout(() => {
-            this.routerService.navigate(['/dashboard']);
+            this.routerService.navigate(['/homepage']);
           }, 1500);
         } else {
           this.loginError = 'Invalid username or password. Please try again.';
@@ -99,8 +96,8 @@ export class LoginFormComponent implements OnInit {
       },
       error: (error) => {
         this.isLoading = false;
-        console.error('Login error:', error);
         this.loginError = this.getErrorMessage(error);
+        console.error('Login error:', error);
       }
     });
   }

@@ -188,18 +188,27 @@
         <label class="form-label" for="verificationCode">
           <i class="fas fa-key"></i> Verification Code
         </label>
-        <input 
-          type="text" 
-          id="verificationCode"
-          formControlName="verificationCode" 
-          class="form-control"
-          placeholder="Enter verification code"
-          [class.ng-invalid]="isFieldInvalid('verificationCode')"
-          [class.ng-touched]="isFieldTouched('verificationCode')"
-        >
+        <div class="verification-code-container">
+          <input type="text" id="verificationCode" formControlName="verificationCode" class="form-control" placeholder="Enter verification code" [class.ng-invalid]="isFieldInvalid('verificationCode')" [class.ng-touched]="isFieldTouched('verificationCode')">
+          <button type="button" class="btn-generate-code" (click)="onGenerateVerificationCode()" [disabled]="isLoading">
+            <i class="fas fa-sync-alt"></i> Generate Code
+          </button>
+        </div>
         <div class="error-message" *ngIf="isFieldInvalid('verificationCode') && isFieldTouched('verificationCode')">
           <i class="fas fa-exclamation-circle"></i>
           <span *ngIf="registerForm.get('verificationCode')?.errors?.['required']">Verification code is required for administrator registration</span>
+        </div>
+      </div>
+
+      <div class="form-group" *ngIf="registerForm.get('role')?.value === 'administrator'">
+        <div class="admin-registration-info">
+          <p class="info-text">
+            <i class="fas fa-info-circle"></i>
+            Administrator registration requires approval. Click the button below to request access.
+          </p>
+          <button type="button" class="btn-request-admin" (click)="onRequestAdminRegistration()" [disabled]="isLoading">
+            <i class="fas fa-user-shield"></i> Request Admin Access
+          </button>
         </div>
       </div>
 

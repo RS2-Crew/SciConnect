@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/fo
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { AuthentificationFacadeService } from '../../domain/application-services/authentification-facade.service';
+import { Observable } from 'rxjs';
+import { IRegisterRequest } from '../../domain/models/register-request';
 
 interface IRegisterFormData {
   firstName: string;
@@ -114,40 +116,130 @@ export class RegisterFormComponent implements OnInit {
   public onRoleChange(): void {
     const selectedRole = this.registerForm.get('role')?.value;
     this.showVerificationCode = selectedRole === 'administrator';
-    if (this.showVerificationCode) {
-      this.registerForm.get('verificationCode')?.setValidators([Validators.required]);
-    } else {
-      this.registerForm.get('verificationCode')?.clearValidators();
+    
+    // Clear verification code when role changes
+    if (selectedRole !== 'administrator') {
+      this.registerForm.patchValue({ verificationCode: '' });
     }
-    this.registerForm.get('verificationCode')?.updateValueAndValidity();
   }
 
-  public onRegisterFormSubmit(): void {
-    this.clearMessages();
-    
-    if (this.registerForm.invalid) {
-      this.markFormGroupTouched();
-      this.registerError = 'Please correct the errors above before submitting.';
+  public onRequestAdminRegistration(): void {
+    const email = this.registerForm.get('email')?.value;
+    if (!email) {
+      this.registerError = 'Please enter your email address first.';
       return;
     }
 
     this.isLoading = true;
-    const data: IRegisterFormData = this.registerForm.value as IRegisterFormData;
+    this.clearMessages();
 
-    // Remove confirmPassword from the data sent to backend
-    const { confirmPassword, ...registrationData } = data;
+    this.authentificationService.requestAdminRegistration(email).subscribe({
+      next: (success) => {
+        this.isLoading = false;
+        if (success) {
+          this.registerSuccess = 'Admin registration request sent successfully! Please check your email for further instructions.';
+        } else {
+          this.registerError = 'Failed to send admin registration request. Please try again.';
+        }
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.registerError = this.getErrorMessage(error);
+        console.error('Admin registration request error:', error);
+      }
+    });
+  }
 
-    // For now, we'll simulate registration since the service doesn't have a register method
-    // In a real implementation, you would call the actual registration service
-    console.log('Registration data:', registrationData);
-    setTimeout(() => {
-      this.isLoading = false;
-      this.registerSuccess = 'Registration successful! Redirecting to login...';
-      this.registerForm.reset();
-      setTimeout(() => {
-        this.routerService.navigate(['/identity/login']);
-      }, 2000);
-    }, 1500);
+  public onGenerateVerificationCode(): void {
+    const email = this.registerForm.get('email')?.value;
+    if (!email) {
+      this.registerError = 'Please enter your email address first.';
+      return;
+    }
+
+    this.isLoading = true;
+    this.clearMessages();
+
+    this.authentificationService.generateVerificationCode(email).subscribe({
+      next: (success) => {
+        this.isLoading = false;
+        if (success) {
+          this.registerSuccess = 'Verification code sent to your email! Please check your inbox.';
+        } else {
+          this.registerError = 'Failed to generate verification code. Please try again.';
+        }
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.registerError = this.getErrorMessage(error);
+        console.error('Verification code generation error:', error);
+      }
+    });
+  }
+
+  public onRegisterFormSubmit(): void {
+    if (this.registerForm.invalid) {
+      this.markFormGroupTouched();
+      return;
+    }
+
+    this.isLoading = true;
+    this.clearMessages();
+
+    const registrationData: IRegisterRequest = {
+      firstName: this.registerForm.get('firstName')?.value,
+      lastName: this.registerForm.get('lastName')?.value,
+      userName: this.registerForm.get('userName')?.value,
+      password: this.registerForm.get('password')?.value,
+      email: this.registerForm.get('email')?.value,
+      verificationCode: this.registerForm.get('verificationCode')?.value
+    };
+
+    const selectedRole = this.registerForm.get('role')?.value;
+    let registrationObservable: Observable<boolean>;
+
+    switch (selectedRole) {
+      case 'guest':
+        registrationObservable = this.authentificationService.registerGuest(registrationData);
+        break;
+      case 'administrator':
+        if (!registrationData.verificationCode) {
+          this.registerError = 'Verification code is required for administrator registration.';
+          this.isLoading = false;
+          return;
+        }
+        registrationObservable = this.authentificationService.registerAdministrator(registrationData);
+        break;
+      case 'pm':
+        registrationObservable = this.authentificationService.registerPM(registrationData);
+        break;
+      default:
+        this.registerError = 'Invalid role selected.';
+        this.isLoading = false;
+        return;
+    }
+
+    registrationObservable.subscribe({
+      next: (success) => {
+        this.isLoading = false;
+        if (success) {
+          this.registerSuccess = 'Registration successful! Redirecting to login...';
+          this.registerForm.reset();
+          // Reset role to guest after successful registration
+          this.registerForm.patchValue({ role: 'guest' });
+          setTimeout(() => {
+            this.routerService.navigate(['/identity/login']);
+          }, 2000);
+        } else {
+          this.registerError = 'Registration failed. Please try again.';
+        }
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.registerError = this.getErrorMessage(error);
+        console.error('Registration error:', error);
+      }
+    });
   }
 
   public onBackToLogin(): void {
