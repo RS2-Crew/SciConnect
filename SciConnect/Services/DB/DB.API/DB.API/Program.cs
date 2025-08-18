@@ -3,6 +3,7 @@ using DB.API.Extensions;
 using DB.Application;
 using DB.Infrastructure;
 using DB.Infrastructure.Persistance;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -32,6 +33,15 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod()
               .AllowCredentials();
     });
+});
+
+builder.Services.AddMassTransit(config => {
+
+    //config.AddConsumers(typeof(Program).Assembly);
+    config.UsingRabbitMq((ctx, cfg) => {
+        cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
+    });
+
 });
 
 builder.Services.AddControllers();

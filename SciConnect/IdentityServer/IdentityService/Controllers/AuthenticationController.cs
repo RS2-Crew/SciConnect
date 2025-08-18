@@ -70,21 +70,52 @@ namespace IdentityService.Controllers
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> RequestAdminRegistration([FromBody] string email)
         {
             if (string.IsNullOrWhiteSpace(email))
                 return BadRequest("Email is required.");
 
-            // Send email to PMs
-            await _publishEndpoint.Publish(new EmailMessage
+            try
             {
-                To = "vukvuk21@gmail.com", // Replace with real PM emails
-                Subject = "New Admin Registration Request",
-                Body = $"An Admin with email <b>{email}</b> has requested access. Please generate and send them a verification code."
-            });
+                var allUsers = await _userManager.Users.ToListAsync();
+                var pmEmails = new List<string>();
 
+                foreach (var user in allUsers)
+                {
+                    var roles = await _userManager.GetRolesAsync(user);
+                    if (roles.Contains("PM"))
+                    {
+                        pmEmails.Add(user.Email);
+                    }
+                }
 
-            return Ok("Registration request sent to PMs.");
+                if (!pmEmails.Any())
+                {
+                    _logger.LogWarning("No PMs found to send admin registration request.");
+                    return NotFound("No PM users found to notify.");
+                }
+
+                var subject = "New Admin Registration Request";
+                var body = $"An Admin with email <b>{email}</b> has requested access. Please generate and send them a verification code.";
+
+                foreach (var pmEmail in pmEmails)
+                {
+                    await _publishEndpoint.Publish(new EmailMessage
+                    {
+                        To = pmEmail,
+                        Subject = subject,
+                        Body = body
+                    });
+                }
+
+                return Ok("Registration request sent to PMs.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while sending registration request to PMs.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error occurred.");
+            }
         }
 
         [HttpPost("[action]")]
