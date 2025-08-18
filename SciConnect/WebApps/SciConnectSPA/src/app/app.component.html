@@ -1,0 +1,15 @@
+<!-- app.component.html -->
+<div class="app-wrapper">
+  <header class="app-header" *ngIf="showHeader">
+    <div class="header-content">
+      <div class="header-logo">
+        <img [src]="getLogoPath()" alt="SciConnect Logo" class="app-logo">
+        <h1 class="app-title">SciConnect</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>
