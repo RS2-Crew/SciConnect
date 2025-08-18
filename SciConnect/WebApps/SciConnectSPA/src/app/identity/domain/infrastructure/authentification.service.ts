@@ -36,11 +36,15 @@ export class AuthentificationService {
   }
 
   public requestAdminRegistration(email: string): Observable<any> {
-    return this.httpClient.post(`${this.url}/RequestAdminRegistration`, email);
+    return this.httpClient.post(`${this.url}/RequestAdminRegistration`, JSON.stringify(email), {
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   public generateVerificationCode(email: string): Observable<any> {
-    return this.httpClient.post(`${this.url}/GenerateVerificationCode`, email);
+    return this.httpClient.post(`${this.url}/GenerateVerificationCode`, JSON.stringify(email), {
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }
 

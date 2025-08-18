@@ -6,3 +6,4 @@ export interface IRegisterRequest {
   email: string;
   verificationCode?: string;
 }
+
