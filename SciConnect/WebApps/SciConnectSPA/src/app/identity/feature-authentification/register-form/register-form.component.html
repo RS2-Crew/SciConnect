@@ -7,11 +7,11 @@
     </div>
 
     <div class="register-header">
-      <div class="register-logo medical-icon">
-        <i class="fas fa-user-plus"></i>
+      <div class="register-logo">
+        <img [src]="getLogoPath()" alt="SciConnect Logo" class="logo-image">
       </div>
       <h1 class="register-title">Create Account</h1>
-      <p class="register-subtitle">Join SciConnect Medical Research Platform</p>
+      <p class="register-subtitle">Join SciConnect</p>
     </div>
 
     <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit()" novalidate>

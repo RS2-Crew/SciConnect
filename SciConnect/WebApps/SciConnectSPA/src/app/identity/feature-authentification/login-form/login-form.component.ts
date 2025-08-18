@@ -155,4 +155,10 @@ export class LoginFormComponent implements OnInit {
       document.body.classList.remove('dark-theme');
     }
   }
+
+  public getLogoPath(): string {
+    return this.isDarkTheme 
+      ? 'assets/images/dark_theme_logo.png' 
+      : 'assets/images/white_theme_logo.png';
+  }
 }

@@ -87,8 +87,13 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
+  overflow: hidden;
+}
+
+.logo-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .welcome-card h2 {

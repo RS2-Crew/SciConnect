@@ -163,4 +163,10 @@ export class HomepageComponent implements OnInit, OnDestroy {
     // TODO: Implement settings page
     console.log('Navigate to settings');
   }
+
+  public getLogoPath(): string {
+    return this.isDarkTheme 
+      ? 'assets/images/dark_theme_logo.png' 
+      : 'assets/images/white_theme_logo.png';
+  }
 }

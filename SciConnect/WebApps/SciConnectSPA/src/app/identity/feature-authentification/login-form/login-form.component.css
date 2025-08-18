@@ -90,9 +90,13 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  overflow: hidden;
+}
+
+.logo-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .login-title {
@@ -360,30 +364,7 @@
   }
 }
 
-/* Medical theme enhancements */
-.medical-icon {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-}
 
-.dark-theme .medical-icon {
-  background: linear-gradient(135deg, #38a169, #2f855a);
-}
-
-.security-badge {
-  position: absolute;
-  top: 20px;
-  right: 60px;
-  background: #28a745;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 500;
-}
-
-.dark-theme .security-badge {
-  background: #38a169;
-}
 
 /* Focus styles for accessibility */
 *:focus {

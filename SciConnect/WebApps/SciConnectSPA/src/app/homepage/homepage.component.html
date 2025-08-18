@@ -4,10 +4,9 @@
     <div class="header-content">
       <div class="header-left">
         <div class="logo-section">
-          <i class="fas fa-heartbeat medical-icon"></i>
+          <img [src]="getLogoPath()" alt="SciConnect Logo" class="app-logo">
           <h1 class="app-title">SciConnect</h1>
         </div>
-        <p class="app-subtitle">Medical Research Platform</p>
       </div>
       
       <div class="header-right">
@@ -91,7 +90,7 @@
 
           <div class="info-card">
             <div class="info-header">
-              <i class="fas fa-shield-alt"></i>
+              <i class="fas fa-user-tag"></i>
               <h3>Roles & Permissions</h3>
             </div>
             <div class="info-content">
@@ -178,8 +177,7 @@
   <!-- Footer -->
   <footer class="homepage-footer">
     <div class="container">
-      <p>&copy; 2024 SciConnect. Medical Research Platform.</p>
-      <p>Secure • Reliable • Professional</p>
+      <p>&copy; 2024 SciConnect.</p>
     </div>
   </footer>
 </div>

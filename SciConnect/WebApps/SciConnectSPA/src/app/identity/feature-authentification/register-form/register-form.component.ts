@@ -332,4 +332,10 @@ export class RegisterFormComponent implements OnInit {
       default: return '#6c757d';
     }
   }
+
+  public getLogoPath(): string {
+    return this.isDarkTheme 
+      ? 'assets/images/dark_theme_logo.png' 
+      : 'assets/images/white_theme_logo.png';
+  }
 }

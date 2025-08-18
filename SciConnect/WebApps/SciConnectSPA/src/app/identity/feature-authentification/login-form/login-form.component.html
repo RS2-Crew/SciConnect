@@ -6,16 +6,11 @@
       </button>
     </div>
     
-    <div class="security-badge">
-      <i class="fas fa-shield-alt"></i> Secure
-    </div>
-    
     <div class="login-header">
-      <div class="login-logo medical-icon">
-        <i class="fas fa-heartbeat"></i>
+      <div class="login-logo">
+        <img [src]="getLogoPath()" alt="SciConnect Logo" class="logo-image">
       </div>
       <h1 class="login-title">SciConnect</h1>
-      <p class="login-subtitle">Medical Research Platform</p>
     </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()" novalidate>

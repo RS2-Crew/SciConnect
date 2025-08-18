@@ -3,10 +3,9 @@
   <header class="app-header" *ngIf="showHeader">
     <div class="header-content">
       <div class="header-logo">
-        <i class="fas fa-heartbeat"></i>
+        <img [src]="getLogoPath()" alt="SciConnect Logo" class="app-logo">
         <h1 class="app-title">SciConnect</h1>
       </div>
-      <div class="header-subtitle">Medical Research Platform</div>
     </div>
   </header>
 
