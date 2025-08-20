@@ -86,9 +86,9 @@ export class LoginFormComponent implements OnInit {
       next: (success) => {
         this.isLoading = false;
         if (success) {
-          this.loginSuccess = 'Login successful! Redirecting to homepage...';
+          this.loginSuccess = 'Login successful! Redirecting to dashboard...';
           setTimeout(() => {
-            this.routerService.navigate(['/homepage']);
+            this.routerService.navigate(['/dashboard']);
           }, 1500);
         } else {
           this.loginError = 'Invalid username or password. Please try again.';

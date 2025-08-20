@@ -13,7 +13,7 @@ namespace DB.Infrastructure.Persistance.EntityConfigurations
        public SqlServerContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<SqlServerContext>();
-            optionsBuilder.UseSqlServer();
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False");
             return new SqlServerContext(optionsBuilder.Options);
         }
     }

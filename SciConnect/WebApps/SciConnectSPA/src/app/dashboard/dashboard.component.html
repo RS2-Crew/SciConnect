@@ -6,95 +6,451 @@
         <p class="date">{{ currentDate | date:'EEEE, MMMM d, yyyy' }}</p>
       </div>
       <div class="header-actions">
+        <div class="language-switcher">
+          <button class="btn-language" (click)="toggleLanguage()">
+            <i class="fas fa-globe"></i>
+            {{ currentLanguage === 'sr' ? 'EN' : 'SR' }}
+          </button>
+        </div>
         <button class="btn-logout" (click)="onLogout()">
           <i class="fas fa-sign-out-alt"></i>
-          Logout
+          {{ 'LOGOUT' | translate }}
         </button>
       </div>
     </div>
   </div>
 
   <div class="dashboard-content">
-    <div class="welcome-card">
-      <div class="welcome-icon">
-        <img [src]="getLogoPath()" alt="SciConnect Logo" class="logo-image">
-      </div>
-      <h2>Welcome to SciConnect</h2>
-      <p>Your platform is ready. Access your data, manage institutions, and collaborate with professionals.</p>
-    </div>
-
-    <div class="quick-actions">
-      <h3>Quick Actions</h3>
-      <div class="action-grid">
-        <div class="action-card">
-          <div class="action-icon">
-            <i class="fas fa-microscope"></i>
-          </div>
-          <h4>Research Analysis</h4>
-          <p>View and manage research analyses</p>
+    <!-- Master Search Section -->
+    <div class="master-search-section">
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <i class="fas fa-search search-icon"></i>
+          <input 
+            type="text" 
+            class="master-search-input" 
+            [placeholder]="'SEARCH_PLACEHOLDER' | translate"
+            [(ngModel)]="masterSearchTerm"
+            (input)="onMasterSearchInput($event)"
+            (focus)="showSearchSuggestions = true"
+            (blur)="onSearchBlur()">
         </div>
         
-        <div class="action-card">
-          <div class="action-icon">
-            <i class="fas fa-hospital"></i>
+        <!-- Search Suggestions Dropdown -->
+        <div class="search-suggestions" *ngIf="showSearchSuggestions && filteredSearchResults.length > 0">
+          <div class="suggestion-group" *ngFor="let group of filteredSearchResults">
+            <div class="suggestion-category">{{ group.category | translate }}</div>
+            <div class="suggestion-item" 
+                 *ngFor="let item of group.items" 
+                 (click)="onSearchSuggestionClick(item, group.type)">
+              <i [class]="getCategoryIcon(group.type)"></i>
+              <span>{{ getDisplayName(item) }}</span>
+            </div>
           </div>
-          <h4>Institutions</h4>
-          <p>Manage institutions</p>
-        </div>
-        
-        <div class="action-card">
-          <div class="action-icon">
-            <i class="fas fa-user-md"></i>
-          </div>
-          <h4>Staff</h4>
-          <p>View professionals</p>
-        </div>
-        
-        <div class="action-card">
-          <div class="action-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h4>Reports</h4>
-          <p>Generate research reports</p>
         </div>
       </div>
     </div>
 
-    <div class="recent-activity">
-      <h3>Recent Activity</h3>
-      <div class="activity-list">
-        <div class="activity-item">
-          <div class="activity-icon">
-            <i class="fas fa-plus-circle"></i>
+    <!-- Tab Navigation -->
+    <div class="tab-navigation">
+      <button class="tab-button" 
+              [class.active]="activeTab === 'analyses'"
+              (click)="setActiveTab('analyses')">
+        <i class="fas fa-flask"></i>
+        {{ 'ANALYSES_INSTITUTIONS' | translate }}
+      </button>
+      <button class="tab-button" 
+              [class.active]="activeTab === 'researchers'"
+              (click)="setActiveTab('researchers')">
+        <i class="fas fa-user-md"></i>
+        {{ 'RESEARCHERS_KEYWORDS' | translate }}
+      </button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Analyses & Institutions Tab -->
+      <div class="tab-panel" *ngIf="activeTab === 'analyses'">
+        <div class="guided-search-section">
+          <h3>{{ 'GUIDED_SEARCH' | translate }}</h3>
+          
+          <div class="search-grid">
+            <!-- Institution Filter -->
+            <div class="filter-card" [class.pinned]="pinnedCategory === 'institution'">
+              <div class="filter-header">
+                <i class="fas fa-hospital"></i>
+                <span>{{ 'INSTITUTION' | translate }}</span>
+                <button class="btn-pin" 
+                        [class.pinned]="pinnedCategory === 'institution'"
+                        (click)="pinCategory('institution')"
+                        [title]="'PIN_CATEGORY' | translate">
+                  <i class="fas fa-thumbtack"></i>
+                </button>
+              </div>
+              <div class="filter-content">
+                <select class="filter-select" 
+                        [(ngModel)]="selectedInstitution"
+                        (change)="onInstitutionChange()">
+                  <option value="">{{ 'SELECT_INSTITUTION' | translate }}</option>
+                  <option *ngFor="let inst of filteredInstitutions" 
+                          [value]="inst.id">{{ inst.name }}</option>
+                </select>
+                <div class="selected-item-details" *ngIf="selectedInstitutionDetails">
+                  <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ selectedInstitutionDetails.address }}, {{ selectedInstitutionDetails.city }}</span>
+                  </div>
+                  <div class="detail-item" *ngIf="selectedInstitutionDetails.website">
+                    <i class="fas fa-globe"></i>
+                    <a [href]="selectedInstitutionDetails.website" target="_blank">{{ selectedInstitutionDetails.website }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Analysis Filter -->
+            <div class="filter-card" [class.pinned]="pinnedCategory === 'analysis'">
+              <div class="filter-header">
+                <i class="fas fa-flask"></i>
+                <span>{{ 'ANALYSIS' | translate }}</span>
+                <button class="btn-pin" 
+                        [class.pinned]="pinnedCategory === 'analysis'"
+                        (click)="pinCategory('analysis')"
+                        [title]="'PIN_CATEGORY' | translate">
+                  <i class="fas fa-thumbtack"></i>
+                </button>
+              </div>
+              <div class="filter-content">
+                <select class="filter-select" 
+                        [(ngModel)]="selectedAnalysis"
+                        (change)="onAnalysisChange()">
+                  <option value="">{{ 'SELECT_ANALYSIS' | translate }}</option>
+                  <option *ngFor="let analysis of filteredAnalyses" 
+                          [value]="analysis.id">{{ analysis.name }}</option>
+                </select>
+                <div class="selected-item-details" *ngIf="selectedAnalysisDetails">
+                  <div class="detail-item" *ngIf="selectedAnalysisDetails.description">
+                    <i class="fas fa-info-circle"></i>
+                    <span>{{ selectedAnalysisDetails.description }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Microorganism Filter -->
+            <div class="filter-card" [class.pinned]="pinnedCategory === 'microorganism'">
+              <div class="filter-header">
+                <i class="fas fa-bug"></i>
+                <span>{{ 'MICROORGANISM' | translate }}</span>
+                <button class="btn-pin" 
+                        [class.pinned]="pinnedCategory === 'microorganism'"
+                        (click)="pinCategory('microorganism')"
+                        [title]="'PIN_CATEGORY' | translate">
+                  <i class="fas fa-thumbtack"></i>
+                </button>
+              </div>
+              <div class="filter-content">
+                <select class="filter-select" 
+                        [(ngModel)]="selectedMicroorganism"
+                        (change)="onMicroorganismChange()">
+                  <option value="">{{ 'SELECT_MICROORGANISM' | translate }}</option>
+                  <option *ngFor="let micro of filteredMicroorganisms" 
+                          [value]="micro.id">{{ micro.name }}</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Instrument Filter -->
+            <div class="filter-card" [class.pinned]="pinnedCategory === 'instrument'">
+              <div class="filter-header">
+                <i class="fas fa-microscope"></i>
+                <span>{{ 'INSTRUMENT' | translate }}</span>
+                <button class="btn-pin" 
+                        [class.pinned]="pinnedCategory === 'instrument'"
+                        (click)="pinCategory('instrument')"
+                        [title]="'PIN_CATEGORY' | translate">
+                  <i class="fas fa-thumbtack"></i>
+                </button>
+              </div>
+              <div class="filter-content">
+                <select class="filter-select" 
+                        [(ngModel)]="selectedInstrument"
+                        (change)="onInstrumentChange()">
+                  <option value="">{{ 'SELECT_INSTRUMENT' | translate }}</option>
+                  <option *ngFor="let instrument of filteredInstruments" 
+                          [value]="instrument.id">{{ instrument.name }}</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div class="activity-content">
-            <h5>New Research Analysis Added</h5>
-            <p>Microbiological analysis completed for Institution A</p>
-            <span class="activity-time">2 hours ago</span>
+
+          <!-- Clear Filters Button -->
+          <div class="filter-actions">
+            <button class="btn-clear-filters" (click)="clearAllFilters()">
+              <i class="fas fa-times"></i>
+              {{ 'CLEAR_FILTERS' | translate }}
+            </button>
           </div>
         </div>
-        
-        <div class="activity-item">
-          <div class="activity-icon">
-            <i class="fas fa-user-plus"></i>
+
+        <!-- Results Section -->
+        <div class="results-section" *ngIf="hasActiveFilters()">
+          <h3>{{ 'SEARCH_RESULTS' | translate }}</h3>
+          
+          <!-- Institutions Results -->
+          <div class="results-group" *ngIf="filteredResults.institutions.length > 0">
+            <h4>{{ 'INSTITUTIONS' | translate }} ({{ filteredResults.institutions.length }})</h4>
+            <div class="results-grid">
+              <div class="result-card institution-card" 
+                   *ngFor="let institution of filteredResults.institutions"
+                   (click)="showInstitutionDetails(institution)">
+                <div class="card-header">
+                  <i class="fas fa-hospital"></i>
+                  <h5>{{ institution.name }}</h5>
+                </div>
+                <div class="card-content">
+                  <p><i class="fas fa-map-marker-alt"></i> {{ institution.address }}, {{ institution.city }}</p>
+                  <p *ngIf="institution.phone"><i class="fas fa-phone"></i> {{ institution.phone }}</p>
+                  <p *ngIf="institution.email"><i class="fas fa-envelope"></i> {{ institution.email }}</p>
+                </div>
+                <div class="card-actions">
+                  <button class="btn-details" (click)="showInstitutionDetails(institution); $event.stopPropagation()">
+                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="activity-content">
-            <h5>New Professional Registered</h5>
-            <p>Dr. Smith joined the platform</p>
-            <span class="activity-time">1 day ago</span>
+
+          <!-- Analyses Results -->
+          <div class="results-group" *ngIf="filteredResults.analyses.length > 0">
+            <h4>{{ 'ANALYSES' | translate }} ({{ filteredResults.analyses.length }})</h4>
+            <div class="results-grid">
+              <div class="result-card analysis-card" 
+                   *ngFor="let analysis of filteredResults.analyses"
+                   (click)="showAnalysisDetails(analysis)">
+                <div class="card-header">
+                  <i class="fas fa-flask"></i>
+                  <h5>{{ analysis.name }}</h5>
+                </div>
+                <div class="card-content">
+                  <p *ngIf="analysis.description">{{ analysis.description }}</p>
+                  <p><i class="fas fa-hospital"></i> {{ 'PERFORMED_AT' | translate }}: {{ getInstitutionNames(analysis.institutions) }}</p>
+                </div>
+                <div class="card-actions">
+                  <button class="btn-details" (click)="showAnalysisDetails(analysis); $event.stopPropagation()">
+                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        
-        <div class="activity-item">
-          <div class="activity-icon">
-            <i class="fas fa-hospital-alt"></i>
+      </div>
+
+      <!-- Researchers & Keywords Tab -->
+      <div class="tab-panel" *ngIf="activeTab === 'researchers'">
+        <div class="guided-search-section">
+          <h3>{{ 'GUIDED_SEARCH' | translate }}</h3>
+          
+          <div class="search-grid">
+            <!-- Researcher Filter -->
+            <div class="filter-card" [class.pinned]="pinnedCategory === 'researcher'">
+              <div class="filter-header">
+                <i class="fas fa-user-md"></i>
+                <span>{{ 'RESEARCHER' | translate }}</span>
+                <button class="btn-pin" 
+                        [class.pinned]="pinnedCategory === 'researcher'"
+                        (click)="pinCategory('researcher')"
+                        [title]="'PIN_CATEGORY' | translate">
+                  <i class="fas fa-thumbtack"></i>
+                </button>
+              </div>
+              <div class="filter-content">
+                <select class="filter-select" 
+                        [(ngModel)]="selectedResearcher"
+                        (change)="onResearcherChange()">
+                  <option value="">{{ 'SELECT_RESEARCHER' | translate }}</option>
+                  <option *ngFor="let researcher of filteredResearchers" 
+                          [value]="researcher.id">{{ researcher.firstName }} {{ researcher.lastName }}</option>
+                </select>
+                <div class="selected-item-details" *ngIf="selectedResearcherDetails">
+                  <div class="detail-item">
+                    <i class="fas fa-hospital"></i>
+                    <span>{{ selectedResearcherDetails.institution?.name }}</span>
+                  </div>
+                  <div class="detail-item" *ngIf="selectedResearcherDetails.keywords?.length">
+                    <i class="fas fa-tags"></i>
+                    <span>{{ getKeywordNames(selectedResearcherDetails.keywords) }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Keywords Filter -->
+            <div class="filter-card" [class.pinned]="pinnedCategory === 'keyword'">
+              <div class="filter-header">
+                <i class="fas fa-tags"></i>
+                <span>{{ 'KEYWORDS' | translate }}</span>
+                <button class="btn-pin" 
+                        [class.pinned]="pinnedCategory === 'keyword'"
+                        (click)="pinCategory('keyword')"
+                        [title]="'PIN_CATEGORY' | translate">
+                  <i class="fas fa-thumbtack"></i>
+                </button>
+              </div>
+              <div class="filter-content">
+                <select class="filter-select" 
+                        [(ngModel)]="selectedKeyword"
+                        (change)="onKeywordChange()">
+                  <option value="">{{ 'SELECT_KEYWORD' | translate }}</option>
+                  <option *ngFor="let keyword of filteredKeywords" 
+                          [value]="keyword.id">{{ keyword.name }}</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div class="activity-content">
-            <h5>Institution Updated</h5>
-            <p>Center B updated their profile</p>
-            <span class="activity-time">3 days ago</span>
+
+          <!-- Clear Filters Button -->
+          <div class="filter-actions">
+            <button class="btn-clear-filters" (click)="clearAllFilters()">
+              <i class="fas fa-times"></i>
+              {{ 'CLEAR_FILTERS' | translate }}
+            </button>
           </div>
         </div>
+
+        <!-- Results Section -->
+        <div class="results-section" *ngIf="hasActiveFilters()">
+          <h3>{{ 'SEARCH_RESULTS' | translate }}</h3>
+          
+          <!-- Researchers Results -->
+          <div class="results-group" *ngIf="filteredResults.researchers.length > 0">
+            <h4>{{ 'RESEARCHERS' | translate }} ({{ filteredResults.researchers.length }})</h4>
+            <div class="results-grid">
+              <div class="result-card researcher-card" 
+                   *ngFor="let researcher of filteredResults.researchers"
+                   (click)="showResearcherDetails(researcher)">
+                <div class="card-header">
+                  <i class="fas fa-user-md"></i>
+                  <h5>{{ researcher.firstName }} {{ researcher.lastName }}</h5>
+                </div>
+                <div class="card-content">
+                  <p><i class="fas fa-hospital"></i> {{ researcher.institution?.name }}</p>
+                  <p *ngIf="researcher.keywords?.length">
+                    <i class="fas fa-tags"></i> {{ getKeywordNames(researcher.keywords) }}
+                  </p>
+                </div>
+                <div class="card-actions">
+                  <button class="btn-details" (click)="showResearcherDetails(researcher); $event.stopPropagation()">
+                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Keywords Results -->
+          <div class="results-group" *ngIf="filteredResults.keywords.length > 0">
+            <h4>{{ 'KEYWORDS' | translate }} ({{ filteredResults.keywords.length }})</h4>
+            <div class="results-grid">
+              <div class="result-card keyword-card" 
+                   *ngFor="let keyword of filteredResults.keywords">
+                <div class="card-header">
+                  <i class="fas fa-tags"></i>
+                  <h5>{{ keyword.name }}</h5>
+                </div>
+                <div class="card-content">
+                  <p><i class="fas fa-user-md"></i> {{ 'RESEARCHERS' | translate }}: {{ getResearcherNames(keyword.researchers) }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3>{{ modalTitle }}</h3>
+        <button class="btn-close" (click)="closeModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ng-container [ngSwitch]="modalType">
+          <div *ngSwitchCase="'institution'" class="institution-details">
+            <div class="detail-row">
+              <i class="fas fa-hospital"></i>
+              <span>{{ selectedItem.name }}</span>
+            </div>
+            <div class="detail-row">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>{{ selectedItem.address }}, {{ selectedItem.city }}, {{ selectedItem.country }}</span>
+            </div>
+            <div class="detail-row" *ngIf="selectedItem.phone">
+              <i class="fas fa-phone"></i>
+              <span>{{ selectedItem.phone }}</span>
+            </div>
+            <div class="detail-row" *ngIf="selectedItem.email">
+              <i class="fas fa-envelope"></i>
+              <span>{{ selectedItem.email }}</span>
+            </div>
+            <div class="detail-row" *ngIf="selectedItem.website">
+              <i class="fas fa-globe"></i>
+              <a [href]="selectedItem.website" target="_blank">{{ selectedItem.website }}</a>
+            </div>
+            <div class="detail-section" *ngIf="selectedItem.analyses?.length">
+              <h4>{{ 'ANALYSES' | translate }}</h4>
+              <div class="tag-list">
+                <span class="tag" *ngFor="let analysis of selectedItem.analyses">{{ analysis.name }}</span>
+              </div>
+            </div>
+            <div class="detail-section" *ngIf="selectedItem.instruments?.length">
+              <h4>{{ 'INSTRUMENTS' | translate }}</h4>
+              <div class="tag-list">
+                <span class="tag" *ngFor="let instrument of selectedItem.instruments">{{ instrument.name }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'researcher'" class="researcher-details">
+            <div class="detail-row">
+              <i class="fas fa-user-md"></i>
+              <span>{{ selectedItem.firstName }} {{ selectedItem.lastName }}</span>
+            </div>
+            <div class="detail-row">
+              <i class="fas fa-hospital"></i>
+              <span>{{ selectedItem.institution?.name }}</span>
+            </div>
+            <div class="detail-section" *ngIf="selectedItem.keywords?.length">
+              <h4>{{ 'KEYWORDS' | translate }}</h4>
+              <div class="tag-list">
+                <span class="tag" *ngFor="let keyword of selectedItem.keywords">{{ keyword.name }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'analysis'" class="analysis-details">
+            <div class="detail-row">
+              <i class="fas fa-flask"></i>
+              <span>{{ selectedItem.name }}</span>
+            </div>
+            <div class="detail-row" *ngIf="selectedItem.description">
+              <i class="fas fa-info-circle"></i>
+              <span>{{ selectedItem.description }}</span>
+            </div>
+            <div class="detail-section" *ngIf="selectedItem.institutions?.length">
+              <h4>{{ 'INSTITUTIONS' | translate }}</h4>
+              <div class="tag-list">
+                <span class="tag" *ngFor="let institution of selectedItem.institutions">{{ institution.name }}</span>
+              </div>
+            </div>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>
