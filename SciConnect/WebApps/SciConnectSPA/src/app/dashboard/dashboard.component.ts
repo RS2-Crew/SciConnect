@@ -1,12 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 import { Subject, takeUntil, forkJoin, of, debounceTime, distinctUntilChanged } from 'rxjs';
 import { catchError, finalize, switchMap } from 'rxjs/operators';
 import { AppStateService } from '../shared/app-state/app-state.service';
 import { DataService } from '../shared/services/data.service';
 import { TranslationService } from '../shared/services/translation.service';
+
 import { TranslatePipe } from '../shared/pipes/translate.pipe';
 import { 
   Institution, 
@@ -45,6 +47,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   userName: string = '';
   currentDate: Date = new Date();
   currentLanguage: 'en' | 'sr' = 'en';
+  
+  // Theme
+  isDarkTheme: boolean = false;
 
   // Tab management
   activeTab: 'analyses' | 'researchers' = 'analyses';
@@ -108,13 +113,18 @@ export class DashboardComponent implements OnInit, OnDestroy {
     private appStateService: AppStateService,
     private dataService: DataService,
     private translationService: TranslationService,
-    private router: Router
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
     this.loadUserInfo();
     this.loadInitialData();
     this.setupSearchDebouncing();
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadThemePreference();
+      this.applyTheme();
+    }
   }
 
   ngOnDestroy(): void {
@@ -460,5 +470,49 @@ export class DashboardComponent implements OnInit, OnDestroy {
   onLogout(): void {
     this.appStateService.clearAppState();
     this.router.navigate(['/identity/login']);
+  }
+
+  // Theme methods
+  private loadThemePreference(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      try {
+        const savedTheme = localStorage.getItem('sciConnectTheme');
+        this.isDarkTheme = savedTheme === 'dark';
+      } catch (error) {
+        console.warn('Could not load theme preference:', error);
+      }
+    }
+  }
+
+  private saveThemePreference(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      try {
+        localStorage.setItem('sciConnectTheme', this.isDarkTheme ? 'dark' : 'light');
+      } catch (error) {
+        console.warn('Could not save theme preference:', error);
+      }
+    }
+  }
+
+  private applyTheme(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.isDarkTheme) {
+        document.body.classList.add('dark-theme');
+      } else {
+        document.body.classList.remove('dark-theme');
+      }
+    }
+  }
+
+  public toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
+    this.applyTheme();
+    this.saveThemePreference();
+  }
+
+  public getLogoPath(): string {
+    return this.isDarkTheme 
+      ? 'assets/images/dark_theme_logo.png' 
+      : 'assets/images/white_theme_logo.png';
   }
 } 

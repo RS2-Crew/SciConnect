@@ -1,28 +1,39 @@
-<div class="dashboard-container">
-  <div class="dashboard-header">
-    <div class="header-content">
-      <div class="greeting-section">
-        <h1 class="greeting">{{ getGreeting() }}, {{ userName }}</h1>
-        <p class="date">{{ currentDate | date:'EEEE, MMMM d, yyyy' }}</p>
-      </div>
-      <div class="header-actions">
-        <div class="language-switcher">
-          <button class="btn-language" (click)="toggleLanguage()">
-            <i class="fas fa-globe"></i>
-            {{ currentLanguage === 'sr' ? 'EN' : 'SR' }}
-          </button>
-        </div>
-        <button class="btn-logout" (click)="onLogout()">
-          <i class="fas fa-sign-out-alt"></i>
-          {{ 'LOGOUT' | translate }}
-        </button>
-      </div>
-    </div>
+<div class="dashboard-container" [class.dark-theme]="isDarkTheme">
+  <!-- Clean floating theme toggle in bottom-right -->
+  <div class="floating-theme-toggle">
+    <button class="theme-btn" (click)="toggleTheme()" [attr.aria-label]="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'">
+      <i class="fas" [class.fa-sun]="isDarkTheme" [class.fa-moon]="!isDarkTheme"></i>
+    </button>
   </div>
 
   <div class="dashboard-content">
+    <!-- Logo and Title -->
+    <div class="content-branding">
+      <img [src]="getLogoPath()" alt="SciConnect Logo" class="content-logo">
+      <h1 class="content-title">SciConnect</h1>
+    </div>
+
     <!-- Master Search Section -->
     <div class="master-search-section">
+
+    <!-- Tab Navigation with Search -->
+    <div class="tab-and-search-row">
+      <div class="tab-navigation">
+        <button class="tab-button" 
+                [class.active]="activeTab === 'analyses'"
+                (click)="setActiveTab('analyses')">
+          <i class="fas fa-flask"></i>
+          {{ 'ANALYSES_INSTITUTIONS' | translate }}
+        </button>
+        <button class="tab-button" 
+                [class.active]="activeTab === 'researchers'"
+                (click)="setActiveTab('researchers')">
+          <i class="fas fa-user-md"></i>
+          {{ 'RESEARCHERS_KEYWORDS' | translate }}
+        </button>
+      </div>
+      
+      <!-- Search Bar next to tabs -->
       <div class="search-container">
         <div class="search-input-wrapper">
           <i class="fas fa-search search-icon"></i>
@@ -49,22 +60,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Tab Navigation -->
-    <div class="tab-navigation">
-      <button class="tab-button" 
-              [class.active]="activeTab === 'analyses'"
-              (click)="setActiveTab('analyses')">
-        <i class="fas fa-flask"></i>
-        {{ 'ANALYSES_INSTITUTIONS' | translate }}
-      </button>
-      <button class="tab-button" 
-              [class.active]="activeTab === 'researchers'"
-              (click)="setActiveTab('researchers')">
-        <i class="fas fa-user-md"></i>
-        {{ 'RESEARCHERS_KEYWORDS' | translate }}
-      </button>
     </div>
 
     <!-- Tab Content -->
