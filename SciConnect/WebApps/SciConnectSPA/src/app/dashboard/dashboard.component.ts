@@ -43,23 +43,18 @@ interface FilteredResults {
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  // User info
   userName: string = '';
   currentDate: Date = new Date();
   currentLanguage: 'en' | 'sr' = 'en';
   
-  // Theme
   isDarkTheme: boolean = false;
 
-  // Tab management
   activeTab: 'analyses' | 'researchers' = 'analyses';
 
-  // Master search
   masterSearchTerm: string = '';
   showSearchSuggestions: boolean = false;
   filteredSearchResults: SearchResult[] = [];
 
-  // Guided search - selections
   selectedInstitution: number | null = null;
   selectedAnalysis: number | null = null;
   selectedMicroorganism: number | null = null;
@@ -67,7 +62,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   selectedResearcher: number | null = null;
   selectedKeyword: number | null = null;
 
-  // Guided search - filtered options
   filteredInstitutions: Institution[] = [];
   filteredAnalyses: Analysis[] = [];
   filteredMicroorganisms: Microorganism[] = [];
@@ -75,15 +69,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
   filteredResearchers: Employee[] = [];
   filteredKeywords: Keyword[] = [];
 
-  // Selected item details
   selectedInstitutionDetails: Institution | null = null;
   selectedAnalysisDetails: Analysis | null = null;
   selectedResearcherDetails: Employee | null = null;
 
-  // Pinning functionality
   pinnedCategory: string | null = null;
 
-  // Results
   filteredResults: FilteredResults = {
     institutions: [],
     analyses: [],
@@ -93,13 +84,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     microorganisms: []
   };
 
-  // Modal
   showModal: boolean = false;
   modalTitle: string = '';
   modalType: string = '';
   selectedItem: any = null;
 
-  // All data
   allInstitutions: Institution[] = [];
   allAnalyses: Analysis[] = [];
   allMicroorganisms: Microorganism[] = [];
@@ -145,11 +134,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private loadInitialData(): void {
     forkJoin({
       institutions: this.dataService.getAllInstitutions().pipe(catchError(() => of([]))),
-      analyses: this.dataService.getAllAnalyses().pipe(catchError(() => of([]))),
+      analyses: this.dataService.getAllAnalysesWithRelatedData().pipe(catchError(() => of([]))),
       microorganisms: this.dataService.getAllMicroorganisms().pipe(catchError(() => of([]))),
       instruments: this.dataService.getAllInstruments().pipe(catchError(() => of([]))),
-      researchers: this.dataService.getAllEmployees().pipe(catchError(() => of([]))),
-      keywords: this.dataService.getAllKeywords().pipe(catchError(() => of([])))
+      researchers: this.dataService.getAllEmployeesWithRelatedData().pipe(catchError(() => of([]))),
+      keywords: this.dataService.getAllKeywordsWithRelatedData().pipe(catchError(() => of([])))
     })
     .pipe(takeUntil(this.destroy$))
     .subscribe(data => {
@@ -171,17 +160,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   private setupSearchDebouncing(): void {
-    // This would be implemented with a proper search service
-    // For now, we'll handle it in the input event
   }
 
-  // Tab management
   setActiveTab(tab: 'analyses' | 'researchers'): void {
     this.activeTab = tab;
     this.updateResults();
   }
-
-  // Master search functionality
   onSearchBlur(): void {
     setTimeout(() => {
       this.showSearchSuggestions = false;
@@ -286,7 +270,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return icons[type] || 'fas fa-question';
   }
 
-  // Pinning functionality
   pinCategory(category: string): void {
     if (this.pinnedCategory === category) {
       this.pinnedCategory = null;
@@ -296,8 +279,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.updateFilteredOptions();
     this.updateResults();
   }
-
-  // Filter change handlers
   onInstitutionChange(): void {
     const institution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
     this.selectedInstitutionDetails = institution || null;
@@ -334,56 +315,306 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.updateResults();
   }
 
-  // Update filtered options based on selections
   private updateFilteredOptions(): void {
-    // This is a simplified version - in a real implementation,
-    // you would make API calls to get filtered data based on relationships
-    
     if (this.pinnedCategory === 'institution' && this.selectedInstitution) {
-      // Filter based on selected institution
       const institution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
       if (institution) {
-        // Filter analyses, instruments, etc. based on institution relationships
-        // This would require API calls to get related data
       }
     } else if (this.pinnedCategory === 'analysis' && this.selectedAnalysis) {
-      // Filter based on selected analysis
       const analysis = this.allAnalyses.find(anal => anal.id === this.selectedAnalysis);
       if (analysis) {
-        // Filter institutions, instruments, etc. based on analysis relationships
       }
     }
-    // Add similar logic for other pinned categories
   }
 
-  // Update results based on current filters
   private updateResults(): void {
-    // This is a simplified version - in a real implementation,
-    // you would make API calls to get filtered results
-    
     this.filteredResults = {
-      institutions: this.selectedInstitution ? 
-        this.allInstitutions.filter(inst => inst.id === this.selectedInstitution) : 
-        this.allInstitutions,
-      analyses: this.selectedAnalysis ? 
-        this.allAnalyses.filter(anal => anal.id === this.selectedAnalysis) : 
-        this.allAnalyses,
-      instruments: this.selectedInstrument ? 
-        this.allInstruments.filter(inst => inst.id === this.selectedInstrument) : 
-        this.allInstruments,
-      keywords: this.selectedKeyword ? 
-        this.allKeywords.filter(kw => kw.id === this.selectedKeyword) : 
-        this.allKeywords,
-      researchers: this.selectedResearcher ? 
-        this.allResearchers.filter(res => res.id === this.selectedResearcher) : 
-        this.allResearchers,
-      microorganisms: this.selectedMicroorganism ? 
-        this.allMicroorganisms.filter(micro => micro.id === this.selectedMicroorganism) : 
-        this.allMicroorganisms
+      institutions: this.getFilteredInstitutions(),
+      analyses: this.getFilteredAnalyses(),
+      instruments: this.getFilteredInstruments(),
+      keywords: this.getFilteredKeywords(),
+      researchers: this.getFilteredResearchers(),
+      microorganisms: this.getFilteredMicroorganisms()
     };
+
+    if (this.hasActiveFilters()) {
+      this.addRelatedEntities();
+    }
   }
 
-  // Utility methods
+  private addRelatedEntities(): void {
+    if (this.selectedInstitution) {
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
+      if (selectedInstitution) {
+        const institutionAnalyses = this.allAnalyses.filter(analysis => 
+          analysis.institutions?.some(inst => inst.id === this.selectedInstitution)
+        );
+        this.filteredResults.analyses = institutionAnalyses;
+
+        if (selectedInstitution.microorganisms) {
+          const institutionMicroorganisms = this.allMicroorganisms.filter(micro => 
+            selectedInstitution.microorganisms?.some(instMicro => instMicro.id === micro.id)
+          );
+          this.filteredResults.microorganisms = institutionMicroorganisms;
+        }
+
+        if (selectedInstitution.instruments) {
+          const institutionInstruments = this.allInstruments.filter(inst => 
+            selectedInstitution.instruments?.some(instInstrument => instInstrument.id === inst.id)
+          );
+          this.filteredResults.instruments = institutionInstruments;
+        }
+
+        const institutionResearchers = this.allResearchers.filter(researcher => 
+          researcher.institution?.id === this.selectedInstitution
+        );
+        this.filteredResults.researchers = institutionResearchers;
+      }
+    }
+
+    if (this.selectedAnalysis) {
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === this.selectedAnalysis);
+      if (selectedAnalysis) {
+        if (selectedAnalysis.institutions) {
+          const analysisInstitutions = this.allInstitutions.filter(inst => 
+            selectedAnalysis.institutions?.some(analysisInst => analysisInst.id === inst.id)
+          );
+          this.filteredResults.institutions = analysisInstitutions;
+        }
+
+        if (selectedAnalysis.microorganisms) {
+          const analysisMicroorganisms = this.allMicroorganisms.filter(micro => 
+            selectedAnalysis.microorganisms?.some(analysisMicro => analysisMicro.id === micro.id)
+          );
+          this.filteredResults.microorganisms = analysisMicroorganisms;
+        }
+      }
+    }
+
+    if (this.selectedMicroorganism) {
+      const selectedMicroorganism = this.allMicroorganisms.find(micro => micro.id === this.selectedMicroorganism);
+      if (selectedMicroorganism) {
+        const microorganismAnalyses = this.allAnalyses.filter(analysis => 
+          analysis.microorganisms?.some(micro => micro.id === this.selectedMicroorganism)
+        );
+        this.filteredResults.analyses = microorganismAnalyses;
+      }
+    }
+
+    if (this.selectedInstrument) {
+      const selectedInstrument = this.allInstruments.find(inst => inst.id === this.selectedInstrument);
+      if (selectedInstrument) {
+        const instrumentInstitutions = this.allInstitutions.filter(inst => 
+          inst.instruments?.some(instrument => instrument.id === this.selectedInstrument)
+        );
+        this.filteredResults.institutions = [...new Set([...this.filteredResults.institutions, ...instrumentInstitutions])];
+      }
+    }
+
+    if (this.selectedResearcher) {
+      const selectedResearcher = this.allResearchers.find(res => res.id === this.selectedResearcher);
+      if (selectedResearcher) {
+        if (selectedResearcher.institution) {
+          const researcherInstitution = this.allInstitutions.find(inst => 
+            inst.id === selectedResearcher.institution?.id
+          );
+          if (researcherInstitution) {
+            this.filteredResults.institutions = [...new Set([...this.filteredResults.institutions, researcherInstitution])];
+          }
+        }
+
+        if (selectedResearcher.keywords) {
+          const researcherKeywords = this.allKeywords.filter(kw => 
+            selectedResearcher.keywords?.some(resKeyword => resKeyword.id === kw.id)
+          );
+          this.filteredResults.keywords = [...new Set([...this.filteredResults.keywords, ...researcherKeywords])];
+        }
+      }
+    }
+
+    if (this.selectedKeyword) {
+      const selectedKeyword = this.allKeywords.find(kw => kw.id === this.selectedKeyword);
+      if (selectedKeyword) {
+        const keywordResearchers = this.allResearchers.filter(researcher => 
+          researcher.keywords?.some(kw => kw.id === this.selectedKeyword)
+        );
+        this.filteredResults.researchers = [...new Set([...this.filteredResults.researchers, ...keywordResearchers])];
+      }
+    }
+  }
+
+  private getFilteredInstitutions(): Institution[] {
+    let institutions = [...this.allInstitutions];
+
+    if (!this.hasActiveFilters()) {
+      return institutions;
+    }
+
+    if (this.selectedInstitution) {
+      institutions = institutions.filter(inst => inst.id === this.selectedInstitution);
+    }
+
+    if (this.selectedAnalysis) {
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === this.selectedAnalysis);
+      if (selectedAnalysis?.institutions) {
+        const analysisInstitutionIds = selectedAnalysis.institutions.map(inst => inst.id);
+        institutions = institutions.filter(inst => analysisInstitutionIds.includes(inst.id));
+      }
+    }
+
+    if (this.selectedInstrument) {
+      const selectedInstrument = this.allInstruments.find(inst => inst.id === this.selectedInstrument);
+      if (selectedInstrument) {
+      }
+    }
+
+    if (this.selectedMicroorganism) {
+      const selectedMicroorganism = this.allMicroorganisms.find(micro => micro.id === this.selectedMicroorganism);
+      if (selectedMicroorganism) {
+      }
+    }
+
+    return institutions;
+  }
+
+  private getFilteredAnalyses(): Analysis[] {
+    let analyses = [...this.allAnalyses];
+
+    if (!this.hasActiveFilters()) {
+      return analyses;
+    }
+
+    if (this.selectedAnalysis) {
+      analyses = analyses.filter(anal => anal.id === this.selectedAnalysis);
+    }
+
+    if (this.selectedInstitution) {
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
+      if (selectedInstitution) {
+        analyses = analyses.filter(analysis => 
+          analysis.institutions?.some(inst => inst.id === this.selectedInstitution)
+        );
+      }
+    }
+
+    if (this.selectedMicroorganism) {
+      const selectedMicroorganism = this.allMicroorganisms.find(micro => micro.id === this.selectedMicroorganism);
+      if (selectedMicroorganism) {
+        analyses = analyses.filter(analysis => 
+          analysis.microorganisms?.some(micro => micro.id === this.selectedMicroorganism)
+        );
+      }
+    }
+
+    return analyses;
+  }
+
+  private getFilteredInstruments(): Instrument[] {
+    let instruments = [...this.allInstruments];
+
+    if (!this.hasActiveFilters()) {
+      return instruments;
+    }
+
+    if (this.selectedInstrument) {
+      instruments = instruments.filter(inst => inst.id === this.selectedInstrument);
+    }
+
+    if (this.selectedInstitution) {
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
+      if (selectedInstitution?.instruments) {
+        const institutionInstrumentIds = selectedInstitution.instruments.map(inst => inst.id);
+        instruments = instruments.filter(inst => institutionInstrumentIds.includes(inst.id));
+      }
+    }
+
+    return instruments;
+  }
+
+  private getFilteredKeywords(): Keyword[] {
+    let keywords = [...this.allKeywords];
+
+    if (!this.hasActiveFilters()) {
+      return keywords;
+    }
+
+    if (this.selectedKeyword) {
+      keywords = keywords.filter(kw => kw.id === this.selectedKeyword);
+    }
+
+    if (this.selectedResearcher) {
+      const selectedResearcher = this.allResearchers.find(res => res.id === this.selectedResearcher);
+      if (selectedResearcher?.keywords) {
+        const researcherKeywordIds = selectedResearcher.keywords.map(kw => kw.id);
+        keywords = keywords.filter(kw => researcherKeywordIds.includes(kw.id));
+      }
+    }
+
+    return keywords;
+  }
+
+  private getFilteredResearchers(): Employee[] {
+    let researchers = [...this.allResearchers];
+
+    if (!this.hasActiveFilters()) {
+      return researchers;
+    }
+
+    if (this.selectedResearcher) {
+      researchers = researchers.filter(res => res.id === this.selectedResearcher);
+    }
+
+    if (this.selectedInstitution) {
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
+      if (selectedInstitution) {
+        researchers = researchers.filter(researcher => 
+          researcher.institution?.id === this.selectedInstitution
+        );
+      }
+    }
+
+    if (this.selectedKeyword) {
+      const selectedKeyword = this.allKeywords.find(kw => kw.id === this.selectedKeyword);
+      if (selectedKeyword) {
+        researchers = researchers.filter(researcher => 
+          researcher.keywords?.some(kw => kw.id === this.selectedKeyword)
+        );
+      }
+    }
+
+    return researchers;
+  }
+
+  private getFilteredMicroorganisms(): Microorganism[] {
+    let microorganisms = [...this.allMicroorganisms];
+
+    if (!this.hasActiveFilters()) {
+      return microorganisms;
+    }
+
+    if (this.selectedMicroorganism) {
+      microorganisms = microorganisms.filter(micro => micro.id === this.selectedMicroorganism);
+    }
+
+    if (this.selectedAnalysis) {
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === this.selectedAnalysis);
+      if (selectedAnalysis?.microorganisms) {
+        const analysisMicroorganismIds = selectedAnalysis.microorganisms.map(micro => micro.id);
+        microorganisms = microorganisms.filter(micro => analysisMicroorganismIds.includes(micro.id));
+      }
+    }
+
+    if (this.selectedInstitution) {
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
+      if (selectedInstitution?.microorganisms) {
+        const institutionMicroorganismIds = selectedInstitution.microorganisms.map(micro => micro.id);
+        microorganisms = microorganisms.filter(micro => institutionMicroorganismIds.includes(micro.id));
+      }
+    }
+
+    return microorganisms;
+  }
+
   hasActiveFilters(): boolean {
     return !!(this.selectedInstitution || this.selectedAnalysis || 
               this.selectedMicroorganism || this.selectedInstrument || 
@@ -405,13 +636,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.updateResults();
   }
 
-  // Language switching
   toggleLanguage(): void {
     this.currentLanguage = this.currentLanguage === 'en' ? 'sr' : 'en';
     this.translationService.setLanguage(this.currentLanguage);
   }
-
-  // Modal functionality
   showInstitutionDetails(institution: Institution): void {
     this.selectedItem = institution;
     this.modalTitle = institution.name;
@@ -433,6 +661,27 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.showModal = true;
   }
 
+  showKeywordDetails(keyword: Keyword): void {
+    this.selectedItem = keyword;
+    this.modalTitle = keyword.name;
+    this.modalType = 'keyword';
+    this.showModal = true;
+  }
+
+  showMicroorganismDetails(microorganism: Microorganism): void {
+    this.selectedItem = microorganism;
+    this.modalTitle = microorganism.name;
+    this.modalType = 'microorganism';
+    this.showModal = true;
+  }
+
+  showInstrumentDetails(instrument: Instrument): void {
+    this.selectedItem = instrument;
+    this.modalTitle = instrument.name;
+    this.modalType = 'instrument';
+    this.showModal = true;
+  }
+
   closeModal(): void {
     this.showModal = false;
     this.selectedItem = null;
@@ -440,7 +689,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.modalType = '';
   }
 
-  // Display name helpers
   getDisplayName(item: any): string {
     if (item.name) return item.name;
     if (item.firstName && item.lastName) return `${item.firstName} ${item.lastName}`;
@@ -459,7 +707,31 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return researchers?.map(res => `${res.firstName} ${res.lastName}`).join(', ') || '';
   }
 
-  // Utility methods
+  getMicroorganismNames(microorganisms: Microorganism[] | undefined): string {
+    return microorganisms?.map(micro => micro.name).join(', ') || '';
+  }
+
+  getMicroorganismInstitutions(microorganism: Microorganism): string {
+    const institutions = this.allInstitutions.filter(inst => 
+      inst.microorganisms?.some(micro => micro.id === microorganism.id)
+    );
+    return institutions.map(inst => inst.name).join(', ') || '';
+  }
+
+  getMicroorganismAnalyses(microorganism: Microorganism): string {
+    const analyses = this.allAnalyses.filter(analysis => 
+      analysis.microorganisms?.some(micro => micro.id === microorganism.id)
+    );
+    return analyses.map(analysis => analysis.name).join(', ') || '';
+  }
+
+  getInstrumentInstitutions(instrument: Instrument): string {
+    const institutions = this.allInstitutions.filter(inst => 
+      inst.instruments?.some(instInstrument => instInstrument.id === instrument.id)
+    );
+    return institutions.map(inst => inst.name).join(', ') || '';
+  }
+
   getGreeting(): string {
     const hour = this.currentDate.getHours();
     if (hour < 12) return 'Good Morning';
@@ -472,7 +744,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.router.navigate(['/identity/login']);
   }
 
-  // Theme methods
   private loadThemePreference(): void {
     if (isPlatformBrowser(this.platformId)) {
       try {

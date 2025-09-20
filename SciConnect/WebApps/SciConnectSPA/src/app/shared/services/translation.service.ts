@@ -113,6 +113,46 @@ export class TranslationService {
     'PERFORMED_AT': {
       en: 'Performed at',
       sr: 'Izvršava se u'
+    },
+    'MICROORGANISMS': {
+      en: 'Microorganisms',
+      sr: 'Mikroorganizmi'
+    },
+    'TYPE': {
+      en: 'Type',
+      sr: 'Tip'
+    },
+    'TITLE': {
+      en: 'Title',
+      sr: 'Titula'
+    },
+    'NO_RESEARCHERS': {
+      en: 'No Researchers',
+      sr: 'Nema Istraživača'
+    },
+    'NO_RESEARCHERS_DESCRIPTION': {
+      en: 'No researchers are currently associated with this keyword.',
+      sr: 'Trenutno nema istraživača povezanih sa ovom ključnom rečju.'
+    },
+    'MANUFACTURER': {
+      en: 'Manufacturer',
+      sr: 'Proizvođač'
+    },
+    'MODEL': {
+      en: 'Model',
+      sr: 'Model'
+    },
+    'USED_BY': {
+      en: 'Used by',
+      sr: 'Koristi se u'
+    },
+    'USED_IN': {
+      en: 'Used in',
+      sr: 'Koristi se u'
+    },
+    'AVAILABLE_AT': {
+      en: 'Available at',
+      sr: 'Dostupno u'
     }
   };
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Observable, BehaviorSubject, forkJoin, of } from 'rxjs';
+import { map, tap, switchMap, catchError } from 'rxjs/operators';
 import { 
   Institution, 
   Analysis, 
@@ -56,7 +56,6 @@ export class DataService {
     });
   }
 
-  // Institutions
   getAllInstitutions(): Observable<Institution[]> {
     return this.http.get<InstitutionViewModel[]>(`${this.baseUrl}/institutions`, { headers: this.getHeaders() })
       .pipe(map(institutions => institutions as Institution[]));
@@ -87,10 +86,38 @@ export class DataService {
     return this.http.get<Institution>(`${this.baseUrl}/institution/with-microorganisms/${institutionName}`, { headers: this.getHeaders() });
   }
 
-  // Analyses
   getAllAnalyses(): Observable<Analysis[]> {
     return this.http.get<AnalysisViewModel[]>(`${this.baseUrl}/analyses`, { headers: this.getHeaders() })
       .pipe(map(analyses => analyses as Analysis[]));
+  }
+
+  getAllAnalysesWithRelatedData(): Observable<Analysis[]> {
+    return this.getAllAnalyses().pipe(
+      switchMap(analyses => {
+        if (analyses.length === 0) {
+          return of([]);
+        }
+        
+        const analysisRequests = analyses.map(analysis => 
+          forkJoin({
+            institutions: this.getAnalysisWithInstitutions(analysis.name).pipe(
+              catchError(() => of({ institutions: [] }))
+            ),
+            microorganisms: this.getAnalysisWithMicroorganisms(analysis.name).pipe(
+              catchError(() => of({ microorganisms: [] }))
+            )
+          }).pipe(
+            map(relatedData => ({
+              ...analysis,
+              institutions: relatedData.institutions.institutions || [],
+              microorganisms: relatedData.microorganisms.microorganisms || []
+            }))
+          )
+        );
+        
+        return forkJoin(analysisRequests);
+      })
+    );
   }
 
   getAnalysisByName(name: string): Observable<Analysis[]> {
@@ -106,7 +133,6 @@ export class DataService {
     return this.http.get<Analysis>(`${this.baseUrl}/analysis/with-microorganisms/${analysisName}`, { headers: this.getHeaders() });
   }
 
-  // Instruments
   getAllInstruments(): Observable<Instrument[]> {
     return this.http.get<InstrumentViewModel[]>(`${this.baseUrl}/instruments`, { headers: this.getHeaders() })
       .pipe(map(instruments => instruments as Instrument[]));
@@ -121,10 +147,31 @@ export class DataService {
     return this.http.get<Institution[]>(`${this.baseUrl}/instrument/with-institutions/${instrumentName}`, { headers: this.getHeaders() });
   }
 
-  // Keywords
   getAllKeywords(): Observable<Keyword[]> {
     return this.http.get<KeywordViewModel[]>(`${this.baseUrl}/keywords`, { headers: this.getHeaders() })
       .pipe(map(keywords => keywords as Keyword[]));
+  }
+
+  getAllKeywordsWithRelatedData(): Observable<Keyword[]> {
+    return this.getAllKeywords().pipe(
+      switchMap(keywords => {
+        if (keywords.length === 0) {
+          return of([]);
+        }
+        
+        const keywordRequests = keywords.map(keyword => 
+          this.getEmployeesByKeyword(keyword.name).pipe(
+            catchError(() => of([])),
+            map(researchers => ({
+              ...keyword,
+              researchers: researchers || []
+            }))
+          )
+        );
+        
+        return forkJoin(keywordRequests);
+      })
+    );
   }
 
   getKeywordByName(name: string): Observable<Keyword[]> {
@@ -136,10 +183,38 @@ export class DataService {
     return this.http.get<Employee[]>(`${this.baseUrl}/keywords/${keywordName}/employees`, { headers: this.getHeaders() });
   }
 
-  // Employees
   getAllEmployees(): Observable<Employee[]> {
     return this.http.get<EmployeeViewModel[]>(`${this.baseUrl}/employees`, { headers: this.getHeaders() })
       .pipe(map(employees => employees as Employee[]));
+  }
+
+  getAllEmployeesWithRelatedData(): Observable<Employee[]> {
+    return this.getAllEmployees().pipe(
+      switchMap(employees => {
+        if (employees.length === 0) {
+          return of([]);
+        }
+        
+        const employeeRequests = employees.map(employee => 
+          forkJoin({
+            institution: this.getEmployeeWithInstitution(employee.firstName, employee.lastName).pipe(
+              catchError(() => of({ institution: null }))
+            ),
+            keywords: this.getEmployeeWithKeywords(employee.firstName, employee.lastName).pipe(
+              catchError(() => of({ keywords: [] }))
+            )
+          }).pipe(
+            map(relatedData => ({
+              ...employee,
+              institution: relatedData.institution.institution || employee.institution,
+              keywords: relatedData.keywords.keywords || employee.keywords || []
+            }))
+          )
+        );
+        
+        return forkJoin(employeeRequests);
+      })
+    );
   }
 
   getEmployeeByName(firstName: string, lastName: string): Observable<Employee[]> {
@@ -155,7 +230,6 @@ export class DataService {
     return this.http.get<Employee>(`${this.baseUrl}/employee/with-keywords/${firstName}/${lastName}`, { headers: this.getHeaders() });
   }
 
-  // Microorganisms
   getAllMicroorganisms(): Observable<Microorganism[]> {
     return this.http.get<MicroorganismViewModel[]>(`${this.baseUrl}/microorganisms`, { headers: this.getHeaders() })
       .pipe(map(microorganisms => microorganisms as Microorganism[]));
@@ -174,7 +248,6 @@ export class DataService {
     return this.http.get<Microorganism>(`${this.baseUrl}/microorganism/with-institution/${microorganismName}`, { headers: this.getHeaders() });
   }
 
-  // Filter state management
   updateFilterState(filterState: Partial<FilterState>): void {
     const currentState = this.filterStateSubject.value;
     const newState = { ...currentState, ...filterState };
@@ -185,12 +258,10 @@ export class DataService {
     return this.filterStateSubject.value;
   }
 
-  // Helper method to get analyses for a selected institution
   getAnalysesForInstitution(institutionName: string): Observable<Analysis[]> {
     return this.getInstitutionWithAnalyses(institutionName)
       .pipe(
         map(institution => {
-          // This would need to be adjusted based on the actual response structure
           return institution['analyses'] || [];
         })
       );
