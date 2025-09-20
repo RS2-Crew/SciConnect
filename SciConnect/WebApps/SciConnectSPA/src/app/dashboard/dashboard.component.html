@@ -81,7 +81,7 @@
                         [(ngModel)]="selectedInstitution"
                         (change)="onInstitutionChange()">
                   <option value="">{{ 'SELECT_INSTITUTION' | translate }}</option>
-                  <option *ngFor="let inst of filteredInstitutions" 
+                  <option *ngFor="let inst of allInstitutions" 
                           [value]="inst.id">{{ inst.name }}</option>
                 </select>
                 <div class="selected-item-details" *ngIf="selectedInstitutionDetails">
@@ -114,7 +114,7 @@
                         [(ngModel)]="selectedAnalysis"
                         (change)="onAnalysisChange()">
                   <option value="">{{ 'SELECT_ANALYSIS' | translate }}</option>
-                  <option *ngFor="let analysis of filteredAnalyses" 
+                  <option *ngFor="let analysis of allAnalyses" 
                           [value]="analysis.id">{{ analysis.name }}</option>
                 </select>
                 <div class="selected-item-details" *ngIf="selectedAnalysisDetails">
@@ -143,7 +143,7 @@
                         [(ngModel)]="selectedMicroorganism"
                         (change)="onMicroorganismChange()">
                   <option value="">{{ 'SELECT_MICROORGANISM' | translate }}</option>
-                  <option *ngFor="let micro of filteredMicroorganisms" 
+                  <option *ngFor="let micro of allMicroorganisms" 
                           [value]="micro.id">{{ micro.name }}</option>
                 </select>
               </div>
@@ -166,7 +166,7 @@
                         [(ngModel)]="selectedInstrument"
                         (change)="onInstrumentChange()">
                   <option value="">{{ 'SELECT_INSTRUMENT' | translate }}</option>
-                  <option *ngFor="let instrument of filteredInstruments" 
+                  <option *ngFor="let instrument of allInstruments" 
                           [value]="instrument.id">{{ instrument.name }}</option>
                 </select>
               </div>
@@ -325,7 +325,7 @@
                         [(ngModel)]="selectedResearcher"
                         (change)="onResearcherChange()">
                   <option value="">{{ 'SELECT_RESEARCHER' | translate }}</option>
-                  <option *ngFor="let researcher of filteredResearchers" 
+                  <option *ngFor="let researcher of allResearchers" 
                           [value]="researcher.id">{{ researcher.firstName }} {{ researcher.lastName }}</option>
                 </select>
                 <div class="selected-item-details" *ngIf="selectedResearcherDetails">
@@ -357,7 +357,7 @@
                         [(ngModel)]="selectedKeyword"
                         (change)="onKeywordChange()">
                   <option value="">{{ 'SELECT_KEYWORD' | translate }}</option>
-                  <option *ngFor="let keyword of filteredKeywords" 
+                  <option *ngFor="let keyword of allKeywords" 
                           [value]="keyword.id">{{ keyword.name }}</option>
                 </select>
               </div>
@@ -388,7 +388,7 @@
                 </div>
                 <div class="card-content">
                   <p *ngIf="researcher.institution?.name">
-                    <i class="fas fa-hospital"></i> {{ 'INSTITUTION' | translate }}: {{ researcher.institution.name }}
+                    <i class="fas fa-hospital"></i> {{ 'INSTITUTION' | translate }}: {{ researcher.institution?.name }}
                   </p>
                   <p *ngIf="researcher.title">
                     <i class="fas fa-user-tie"></i> {{ 'TITLE' | translate }}: {{ researcher.title }}
