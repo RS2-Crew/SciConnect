@@ -452,11 +452,18 @@ export class DashboardComponent implements OnInit, OnDestroy {
           }
         }
 
-        if (selectedResearcher.keywords) {
+        if (selectedResearcher.keywords && selectedResearcher.keywords.length > 0) {
+          // Only show keywords that are directly associated with this specific researcher
           const researcherKeywords = this.allKeywords.filter(kw => 
             selectedResearcher.keywords?.some(resKeyword => resKeyword.id === kw.id)
           );
-          this.filteredResults.keywords = [...new Set([...this.filteredResults.keywords, ...researcherKeywords])];
+          console.log(`Researcher ${selectedResearcher.firstName} ${selectedResearcher.lastName} keywords:`, selectedResearcher.keywords);
+          console.log(`Filtered keywords for display:`, researcherKeywords);
+          this.filteredResults.keywords = researcherKeywords;
+        } else {
+          // If researcher has no keywords, show no keywords
+          console.log(`Researcher ${selectedResearcher.firstName} ${selectedResearcher.lastName} has no keywords`);
+          this.filteredResults.keywords = [];
         }
       }
     }
@@ -691,9 +698,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     if (this.selectedResearcher) {
       const selectedResearcher = this.allResearchers.find(res => res.id === this.selectedResearcher);
-      if (selectedResearcher?.keywords) {
+      if (selectedResearcher?.keywords && selectedResearcher.keywords.length > 0) {
+        // Only show keywords that are directly associated with this specific researcher
         const researcherKeywordIds = selectedResearcher.keywords.map(kw => kw.id);
         keywords = keywords.filter(kw => researcherKeywordIds.includes(kw.id));
+      } else {
+        // If researcher has no keywords, return empty array
+        keywords = [];
       }
     }
 

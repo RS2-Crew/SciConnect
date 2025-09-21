@@ -51,6 +51,12 @@ namespace DB.Infrastructure.Persistance
                 institutions[0].AddKeyword(keywords[2]);
                 institutions[1].AddKeyword(keywords[2]);
                 institutions[2].AddKeyword(keywords[0]);
+                
+                // Ensure bidirectional relationships for institution-keyword
+                keywords[1].AddInstitution(institutions[0]);
+                keywords[2].AddInstitution(institutions[0]);
+                keywords[2].AddInstitution(institutions[1]);
+                keywords[0].AddInstitution(institutions[2]);
 
                 institutions[0].AddEmployee(employees[0]);
                 institutions[1].AddEmployee(employees[1]);
@@ -155,12 +161,19 @@ namespace DB.Infrastructure.Persistance
             var e1 = new Employee("John", "Doe", institutions[0]);
             e1.AddKeyword(keywords[0]);
             e1.AddKeyword(keywords[2]);
+            // Ensure bidirectional relationship
+            keywords[0].AddEmployee(e1);
+            keywords[2].AddEmployee(e1);
 
             var e2 = new Employee("Jane", "Smith", institutions[1]);
             e2.AddKeyword(keywords[1]);
+            // Ensure bidirectional relationship
+            keywords[1].AddEmployee(e2);
 
             var e3 = new Employee("Alice", "Johnson", institutions[2]);
             e3.AddKeyword(keywords[2]);
+            // Ensure bidirectional relationship
+            keywords[2].AddEmployee(e3);
 
             return new List<Employee> { e1, e2, e3 };
         }
