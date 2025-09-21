@@ -350,6 +350,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (this.selectedInstitution) {
       const selectedInstitution = this.allInstitutions.find(inst => inst.id === this.selectedInstitution);
       if (selectedInstitution) {
+        // Ensure the selected institution is included in results
+        if (!this.filteredResults.institutions.some(inst => inst.id === this.selectedInstitution)) {
+          this.filteredResults.institutions = [selectedInstitution, ...this.filteredResults.institutions];
+        }
+        
         const institutionAnalyses = this.allAnalyses.filter(analysis => 
           analysis.institutions?.some(inst => inst.id === this.selectedInstitution)
         );
@@ -379,6 +384,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (this.selectedAnalysis) {
       const selectedAnalysis = this.allAnalyses.find(anal => anal.id === this.selectedAnalysis);
       if (selectedAnalysis) {
+        // Ensure the selected analysis is included in results
+        if (!this.filteredResults.analyses.some(anal => anal.id === this.selectedAnalysis)) {
+          this.filteredResults.analyses = [selectedAnalysis, ...this.filteredResults.analyses];
+        }
+        
         if (selectedAnalysis.institutions) {
           const analysisInstitutions = this.allInstitutions.filter(inst => 
             selectedAnalysis.institutions?.some(analysisInst => analysisInst.id === inst.id)
@@ -398,6 +408,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (this.selectedMicroorganism) {
       const selectedMicroorganism = this.allMicroorganisms.find(micro => micro.id === this.selectedMicroorganism);
       if (selectedMicroorganism) {
+        // Ensure the selected microorganism is included in results
+        if (!this.filteredResults.microorganisms.some(micro => micro.id === this.selectedMicroorganism)) {
+          this.filteredResults.microorganisms = [selectedMicroorganism, ...this.filteredResults.microorganisms];
+        }
+        
         const microorganismAnalyses = this.allAnalyses.filter(analysis => 
           analysis.microorganisms?.some(micro => micro.id === this.selectedMicroorganism)
         );
@@ -408,6 +423,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (this.selectedInstrument) {
       const selectedInstrument = this.allInstruments.find(inst => inst.id === this.selectedInstrument);
       if (selectedInstrument) {
+        // Ensure the selected instrument is included in results
+        if (!this.filteredResults.instruments.some(inst => inst.id === this.selectedInstrument)) {
+          this.filteredResults.instruments = [selectedInstrument, ...this.filteredResults.instruments];
+        }
+        
         const instrumentInstitutions = this.allInstitutions.filter(inst => 
           inst.instruments?.some(instrument => instrument.id === this.selectedInstrument)
         );
@@ -418,6 +438,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (this.selectedResearcher) {
       const selectedResearcher = this.allResearchers.find(res => res.id === this.selectedResearcher);
       if (selectedResearcher) {
+        // Ensure the selected researcher is included in results
+        if (!this.filteredResults.researchers.some(res => res.id === this.selectedResearcher)) {
+          this.filteredResults.researchers = [selectedResearcher, ...this.filteredResults.researchers];
+        }
+        
         if (selectedResearcher.institution) {
           const researcherInstitution = this.allInstitutions.find(inst => 
             inst.id === selectedResearcher.institution?.id
@@ -439,6 +464,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (this.selectedKeyword) {
       const selectedKeyword = this.allKeywords.find(kw => kw.id === this.selectedKeyword);
       if (selectedKeyword) {
+        // Ensure the selected keyword is included in results
+        if (!this.filteredResults.keywords.some(kw => kw.id === this.selectedKeyword)) {
+          this.filteredResults.keywords = [selectedKeyword, ...this.filteredResults.keywords];
+        }
+        
         const keywordResearchers = this.allResearchers.filter(researcher => 
           researcher.keywords?.some(kw => kw.id === this.selectedKeyword)
         );
