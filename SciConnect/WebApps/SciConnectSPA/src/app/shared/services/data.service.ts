@@ -61,6 +61,59 @@ export class DataService {
       .pipe(map(institutions => institutions as Institution[]));
   }
 
+  getAllInstitutionsWithRelatedData(): Observable<Institution[]> {
+    return this.getAllInstitutions().pipe(
+      switchMap(institutions => {
+        if (institutions.length === 0) {
+          return of([]);
+        }
+        
+        const institutionRequests = institutions.map(institution => 
+          forkJoin({
+            withAnalyses: this.getInstitutionWithAnalyses(institution.name).pipe(
+              tap(data => {
+                if (institution.name.includes('Tech')) {
+                  console.log(`API response for ${institution.name} analyses:`, data);
+                }
+              }),
+              catchError(() => of(institution))
+            ),
+            withInstruments: this.getInstitutionWithInstruments(institution.name).pipe(
+              tap(data => {
+                if (institution.name.includes('Tech')) {
+                  console.log(`API response for ${institution.name} instruments:`, data);
+                }
+              }),
+              catchError(() => of(institution))
+            ),
+            withEmployees: this.getInstitutionWithEmployees(institution.name).pipe(
+              catchError(() => of(institution))
+            ),
+            withKeywords: this.getInstitutionWithKeywords(institution.name).pipe(
+              catchError(() => of(institution))
+            ),
+            withMicroorganisms: this.getInstitutionWithMicroorganisms(institution.name).pipe(
+              catchError(() => of(institution))
+            )
+          }).pipe(
+            map(relatedData => {
+              return {
+                ...institution,
+                analyses: relatedData.withAnalyses.analyses || [],
+                instruments: relatedData.withInstruments.instruments || [],
+                employees: relatedData.withEmployees.employees || [],
+                keywords: relatedData.withKeywords.keywords || [],
+                microorganisms: relatedData.withMicroorganisms.microorganisms || []
+              };
+            })
+          )
+        );
+        
+        return forkJoin(institutionRequests);
+      })
+    );
+  }
+
   getInstitutionByName(name: string): Observable<Institution[]> {
     return this.http.get<InstitutionViewModel[]>(`${this.baseUrl}/institutions/${name}`, { headers: this.getHeaders() })
       .pipe(map(institutions => institutions as Institution[]));
@@ -136,6 +189,28 @@ export class DataService {
   getAllInstruments(): Observable<Instrument[]> {
     return this.http.get<InstrumentViewModel[]>(`${this.baseUrl}/instruments`, { headers: this.getHeaders() })
       .pipe(map(instruments => instruments as Instrument[]));
+  }
+
+  getAllInstrumentsWithRelatedData(): Observable<Instrument[]> {
+    return this.getAllInstruments().pipe(
+      switchMap(instruments => {
+        if (instruments.length === 0) {
+          return of([]);
+        }
+        
+        const instrumentRequests = instruments.map(instrument => 
+          this.getInstitutionsByInstrument(instrument.name).pipe(
+            catchError(() => of([])),
+            map(institutions => ({
+              ...instrument,
+              institutions: institutions || []
+            }))
+          )
+        );
+        
+        return forkJoin(instrumentRequests);
+      })
+    );
   }
 
   getInstrumentByName(name: string): Observable<Instrument[]> {
@@ -233,6 +308,35 @@ export class DataService {
   getAllMicroorganisms(): Observable<Microorganism[]> {
     return this.http.get<MicroorganismViewModel[]>(`${this.baseUrl}/microorganisms`, { headers: this.getHeaders() })
       .pipe(map(microorganisms => microorganisms as Microorganism[]));
+  }
+
+  getAllMicroorganismsWithRelatedData(): Observable<Microorganism[]> {
+    return this.getAllMicroorganisms().pipe(
+      switchMap(microorganisms => {
+        if (microorganisms.length === 0) {
+          return of([]);
+        }
+        
+        const microorganismRequests = microorganisms.map(microorganism => 
+          forkJoin({
+            withAnalysis: this.getMicroorganismWithAnalysis(microorganism.name).pipe(
+              catchError(() => of(microorganism))
+            ),
+            withInstitution: this.getMicroorganismWithInstitution(microorganism.name).pipe(
+              catchError(() => of(microorganism))
+            )
+          }).pipe(
+            map(relatedData => ({
+              ...microorganism,
+              analysis: relatedData.withAnalysis.analysis || [],
+              institution: relatedData.withInstitution.institution || undefined
+            }))
+          )
+        );
+        
+        return forkJoin(microorganismRequests);
+      })
+    );
   }
 
   getMicroorganismByName(name: string): Observable<Microorganism[]> {

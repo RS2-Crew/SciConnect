@@ -30,6 +30,7 @@ export interface Instrument {
   description?: string;
   manufacturer?: string;
   model?: string;
+  institutions?: Institution[];
 }
 
 export interface Keyword {
@@ -55,6 +56,8 @@ export interface Microorganism {
   name: string;
   description?: string;
   type?: string;
+  analysis?: Analysis[];
+  institution?: Institution;
 }
 
 // View Models from backend

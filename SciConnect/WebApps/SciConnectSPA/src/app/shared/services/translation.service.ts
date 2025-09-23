@@ -94,6 +94,10 @@ export class TranslationService {
       en: 'Search Results',
       sr: 'Rezultati Pretrage'
     },
+    'NO_RESULTS_FOUND': {
+      en: 'No results found',
+      sr: 'Nema rezultata'
+    },
     'INSTITUTIONS': {
       en: 'Institutions',
       sr: 'Ustanove'

@@ -44,12 +44,14 @@
         
         <div class="search-suggestions" *ngIf="showSearchSuggestions && filteredSearchResults.length > 0">
           <div class="suggestion-group" *ngFor="let group of filteredSearchResults">
-            <div class="suggestion-category">{{ group.category | translate }}</div>
+            <div class="suggestion-category" *ngIf="group.items.length > 0">{{ group.category | translate }}</div>
             <div class="suggestion-item" 
+                 [class.selected-item]="isItemSelected(item, group.type)"
                  *ngFor="let item of group.items" 
                  (click)="onSearchSuggestionClick(item, group.type)">
               <i [class]="getCategoryIcon(group.type)"></i>
               <span>{{ getDisplayName(item) }}</span>
+              <i class="fas fa-check selected-indicator" *ngIf="isItemSelected(item, group.type)"></i>
             </div>
           </div>
         </div>
