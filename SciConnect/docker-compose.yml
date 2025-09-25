@@ -7,16 +7,21 @@ services:
 
   mssql:
     image: mcr.microsoft.com/mssql/server:2017-latest
-   
-  rabbitmq: 
-    image: rabbitmq:4-management-alpine  
-   
+
+  rabbitmq:
+    image: rabbitmq:4-management-alpine
+
   db.api:
     image: ${DOCKER_REGISTRY-}dbapi
     build:
       context: .
       dockerfile: Services/DB/DB.API/DB.API/Dockerfile
 
+  sciconnectspa:
+    image: ${DOCKER_REGISTRY-}sciconnectspa
+    build:
+      context: ./WebApps/SciConnectSPA
+      dockerfile: Dockerfile
+
 volumes:
-    mssql_data:
- 
+  mssql_data:
