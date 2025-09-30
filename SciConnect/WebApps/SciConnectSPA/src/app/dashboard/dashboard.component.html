@@ -1,504 +1,756 @@
 <div class="dashboard-container" [class.dark-theme]="isDarkTheme">
   <div class="floating-theme-toggle">
-    <button class="theme-btn" (click)="toggleTheme()" [attr.aria-label]="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'">
-      <i class="fas" [class.fa-sun]="isDarkTheme" [class.fa-moon]="!isDarkTheme"></i>
+    <button
+      class="theme-btn"
+      (click)="toggleTheme()"
+      [attr.aria-label]="
+        isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'
+      "
+    >
+      <i
+        class="fas"
+        [class.fa-sun]="isDarkTheme"
+        [class.fa-moon]="!isDarkTheme"
+      ></i>
     </button>
   </div>
 
   <div class="dashboard-content">
     <div class="content-branding">
-      <img [src]="getLogoPath()" alt="SciConnect Logo" class="content-logo">
+      <img [src]="getLogoPath()" alt="SciConnect Logo" class="content-logo" />
       <h1 class="content-title">SciConnect</h1>
     </div>
 
     <div class="master-search-section">
-
-    <div class="tab-and-search-row">
-      <div class="tab-navigation">
-        <button class="tab-button" 
-                [class.active]="activeTab === 'analyses'"
-                (click)="setActiveTab('analyses')">
-          <i class="fas fa-flask"></i>
-          {{ 'ANALYSES_INSTITUTIONS' | translate }}
-        </button>
-        <button class="tab-button" 
-                [class.active]="activeTab === 'researchers'"
-                (click)="setActiveTab('researchers')">
-          <i class="fas fa-user-md"></i>
-          {{ 'RESEARCHERS_KEYWORDS' | translate }}
-        </button>
-      </div>
-      
-      <div class="search-container">
-        <div class="search-input-wrapper">
-          <i class="fas fa-search search-icon"></i>
-          <input 
-            type="text" 
-            class="master-search-input" 
-            [placeholder]="'SEARCH_PLACEHOLDER' | translate"
-            [(ngModel)]="masterSearchTerm"
-            (input)="onMasterSearchInput($event)"
-            (focus)="showSearchSuggestions = true"
-            (blur)="onSearchBlur()">
+      <div class="tab-and-search-row">
+        <div class="tab-navigation">
+          <button
+            class="tab-button"
+            [class.active]="activeTab === 'analyses'"
+            (click)="setActiveTab('analyses')"
+          >
+            <i class="fas fa-flask"></i>
+            {{ "ANALYSES_INSTITUTIONS" | translate }}
+          </button>
+          <button
+            class="tab-button"
+            [class.active]="activeTab === 'researchers'"
+            (click)="setActiveTab('researchers')"
+          >
+            <i class="fas fa-user-md"></i>
+            {{ "RESEARCHERS_KEYWORDS" | translate }}
+          </button>
         </div>
-        
-        <div class="search-suggestions" *ngIf="showSearchSuggestions && filteredSearchResults.length > 0">
-          <div class="suggestion-group" *ngFor="let group of filteredSearchResults">
-            <div class="suggestion-category" *ngIf="group.items.length > 0">{{ group.category | translate }}</div>
-            <div class="suggestion-item" 
-                 [class.selected-item]="isItemSelected(item, group.type)"
-                 *ngFor="let item of group.items" 
-                 (click)="onSearchSuggestionClick(item, group.type)">
-              <i [class]="getCategoryIcon(group.type)"></i>
-              <span>{{ getDisplayName(item) }}</span>
-              <i class="fas fa-check selected-indicator" *ngIf="isItemSelected(item, group.type)"></i>
+
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              class="master-search-input"
+              [placeholder]="'SEARCH_PLACEHOLDER' | translate"
+              [(ngModel)]="masterSearchTerm"
+              (input)="onMasterSearchInput($event)"
+              (focus)="showSearchSuggestions = true"
+              (blur)="onSearchBlur()"
+            />
+          </div>
+
+          <div
+            class="search-suggestions"
+            *ngIf="showSearchSuggestions && filteredSearchResults.length > 0"
+          >
+            <div
+              class="suggestion-group"
+              *ngFor="let group of filteredSearchResults"
+            >
+              <div class="suggestion-category" *ngIf="group.items.length > 0">
+                {{ group.category | translate }}
+              </div>
+              <div
+                class="suggestion-item"
+                [class.selected-item]="isItemSelected(item, group.type)"
+                *ngFor="let item of group.items"
+                (click)="onSearchSuggestionClick(item, group.type)"
+              >
+                <i [class]="getCategoryIcon(group.type)"></i>
+                <span>{{ getDisplayName(item) }}</span>
+                <i
+                  class="fas fa-check selected-indicator"
+                  *ngIf="isItemSelected(item, group.type)"
+                ></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Tab Content -->
-    <div class="tab-content">
-      <!-- Analyses & Institutions Tab -->
-      <div class="tab-panel" *ngIf="activeTab === 'analyses'">
-        <div class="guided-search-section">
-          <h3>{{ 'GUIDED_SEARCH' | translate }}</h3>
-          
-          <div class="search-grid">
-            <!-- Institution Filter -->
-            <div class="filter-card" [class.pinned]="pinnedCategory === 'institution'">
-              <div class="filter-header">
-                <i class="fas fa-hospital"></i>
-                <span>{{ 'INSTITUTION' | translate }}</span>
-                <button class="btn-pin" 
-                        [class.pinned]="pinnedCategory === 'institution'"
-                        (click)="pinCategory('institution')"
-                        [title]="'PIN_CATEGORY' | translate">
-                  <i class="fas fa-thumbtack"></i>
-                </button>
-              </div>
-              <div class="filter-content">
-                <select class="filter-select" 
-                        [(ngModel)]="selectedInstitution"
-                        (change)="onInstitutionChange()">
-                  <option value="">{{ 'SELECT_INSTITUTION' | translate }}</option>
-                  <option *ngFor="let inst of allInstitutions" 
-                          [value]="inst.id">{{ inst.name }}</option>
-                </select>
-                <div class="selected-item-details" *ngIf="selectedInstitutionDetails">
-                  <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>{{ selectedInstitutionDetails.address }}, {{ selectedInstitutionDetails.city }}</span>
-                  </div>
-                  <div class="detail-item" *ngIf="selectedInstitutionDetails.website">
-                    <i class="fas fa-globe"></i>
-                    <a [href]="selectedInstitutionDetails.website" target="_blank">{{ selectedInstitutionDetails.website }}</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Analyses & Institutions Tab -->
+        <div class="tab-panel" *ngIf="activeTab === 'analyses'">
+          <div class="guided-search-section">
+            <h3>{{ "GUIDED_SEARCH" | translate }}</h3>
 
-            <!-- Analysis Filter -->
-            <div class="filter-card" [class.pinned]="pinnedCategory === 'analysis'">
-              <div class="filter-header">
-                <i class="fas fa-flask"></i>
-                <span>{{ 'ANALYSIS' | translate }}</span>
-                <button class="btn-pin" 
-                        [class.pinned]="pinnedCategory === 'analysis'"
-                        (click)="pinCategory('analysis')"
-                        [title]="'PIN_CATEGORY' | translate">
-                  <i class="fas fa-thumbtack"></i>
-                </button>
-              </div>
-              <div class="filter-content">
-                <select class="filter-select" 
-                        [(ngModel)]="selectedAnalysis"
-                        (change)="onAnalysisChange()">
-                  <option value="">{{ 'SELECT_ANALYSIS' | translate }}</option>
-                  <option *ngFor="let analysis of allAnalyses" 
-                          [value]="analysis.id">{{ analysis.name }}</option>
-                </select>
-                <div class="selected-item-details" *ngIf="selectedAnalysisDetails">
-                  <div class="detail-item" *ngIf="selectedAnalysisDetails.description">
-                    <i class="fas fa-info-circle"></i>
-                    <span>{{ selectedAnalysisDetails.description }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Microorganism Filter -->
-            <div class="filter-card" [class.pinned]="pinnedCategory === 'microorganism'">
-              <div class="filter-header">
-                <i class="fas fa-bug"></i>
-                <span>{{ 'MICROORGANISM' | translate }}</span>
-                <button class="btn-pin" 
-                        [class.pinned]="pinnedCategory === 'microorganism'"
-                        (click)="pinCategory('microorganism')"
-                        [title]="'PIN_CATEGORY' | translate">
-                  <i class="fas fa-thumbtack"></i>
-                </button>
-              </div>
-              <div class="filter-content">
-                <select class="filter-select" 
-                        [(ngModel)]="selectedMicroorganism"
-                        (change)="onMicroorganismChange()">
-                  <option value="">{{ 'SELECT_MICROORGANISM' | translate }}</option>
-                  <option *ngFor="let micro of allMicroorganisms" 
-                          [value]="micro.id">{{ micro.name }}</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Instrument Filter -->
-            <div class="filter-card" [class.pinned]="pinnedCategory === 'instrument'">
-              <div class="filter-header">
-                <i class="fas fa-microscope"></i>
-                <span>{{ 'INSTRUMENT' | translate }}</span>
-                <button class="btn-pin" 
-                        [class.pinned]="pinnedCategory === 'instrument'"
-                        (click)="pinCategory('instrument')"
-                        [title]="'PIN_CATEGORY' | translate">
-                  <i class="fas fa-thumbtack"></i>
-                </button>
-              </div>
-              <div class="filter-content">
-                <select class="filter-select" 
-                        [(ngModel)]="selectedInstrument"
-                        (change)="onInstrumentChange()">
-                  <option value="">{{ 'SELECT_INSTRUMENT' | translate }}</option>
-                  <option *ngFor="let instrument of allInstruments" 
-                          [value]="instrument.id">{{ instrument.name }}</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- Clear Filters Button -->
-          <div class="filter-actions">
-            <button class="btn-clear-filters" (click)="clearAllFilters()">
-              <i class="fas fa-times"></i>
-              {{ 'CLEAR_FILTERS' | translate }}
-            </button>
-          </div>
-        </div>
-
-        <div class="results-section" *ngIf="hasActiveFilters()">
-          <h3>{{ 'SEARCH_RESULTS' | translate }}</h3>
-          
-          <div class="results-group" *ngIf="filteredResults.institutions.length > 0">
-            <h4>{{ 'INSTITUTIONS' | translate }} ({{ filteredResults.institutions.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card institution-card" 
-                   *ngFor="let institution of filteredResults.institutions"
-                   (click)="showInstitutionDetails(institution)">
-                <div class="card-header">
+            <div class="search-grid">
+              <!-- Institution Filter -->
+              <div class="filter-card">
+                <div class="filter-header">
                   <i class="fas fa-hospital"></i>
-                  <h5>{{ institution.name }}</h5>
+                  <span>{{ "INSTITUTION" | translate }}</span>
                 </div>
-                <div class="card-content">
-                  <p><i class="fas fa-map-marker-alt"></i> {{ institution.address }}, {{ institution.city }}</p>
-                  <p *ngIf="institution.phone"><i class="fas fa-phone"></i> {{ institution.phone }}</p>
-                  <p *ngIf="institution.email"><i class="fas fa-envelope"></i> {{ institution.email }}</p>
-                </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showInstitutionDetails(institution); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
+                <div class="filter-content">
+                  <select
+                    class="filter-select"
+                    [(ngModel)]="selectedInstitution"
+                    (change)="onInstitutionChange()"
+                  >
+                    <option value="">
+                      {{ "SELECT_INSTITUTION" | translate }}
+                    </option>
+                    <option
+                      *ngFor="let inst of allInstitutions"
+                      [value]="inst.id"
+                    >
+                      {{ inst.name }}
+                    </option>
+                  </select>
+                  <div
+                    class="selected-item-details"
+                    *ngIf="selectedInstitutionDetails"
+                  >
+                    <div class="detail-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span
+                        >{{ selectedInstitutionDetails.address }},
+                        {{ selectedInstitutionDetails.city }}</span
+                      >
+                    </div>
+                    <div
+                      class="detail-item"
+                      *ngIf="selectedInstitutionDetails.website"
+                    >
+                      <i class="fas fa-globe"></i>
+                      <a
+                        [href]="selectedInstitutionDetails.website"
+                        target="_blank"
+                        >{{ selectedInstitutionDetails.website }}</a
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="results-group" *ngIf="filteredResults.analyses.length > 0">
-            <h4>{{ 'ANALYSES' | translate }} ({{ filteredResults.analyses.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card analysis-card" 
-                   *ngFor="let analysis of filteredResults.analyses"
-                   (click)="showAnalysisDetails(analysis)">
-                <div class="card-header">
+              <!-- Analysis Filter -->
+              <div class="filter-card">
+                <div class="filter-header">
                   <i class="fas fa-flask"></i>
-                  <h5>{{ analysis.name }}</h5>
+                  <span>{{ "ANALYSIS" | translate }}</span>
                 </div>
-                <div class="card-content">
-                  <p *ngIf="analysis.description">{{ analysis.description }}</p>
-                  <p *ngIf="analysis.institutions && analysis.institutions.length > 0">
-                    <i class="fas fa-hospital"></i> {{ 'PERFORMED_AT' | translate }}: {{ getInstitutionNames(analysis.institutions) }}
-                  </p>
-                  <p *ngIf="analysis.microorganisms && analysis.microorganisms.length > 0">
-                    <i class="fas fa-bug"></i> {{ 'MICROORGANISMS' | translate }}: {{ getMicroorganismNames(analysis.microorganisms) }}
-                  </p>
-                  <p *ngIf="analysis.type">
-                    <i class="fas fa-tag"></i> {{ 'TYPE' | translate }}: {{ analysis.type }}
-                  </p>
-                </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showAnalysisDetails(analysis); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
+                <div class="filter-content">
+                  <select
+                    class="filter-select"
+                    [(ngModel)]="selectedAnalysis"
+                    (change)="onAnalysisChange()"
+                  >
+                    <option value="">
+                      {{ "SELECT_ANALYSIS" | translate }}
+                    </option>
+                    <option
+                      *ngFor="let analysis of allAnalyses"
+                      [value]="analysis.id"
+                    >
+                      {{ analysis.name }}
+                    </option>
+                  </select>
+                  <div
+                    class="selected-item-details"
+                    *ngIf="selectedAnalysisDetails"
+                  >
+                    <div
+                      class="detail-item"
+                      *ngIf="selectedAnalysisDetails.description"
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      <span>{{ selectedAnalysisDetails.description }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="results-group" *ngIf="filteredResults.microorganisms.length > 0">
-            <h4>{{ 'MICROORGANISMS' | translate }} ({{ filteredResults.microorganisms.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card microorganism-card" 
-                   *ngFor="let microorganism of filteredResults.microorganisms"
-                   (click)="showMicroorganismDetails(microorganism)">
-                <div class="card-header">
+              <!-- Microorganism Filter -->
+              <div class="filter-card">
+                <div class="filter-header">
                   <i class="fas fa-bug"></i>
-                  <h5>{{ microorganism.name }}</h5>
+                  <span>{{ "MICROORGANISM" | translate }}</span>
                 </div>
-                <div class="card-content">
-                  <p *ngIf="microorganism.description">{{ microorganism.description }}</p>
-                  <p *ngIf="microorganism.type">
-                    <i class="fas fa-tag"></i> {{ 'TYPE' | translate }}: {{ microorganism.type }}
-                  </p>
-                  <p *ngIf="getMicroorganismInstitutions(microorganism)">
-                    <i class="fas fa-hospital"></i> {{ 'USED_BY' | translate }}: {{ getMicroorganismInstitutions(microorganism) }}
-                  </p>
-                  <p *ngIf="getMicroorganismAnalyses(microorganism)">
-                    <i class="fas fa-flask"></i> {{ 'USED_IN' | translate }}: {{ getMicroorganismAnalyses(microorganism) }}
-                  </p>
-                </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showMicroorganismDetails(microorganism); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
+                <div class="filter-content">
+                  <select
+                    class="filter-select"
+                    [(ngModel)]="selectedMicroorganism"
+                    (change)="onMicroorganismChange()"
+                  >
+                    <option value="">
+                      {{ "SELECT_MICROORGANISM" | translate }}
+                    </option>
+                    <option
+                      *ngFor="let micro of allMicroorganisms"
+                      [value]="micro.id"
+                    >
+                      {{ micro.name }}
+                    </option>
+                  </select>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="results-group" *ngIf="filteredResults.instruments.length > 0">
-            <h4>{{ 'INSTRUMENTS' | translate }} ({{ filteredResults.instruments.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card instrument-card" 
-                   *ngFor="let instrument of filteredResults.instruments"
-                   (click)="showInstrumentDetails(instrument)">
-                <div class="card-header">
+              <!-- Instrument Filter -->
+              <div class="filter-card">
+                <div class="filter-header">
                   <i class="fas fa-microscope"></i>
-                  <h5>{{ instrument.name }}</h5>
+                  <span>{{ "INSTRUMENT" | translate }}</span>
                 </div>
-                <div class="card-content">
-                  <p *ngIf="instrument.description">{{ instrument.description }}</p>
-                  <p *ngIf="instrument.manufacturer">
-                    <i class="fas fa-industry"></i> {{ 'MANUFACTURER' | translate }}: {{ instrument.manufacturer }}
-                  </p>
-                  <p *ngIf="instrument.model">
-                    <i class="fas fa-cog"></i> {{ 'MODEL' | translate }}: {{ instrument.model }}
-                  </p>
-                  <p *ngIf="getInstrumentInstitutions(instrument)">
-                    <i class="fas fa-hospital"></i> {{ 'AVAILABLE_AT' | translate }}: {{ getInstrumentInstitutions(instrument) }}
-                  </p>
-                </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showInstrumentDetails(instrument); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
+                <div class="filter-content">
+                  <select
+                    class="filter-select"
+                    [(ngModel)]="selectedInstrument"
+                    (change)="onInstrumentChange()"
+                  >
+                    <option value="">
+                      {{ "SELECT_INSTRUMENT" | translate }}
+                    </option>
+                    <option
+                      *ngFor="let instrument of allInstruments"
+                      [value]="instrument.id"
+                    >
+                      {{ instrument.name }}
+                    </option>
+                  </select>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="tab-panel" *ngIf="activeTab === 'researchers'">
-        <div class="guided-search-section">
-          <h3>{{ 'GUIDED_SEARCH' | translate }}</h3>
-          
-          <div class="search-grid">
-            <div class="filter-card" [class.pinned]="pinnedCategory === 'researcher'">
-              <div class="filter-header">
-                <i class="fas fa-user-md"></i>
-                <span>{{ 'RESEARCHER' | translate }}</span>
-                <button class="btn-pin" 
-                        [class.pinned]="pinnedCategory === 'researcher'"
-                        (click)="pinCategory('researcher')"
-                        [title]="'PIN_CATEGORY' | translate">
-                  <i class="fas fa-thumbtack"></i>
-                </button>
-              </div>
-              <div class="filter-content">
-                <select class="filter-select" 
-                        [(ngModel)]="selectedResearcher"
-                        (change)="onResearcherChange()">
-                  <option value="">{{ 'SELECT_RESEARCHER' | translate }}</option>
-                  <option *ngFor="let researcher of allResearchers" 
-                          [value]="researcher.id">{{ researcher.firstName }} {{ researcher.lastName }}</option>
-                </select>
-                <div class="selected-item-details" *ngIf="selectedResearcherDetails">
-                  <div class="detail-item">
+            <!-- Clear Filters Button -->
+            <div class="filter-actions">
+              <button class="btn-clear-filters" (click)="clearAllFilters()">
+                <i class="fas fa-times"></i>
+                {{ "CLEAR_FILTERS" | translate }}
+              </button>
+            </div>
+          </div>
+
+          <div class="results-section" *ngIf="hasActiveFilters()">
+            <h3>{{ "SEARCH_RESULTS" | translate }}</h3>
+
+            <div
+              class="results-group"
+              *ngIf="filteredResults.institutions.length > 0"
+            >
+              <h4>
+                {{ "INSTITUTIONS" | translate }} ({{
+                  filteredResults.institutions.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card institution-card"
+                  *ngFor="let institution of filteredResults.institutions"
+                  (click)="showInstitutionDetails(institution)"
+                >
+                  <div class="card-header">
                     <i class="fas fa-hospital"></i>
-                    <span>{{ selectedResearcherDetails.institution?.name }}</span>
+                    <h5>{{ institution.name }}</h5>
                   </div>
-                  <div class="detail-item" *ngIf="selectedResearcherDetails.keywords?.length">
-                    <i class="fas fa-tags"></i>
-                    <span>{{ getKeywordNames(selectedResearcherDetails.keywords) }}</span>
+                  <div class="card-content">
+                    <p>
+                      <i class="fas fa-map-marker-alt"></i>
+                      {{ institution.address }}, {{ institution.city }}
+                    </p>
+                    <p *ngIf="institution.phone">
+                      <i class="fas fa-phone"></i> {{ institution.phone }}
+                    </p>
+                    <p *ngIf="institution.email">
+                      <i class="fas fa-envelope"></i> {{ institution.email }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showInstitutionDetails(institution);
+                        $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="filter-card" [class.pinned]="pinnedCategory === 'keyword'">
-              <div class="filter-header">
-                <i class="fas fa-tags"></i>
-                <span>{{ 'KEYWORDS' | translate }}</span>
-                <button class="btn-pin" 
-                        [class.pinned]="pinnedCategory === 'keyword'"
-                        (click)="pinCategory('keyword')"
-                        [title]="'PIN_CATEGORY' | translate">
-                  <i class="fas fa-thumbtack"></i>
-                </button>
+            <div
+              class="results-group"
+              *ngIf="filteredResults.analyses.length > 0"
+            >
+              <h4>
+                {{ "ANALYSES" | translate }} ({{
+                  filteredResults.analyses.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card analysis-card"
+                  *ngFor="let analysis of filteredResults.analyses"
+                  (click)="showAnalysisDetails(analysis)"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-flask"></i>
+                    <h5>{{ analysis.name }}</h5>
+                  </div>
+                  <div class="card-content">
+                    <p *ngIf="analysis.description">
+                      {{ analysis.description }}
+                    </p>
+                    <p
+                      *ngIf="
+                        analysis.institutions &&
+                        analysis.institutions.length > 0
+                      "
+                    >
+                      <i class="fas fa-hospital"></i>
+                      {{ "PERFORMED_AT" | translate }}:
+                      {{ getInstitutionNames(analysis.institutions) }}
+                    </p>
+                    <p
+                      *ngIf="
+                        analysis.microorganisms &&
+                        analysis.microorganisms.length > 0
+                      "
+                    >
+                      <i class="fas fa-bug"></i>
+                      {{ "MICROORGANISMS" | translate }}:
+                      {{ getMicroorganismNames(analysis.microorganisms) }}
+                    </p>
+                    <p *ngIf="analysis.type">
+                      <i class="fas fa-tag"></i> {{ "TYPE" | translate }}:
+                      {{ analysis.type }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showAnalysisDetails(analysis); $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div class="filter-content">
-                <select class="filter-select" 
-                        [(ngModel)]="selectedKeyword"
-                        (change)="onKeywordChange()">
-                  <option value="">{{ 'SELECT_KEYWORD' | translate }}</option>
-                  <option *ngFor="let keyword of allKeywords" 
-                          [value]="keyword.id">{{ keyword.name }}</option>
-                </select>
+            </div>
+
+            <div
+              class="results-group"
+              *ngIf="filteredResults.microorganisms.length > 0"
+            >
+              <h4>
+                {{ "MICROORGANISMS" | translate }} ({{
+                  filteredResults.microorganisms.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card microorganism-card"
+                  *ngFor="let microorganism of filteredResults.microorganisms"
+                  (click)="showMicroorganismDetails(microorganism)"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-bug"></i>
+                    <h5>{{ microorganism.name }}</h5>
+                  </div>
+                  <div class="card-content">
+                    <p *ngIf="microorganism.description">
+                      {{ microorganism.description }}
+                    </p>
+                    <p *ngIf="microorganism.type">
+                      <i class="fas fa-tag"></i> {{ "TYPE" | translate }}:
+                      {{ microorganism.type }}
+                    </p>
+                    <p *ngIf="getMicroorganismInstitutions(microorganism)">
+                      <i class="fas fa-hospital"></i>
+                      {{ "USED_BY" | translate }}:
+                      {{ getMicroorganismInstitutions(microorganism) }}
+                    </p>
+                    <p *ngIf="getMicroorganismAnalyses(microorganism)">
+                      <i class="fas fa-flask"></i> {{ "USED_IN" | translate }}:
+                      {{ getMicroorganismAnalyses(microorganism) }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showMicroorganismDetails(microorganism);
+                        $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="results-group"
+              *ngIf="filteredResults.instruments.length > 0"
+            >
+              <h4>
+                {{ "INSTRUMENTS" | translate }} ({{
+                  filteredResults.instruments.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card instrument-card"
+                  *ngFor="let instrument of filteredResults.instruments"
+                  (click)="showInstrumentDetails(instrument)"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-microscope"></i>
+                    <h5>{{ instrument.name }}</h5>
+                  </div>
+                  <div class="card-content">
+                    <p *ngIf="instrument.description">
+                      {{ instrument.description }}
+                    </p>
+                    <p *ngIf="instrument.manufacturer">
+                      <i class="fas fa-industry"></i>
+                      {{ "MANUFACTURER" | translate }}:
+                      {{ instrument.manufacturer }}
+                    </p>
+                    <p *ngIf="instrument.model">
+                      <i class="fas fa-cog"></i> {{ "MODEL" | translate }}:
+                      {{ instrument.model }}
+                    </p>
+                    <p *ngIf="getInstrumentInstitutions(instrument)">
+                      <i class="fas fa-hospital"></i>
+                      {{ "AVAILABLE_AT" | translate }}:
+                      {{ getInstrumentInstitutions(instrument) }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showInstrumentDetails(instrument);
+                        $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- Clear Filters Button -->
-          <div class="filter-actions">
-            <button class="btn-clear-filters" (click)="clearAllFilters()">
-              <i class="fas fa-times"></i>
-              {{ 'CLEAR_FILTERS' | translate }}
-            </button>
-          </div>
         </div>
 
-        <div class="results-section" *ngIf="hasActiveFilters()">
-          <h3>{{ 'SEARCH_RESULTS' | translate }}</h3>
-          
-          <div class="results-group" *ngIf="filteredResults.researchers.length > 0">
-            <h4>{{ 'RESEARCHERS' | translate }} ({{ filteredResults.researchers.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card researcher-card" 
-                   *ngFor="let researcher of filteredResults.researchers"
-                   (click)="showResearcherDetails(researcher)">
-                <div class="card-header">
+        <div class="tab-panel" *ngIf="activeTab === 'researchers'">
+          <div class="guided-search-section">
+            <h3>{{ "GUIDED_SEARCH" | translate }}</h3>
+
+            <div class="search-grid">
+              <div class="filter-card">
+                <div class="filter-header">
                   <i class="fas fa-user-md"></i>
-                  <h5>{{ researcher.firstName }} {{ researcher.lastName }}</h5>
+                  <span>{{ "RESEARCHER" | translate }}</span>
                 </div>
-                <div class="card-content">
-                  <p *ngIf="researcher.institution?.name">
-                    <i class="fas fa-hospital"></i> {{ 'INSTITUTION' | translate }}: {{ researcher.institution?.name }}
-                  </p>
-                  <p *ngIf="researcher.title">
-                    <i class="fas fa-user-tie"></i> {{ 'TITLE' | translate }}: {{ researcher.title }}
-                  </p>
-                  <p *ngIf="researcher.email">
-                    <i class="fas fa-envelope"></i> {{ researcher.email }}
-                  </p>
-                  <p *ngIf="researcher.phone">
-                    <i class="fas fa-phone"></i> {{ researcher.phone }}
-                  </p>
-                  <p *ngIf="researcher.keywords?.length">
-                    <i class="fas fa-tags"></i> {{ 'KEYWORDS' | translate }}: {{ getKeywordNames(researcher.keywords) }}
-                  </p>
-                </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showResearcherDetails(researcher); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
+                <div class="filter-content">
+                  <select
+                    class="filter-select"
+                    [(ngModel)]="selectedResearcher"
+                    (change)="onResearcherChange()"
+                  >
+                    <option value="">
+                      {{ "SELECT_RESEARCHER" | translate }}
+                    </option>
+                    <option
+                      *ngFor="let researcher of allResearchers"
+                      [value]="researcher.id"
+                    >
+                      {{ researcher.firstName }} {{ researcher.lastName }}
+                    </option>
+                  </select>
+                  <div
+                    class="selected-item-details"
+                    *ngIf="selectedResearcherDetails"
+                  >
+                    <div class="detail-item">
+                      <i class="fas fa-hospital"></i>
+                      <span>{{
+                        selectedResearcherDetails.institution?.name
+                      }}</span>
+                    </div>
+                    <div
+                      class="detail-item"
+                      *ngIf="selectedResearcherDetails.keywords?.length"
+                    >
+                      <i class="fas fa-tags"></i>
+                      <span>{{
+                        getKeywordNames(selectedResearcherDetails.keywords)
+                      }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="results-group" *ngIf="filteredResults.keywords.length > 0">
-            <h4>{{ 'KEYWORDS' | translate }} ({{ filteredResults.keywords.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card keyword-card" 
-                   *ngFor="let keyword of filteredResults.keywords"
-                   (click)="showKeywordDetails(keyword)">
-                <div class="card-header">
+              <div class="filter-card">
+                <div class="filter-header">
                   <i class="fas fa-tags"></i>
-                  <h5>{{ keyword.name }}</h5>
+                  <span>{{ "KEYWORDS" | translate }}</span>
                 </div>
-                <div class="card-content">
-                  <p *ngIf="keyword.description">{{ keyword.description }}</p>
-                  <p *ngIf="keyword.researchers?.length">
-                    <i class="fas fa-user-md"></i> {{ 'RESEARCHERS' | translate }}: {{ getResearcherNames(keyword.researchers) }}
-                  </p>
-                  <p *ngIf="!keyword.researchers?.length">
-                    <i class="fas fa-info-circle"></i> {{ 'NO_RESEARCHERS' | translate }}
-                  </p>
-                </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showKeywordDetails(keyword); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="results-group" *ngIf="filteredResults.microorganisms.length > 0">
-            <h4>{{ 'MICROORGANISMS' | translate }} ({{ filteredResults.microorganisms.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card microorganism-card" 
-                   *ngFor="let microorganism of filteredResults.microorganisms"
-                   (click)="showMicroorganismDetails(microorganism)">
-                <div class="card-header">
-                  <i class="fas fa-bug"></i>
-                  <h5>{{ microorganism.name }}</h5>
-                </div>
-                <div class="card-content">
-                  <p *ngIf="microorganism.description">{{ microorganism.description }}</p>
-                  <p *ngIf="microorganism.type">
-                    <i class="fas fa-tag"></i> {{ 'TYPE' | translate }}: {{ microorganism.type }}
-                  </p>
-                  <p *ngIf="getMicroorganismInstitutions(microorganism)">
-                    <i class="fas fa-hospital"></i> {{ 'USED_BY' | translate }}: {{ getMicroorganismInstitutions(microorganism) }}
-                  </p>
-                  <p *ngIf="getMicroorganismAnalyses(microorganism)">
-                    <i class="fas fa-flask"></i> {{ 'USED_IN' | translate }}: {{ getMicroorganismAnalyses(microorganism) }}
-                  </p>
-                </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showMicroorganismDetails(microorganism); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
+                <div class="filter-content">
+                  <select
+                    class="filter-select"
+                    [(ngModel)]="selectedKeyword"
+                    (change)="onKeywordChange()"
+                  >
+                    <option value="">{{ "SELECT_KEYWORD" | translate }}</option>
+                    <option
+                      *ngFor="let keyword of allKeywords"
+                      [value]="keyword.id"
+                    >
+                      {{ keyword.name }}
+                    </option>
+                  </select>
                 </div>
               </div>
             </div>
+
+            <!-- Clear Filters Button -->
+            <div class="filter-actions">
+              <button class="btn-clear-filters" (click)="clearAllFilters()">
+                <i class="fas fa-times"></i>
+                {{ "CLEAR_FILTERS" | translate }}
+              </button>
+            </div>
           </div>
 
-          <div class="results-group" *ngIf="filteredResults.instruments.length > 0">
-            <h4>{{ 'INSTRUMENTS' | translate }} ({{ filteredResults.instruments.length }})</h4>
-            <div class="results-grid">
-              <div class="result-card instrument-card" 
-                   *ngFor="let instrument of filteredResults.instruments"
-                   (click)="showInstrumentDetails(instrument)">
-                <div class="card-header">
-                  <i class="fas fa-microscope"></i>
-                  <h5>{{ instrument.name }}</h5>
+          <div class="results-section" *ngIf="hasActiveFilters()">
+            <h3>{{ "SEARCH_RESULTS" | translate }}</h3>
+
+            <div
+              class="results-group"
+              *ngIf="filteredResults.researchers.length > 0"
+            >
+              <h4>
+                {{ "RESEARCHERS" | translate }} ({{
+                  filteredResults.researchers.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card researcher-card"
+                  *ngFor="let researcher of filteredResults.researchers"
+                  (click)="showResearcherDetails(researcher)"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-user-md"></i>
+                    <h5>
+                      {{ researcher.firstName }} {{ researcher.lastName }}
+                    </h5>
+                  </div>
+                  <div class="card-content">
+                    <p *ngIf="researcher.institution?.name">
+                      <i class="fas fa-hospital"></i>
+                      {{ "INSTITUTION" | translate }}:
+                      {{ researcher.institution?.name }}
+                    </p>
+                    <p *ngIf="researcher.title">
+                      <i class="fas fa-user-tie"></i> {{ "TITLE" | translate }}:
+                      {{ researcher.title }}
+                    </p>
+                    <p *ngIf="researcher.email">
+                      <i class="fas fa-envelope"></i> {{ researcher.email }}
+                    </p>
+                    <p *ngIf="researcher.phone">
+                      <i class="fas fa-phone"></i> {{ researcher.phone }}
+                    </p>
+                    <p *ngIf="researcher.keywords?.length">
+                      <i class="fas fa-tags"></i> {{ "KEYWORDS" | translate }}:
+                      {{ getKeywordNames(researcher.keywords) }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showResearcherDetails(researcher);
+                        $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
+                  </div>
                 </div>
-                <div class="card-content">
-                  <p *ngIf="instrument.description">{{ instrument.description }}</p>
-                  <p *ngIf="instrument.manufacturer">
-                    <i class="fas fa-industry"></i> {{ 'MANUFACTURER' | translate }}: {{ instrument.manufacturer }}
-                  </p>
-                  <p *ngIf="instrument.model">
-                    <i class="fas fa-cog"></i> {{ 'MODEL' | translate }}: {{ instrument.model }}
-                  </p>
-                  <p *ngIf="getInstrumentInstitutions(instrument)">
-                    <i class="fas fa-hospital"></i> {{ 'AVAILABLE_AT' | translate }}: {{ getInstrumentInstitutions(instrument) }}
-                  </p>
+              </div>
+            </div>
+
+            <div
+              class="results-group"
+              *ngIf="filteredResults.keywords.length > 0"
+            >
+              <h4>
+                {{ "KEYWORDS" | translate }} ({{
+                  filteredResults.keywords.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card keyword-card"
+                  *ngFor="let keyword of filteredResults.keywords"
+                  (click)="showKeywordDetails(keyword)"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-tags"></i>
+                    <h5>{{ keyword.name }}</h5>
+                  </div>
+                  <div class="card-content">
+                    <p *ngIf="keyword.description">{{ keyword.description }}</p>
+                    <p *ngIf="keyword.researchers?.length">
+                      <i class="fas fa-user-md"></i>
+                      {{ "RESEARCHERS" | translate }}:
+                      {{ getResearcherNames(keyword.researchers) }}
+                    </p>
+                    <p *ngIf="!keyword.researchers?.length">
+                      <i class="fas fa-info-circle"></i>
+                      {{ "NO_RESEARCHERS" | translate }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showKeywordDetails(keyword); $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
+                  </div>
                 </div>
-                <div class="card-actions">
-                  <button class="btn-details" (click)="showInstrumentDetails(instrument); $event.stopPropagation()">
-                    <i class="fas fa-info-circle"></i> {{ 'DETAILS' | translate }}
-                  </button>
+              </div>
+            </div>
+
+            <div
+              class="results-group"
+              *ngIf="filteredResults.microorganisms.length > 0"
+            >
+              <h4>
+                {{ "MICROORGANISMS" | translate }} ({{
+                  filteredResults.microorganisms.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card microorganism-card"
+                  *ngFor="let microorganism of filteredResults.microorganisms"
+                  (click)="showMicroorganismDetails(microorganism)"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-bug"></i>
+                    <h5>{{ microorganism.name }}</h5>
+                  </div>
+                  <div class="card-content">
+                    <p *ngIf="microorganism.description">
+                      {{ microorganism.description }}
+                    </p>
+                    <p *ngIf="microorganism.type">
+                      <i class="fas fa-tag"></i> {{ "TYPE" | translate }}:
+                      {{ microorganism.type }}
+                    </p>
+                    <p *ngIf="getMicroorganismInstitutions(microorganism)">
+                      <i class="fas fa-hospital"></i>
+                      {{ "USED_BY" | translate }}:
+                      {{ getMicroorganismInstitutions(microorganism) }}
+                    </p>
+                    <p *ngIf="getMicroorganismAnalyses(microorganism)">
+                      <i class="fas fa-flask"></i> {{ "USED_IN" | translate }}:
+                      {{ getMicroorganismAnalyses(microorganism) }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showMicroorganismDetails(microorganism);
+                        $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="results-group"
+              *ngIf="filteredResults.instruments.length > 0"
+            >
+              <h4>
+                {{ "INSTRUMENTS" | translate }} ({{
+                  filteredResults.instruments.length
+                }})
+              </h4>
+              <div class="results-grid">
+                <div
+                  class="result-card instrument-card"
+                  *ngFor="let instrument of filteredResults.instruments"
+                  (click)="showInstrumentDetails(instrument)"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-microscope"></i>
+                    <h5>{{ instrument.name }}</h5>
+                  </div>
+                  <div class="card-content">
+                    <p *ngIf="instrument.description">
+                      {{ instrument.description }}
+                    </p>
+                    <p *ngIf="instrument.manufacturer">
+                      <i class="fas fa-industry"></i>
+                      {{ "MANUFACTURER" | translate }}:
+                      {{ instrument.manufacturer }}
+                    </p>
+                    <p *ngIf="instrument.model">
+                      <i class="fas fa-cog"></i> {{ "MODEL" | translate }}:
+                      {{ instrument.model }}
+                    </p>
+                    <p *ngIf="getInstrumentInstitutions(instrument)">
+                      <i class="fas fa-hospital"></i>
+                      {{ "AVAILABLE_AT" | translate }}:
+                      {{ getInstrumentInstitutions(instrument) }}
+                    </p>
+                  </div>
+                  <div class="card-actions">
+                    <button
+                      class="btn-details"
+                      (click)="
+                        showInstrumentDetails(instrument);
+                        $event.stopPropagation()
+                      "
+                    >
+                      <i class="fas fa-info-circle"></i>
+                      {{ "DETAILS" | translate }}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -506,167 +758,219 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <div class="modal-header">
-        <h3>{{ modalTitle }}</h3>
-        <button class="btn-close" (click)="closeModal()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ng-container [ngSwitch]="modalType">
-          <div *ngSwitchCase="'institution'" class="institution-details">
-            <div class="detail-row">
-              <i class="fas fa-hospital"></i>
-              <span>{{ selectedItem.name }}</span>
-            </div>
-            <div class="detail-row">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>{{ selectedItem.address }}, {{ selectedItem.city }}, {{ selectedItem.country }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.phone">
-              <i class="fas fa-phone"></i>
-              <span>{{ selectedItem.phone }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.email">
-              <i class="fas fa-envelope"></i>
-              <span>{{ selectedItem.email }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.website">
-              <i class="fas fa-globe"></i>
-              <a [href]="selectedItem.website" target="_blank">{{ selectedItem.website }}</a>
-            </div>
-            <div class="detail-section" *ngIf="selectedItem.analyses?.length">
-              <h4>{{ 'ANALYSES' | translate }}</h4>
-              <div class="tag-list">
-                <span class="tag" *ngFor="let analysis of selectedItem.analyses">{{ analysis.name }}</span>
+    <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h3>{{ modalTitle }}</h3>
+          <button class="btn-close" (click)="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ng-container [ngSwitch]="modalType">
+            <div *ngSwitchCase="'institution'" class="institution-details">
+              <div class="detail-row">
+                <i class="fas fa-hospital"></i>
+                <span>{{ selectedItem.name }}</span>
+              </div>
+              <div class="detail-row">
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >{{ selectedItem.address }}, {{ selectedItem.city }},
+                  {{ selectedItem.country }}</span
+                >
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.phone">
+                <i class="fas fa-phone"></i>
+                <span>{{ selectedItem.phone }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.email">
+                <i class="fas fa-envelope"></i>
+                <span>{{ selectedItem.email }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.website">
+                <i class="fas fa-globe"></i>
+                <a [href]="selectedItem.website" target="_blank">{{
+                  selectedItem.website
+                }}</a>
+              </div>
+              <div class="detail-section" *ngIf="selectedItem.analyses?.length">
+                <h4>{{ "ANALYSES" | translate }}</h4>
+                <div class="tag-list">
+                  <span
+                    class="tag"
+                    *ngFor="let analysis of selectedItem.analyses"
+                    >{{ analysis.name }}</span
+                  >
+                </div>
+              </div>
+              <div
+                class="detail-section"
+                *ngIf="selectedItem.instruments?.length"
+              >
+                <h4>{{ "INSTRUMENTS" | translate }}</h4>
+                <div class="tag-list">
+                  <span
+                    class="tag"
+                    *ngFor="let instrument of selectedItem.instruments"
+                    >{{ instrument.name }}</span
+                  >
+                </div>
               </div>
             </div>
-            <div class="detail-section" *ngIf="selectedItem.instruments?.length">
-              <h4>{{ 'INSTRUMENTS' | translate }}</h4>
-              <div class="tag-list">
-                <span class="tag" *ngFor="let instrument of selectedItem.instruments">{{ instrument.name }}</span>
+
+            <div *ngSwitchCase="'researcher'" class="researcher-details">
+              <div class="detail-row">
+                <i class="fas fa-user-md"></i>
+                <span
+                  >{{ selectedItem.firstName }}
+                  {{ selectedItem.lastName }}</span
+                >
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.title">
+                <i class="fas fa-user-tie"></i>
+                <span>{{ "TITLE" | translate }}: {{ selectedItem.title }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.institution?.name">
+                <i class="fas fa-hospital"></i>
+                <span
+                  >{{ "INSTITUTION" | translate }}:
+                  {{ selectedItem.institution.name }}</span
+                >
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.email">
+                <i class="fas fa-envelope"></i>
+                <span>{{ selectedItem.email }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.phone">
+                <i class="fas fa-phone"></i>
+                <span>{{ selectedItem.phone }}</span>
+              </div>
+              <div class="detail-section" *ngIf="selectedItem.keywords?.length">
+                <h4>{{ "KEYWORDS" | translate }}</h4>
+                <div class="tag-list">
+                  <span
+                    class="tag"
+                    *ngFor="let keyword of selectedItem.keywords"
+                    >{{ keyword.name }}</span
+                  >
+                </div>
               </div>
             </div>
-          </div>
 
-          <div *ngSwitchCase="'researcher'" class="researcher-details">
-            <div class="detail-row">
-              <i class="fas fa-user-md"></i>
-              <span>{{ selectedItem.firstName }} {{ selectedItem.lastName }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.title">
-              <i class="fas fa-user-tie"></i>
-              <span>{{ 'TITLE' | translate }}: {{ selectedItem.title }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.institution?.name">
-              <i class="fas fa-hospital"></i>
-              <span>{{ 'INSTITUTION' | translate }}: {{ selectedItem.institution.name }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.email">
-              <i class="fas fa-envelope"></i>
-              <span>{{ selectedItem.email }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.phone">
-              <i class="fas fa-phone"></i>
-              <span>{{ selectedItem.phone }}</span>
-            </div>
-            <div class="detail-section" *ngIf="selectedItem.keywords?.length">
-              <h4>{{ 'KEYWORDS' | translate }}</h4>
-              <div class="tag-list">
-                <span class="tag" *ngFor="let keyword of selectedItem.keywords">{{ keyword.name }}</span>
+            <div *ngSwitchCase="'analysis'" class="analysis-details">
+              <div class="detail-row">
+                <i class="fas fa-flask"></i>
+                <span>{{ selectedItem.name }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.description">
+                <i class="fas fa-info-circle"></i>
+                <span>{{ selectedItem.description }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.type">
+                <i class="fas fa-tag"></i>
+                <span>{{ "TYPE" | translate }}: {{ selectedItem.type }}</span>
+              </div>
+              <div
+                class="detail-section"
+                *ngIf="selectedItem.institutions?.length"
+              >
+                <h4>{{ "PERFORMED_AT" | translate }}</h4>
+                <div class="tag-list">
+                  <span
+                    class="tag"
+                    *ngFor="let institution of selectedItem.institutions"
+                    >{{ institution.name }}</span
+                  >
+                </div>
+              </div>
+              <div
+                class="detail-section"
+                *ngIf="selectedItem.microorganisms?.length"
+              >
+                <h4>{{ "MICROORGANISMS" | translate }}</h4>
+                <div class="tag-list">
+                  <span
+                    class="tag"
+                    *ngFor="let microorganism of selectedItem.microorganisms"
+                    >{{ microorganism.name }}</span
+                  >
+                </div>
               </div>
             </div>
-          </div>
 
-          <div *ngSwitchCase="'analysis'" class="analysis-details">
-            <div class="detail-row">
-              <i class="fas fa-flask"></i>
-              <span>{{ selectedItem.name }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.description">
-              <i class="fas fa-info-circle"></i>
-              <span>{{ selectedItem.description }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.type">
-              <i class="fas fa-tag"></i>
-              <span>{{ 'TYPE' | translate }}: {{ selectedItem.type }}</span>
-            </div>
-            <div class="detail-section" *ngIf="selectedItem.institutions?.length">
-              <h4>{{ 'PERFORMED_AT' | translate }}</h4>
-              <div class="tag-list">
-                <span class="tag" *ngFor="let institution of selectedItem.institutions">{{ institution.name }}</span>
+            <div *ngSwitchCase="'keyword'" class="keyword-details">
+              <div class="detail-row">
+                <i class="fas fa-tags"></i>
+                <span>{{ selectedItem.name }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.description">
+                <i class="fas fa-info-circle"></i>
+                <span>{{ selectedItem.description }}</span>
+              </div>
+              <div
+                class="detail-section"
+                *ngIf="selectedItem.researchers?.length"
+              >
+                <h4>{{ "RESEARCHERS" | translate }}</h4>
+                <div class="tag-list">
+                  <span
+                    class="tag"
+                    *ngFor="let researcher of selectedItem.researchers"
+                  >
+                    {{ researcher.firstName }} {{ researcher.lastName }}
+                  </span>
+                </div>
+              </div>
+              <div
+                class="detail-section"
+                *ngIf="!selectedItem.researchers?.length"
+              >
+                <h4>{{ "NO_RESEARCHERS" | translate }}</h4>
+                <p>{{ "NO_RESEARCHERS_DESCRIPTION" | translate }}</p>
               </div>
             </div>
-            <div class="detail-section" *ngIf="selectedItem.microorganisms?.length">
-              <h4>{{ 'MICROORGANISMS' | translate }}</h4>
-              <div class="tag-list">
-                <span class="tag" *ngFor="let microorganism of selectedItem.microorganisms">{{ microorganism.name }}</span>
+
+            <div *ngSwitchCase="'microorganism'" class="microorganism-details">
+              <div class="detail-row">
+                <i class="fas fa-bug"></i>
+                <span>{{ selectedItem.name }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.description">
+                <i class="fas fa-info-circle"></i>
+                <span>{{ selectedItem.description }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.type">
+                <i class="fas fa-tag"></i>
+                <span>{{ "TYPE" | translate }}: {{ selectedItem.type }}</span>
               </div>
             </div>
-          </div>
 
-          <div *ngSwitchCase="'keyword'" class="keyword-details">
-            <div class="detail-row">
-              <i class="fas fa-tags"></i>
-              <span>{{ selectedItem.name }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.description">
-              <i class="fas fa-info-circle"></i>
-              <span>{{ selectedItem.description }}</span>
-            </div>
-            <div class="detail-section" *ngIf="selectedItem.researchers?.length">
-              <h4>{{ 'RESEARCHERS' | translate }}</h4>
-              <div class="tag-list">
-                <span class="tag" *ngFor="let researcher of selectedItem.researchers">
-                  {{ researcher.firstName }} {{ researcher.lastName }}
-                </span>
+            <div *ngSwitchCase="'instrument'" class="instrument-details">
+              <div class="detail-row">
+                <i class="fas fa-microscope"></i>
+                <span>{{ selectedItem.name }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.description">
+                <i class="fas fa-info-circle"></i>
+                <span>{{ selectedItem.description }}</span>
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.manufacturer">
+                <i class="fas fa-industry"></i>
+                <span
+                  >{{ "MANUFACTURER" | translate }}:
+                  {{ selectedItem.manufacturer }}</span
+                >
+              </div>
+              <div class="detail-row" *ngIf="selectedItem.model">
+                <i class="fas fa-cog"></i>
+                <span>{{ "MODEL" | translate }}: {{ selectedItem.model }}</span>
               </div>
             </div>
-            <div class="detail-section" *ngIf="!selectedItem.researchers?.length">
-              <h4>{{ 'NO_RESEARCHERS' | translate }}</h4>
-              <p>{{ 'NO_RESEARCHERS_DESCRIPTION' | translate }}</p>
-            </div>
-          </div>
-
-          <div *ngSwitchCase="'microorganism'" class="microorganism-details">
-            <div class="detail-row">
-              <i class="fas fa-bug"></i>
-              <span>{{ selectedItem.name }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.description">
-              <i class="fas fa-info-circle"></i>
-              <span>{{ selectedItem.description }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.type">
-              <i class="fas fa-tag"></i>
-              <span>{{ 'TYPE' | translate }}: {{ selectedItem.type }}</span>
-            </div>
-          </div>
-
-          <div *ngSwitchCase="'instrument'" class="instrument-details">
-            <div class="detail-row">
-              <i class="fas fa-microscope"></i>
-              <span>{{ selectedItem.name }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.description">
-              <i class="fas fa-info-circle"></i>
-              <span>{{ selectedItem.description }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.manufacturer">
-              <i class="fas fa-industry"></i>
-              <span>{{ 'MANUFACTURER' | translate }}: {{ selectedItem.manufacturer }}</span>
-            </div>
-            <div class="detail-row" *ngIf="selectedItem.model">
-              <i class="fas fa-cog"></i>
-              <span>{{ 'MODEL' | translate }}: {{ selectedItem.model }}</span>
-            </div>
-          </div>
-        </ng-container>
+          </ng-container>
+        </div>
       </div>
     </div>
   </div>
-</div> 
+</div>
