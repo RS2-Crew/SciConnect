@@ -2,9 +2,9 @@
 using DB.Application.Contracts.Persistance;
 using DB.Domain.Entities;
 using EventBus.Messages.Entities;
+using EventBus.Messages.Events;   
 using MassTransit;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace DB.Application.Features.Analyses.Commands.CreateAnalysis
@@ -16,7 +16,11 @@ namespace DB.Application.Features.Analyses.Commands.CreateAnalysis
         private readonly ILogger<CreateAnalysisCommandHandler> _logger;
         private readonly IPublishEndpoint _publishEndpoint;
 
-        public CreateAnalysisCommandHandler(IAnalysisRepository repository, IAnalysisFactory factory, ILogger<CreateAnalysisCommandHandler> logger, IPublishEndpoint publishEndpoint)
+        public CreateAnalysisCommandHandler(
+            IAnalysisRepository repository,
+            IAnalysisFactory factory,
+            ILogger<CreateAnalysisCommandHandler> logger,
+            IPublishEndpoint publishEndpoint)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _factory = factory ?? throw new ArgumentNullException(nameof(factory));
@@ -29,15 +33,24 @@ namespace DB.Application.Features.Analyses.Commands.CreateAnalysis
             var analysisEntity = _factory.Create(request);
             var newAnalysis = await _repository.AddAsync(analysisEntity);
 
-            _logger.LogInformation($"Analysis {newAnalysis.Id} successfully created.");
+            _logger.LogInformation("Analysis {AnalysisId} successfully created.", newAnalysis.Id);
 
+           
             var evt = new SimpleEntityCreatedEvent
             {
                 EntityType = "Analysis",
                 Name = newAnalysis.Name
             };
+            await _publishEndpoint.Publish(evt, cancellationToken);
 
-            await _publishEndpoint.Publish(evt);
+           
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Analysis,
+                Kind = ChangeKind.Created,
+                Id = newAnalysis.Id,
+                Name = newAnalysis.Name
+            }, cancellationToken);
 
             return newAnalysis.Id;
         }

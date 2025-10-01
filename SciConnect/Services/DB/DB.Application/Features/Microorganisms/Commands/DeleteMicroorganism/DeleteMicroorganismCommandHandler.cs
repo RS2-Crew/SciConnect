@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Persistance;
-using DB.Domain.Entities;
+using EventBus.Messages.Events;
+using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -14,32 +13,38 @@ namespace DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
     {
         private readonly IMicroorganismRepository _repository;
         private readonly ILogger<DeleteMicroorganismCommandHandler> _logger;
+        private readonly IPublishEndpoint _publishEndpoint;
 
-        public DeleteMicroorganismCommandHandler(IMicroorganismRepository repository, ILogger<DeleteMicroorganismCommandHandler> logger)
+        public DeleteMicroorganismCommandHandler(
+            IMicroorganismRepository repository,
+            ILogger<DeleteMicroorganismCommandHandler> logger,
+            IPublishEndpoint publishEndpoint)
         {
             _repository = repository;
             _logger = logger;
+            _publishEndpoint = publishEndpoint;
         }
 
         public async Task<Unit> Handle(DeleteMicroorganismCommand request, CancellationToken cancellationToken)
         {
             if (string.IsNullOrWhiteSpace(request.Name))
-            {
-                _logger.LogError("Microorganism name must be provided.");
                 throw new ArgumentException("Microorganism name must be provided.");
-            }
 
             var microorganism = await _repository.GetByNameAsync(request.Name.Trim());
-
             if (microorganism == null)
-            {
-                _logger.LogError($"Microorganism with name {request.Name} not found.");
                 throw new ArgumentException($"Microorganism with name {request.Name} not found.");
-            }
 
             await _repository.DeleteAsync(microorganism);
 
             _logger.LogInformation($"Microorganism with name {request.Name} successfully deleted.");
+
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Microorganism,
+                Kind = ChangeKind.Deleted,
+                Id = microorganism.Id,
+                Name = null
+            });
 
             return Unit.Value;
         }

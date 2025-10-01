@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Persistance;
+using EventBus.Messages.Events;
+using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -13,32 +13,35 @@ namespace DB.Application.Features.Instruments.Commands.DeleteInstrument
     {
         private readonly IInstrumentRepository _repository;
         private readonly ILogger<DeleteInstrumentCommandHandler> _logger;
+        private readonly IPublishEndpoint _publishEndpoint;
 
-        public DeleteInstrumentCommandHandler(IInstrumentRepository repository, ILogger<DeleteInstrumentCommandHandler> logger)
+        public DeleteInstrumentCommandHandler(IInstrumentRepository repository, ILogger<DeleteInstrumentCommandHandler> logger, IPublishEndpoint publishEndpoint)
         {
             _repository = repository;
             _logger = logger;
+            _publishEndpoint = publishEndpoint;
         }
 
         public async Task<Unit> Handle(DeleteInstrumentCommand request, CancellationToken cancellationToken)
         {
             if (string.IsNullOrWhiteSpace(request.Name))
-            {
-                _logger.LogError("Instrument name must be provided.");
                 throw new ArgumentException("Instrument name must be provided.");
-            }
 
             var instrument = await _repository.GetByNameAsync(request.Name.Trim());
-
             if (instrument == null)
-            {
-                _logger.LogError($"Instrument with name {request.Name} not found.");
                 throw new ArgumentException($"Instrument with name {request.Name} not found.");
-            }
 
             await _repository.DeleteAsync(instrument);
 
-            _logger.LogInformation($"Instrument with name {request.Name} successfully deleted.");
+            _logger.LogInformation("Instrument with name {Name} successfully deleted.", request.Name);
+
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Instrument,
+                Kind = ChangeKind.Deleted,
+                Id = instrument.Id,
+                Name = null
+            });
 
             return Unit.Value;
         }

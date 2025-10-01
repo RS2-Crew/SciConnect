@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Factories;
 using DB.Application.Contracts.Persistance;
 using DB.Application.Features.Institutions.Commands.CreateInstitution;
 using EventBus.Messages.Entities;
+using EventBus.Messages.Events;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -41,6 +40,14 @@ namespace DB.Application.Features.Instruments.Commands.CreateInstrument
             };
 
             await _publishEndpoint.Publish(evt);
+
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Instrument,
+                Kind = ChangeKind.Created,
+                Id = instrument.Id,
+                Name = instrument.Name
+            });
 
             return instrument.Id;
         }

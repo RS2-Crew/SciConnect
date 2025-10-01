@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Factories;
 using DB.Application.Contracts.Persistance;
 using DB.Domain.Entities;
 using EventBus.Messages.Entities;
+using EventBus.Messages.Events;
 using MassTransit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +41,14 @@ namespace DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
             };
 
             await _publishEndpoint.Publish(evt);
+
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Microorganism,
+                Kind = ChangeKind.Created,
+                Id = microorganism.Id,
+                Name = microorganism.Name
+            });
 
             return microorganism.Id;
         }

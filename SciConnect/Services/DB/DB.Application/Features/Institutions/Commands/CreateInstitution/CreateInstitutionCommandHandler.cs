@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Factories;
 using DB.Application.Contracts.Persistance;
 using EventBus.Messages.Entities;
+using EventBus.Messages.Events;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -45,10 +47,17 @@ namespace DB.Application.Features.Institutions.Commands.CreateInstitution
                 Phone = newInstitution.Phone,
                 Email = newInstitution.Email,
                 Website = newInstitution.Website
-
             };
 
             await _publishEndpoint.Publish(evt);
+
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Institution,
+                Kind = ChangeKind.Created,
+                Id = newInstitution.Id,
+                Name = newInstitution.Name
+            });
 
             return newInstitution.Id;
         }

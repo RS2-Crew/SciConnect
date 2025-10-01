@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Factories;
 using DB.Application.Contracts.Persistance;
 using DB.Application.Features.Keywords.Commands.CreateKeyword;
 using EventBus.Messages.Entities;
+using EventBus.Messages.Events;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -20,7 +19,11 @@ namespace DB.Application.Features.Keywords.Commands.CreateKeyword
         private readonly ILogger<CreateKeywordCommandHandler> _logger;
         private readonly IPublishEndpoint _publishEndpoint;
 
-        public CreateKeywordCommandHandler(IKeywordRepository keywordRepository, IKeywordFactory keywordFactory, ILogger<CreateKeywordCommandHandler> logger, IPublishEndpoint publishEndpoint)
+        public CreateKeywordCommandHandler(
+            IKeywordRepository keywordRepository,
+            IKeywordFactory keywordFactory,
+            ILogger<CreateKeywordCommandHandler> logger,
+            IPublishEndpoint publishEndpoint)
         {
             _keywordRepository = keywordRepository ?? throw new ArgumentNullException(nameof(keywordRepository));
             _keywordFactory = keywordFactory ?? throw new ArgumentNullException(nameof(keywordFactory));
@@ -31,7 +34,6 @@ namespace DB.Application.Features.Keywords.Commands.CreateKeyword
         public async Task<int> Handle(CreateKeywordCommand request, CancellationToken cancellationToken)
         {
             var keyword = _keywordFactory.Create(request);
-
             await _keywordRepository.AddAsync(keyword);
 
             var evt = new SimpleEntityCreatedEvent
@@ -39,8 +41,15 @@ namespace DB.Application.Features.Keywords.Commands.CreateKeyword
                 EntityType = "Keyword",
                 Name = keyword.Name
             };
-
             await _publishEndpoint.Publish(evt);
+
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Keyword,
+                Kind = ChangeKind.Created,
+                Id = keyword.Id,
+                Name = keyword.Name
+            });
 
             return keyword.Id;
         }
