@@ -1,10 +1,12 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using DB.Application.Contracts.Factories;
 using DB.Application.Contracts.Persistance;
 using DB.Application.Features.Employees.Commands.CreateEmployee;
 using DB.Domain.Entities;
 using EventBus.Messages.Entities;
+using EventBus.Messages.Events;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -49,6 +51,13 @@ namespace DB.Application.Features.Employees.Commands.CreateEmployee
 
             await _publishEndpoint.Publish(evt);
 
+            await _publishEndpoint.Publish(new AutocompleteEntityChanged
+            {
+                Type = EntityType.Employee,
+                Kind = ChangeKind.Created,
+                Id = employee.Id,
+                Name = $"{employee.FirstName} {employee.LastName}"
+            });
 
             return employee.Id;
         }
