@@ -1,0 +1,65 @@
+<div class="admin-management-container">
+  <div class="admin-management-card">
+    <div class="header">
+      <h2><i class="fas fa-user-shield"></i> Admin Management</h2>
+      <p>Generate verification codes for administrator registration requests</p>
+    </div>
+
+    <div *ngIf="!isPM" class="access-denied">
+      <i class="fas fa-exclamation-triangle"></i>
+      <h3>Access Denied</h3>
+      <p>You must be a Project Manager to access this page.</p>
+    </div>
+
+    <div *ngIf="isPM" class="content">
+      <form [formGroup]="generateCodeForm" (ngSubmit)="onGenerateVerificationCode()">
+        <div class="form-group">
+          <label for="adminEmail">
+            <i class="fas fa-envelope"></i> Administrator Email
+          </label>
+          <input
+            type="email"
+            id="adminEmail"
+            formControlName="adminEmail"
+            class="form-control"
+            placeholder="Enter admin email address"
+            [class.invalid]="isFieldInvalid('adminEmail')"
+          >
+          <div class="error-message" *ngIf="isFieldInvalid('adminEmail')">
+            <i class="fas fa-exclamation-circle"></i>
+            <span *ngIf="generateCodeForm.get('adminEmail')?.errors?.['required']">Email is required</span>
+            <span *ngIf="generateCodeForm.get('adminEmail')?.errors?.['email']">Please enter a valid email address</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-generate" [disabled]="generateCodeForm.invalid || isLoading">
+          <span *ngIf="isLoading" class="loading-spinner"></span>
+          <i *ngIf="!isLoading" class="fas fa-key"></i>
+          <span *ngIf="!isLoading">Generate Verification Code</span>
+          <span *ngIf="isLoading">Generating...</span>
+        </button>
+      </form>
+
+      <div class="message success-message" *ngIf="successMessage">
+        <i class="fas fa-check-circle"></i>
+        {{ successMessage }}
+      </div>
+
+      <div class="message error-message" *ngIf="errorMessage">
+        <i class="fas fa-exclamation-triangle"></i>
+        {{ errorMessage }}
+      </div>
+
+      <div class="info-section">
+        <h3><i class="fas fa-info-circle"></i> How it works</h3>
+        <ol>
+          <li>Admin requests registration access</li>
+          <li>You receive notification email</li>
+          <li>Enter admin's email above and click "Generate Verification Code"</li>
+          <li>Admin receives verification code via email</li>
+          <li>Admin completes registration using the code</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

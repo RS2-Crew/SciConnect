@@ -188,12 +188,7 @@
         <label class="form-label" for="verificationCode">
           <i class="fas fa-key"></i> Verification Code
         </label>
-        <div class="verification-code-container">
-          <input type="text" id="verificationCode" formControlName="verificationCode" class="form-control" placeholder="Enter verification code" [class.ng-invalid]="isFieldInvalid('verificationCode')" [class.ng-touched]="isFieldTouched('verificationCode')">
-          <button type="button" class="btn-generate-code" (click)="onGenerateVerificationCode()" [disabled]="isLoading">
-            <i class="fas fa-sync-alt"></i> Generate Code
-          </button>
-        </div>
+        <input type="text" id="verificationCode" formControlName="verificationCode" class="form-control" placeholder="Enter verification code received via email" [class.ng-invalid]="isFieldInvalid('verificationCode')" [class.ng-touched]="isFieldTouched('verificationCode')">
         <div class="error-message" *ngIf="isFieldInvalid('verificationCode') && isFieldTouched('verificationCode')">
           <i class="fas fa-exclamation-circle"></i>
           <span *ngIf="registerForm.get('verificationCode')?.errors?.['required']">Verification code is required for administrator registration</span>

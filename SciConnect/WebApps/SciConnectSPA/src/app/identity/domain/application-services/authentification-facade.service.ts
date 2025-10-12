@@ -13,7 +13,7 @@ import { JwtPayloadKeys } from "../../../shared/jwt/jwt-payload-keys";
 })
 export class AuthentificationFacadeService {
 
-  constructor(private authentificationService:AuthentificationService, private appStateService: AppStateService, private jwtService: JwtService
+  constructor(private authentificationService: AuthentificationService, private appStateService: AppStateService, private jwtService: JwtService
   ){}
 
   public login(username: string, password: string): Observable<boolean>{

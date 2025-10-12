@@ -1,18 +1,30 @@
 <div class="dashboard-container" [class.dark-theme]="isDarkTheme">
-  <div class="floating-theme-toggle">
-    <button
-      class="theme-btn"
-      (click)="toggleTheme()"
-      [attr.aria-label]="
-        isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'
-      "
-    >
-      <i
-        class="fas"
-        [class.fa-sun]="isDarkTheme"
-        [class.fa-moon]="!isDarkTheme"
-      ></i>
-    </button>
+  <div class="floating-controls">
+    <div class="floating-theme-toggle">
+      <button
+        class="theme-btn"
+        (click)="toggleTheme()"
+        [attr.aria-label]="
+          isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'
+        "
+      >
+        <i
+          class="fas"
+          [class.fa-sun]="isDarkTheme"
+          [class.fa-moon]="!isDarkTheme"
+        ></i>
+      </button>
+    </div>
+    
+    <div class="floating-admin-management" *ngIf="isPM()">
+      <button
+        class="admin-btn"
+        (click)="navigateToAdminManagement()"
+        title="Admin Management - Generate verification codes"
+      >
+        <i class="fas fa-user-shield"></i>
+      </button>
+    </div>
   </div>
 
   <div class="dashboard-content">

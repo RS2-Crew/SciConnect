@@ -63,6 +63,7 @@ interface FilteredResults {
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   userName: string = '';
+  userRoles: string[] = [];
   currentDate: Date = new Date();
   currentLanguage: 'en' | 'sr' = 'en';
 
@@ -147,6 +148,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
           state.firstName && state.lastName
             ? `${state.firstName} ${state.lastName}`
             : state.username || 'User';
+        
+        // Extract roles
+        if (state.roles) {
+          this.userRoles = Array.isArray(state.roles) 
+            ? state.roles.map(role => role.toString()) 
+            : [state.roles.toString()];
+        } else {
+          this.userRoles = [];
+        }
       });
   }
 
@@ -1598,5 +1608,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return this.isDarkTheme
       ? 'assets/images/dark_theme_logo.png'
       : 'assets/images/white_theme_logo.png';
+  }
+
+  public isPM(): boolean {
+    return this.userRoles.some(role => role.toLowerCase() === 'pm');
+  }
+
+  public navigateToAdminManagement(): void {
+    this.router.navigate(['/admin-management']);
   }
 }

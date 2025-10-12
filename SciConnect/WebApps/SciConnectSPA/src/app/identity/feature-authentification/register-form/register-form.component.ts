@@ -150,33 +150,6 @@ export class RegisterFormComponent implements OnInit {
     });
   }
 
-  public onGenerateVerificationCode(): void {
-    const email = this.registerForm.get('email')?.value;
-    if (!email) {
-      this.registerError = 'Please enter your email address first.';
-      return;
-    }
-
-    this.isLoading = true;
-    this.clearMessages();
-
-    this.authentificationService.generateVerificationCode(email).subscribe({
-      next: (success) => {
-        this.isLoading = false;
-        if (success) {
-          this.registerSuccess = 'Verification code sent to your email! Please check your inbox.';
-        } else {
-          this.registerError = 'Failed to generate verification code. Please try again.';
-        }
-      },
-      error: (error) => {
-        this.isLoading = false;
-        this.registerError = this.getErrorMessage(error);
-        console.error('Verification code generation error:', error);
-      }
-    });
-  }
-
   public onRegisterFormSubmit(): void {
     if (this.registerForm.invalid) {
       this.markFormGroupTouched();

@@ -120,6 +120,14 @@
             <p>View analytics and overview of your research data</p>
           </div>
 
+          <div class="action-card" *ngIf="isPM()" (click)="navigateToAdminManagement()">
+            <div class="action-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h4>Admin Management</h4>
+            <p>Generate verification codes for administrator registration</p>
+          </div>
+
           <div class="action-card" (click)="navigateToProfile()">
             <div class="action-icon">
               <i class="fas fa-user-edit"></i>

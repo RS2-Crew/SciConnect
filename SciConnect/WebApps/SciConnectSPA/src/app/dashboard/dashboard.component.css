@@ -6,15 +6,25 @@
   color: #333;
 }
 
-/* Floating Theme Toggle - Top Right */
-.floating-theme-toggle {
+/* Floating Controls - Top Right */
+.floating-controls {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.theme-btn {
+.floating-theme-toggle,
+.floating-admin-management {
+  display: flex;
+  justify-content: center;
+}
+
+.theme-btn,
+.admin-btn {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
@@ -31,13 +41,26 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.theme-btn:hover {
+.theme-btn:hover,
+.admin-btn:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
-.theme-btn i {
+.admin-btn {
+  background: rgba(102, 126, 234, 0.8);
+  border-color: rgba(102, 126, 234, 0.9);
+}
+
+.admin-btn:hover {
+  background: rgba(102, 126, 234, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+.theme-btn i,
+.admin-btn i {
   font-size: 1.2rem;
 }
 
