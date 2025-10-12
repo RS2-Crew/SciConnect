@@ -6,7 +6,7 @@ services:
       dockerfile: IdentityServer/IdentityService/Dockerfile
 
   mssql:
-    image: mcr.microsoft.com/mssql/server:2017-latest
+    image: mcr.microsoft.com/mssql/server:2022-latest
    
   rabbitmq: 
     image: rabbitmq:4-management-alpine  
@@ -16,6 +16,19 @@ services:
     build:
       context: .
       dockerfile: Services/DB/DB.API/DB.API/Dockerfile
+
+  autocomplete.api:
+    image: ${DOCKER_REGISTRY-}autocompleteapi
+    build:
+      context: ..
+      dockerfile: Autocomplete.API/Dockerfile
+    depends_on:
+      - rabbitmq
+      - db.api
+    ports:
+      - "8082:8080"
+    volumes:
+      - ../Autocomplete.API/data:/app/data
 
 volumes:
     mssql_data:
