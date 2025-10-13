@@ -25,55 +25,35 @@ namespace DB.Infrastructure.Persistance
                 List<Employee> employees = GetPreconfiguredEmployees(institutions, keywords);
                 List<Analysis> analyses = GetPreconfiguredAnalysis();
 
+                // Povezivanje entiteta
                 institutions[0].AddInstrument(instruments[0]);
                 institutions[0].AddInstrument(instruments[1]);
-                institutions[0].AddInstrument(instruments[3]);
-                institutions[0].AddInstrument(instruments[4]);
                 institutions[1].AddInstrument(instruments[2]);
-                institutions[1].AddInstrument(instruments[5]);
-                institutions[1].AddInstrument(instruments[6]);
                 institutions[2].AddInstrument(instruments[1]);
-                institutions[2].AddInstrument(instruments[7]);
-                institutions[2].AddInstrument(instruments[8]);
 
-                institutions[0].AddMicroorgnaism(microorganisms[1]);
-                institutions[0].AddMicroorgnaism(microorganisms[2]);
-                institutions[0].AddMicroorgnaism(microorganisms[3]);
-                institutions[0].AddMicroorgnaism(microorganisms[4]);
-                institutions[1].AddMicroorgnaism(microorganisms[2]);
-                institutions[1].AddMicroorgnaism(microorganisms[5]);
-                institutions[1].AddMicroorgnaism(microorganisms[6]);
-                institutions[2].AddMicroorgnaism(microorganisms[0]);
-                institutions[2].AddMicroorgnaism(microorganisms[7]);
-                institutions[2].AddMicroorgnaism(microorganisms[8]);
+                institutions[0].AddMicroorganism(microorganisms[1]);
+                institutions[0].AddMicroorganism(microorganisms[2]);
+                institutions[1].AddMicroorganism(microorganisms[2]);
+                institutions[2].AddMicroorganism(microorganisms[0]);
 
                 institutions[0].AddKeyword(keywords[1]);
                 institutions[0].AddKeyword(keywords[2]);
                 institutions[1].AddKeyword(keywords[2]);
                 institutions[2].AddKeyword(keywords[0]);
-                
-                // Ensure bidirectional relationships for institution-keyword
-                keywords[1].AddInstitution(institutions[0]);
-                keywords[2].AddInstitution(institutions[0]);
-                keywords[2].AddInstitution(institutions[1]);
-                keywords[0].AddInstitution(institutions[2]);
 
-                institutions[0].AddEmployee(employees[0]);
-                institutions[1].AddEmployee(employees[1]);
-                institutions[2].AddEmployee(employees[2]);
+                institutions[0].AddEmployee(employees[0]); // John Doe
+                institutions[1].AddEmployee(employees[1]); // Jane Smith
+                institutions[2].AddEmployee(employees[2]); // Alice Johnson
 
                 institutions[0].AddAnalysis(analyses[1]);
                 institutions[0].AddAnalysis(analyses[2]);
                 institutions[1].AddAnalysis(analyses[0]);
                 institutions[2].AddAnalysis(analyses[0]);
 
-                analyses[0].AddMicroorgnaism(microorganisms[1]);
-                analyses[0].AddMicroorgnaism(microorganisms[2]);
-                analyses[0].AddMicroorgnaism(microorganisms[3]);
-                analyses[1].AddMicroorgnaism(microorganisms[0]);
-                analyses[1].AddMicroorgnaism(microorganisms[4]);
-                analyses[2].AddMicroorgnaism(microorganisms[0]);
-                analyses[2].AddMicroorgnaism(microorganisms[5]);
+                analyses[0].AddMicroorganism(microorganisms[1]);
+                analyses[0].AddMicroorganism(microorganisms[2]);
+                analyses[1].AddMicroorganism(microorganisms[0]);
+                analyses[2].AddMicroorganism(microorganisms[0]);
 
                 context.Institutions.AddRange(institutions);
                 context.Instruments.AddRange(instruments);
@@ -104,19 +84,7 @@ namespace DB.Infrastructure.Persistance
             {
                 new Microorganism("SARS-CoV-2"),
                 new Microorganism("Cytomegalovirus"),
-                new Microorganism("Chlamydia sp."),
-                new Microorganism("Escherichia coli"),
-                new Microorganism("Staphylococcus aureus"),
-                new Microorganism("Streptococcus pneumoniae"),
-                new Microorganism("Mycobacterium tuberculosis"),
-                new Microorganism("Candida albicans"),
-                new Microorganism("Aspergillus fumigatus"),
-                new Microorganism("Pseudomonas aeruginosa"),
-                new Microorganism("Klebsiella pneumoniae"),
-                new Microorganism("Enterococcus faecalis"),
-                new Microorganism("Clostridium difficile"),
-                new Microorganism("Neisseria gonorrhoeae"),
-                new Microorganism("Treponema pallidum")
+                new Microorganism("Chlamydia sp.")
             };
         }
 
@@ -135,24 +103,7 @@ namespace DB.Infrastructure.Persistance
             {
                 new Instrument("Microscope"),
                 new Instrument("Spectrometer"),
-                new Instrument("PCR Machine"),
-                new Instrument("Flow Cytometer"),
-                new Instrument("Mass Spectrometer"),
-                new Instrument("Electron Microscope"),
-                new Instrument("Centrifuge"),
-                new Instrument("Incubator"),
-                new Instrument("Autoclave"),
-                new Instrument("Gel Electrophoresis System"),
-                new Instrument("Real-Time PCR System"),
-                new Instrument("Sequencing Machine"),
-                new Instrument("Microplate Reader"),
-                new Instrument("Liquid Chromatography System"),
-                new Instrument("Gas Chromatography System"),
-                new Instrument("Atomic Absorption Spectrometer"),
-                new Instrument("Fluorescence Microscope"),
-                new Instrument("Confocal Microscope"),
-                new Instrument("Cell Counter"),
-                new Instrument("Freeze Dryer")
+                new Instrument("PCR Machine")
             };
         }
 
@@ -161,19 +112,12 @@ namespace DB.Infrastructure.Persistance
             var e1 = new Employee("John", "Doe", institutions[0]);
             e1.AddKeyword(keywords[0]);
             e1.AddKeyword(keywords[2]);
-            // Ensure bidirectional relationship
-            keywords[0].AddEmployee(e1);
-            keywords[2].AddEmployee(e1);
 
             var e2 = new Employee("Jane", "Smith", institutions[1]);
             e2.AddKeyword(keywords[1]);
-            // Ensure bidirectional relationship
-            keywords[1].AddEmployee(e2);
 
             var e3 = new Employee("Alice", "Johnson", institutions[2]);
             e3.AddKeyword(keywords[2]);
-            // Ensure bidirectional relationship
-            keywords[2].AddEmployee(e3);
 
             return new List<Employee> { e1, e2, e3 };
         }
