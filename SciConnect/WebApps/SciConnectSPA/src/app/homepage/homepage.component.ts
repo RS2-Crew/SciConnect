@@ -67,7 +67,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
                 lastName: appState.lastName || ''
               };
             } catch (error) {
-              console.error('Error parsing JWT payload:', error);
               // Fallback to app state data
               this.userInfo = {
                 username: appState.username || 'Unknown User',
@@ -86,7 +85,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
         })
       );
     } catch (error) {
-      console.error('Error loading user info:', error);
       this.router.navigate(['/identity/login']);
       return;
     }

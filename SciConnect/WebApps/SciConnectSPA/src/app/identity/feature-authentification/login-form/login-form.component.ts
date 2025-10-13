@@ -97,7 +97,6 @@ export class LoginFormComponent implements OnInit {
       error: (error) => {
         this.isLoading = false;
         this.loginError = this.getErrorMessage(error);
-        console.error('Login error:', error);
       }
     });
   }

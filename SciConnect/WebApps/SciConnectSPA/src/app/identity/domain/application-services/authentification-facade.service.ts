@@ -34,7 +34,6 @@ export class AuthentificationFacadeService {
       }),
       map(() => {return true;}),
       catchError((err) => {
-        console.log(err);
         //cistimo stanje aplikacije u slucaju greske.
         this.appStateService.clearAppState();
         return of(false);

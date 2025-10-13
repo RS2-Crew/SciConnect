@@ -15,3 +15,4 @@ import { AdminManagementComponent } from './admin-management.component';
   ]
 })
 export class AdminManagementModule { }
+

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, forkJoin, of } from 'rxjs';
-import { map, tap, switchMap, catchError } from 'rxjs/operators';
+import { map, switchMap, catchError } from 'rxjs/operators';
 import { 
   Institution, 
   Analysis, 
@@ -71,19 +71,9 @@ export class DataService {
         const institutionRequests = institutions.map(institution => 
           forkJoin({
             withAnalyses: this.getInstitutionWithAnalyses(institution.name).pipe(
-              tap(data => {
-                if (institution.name.includes('Tech')) {
-                  console.log(`API response for ${institution.name} analyses:`, data);
-                }
-              }),
               catchError(() => of(institution))
             ),
             withInstruments: this.getInstitutionWithInstruments(institution.name).pipe(
-              tap(data => {
-                if (institution.name.includes('Tech')) {
-                  console.log(`API response for ${institution.name} instruments:`, data);
-                }
-              }),
               catchError(() => of(institution))
             ),
             withEmployees: this.getInstitutionWithEmployees(institution.name).pipe(
@@ -369,5 +359,112 @@ export class DataService {
           return institution['analyses'] || [];
         })
       );
+  }
+
+  createInstitution(name: string, description: string, city: string, street: string, country: string, streetNumber: string): Observable<number> {
+    const command = { name, description, city, street, country, streetNumber };
+    return this.http.post<number>(`${this.baseUrl}/institutions`, command, { headers: this.getHeaders() });
+  }
+
+  deleteInstitution(name: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/institutions/${name}`, { headers: this.getHeaders() });
+  }
+
+  createInstrument(name: string, description: string): Observable<number> {
+    const command = { name, description };
+    return this.http.post<number>(`${this.baseUrl}/instruments`, command, { headers: this.getHeaders() });
+  }
+
+  deleteInstrument(name: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/instruments/${name}`, { headers: this.getHeaders() });
+  }
+
+  createKeyword(name: string): Observable<number> {
+    const command = { name };
+    return this.http.post<number>(`${this.baseUrl}/keywords`, command, { headers: this.getHeaders() });
+  }
+
+  deleteKeyword(name: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/keywords/${name}`, { headers: this.getHeaders() });
+  }
+
+  createEmployee(firstName: string, lastName: string, email: string, institutionId: number): Observable<number> {
+    const command = { firstName, lastName, email, institutionId };
+    return this.http.post<number>(`${this.baseUrl}/employees`, command, { headers: this.getHeaders() });
+  }
+
+  deleteEmployee(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/employees/${id}`, { headers: this.getHeaders() });
+  }
+
+  createAnalysis(name: string, description: string): Observable<number> {
+    const command = { name, description };
+    return this.http.post<number>(`${this.baseUrl}/analyses`, command, { headers: this.getHeaders() });
+  }
+
+  deleteAnalysis(name: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/analyses/${name}`, { headers: this.getHeaders() });
+  }
+
+  createMicroorganism(name: string): Observable<number> {
+    const command = { name };
+    return this.http.post<number>(`${this.baseUrl}/microorganisms`, command, { headers: this.getHeaders() });
+  }
+
+  deleteMicroorganism(name: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/microorganisms/${name}`, { headers: this.getHeaders() });
+  }
+
+  connectInstitutionToAnalysis(institutionId: number, analysisId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/institutions/${institutionId}/analysis/${analysisId}`, {}, { headers: this.getHeaders() })
+      .pipe(
+        catchError(error => {
+          throw error;
+        })
+      );
+  }
+
+  disconnectInstitutionFromAnalysis(institutionId: number, analysisId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/institutions/${institutionId}/analysis/${analysisId}`, { headers: this.getHeaders() });
+  }
+
+  connectInstitutionToInstrument(institutionId: number, instrumentId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/institutions/${institutionId}/instruments/${instrumentId}`, {}, { headers: this.getHeaders() });
+  }
+
+  disconnectInstitutionFromInstrument(institutionId: number, instrumentId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/institutions/${institutionId}/instruments/${instrumentId}`, { headers: this.getHeaders() });
+  }
+
+  connectInstitutionToMicroorganism(institutionId: number, microorganismId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/institutions/${institutionId}/microorganism/${microorganismId}`, {}, { headers: this.getHeaders() });
+  }
+
+  disconnectInstitutionFromMicroorganism(institutionId: number, microorganismId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/institutions/${institutionId}/microorganism/${microorganismId}`, { headers: this.getHeaders() });
+  }
+
+  connectResearcherToKeyword(researcherId: number, keywordId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/employee/${researcherId}/keyword/${keywordId}`, {}, { headers: this.getHeaders() });
+  }
+
+  disconnectResearcherFromKeyword(researcherId: number, keywordId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/employee/${researcherId}/keyword/${keywordId}`, { headers: this.getHeaders() });
+  }
+
+  connectAnalysisToMicroorganism(analysisId: number, microorganismId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/analysis/${analysisId}/microorganism/${microorganismId}`, {}, { headers: this.getHeaders() });
+  }
+
+  disconnectAnalysisFromMicroorganism(analysisId: number, microorganismId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/analysis/${analysisId}/microorganism/${microorganismId}`, { headers: this.getHeaders() });
+  }
+
+  connectAnalysisToInstrument(analysisId: number, instrumentId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/analysis/${analysisId}/instrument/${instrumentId}`, {}, { headers: this.getHeaders() });
+  }
+
+  disconnectAnalysisFromInstrument(analysisId: number, instrumentId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/analysis/${analysisId}/instrument/${instrumentId}`, { headers: this.getHeaders() });
   }
 }

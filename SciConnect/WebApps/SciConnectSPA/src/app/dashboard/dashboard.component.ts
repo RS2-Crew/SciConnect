@@ -14,10 +14,8 @@ import {
   takeUntil,
   forkJoin,
   of,
-  debounceTime,
-  distinctUntilChanged,
 } from 'rxjs';
-import { catchError, finalize, switchMap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { AppStateService } from '../shared/app-state/app-state.service';
 import { DataService } from '../shared/services/data.service';
 import { TranslationService } from '../shared/services/translation.service';
@@ -69,7 +67,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   isDarkTheme: boolean = false;
 
-  activeTab: 'analyses' | 'researchers' = 'analyses';
+  activeTab: 'analyses' | 'researchers' | 'database' = 'analyses';
 
   masterSearchTerm: string = '';
   showSearchSuggestions: boolean = false;
@@ -114,6 +112,30 @@ export class DashboardComponent implements OnInit, OnDestroy {
   allResearchers: Employee[] = [];
   allKeywords: Keyword[] = [];
 
+  newInstitutionName: string = '';
+  newInstitutionDesc: string = '';
+  newInstitutionCity: string = '';
+  newInstitutionStreet: string = '';
+  newInstitutionCountry: string = '';
+  newInstitutionStreetNumber: string = '';
+  newInstrumentName: string = '';
+  newInstrumentDesc: string = '';
+  newKeywordName: string = '';
+  newAnalysisName: string = '';
+  newAnalysisDesc: string = '';
+  newEmployeeFirstName: string = '';
+  newEmployeeLastName: string = '';
+  newEmployeeEmail: string = '';
+  newEmployeeInstitutionId: number | null = null;
+  newMicroorganismName: string = '';
+
+  selectedConnectionInstitution: number | null = null;
+  selectedConnectionAnalysis: number | null = null;
+  selectedConnectionInstrument: number | null = null;
+  selectedConnectionMicroorganism: number | null = null;
+  selectedConnectionResearcher: number | null = null;
+  selectedConnectionKeyword: number | null = null;
+
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -127,7 +149,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loadUserInfo();
     this.loadInitialData();
-    this.setupSearchDebouncing();
     if (isPlatformBrowser(this.platformId)) {
       this.loadThemePreference();
       this.applyTheme();
@@ -200,9 +221,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
   }
 
-  private setupSearchDebouncing(): void {}
 
-  setActiveTab(tab: 'analyses' | 'researchers'): void {
+  setActiveTab(tab: 'analyses' | 'researchers' | 'database'): void {
     this.activeTab = tab;
     this.updateResults();
   }
@@ -1570,7 +1590,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
         const savedTheme = localStorage.getItem('sciConnectTheme');
         this.isDarkTheme = savedTheme === 'dark';
       } catch (error) {
-        console.warn('Could not load theme preference:', error);
       }
     }
   }
@@ -1583,7 +1602,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
           this.isDarkTheme ? 'dark' : 'light'
         );
       } catch (error) {
-        console.warn('Could not save theme preference:', error);
       }
     }
   }
@@ -1616,5 +1634,293 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   public navigateToAdminManagement(): void {
     this.router.navigate(['/admin-management']);
+  }
+
+  public canManageDatabase(): boolean {
+    return this.userRoles.some(role => role.toLowerCase() === 'administrator' || role.toLowerCase() === 'pm');
+  }
+
+  public createInstitution(): void {
+    if (!this.newInstitutionName || !this.newInstitutionCity || !this.newInstitutionStreet || !this.newInstitutionCountry || !this.newInstitutionStreetNumber) return;
+    
+    this.dataService.createInstitution(this.newInstitutionName, this.newInstitutionDesc, this.newInstitutionCity, this.newInstitutionStreet, this.newInstitutionCountry, this.newInstitutionStreetNumber).subscribe({
+      next: () => {
+        this.newInstitutionName = '';
+        this.newInstitutionDesc = '';
+        this.newInstitutionCity = '';
+        this.newInstitutionStreet = '';
+        this.newInstitutionCountry = '';
+        this.newInstitutionStreetNumber = '';
+        this.loadInitialData();
+      },
+      error: (error) => {}
+    });
+  }
+
+  public deleteInstitution(name: string): void {
+    this.dataService.deleteInstitution(name).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {}
+    });
+  }
+
+  public createInstrument(): void {
+    if (!this.newInstrumentName) return;
+    
+    this.dataService.createInstrument(this.newInstrumentName, this.newInstrumentDesc).subscribe({
+      next: () => {
+        this.newInstrumentName = '';
+        this.newInstrumentDesc = '';
+        this.loadInitialData();
+      },
+      error: (error) => {}
+    });
+  }
+
+  public deleteInstrument(name: string): void {
+    this.dataService.deleteInstrument(name).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {}
+    });
+  }
+
+  public createKeyword(): void {
+    if (!this.newKeywordName) return;
+    
+    this.dataService.createKeyword(this.newKeywordName).subscribe({
+      next: () => {
+        this.newKeywordName = '';
+        this.loadInitialData();
+      },
+      error: (error) => {}
+    });
+  }
+
+  public deleteKeyword(name: string): void {
+    this.dataService.deleteKeyword(name).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {}
+    });
+  }
+
+  public createAnalysis(): void {
+    if (!this.newAnalysisName) return;
+    
+    this.dataService.createAnalysis(this.newAnalysisName, this.newAnalysisDesc).subscribe({
+      next: () => {
+        this.newAnalysisName = '';
+        this.newAnalysisDesc = '';
+        this.loadInitialData();
+      },
+      error: (error) => {}
+    });
+  }
+
+  public deleteAnalysis(name: string): void {
+    this.dataService.deleteAnalysis(name).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {}
+    });
+  }
+
+  public createEmployee(): void {
+    if (!this.newEmployeeFirstName || !this.newEmployeeLastName || !this.newEmployeeEmail || !this.newEmployeeInstitutionId) return;
+    
+    this.dataService.createEmployee(this.newEmployeeFirstName, this.newEmployeeLastName, this.newEmployeeEmail, this.newEmployeeInstitutionId).subscribe({
+      next: () => {
+        this.newEmployeeFirstName = '';
+        this.newEmployeeLastName = '';
+        this.newEmployeeEmail = '';
+        this.newEmployeeInstitutionId = null;
+        this.loadInitialData();
+      },
+      error: (error) => {}
+    });
+  }
+
+  public deleteEmployee(id: number): void {
+    this.dataService.deleteEmployee(id).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {}
+    });
+  }
+
+  public get allEmployees(): Employee[] {
+    return this.allResearchers;
+  }
+
+  public createMicroorganism(): void {
+    if (!this.newMicroorganismName) return;
+    
+    this.dataService.createMicroorganism(this.newMicroorganismName).subscribe({
+      next: () => {
+        this.newMicroorganismName = '';
+        this.loadInitialData();
+      },
+      error: (error) => {}
+    });
+  }
+
+  public deleteMicroorganism(name: string): void {
+    this.dataService.deleteMicroorganism(name).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {}
+    });
+  }
+
+  public connectInstitutionToAnalysis(): void {
+    if (!this.selectedConnectionInstitution || !this.selectedConnectionAnalysis) return;
+    
+    this.dataService.connectInstitutionToAnalysis(this.selectedConnectionInstitution, this.selectedConnectionAnalysis).subscribe({
+      next: () => {
+        this.selectedConnectionInstitution = null;
+        this.selectedConnectionAnalysis = null;
+        this.loadInitialData();
+      },
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public disconnectInstitutionFromAnalysis(institutionId: number, analysisId: number): void {
+    this.dataService.disconnectInstitutionFromAnalysis(institutionId, analysisId).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public connectInstitutionToInstrument(): void {
+    if (!this.selectedConnectionInstitution || !this.selectedConnectionInstrument) return;
+    
+    this.dataService.connectInstitutionToInstrument(this.selectedConnectionInstitution, this.selectedConnectionInstrument).subscribe({
+      next: () => {
+        this.selectedConnectionInstitution = null;
+        this.selectedConnectionInstrument = null;
+        this.loadInitialData();
+      },
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public disconnectInstitutionFromInstrument(institutionId: number, instrumentId: number): void {
+    this.dataService.disconnectInstitutionFromInstrument(institutionId, instrumentId).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public connectInstitutionToMicroorganism(): void {
+    if (!this.selectedConnectionInstitution || !this.selectedConnectionMicroorganism) return;
+    
+    this.dataService.connectInstitutionToMicroorganism(this.selectedConnectionInstitution, this.selectedConnectionMicroorganism).subscribe({
+      next: () => {
+        this.selectedConnectionInstitution = null;
+        this.selectedConnectionMicroorganism = null;
+        this.loadInitialData();
+      },
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public disconnectInstitutionFromMicroorganism(institutionId: number, microorganismId: number): void {
+    this.dataService.disconnectInstitutionFromMicroorganism(institutionId, microorganismId).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public connectResearcherToKeyword(): void {
+    if (!this.selectedConnectionResearcher || !this.selectedConnectionKeyword) return;
+    
+    this.dataService.connectResearcherToKeyword(this.selectedConnectionResearcher, this.selectedConnectionKeyword).subscribe({
+      next: () => {
+        this.selectedConnectionResearcher = null;
+        this.selectedConnectionKeyword = null;
+        this.loadInitialData();
+      },
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public disconnectResearcherFromKeyword(researcherId: number, keywordId: number): void {
+    this.dataService.disconnectResearcherFromKeyword(researcherId, keywordId).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public connectAnalysisToMicroorganism(): void {
+    if (!this.selectedConnectionAnalysis || !this.selectedConnectionMicroorganism) return;
+    
+    this.dataService.connectAnalysisToMicroorganism(this.selectedConnectionAnalysis, this.selectedConnectionMicroorganism).subscribe({
+      next: () => {
+        this.selectedConnectionAnalysis = null;
+        this.selectedConnectionMicroorganism = null;
+        this.loadInitialData();
+      },
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public disconnectAnalysisFromMicroorganism(analysisId: number, microorganismId: number): void {
+    this.dataService.disconnectAnalysisFromMicroorganism(analysisId, microorganismId).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public connectAnalysisToInstrument(): void {
+    if (!this.selectedConnectionAnalysis || !this.selectedConnectionInstrument) return;
+    
+    this.dataService.connectAnalysisToInstrument(this.selectedConnectionAnalysis, this.selectedConnectionInstrument).subscribe({
+      next: () => {
+        this.selectedConnectionAnalysis = null;
+        this.selectedConnectionInstrument = null;
+        this.loadInitialData();
+      },
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
+  }
+
+  public disconnectAnalysisFromInstrument(analysisId: number, instrumentId: number): void {
+    this.dataService.disconnectAnalysisFromInstrument(analysisId, instrumentId).subscribe({
+      next: () => this.loadInitialData(),
+      error: (error) => {
+        if (error.status === 404) {
+        }
+      }
+    });
   }
 }

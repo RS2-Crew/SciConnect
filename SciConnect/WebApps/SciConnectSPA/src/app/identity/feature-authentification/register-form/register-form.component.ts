@@ -145,7 +145,6 @@ export class RegisterFormComponent implements OnInit {
       error: (error) => {
         this.isLoading = false;
         this.registerError = this.getErrorMessage(error);
-        console.error('Admin registration request error:', error);
       }
     });
   }
@@ -210,7 +209,6 @@ export class RegisterFormComponent implements OnInit {
       error: (error) => {
         this.isLoading = false;
         this.registerError = this.getErrorMessage(error);
-        console.error('Registration error:', error);
       }
     });
   }
