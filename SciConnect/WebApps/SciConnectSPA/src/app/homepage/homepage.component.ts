@@ -67,7 +67,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
                 lastName: appState.lastName || ''
               };
             } catch (error) {
-              console.error('Error parsing JWT payload:', error);
               // Fallback to app state data
               this.userInfo = {
                 username: appState.username || 'Unknown User',
@@ -86,7 +85,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
         })
       );
     } catch (error) {
-      console.error('Error loading user info:', error);
       this.router.navigate(['/identity/login']);
       return;
     }
@@ -154,14 +152,24 @@ export class HomepageComponent implements OnInit, OnDestroy {
     this.router.navigate(['/dashboard']);
   }
 
+  public navigateToAdminManagement(): void {
+    this.router.navigate(['/admin-management']);
+  }
+
   public navigateToProfile(): void {
-    // TODO: Implement profile page
     console.log('Navigate to profile');
   }
 
   public navigateToSettings(): void {
-    // TODO: Implement settings page
     console.log('Navigate to settings');
+  }
+
+  public isPM(): boolean {
+    console.log('Checking PM role. User roles:', this.userInfo?.roles);
+    if (!this.userInfo?.roles) return false;
+    const isPMResult = this.userInfo.roles.some(role => role.toLowerCase() === 'pm');
+    console.log('isPM result:', isPMResult);
+    return isPMResult;
   }
 
   public getLogoPath(): string {

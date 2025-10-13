@@ -31,10 +31,10 @@ namespace DB.Infrastructure.Persistance
                 institutions[1].AddInstrument(instruments[2]);
                 institutions[2].AddInstrument(instruments[1]);
 
-                institutions[0].AddMicroorgnaism(microorganisms[1]);
-                institutions[0].AddMicroorgnaism(microorganisms[2]);
-                institutions[1].AddMicroorgnaism(microorganisms[2]);
-                institutions[2].AddMicroorgnaism(microorganisms[0]);
+                institutions[0].AddMicroorganism(microorganisms[1]);
+                institutions[0].AddMicroorganism(microorganisms[2]);
+                institutions[1].AddMicroorganism(microorganisms[2]);
+                institutions[2].AddMicroorganism(microorganisms[0]);
 
                 institutions[0].AddKeyword(keywords[1]);
                 institutions[0].AddKeyword(keywords[2]);
@@ -50,10 +50,10 @@ namespace DB.Infrastructure.Persistance
                 institutions[1].AddAnalysis(analyses[0]);
                 institutions[2].AddAnalysis(analyses[0]);
 
-                analyses[0].AddMicroorgnaism(microorganisms[1]);
-                analyses[0].AddMicroorgnaism(microorganisms[2]);
-                analyses[1].AddMicroorgnaism(microorganisms[0]);
-                analyses[2].AddMicroorgnaism(microorganisms[0]);
+                analyses[0].AddMicroorganism(microorganisms[1]);
+                analyses[0].AddMicroorganism(microorganisms[2]);
+                analyses[1].AddMicroorganism(microorganisms[0]);
+                analyses[2].AddMicroorganism(microorganisms[0]);
 
                 context.Institutions.AddRange(institutions);
                 context.Instruments.AddRange(instruments);

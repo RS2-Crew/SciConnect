@@ -13,7 +13,7 @@ services:
       - EmailSettings__Port=587
       - EmailSettings__UseSSL=false
       - EmailSettings__UseStartTls=true
-    depends_on: 
+    depends_on:
       - mssql
       - rabbitmq
     ports:
@@ -24,18 +24,18 @@ services:
     ports:
       - "1433:1433"
     environment:
-     #NAPRAVITI ENVIRONMENT PROMENLJIVU ZA PASS
+      #NAPRAVITI ENVIRONMENT PROMENLJIVU ZA PASS
       - SA_PASSWORD=MATF12345678rs2
       - ACCEPT_EULA=Y
     volumes:
       - mssql_data:/var/opt/mssql/data
-  
-  rabbitmq: 
-    container_name: rabbitmq 
-    restart: always 
-    ports: 
-      - "5672:5672" 
-      - "15672:15672" 
+
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 
   db.api:
     container_name: mainservice
@@ -44,9 +44,19 @@ services:
       - "ConnectionStrings:EntityConnectionString=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
       - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
 
-    depends_on: 
+    depends_on:
       - mssql
       - rabbitmq
     ports:
       - "4001:8080"
 
+  sciconnectspa:
+    container_name: sciconnect-frontend
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - db.api
+      - identityservice
+    ports:
+      - "4200:4000"
+    restart: unless-stopped
