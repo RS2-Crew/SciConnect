@@ -29,7 +29,7 @@ namespace DB.Infrastructure.Repositories
             return analysis.AsReadOnly();
         }
 
-        public async Task<IReadOnlyList<Analysis>> GetAllAsync()
+        public override async Task<IReadOnlyList<Analysis>> GetAllAsync()
         {
             return await _dbContext.Analyses
                 .AsNoTracking()

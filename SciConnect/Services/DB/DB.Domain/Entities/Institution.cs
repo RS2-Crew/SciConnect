@@ -60,7 +60,7 @@ namespace DB.Domain.Entities
         }
 
 
-        public void AddMicroorgnaism(Microorganism microorganism)
+        public void AddMicroorganism(Microorganism microorganism)
         {
             if (!_microorganisms.Contains(microorganism))
             {
