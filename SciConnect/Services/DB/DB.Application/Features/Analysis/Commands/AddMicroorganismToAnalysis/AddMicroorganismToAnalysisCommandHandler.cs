@@ -29,7 +29,7 @@ namespace DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
                 throw new ArgumentException("Invalid analysis or microorganism ID.");
             }
 
-            analysis.AddMicroorgnaism(microorganism);
+            analysis.AddMicroorganism(microorganism);
             await _analysisRepository.UpdateAsync(analysis);
 
             return Unit.Value;

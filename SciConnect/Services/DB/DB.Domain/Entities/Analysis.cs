@@ -31,7 +31,7 @@ namespace DB.Domain.Entities
             _institutions.Add(institution);
         }
 
-        public void AddMicroorgnaism(Microorganism microorganism)
+        public void AddMicroorganism(Microorganism microorganism)
         {
             if (!_microorganisms.Contains(microorganism))
             {
