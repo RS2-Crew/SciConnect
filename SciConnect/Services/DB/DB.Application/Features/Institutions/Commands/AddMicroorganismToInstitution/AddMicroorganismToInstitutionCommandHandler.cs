@@ -29,7 +29,7 @@ namespace DB.Application.Features.Institutions.Commands.AddMicroorganismToInstit
                 throw new ArgumentException("Invalid microorganism or institution ID.");
             }
 
-            institution.AddMicroorgnaism(microorganism);
+            institution.AddMicroorganism(microorganism);
             await _institutionRepository.UpdateAsync(institution);
 
             return Unit.Value;
