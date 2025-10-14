@@ -1,0 +1,9 @@
+@AnalyticsService_HostAddress = http://localhost:4002
+
+### Get Analytics Summary
+GET {{AnalyticsService_HostAddress}}/api/v1/analytics/summary
+Accept: application/json
+
+### Get Detailed Analytics for Institution
+GET {{AnalyticsService_HostAddress}}/api/v1/analytics/detailed/Institution
+Accept: application/json

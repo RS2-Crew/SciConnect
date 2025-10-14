@@ -25,6 +25,16 @@
         <i class="fas fa-user-shield"></i>
       </button>
     </div>
+
+    <div class="floating-analytics" *ngIf="canViewAnalytics()">
+      <button
+        class="analytics-btn"
+        (click)="toggleAnalytics()"
+        title="System Analytics"
+      >
+        <i class="fas fa-chart-bar"></i>
+      </button>
+    </div>
   </div>
 
   <div class="dashboard-content">
@@ -1333,6 +1343,85 @@
               </div>
             </div>
           </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics Window -->
+    <div class="analytics-overlay" *ngIf="showAnalytics && canViewAnalytics()" (click)="toggleAnalytics()">
+      <div class="analytics-window" (click)="$event.stopPropagation()">
+        <div class="analytics-header">
+          <h3><i class="fas fa-chart-bar"></i> System Analytics</h3>
+          <button class="btn-close-analytics" (click)="toggleAnalytics()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="analytics-content" *ngIf="analyticsData">
+          <div class="analytics-grid">
+            <div class="analytics-item">
+              <div class="analytics-icon institutions">
+                <i class="fas fa-hospital"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Institutions</span>
+                <span class="analytics-value">{{ analyticsData.totalInstitutions }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon analyses">
+                <i class="fas fa-flask"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Analyses</span>
+                <span class="analytics-value">{{ analyticsData.totalAnalyses }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon researchers">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Researchers</span>
+                <span class="analytics-value">{{ analyticsData.totalResearchers }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon instruments">
+                <i class="fas fa-microscope"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Instruments</span>
+                <span class="analytics-value">{{ analyticsData.totalInstruments }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon keywords">
+                <i class="fas fa-tags"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Keywords</span>
+                <span class="analytics-value">{{ analyticsData.totalKeywords }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon microorganisms">
+                <i class="fas fa-bug"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Microorganisms</span>
+                <span class="analytics-value">{{ analyticsData.totalMicroorganisms }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="analytics-loading" *ngIf="!analyticsData">
+          <i class="fas fa-spinner fa-spin"></i>
+          <span>Loading analytics...</span>
         </div>
       </div>
     </div>

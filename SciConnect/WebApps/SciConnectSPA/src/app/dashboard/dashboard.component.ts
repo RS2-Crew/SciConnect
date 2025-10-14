@@ -19,6 +19,7 @@ import { catchError } from 'rxjs/operators';
 import { AppStateService } from '../shared/app-state/app-state.service';
 import { DataService } from '../shared/services/data.service';
 import { TranslationService } from '../shared/services/translation.service';
+import { AnalyticsService, SummaryAnalyticsResponse } from '../shared/services/analytics.service';
 
 import { TranslatePipe } from '../shared/pipes/translate.pipe';
 import {
@@ -136,12 +137,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
   selectedConnectionResearcher: number | null = null;
   selectedConnectionKeyword: number | null = null;
 
+  analyticsData: SummaryAnalyticsResponse | null = null;
+  showAnalytics: boolean = false;
+
   private destroy$ = new Subject<void>();
 
   constructor(
     private appStateService: AppStateService,
     private dataService: DataService,
     private translationService: TranslationService,
+    private analyticsService: AnalyticsService,
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
@@ -1638,6 +1643,34 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   public canManageDatabase(): boolean {
     return this.userRoles.some(role => role.toLowerCase() === 'administrator' || role.toLowerCase() === 'pm');
+  }
+
+  public canViewAnalytics(): boolean {
+    return this.userRoles.some(role => role.toLowerCase() === 'administrator' || role.toLowerCase() === 'pm');
+  }
+
+  public toggleAnalytics(): void {
+    this.showAnalytics = !this.showAnalytics;
+    
+    // Fetch fresh data every time the analytics window is opened
+    if (this.showAnalytics) {
+      this.loadAnalyticsData();
+    }
+  }
+
+  private loadAnalyticsData(): void {
+    if (this.canViewAnalytics()) {
+      this.analyticsService.getAnalyticsSummary()
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (data) => {
+            this.analyticsData = data;
+          },
+          error: (error) => {
+            console.error('Error loading analytics data:', error);
+          }
+        });
+    }
   }
 
   public createInstitution(): void {
