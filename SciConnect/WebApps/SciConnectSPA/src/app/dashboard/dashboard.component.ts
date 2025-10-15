@@ -1237,7 +1237,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   public canViewAnalytics(): boolean {
-    return this.userRoles.some(role => role.toLowerCase() === 'administrator' || role.toLowerCase() === 'pm');
+    return this.userRoles.some(role => 
+      role.toLowerCase() === 'administrator' || 
+      role.toLowerCase() === 'pm' || 
+      role.toLowerCase() === 'guest'
+    );
   }
 
   public toggleAnalytics(): void {
