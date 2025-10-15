@@ -59,8 +59,8 @@ services:
     container_name: mainservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings:EntityConnectionString=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False
-      - EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672
+      - "ConnectionStrings:EntityConnectionString=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
     depends_on:
       mssql:
         condition: service_healthy
@@ -85,8 +85,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - ConnectionStrings:DefaultConnection=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False
-      - EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672
+      - "ConnectionStrings:DefaultConnection=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
     depends_on:
       mssql:
         condition: service_healthy
