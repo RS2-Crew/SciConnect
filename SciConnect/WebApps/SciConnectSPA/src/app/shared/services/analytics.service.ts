@@ -27,12 +27,6 @@ export interface TopInstitutionResponse {
   analysisCount: number;
 }
 
-export interface DetailedAnalyticsResponse {
-  entityType: string;
-  entityName: string;
-  count: number;
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -48,11 +42,10 @@ export class AnalyticsService {
   }
 
   private getHeaders(): HttpHeaders {
-    const appState = this.appStateService.getAppState();
     let token = '';
-    appState.subscribe(state => {
+    this.appStateService.getAppState().subscribe(state => {
       token = state.accessToken || '';
-    });
+    }).unsubscribe();
     
     return new HttpHeaders({
       'Content-Type': 'application/json',
@@ -70,9 +63,5 @@ export class AnalyticsService {
 
   getTopInstitutions(limit: number = 5): Observable<TopInstitutionResponse[]> {
     return this.http.get<TopInstitutionResponse[]>(`${this.baseUrl}/institutions/top?limit=${limit}`, { headers: this.getHeaders() });
-  }
-
-  getDetailedAnalytics(entityType: string): Observable<DetailedAnalyticsResponse[]> {
-    return this.http.get<DetailedAnalyticsResponse[]>(`${this.baseUrl}/detailed/${entityType}`, { headers: this.getHeaders() });
   }
 }

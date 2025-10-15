@@ -44,11 +44,10 @@ export class DataService {
   }
 
   private getHeaders(): HttpHeaders {
-    const appState = this.appStateService.getAppState();
     let token = '';
-    appState.subscribe(state => {
+    this.appStateService.getAppState().subscribe(state => {
       token = state.accessToken || '';
-    });
+    }).unsubscribe();
     
     return new HttpHeaders({
       'Content-Type': 'application/json',

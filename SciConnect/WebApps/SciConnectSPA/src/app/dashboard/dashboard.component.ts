@@ -18,10 +18,8 @@ import {
 import { catchError } from 'rxjs/operators';
 import { AppStateService } from '../shared/app-state/app-state.service';
 import { DataService } from '../shared/services/data.service';
-import { TranslationService } from '../shared/services/translation.service';
 import { AnalyticsService, SummaryAnalyticsResponse, InstitutionBreakdownResponse, TopInstitutionResponse } from '../shared/services/analytics.service';
 
-import { TranslatePipe } from '../shared/pipes/translate.pipe';
 import {
   Institution,
   Analysis,
@@ -56,7 +54,7 @@ interface FilteredResults {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslatePipe],
+  imports: [CommonModule, FormsModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
@@ -64,7 +62,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   userName: string = '';
   userRoles: string[] = [];
   currentDate: Date = new Date();
-  currentLanguage: 'en' | 'sr' = 'en';
 
   isDarkTheme: boolean = false;
 
@@ -148,7 +145,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(
     private appStateService: AppStateService,
     private dataService: DataService,
-    private translationService: TranslationService,
     private analyticsService: AnalyticsService,
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -1477,10 +1473,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.updateResults();
   }
 
-  toggleLanguage(): void {
-    this.currentLanguage = this.currentLanguage === 'en' ? 'sr' : 'en';
-    this.translationService.setLanguage(this.currentLanguage);
-  }
   showInstitutionDetails(institution: Institution): void {
     this.selectedItem = institution;
     this.modalTitle = institution.name;
