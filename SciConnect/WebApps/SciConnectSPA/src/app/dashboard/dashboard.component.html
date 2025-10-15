@@ -1,17 +1,17 @@
-<div class="dashboard-container" [class.dark-theme]="isDarkTheme">
+<div class="dashboard-container" [class.dark-theme]="themeService.isDarkTheme">
   <div class="floating-controls">
     <div class="floating-theme-toggle">
       <button
         class="theme-btn"
-        (click)="toggleTheme()"
+        (click)="themeService.toggleTheme()"
         [attr.aria-label]="
-          isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'
+          themeService.isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'
         "
       >
         <i
           class="fas"
-          [class.fa-sun]="isDarkTheme"
-          [class.fa-moon]="!isDarkTheme"
+          [class.fa-sun]="themeService.isDarkTheme"
+          [class.fa-moon]="!themeService.isDarkTheme"
         ></i>
       </button>
     </div>
@@ -25,11 +25,31 @@
         <i class="fas fa-user-shield"></i>
       </button>
     </div>
+
+    <div class="floating-analytics" *ngIf="canViewAnalytics()">
+      <button
+        class="analytics-btn"
+        (click)="toggleAnalytics()"
+        title="System Analytics"
+      >
+        <i class="fas fa-chart-bar"></i>
+      </button>
+    </div>
+
+    <div class="floating-logout">
+      <button
+        class="logout-btn"
+        (click)="onLogout()"
+        title="Logout"
+      >
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
   </div>
 
   <div class="dashboard-content">
     <div class="content-branding">
-      <img [src]="getLogoPath()" alt="SciConnect Logo" class="content-logo" />
+      <img [src]="themeService.getLogoPath()" alt="SciConnect Logo" class="content-logo" />
       <h1 class="content-title">SciConnect</h1>
     </div>
 
@@ -42,7 +62,7 @@
             (click)="setActiveTab('analyses')"
           >
             <i class="fas fa-flask"></i>
-            {{ "ANALYSES_INSTITUTIONS" | translate }}
+            Analyses & Institutions
           </button>
           <button
             class="tab-button"
@@ -50,7 +70,7 @@
             (click)="setActiveTab('researchers')"
           >
             <i class="fas fa-user-md"></i>
-            {{ "RESEARCHERS_KEYWORDS" | translate }}
+            Researchers & Keywords
           </button>
           <button
             class="tab-button"
@@ -69,7 +89,7 @@
             <input
               type="text"
               class="master-search-input"
-              [placeholder]="'SEARCH_PLACEHOLDER' | translate"
+              placeholder="Search for institutions, analyses, researchers, keywords..."
               [(ngModel)]="masterSearchTerm"
               (input)="onMasterSearchInput($event)"
               (focus)="showSearchSuggestions = true"
@@ -86,7 +106,7 @@
               *ngFor="let group of filteredSearchResults"
             >
               <div class="suggestion-category" *ngIf="group.items.length > 0">
-                {{ group.category | translate }}
+                {{ group.category }}
               </div>
               <div
                 class="suggestion-item"
@@ -109,13 +129,13 @@
       <div class="tab-content">
         <div class="tab-panel" *ngIf="activeTab === 'analyses'">
           <div class="guided-search-section">
-            <h3>{{ "GUIDED_SEARCH" | translate }}</h3>
+            <h3>Guided Search</h3>
 
             <div class="search-grid">
               <div class="filter-card">
                 <div class="filter-header">
                   <i class="fas fa-hospital"></i>
-                  <span>{{ "INSTITUTION" | translate }}</span>
+                  <span>Institution</span>
                 </div>
                 <div class="filter-content">
                   <select
@@ -124,7 +144,7 @@
                     (change)="onInstitutionChange()"
                   >
                     <option value="">
-                      {{ "SELECT_INSTITUTION" | translate }}
+                      Select Institution
                     </option>
                     <option
                       *ngFor="let inst of allInstitutions"
@@ -162,7 +182,7 @@
               <div class="filter-card">
                 <div class="filter-header">
                   <i class="fas fa-flask"></i>
-                  <span>{{ "ANALYSIS" | translate }}</span>
+                  <span>Analysis</span>
                 </div>
                 <div class="filter-content">
                   <select
@@ -171,7 +191,7 @@
                     (change)="onAnalysisChange()"
                   >
                     <option value="">
-                      {{ "SELECT_ANALYSIS" | translate }}
+                      Select Analysis
                     </option>
                     <option
                       *ngFor="let analysis of allAnalyses"
@@ -198,7 +218,7 @@
               <div class="filter-card">
                 <div class="filter-header">
                   <i class="fas fa-bug"></i>
-                  <span>{{ "MICROORGANISM" | translate }}</span>
+                  <span>Microorganism</span>
                 </div>
                 <div class="filter-content">
                   <select
@@ -207,7 +227,7 @@
                     (change)="onMicroorganismChange()"
                   >
                     <option value="">
-                      {{ "SELECT_MICROORGANISM" | translate }}
+                      Select Microorganism
                     </option>
                     <option
                       *ngFor="let micro of allMicroorganisms"
@@ -222,7 +242,7 @@
               <div class="filter-card">
                 <div class="filter-header">
                   <i class="fas fa-microscope"></i>
-                  <span>{{ "INSTRUMENT" | translate }}</span>
+                  <span>Instrument</span>
                 </div>
                 <div class="filter-content">
                   <select
@@ -231,7 +251,7 @@
                     (change)="onInstrumentChange()"
                   >
                     <option value="">
-                      {{ "SELECT_INSTRUMENT" | translate }}
+                      Select Instrument
                     </option>
                     <option
                       *ngFor="let instrument of allInstruments"
@@ -247,20 +267,20 @@
             <div class="filter-actions">
               <button class="btn-clear-filters" (click)="clearAllFilters()">
                 <i class="fas fa-times"></i>
-                {{ "CLEAR_FILTERS" | translate }}
+                Clear All Filters
               </button>
             </div>
           </div>
 
           <div class="results-section" *ngIf="hasActiveFilters()">
-            <h3>{{ "SEARCH_RESULTS" | translate }}</h3>
+            <h3>Search Results</h3>
 
             <div
               class="results-group"
               *ngIf="filteredResults.institutions.length > 0"
             >
               <h4>
-                {{ "INSTITUTIONS" | translate }} ({{
+                Institutions ({{
                   filteredResults.institutions.length
                 }})
               </h4>
@@ -295,7 +315,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -307,7 +327,7 @@
               *ngIf="filteredResults.analyses.length > 0"
             >
               <h4>
-                {{ "ANALYSES" | translate }} ({{
+                Analyses ({{
                   filteredResults.analyses.length
                 }})
               </h4>
@@ -332,7 +352,7 @@
                       "
                     >
                       <i class="fas fa-hospital"></i>
-                      {{ "PERFORMED_AT" | translate }}:
+                      Performed at:
                       {{ getInstitutionNames(analysis.institutions) }}
                     </p>
                     <p
@@ -342,11 +362,11 @@
                       "
                     >
                       <i class="fas fa-bug"></i>
-                      {{ "MICROORGANISMS" | translate }}:
+                      Microorganisms:
                       {{ getMicroorganismNames(analysis.microorganisms) }}
                     </p>
                     <p *ngIf="analysis.type">
-                      <i class="fas fa-tag"></i> {{ "TYPE" | translate }}:
+                      <i class="fas fa-tag"></i> Type:
                       {{ analysis.type }}
                     </p>
                   </div>
@@ -358,7 +378,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -370,7 +390,7 @@
               *ngIf="filteredResults.microorganisms.length > 0"
             >
               <h4>
-                {{ "MICROORGANISMS" | translate }} ({{
+                Microorganisms ({{
                   filteredResults.microorganisms.length
                 }})
               </h4>
@@ -389,16 +409,16 @@
                       {{ microorganism.description }}
                     </p>
                     <p *ngIf="microorganism.type">
-                      <i class="fas fa-tag"></i> {{ "TYPE" | translate }}:
+                      <i class="fas fa-tag"></i> Type:
                       {{ microorganism.type }}
                     </p>
                     <p *ngIf="getMicroorganismInstitutions(microorganism)">
                       <i class="fas fa-hospital"></i>
-                      {{ "USED_BY" | translate }}:
+                      Used by:
                       {{ getMicroorganismInstitutions(microorganism) }}
                     </p>
                     <p *ngIf="getMicroorganismAnalyses(microorganism)">
-                      <i class="fas fa-flask"></i> {{ "USED_IN" | translate }}:
+                      <i class="fas fa-flask"></i> Used in:
                       {{ getMicroorganismAnalyses(microorganism) }}
                     </p>
                   </div>
@@ -411,7 +431,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -423,7 +443,7 @@
               *ngIf="filteredResults.instruments.length > 0"
             >
               <h4>
-                {{ "INSTRUMENTS" | translate }} ({{
+                Instruments ({{
                   filteredResults.instruments.length
                 }})
               </h4>
@@ -443,16 +463,16 @@
                     </p>
                     <p *ngIf="instrument.manufacturer">
                       <i class="fas fa-industry"></i>
-                      {{ "MANUFACTURER" | translate }}:
+                      Manufacturer:
                       {{ instrument.manufacturer }}
                     </p>
                     <p *ngIf="instrument.model">
-                      <i class="fas fa-cog"></i> {{ "MODEL" | translate }}:
+                      <i class="fas fa-cog"></i> Model:
                       {{ instrument.model }}
                     </p>
                     <p *ngIf="getInstrumentInstitutions(instrument)">
                       <i class="fas fa-hospital"></i>
-                      {{ "AVAILABLE_AT" | translate }}:
+                      Available at:
                       {{ getInstrumentInstitutions(instrument) }}
                     </p>
                   </div>
@@ -465,7 +485,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -476,13 +496,13 @@
 
         <div class="tab-panel" *ngIf="activeTab === 'researchers'">
           <div class="guided-search-section">
-            <h3>{{ "GUIDED_SEARCH" | translate }}</h3>
+            <h3>Guided Search</h3>
 
             <div class="search-grid">
               <div class="filter-card">
                 <div class="filter-header">
                   <i class="fas fa-user-md"></i>
-                  <span>{{ "RESEARCHER" | translate }}</span>
+                  <span>Researcher</span>
                 </div>
                 <div class="filter-content">
                   <select
@@ -491,7 +511,7 @@
                     (change)="onResearcherChange()"
                   >
                     <option value="">
-                      {{ "SELECT_RESEARCHER" | translate }}
+                      Select Researcher
                     </option>
                     <option
                       *ngFor="let researcher of allResearchers"
@@ -526,7 +546,7 @@
               <div class="filter-card">
                 <div class="filter-header">
                   <i class="fas fa-tags"></i>
-                  <span>{{ "KEYWORDS" | translate }}</span>
+                  <span>Keywords</span>
                 </div>
                 <div class="filter-content">
                   <select
@@ -534,7 +554,7 @@
                     [(ngModel)]="selectedKeyword"
                     (change)="onKeywordChange()"
                   >
-                    <option value="">{{ "SELECT_KEYWORD" | translate }}</option>
+                    <option value="">Select Keyword</option>
                     <option
                       *ngFor="let keyword of allKeywords"
                       [value]="keyword.id"
@@ -549,20 +569,20 @@
             <div class="filter-actions">
               <button class="btn-clear-filters" (click)="clearAllFilters()">
                 <i class="fas fa-times"></i>
-                {{ "CLEAR_FILTERS" | translate }}
+                Clear All Filters
               </button>
             </div>
           </div>
 
           <div class="results-section" *ngIf="hasActiveFilters()">
-            <h3>{{ "SEARCH_RESULTS" | translate }}</h3>
+            <h3>Search Results</h3>
 
             <div
               class="results-group"
               *ngIf="filteredResults.researchers.length > 0"
             >
               <h4>
-                {{ "RESEARCHERS" | translate }} ({{
+                Researchers ({{
                   filteredResults.researchers.length
                 }})
               </h4>
@@ -581,11 +601,11 @@
                   <div class="card-content">
                     <p *ngIf="researcher.institution?.name">
                       <i class="fas fa-hospital"></i>
-                      {{ "INSTITUTION" | translate }}:
+                      Institution:
                       {{ researcher.institution?.name }}
                     </p>
                     <p *ngIf="researcher.title">
-                      <i class="fas fa-user-tie"></i> {{ "TITLE" | translate }}:
+                      <i class="fas fa-user-tie"></i> Title:
                       {{ researcher.title }}
                     </p>
                     <p *ngIf="researcher.email">
@@ -595,7 +615,7 @@
                       <i class="fas fa-phone"></i> {{ researcher.phone }}
                     </p>
                     <p *ngIf="researcher.keywords?.length">
-                      <i class="fas fa-tags"></i> {{ "KEYWORDS" | translate }}:
+                      <i class="fas fa-tags"></i> Keywords:
                       {{ getKeywordNames(researcher.keywords) }}
                     </p>
                   </div>
@@ -608,7 +628,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -620,7 +640,7 @@
               *ngIf="filteredResults.keywords.length > 0"
             >
               <h4>
-                {{ "KEYWORDS" | translate }} ({{
+                Keywords ({{
                   filteredResults.keywords.length
                 }})
               </h4>
@@ -638,12 +658,12 @@
                     <p *ngIf="keyword.description">{{ keyword.description }}</p>
                     <p *ngIf="keyword.researchers?.length">
                       <i class="fas fa-user-md"></i>
-                      {{ "RESEARCHERS" | translate }}:
+                      Researchers:
                       {{ getResearcherNames(keyword.researchers) }}
                     </p>
                     <p *ngIf="!keyword.researchers?.length">
                       <i class="fas fa-info-circle"></i>
-                      {{ "NO_RESEARCHERS" | translate }}
+                      No Researchers
                     </p>
                   </div>
                   <div class="card-actions">
@@ -654,7 +674,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -666,7 +686,7 @@
               *ngIf="filteredResults.microorganisms.length > 0"
             >
               <h4>
-                {{ "MICROORGANISMS" | translate }} ({{
+                Microorganisms ({{
                   filteredResults.microorganisms.length
                 }})
               </h4>
@@ -685,16 +705,16 @@
                       {{ microorganism.description }}
                     </p>
                     <p *ngIf="microorganism.type">
-                      <i class="fas fa-tag"></i> {{ "TYPE" | translate }}:
+                      <i class="fas fa-tag"></i> Type:
                       {{ microorganism.type }}
                     </p>
                     <p *ngIf="getMicroorganismInstitutions(microorganism)">
                       <i class="fas fa-hospital"></i>
-                      {{ "USED_BY" | translate }}:
+                      Used by:
                       {{ getMicroorganismInstitutions(microorganism) }}
                     </p>
                     <p *ngIf="getMicroorganismAnalyses(microorganism)">
-                      <i class="fas fa-flask"></i> {{ "USED_IN" | translate }}:
+                      <i class="fas fa-flask"></i> Used in:
                       {{ getMicroorganismAnalyses(microorganism) }}
                     </p>
                   </div>
@@ -707,7 +727,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -719,7 +739,7 @@
               *ngIf="filteredResults.instruments.length > 0"
             >
               <h4>
-                {{ "INSTRUMENTS" | translate }} ({{
+                Instruments ({{
                   filteredResults.instruments.length
                 }})
               </h4>
@@ -739,16 +759,16 @@
                     </p>
                     <p *ngIf="instrument.manufacturer">
                       <i class="fas fa-industry"></i>
-                      {{ "MANUFACTURER" | translate }}:
+                      Manufacturer:
                       {{ instrument.manufacturer }}
                     </p>
                     <p *ngIf="instrument.model">
-                      <i class="fas fa-cog"></i> {{ "MODEL" | translate }}:
+                      <i class="fas fa-cog"></i> Model:
                       {{ instrument.model }}
                     </p>
                     <p *ngIf="getInstrumentInstitutions(instrument)">
                       <i class="fas fa-hospital"></i>
-                      {{ "AVAILABLE_AT" | translate }}:
+                      Available at:
                       {{ getInstrumentInstitutions(instrument) }}
                     </p>
                   </div>
@@ -761,7 +781,7 @@
                       "
                     >
                       <i class="fas fa-info-circle"></i>
-                      {{ "DETAILS" | translate }}
+                      Details
                     </button>
                   </div>
                 </div>
@@ -895,7 +915,7 @@
                     </button>
                   </div>
                   <div class="item-list">
-                    <div class="item" *ngFor="let employee of allEmployees">
+                    <div class="item" *ngFor="let employee of allResearchers">
                       <span>{{ employee.firstName }} {{ employee.lastName }} ({{ employee.email }})</span>
                       <button class="btn-delete" (click)="deleteEmployee(employee.id)">
                         <i class="fas fa-trash"></i>
@@ -1082,40 +1102,6 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="connection-card">
-                  <div class="card-header">
-                    <i class="fas fa-network-wired"></i>
-                    <h4>Current Connections</h4>
-                  </div>
-                  <div class="card-content">
-                    <div class="connections-list">
-                      <div class="connection-section" *ngFor="let institution of allInstitutions">
-                        <h6>{{ institution.name }}</h6>
-                        <div class="connection-items">
-                          <div class="connection-item" *ngFor="let analysis of institution.analyses">
-                            <span><i class="fas fa-flask"></i> {{ analysis.name }}</span>
-                            <button class="btn-disconnect" (click)="disconnectInstitutionFromAnalysis(institution.id, analysis.id)">
-                              <i class="fas fa-unlink"></i>
-                            </button>
-                          </div>
-                          <div class="connection-item" *ngFor="let instrument of institution.instruments">
-                            <span><i class="fas fa-microscope"></i> {{ instrument.name }}</span>
-                            <button class="btn-disconnect" (click)="disconnectInstitutionFromInstrument(institution.id, instrument.id)">
-                              <i class="fas fa-unlink"></i>
-                            </button>
-                          </div>
-                          <div class="connection-item" *ngFor="let microorganism of institution.microorganisms">
-                            <span><i class="fas fa-bug"></i> {{ microorganism.name }}</span>
-                            <button class="btn-disconnect" (click)="disconnectInstitutionFromMicroorganism(institution.id, microorganism.id)">
-                              <i class="fas fa-unlink"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -1160,7 +1146,7 @@
                 }}</a>
               </div>
               <div class="detail-section" *ngIf="selectedItem.analyses?.length">
-                <h4>{{ "ANALYSES" | translate }}</h4>
+                <h4>Analyses</h4>
                 <div class="tag-list">
                   <span
                     class="tag"
@@ -1173,7 +1159,7 @@
                 class="detail-section"
                 *ngIf="selectedItem.instruments?.length"
               >
-                <h4>{{ "INSTRUMENTS" | translate }}</h4>
+                <h4>Instruments</h4>
                 <div class="tag-list">
                   <span
                     class="tag"
@@ -1194,12 +1180,12 @@
               </div>
               <div class="detail-row" *ngIf="selectedItem.title">
                 <i class="fas fa-user-tie"></i>
-                <span>{{ "TITLE" | translate }}: {{ selectedItem.title }}</span>
+                <span>Title: {{ selectedItem.title }}</span>
               </div>
               <div class="detail-row" *ngIf="selectedItem.institution?.name">
                 <i class="fas fa-hospital"></i>
                 <span
-                  >{{ "INSTITUTION" | translate }}:
+                  >Institution:
                   {{ selectedItem.institution.name }}</span
                 >
               </div>
@@ -1212,7 +1198,7 @@
                 <span>{{ selectedItem.phone }}</span>
               </div>
               <div class="detail-section" *ngIf="selectedItem.keywords?.length">
-                <h4>{{ "KEYWORDS" | translate }}</h4>
+                <h4>Keywords</h4>
                 <div class="tag-list">
                   <span
                     class="tag"
@@ -1234,13 +1220,13 @@
               </div>
               <div class="detail-row" *ngIf="selectedItem.type">
                 <i class="fas fa-tag"></i>
-                <span>{{ "TYPE" | translate }}: {{ selectedItem.type }}</span>
+                <span>Type: {{ selectedItem.type }}</span>
               </div>
               <div
                 class="detail-section"
                 *ngIf="selectedItem.institutions?.length"
               >
-                <h4>{{ "PERFORMED_AT" | translate }}</h4>
+                <h4>Performed at</h4>
                 <div class="tag-list">
                   <span
                     class="tag"
@@ -1253,7 +1239,7 @@
                 class="detail-section"
                 *ngIf="selectedItem.microorganisms?.length"
               >
-                <h4>{{ "MICROORGANISMS" | translate }}</h4>
+                <h4>Microorganisms</h4>
                 <div class="tag-list">
                   <span
                     class="tag"
@@ -1277,7 +1263,7 @@
                 class="detail-section"
                 *ngIf="selectedItem.researchers?.length"
               >
-                <h4>{{ "RESEARCHERS" | translate }}</h4>
+                <h4>Researchers</h4>
                 <div class="tag-list">
                   <span
                     class="tag"
@@ -1291,8 +1277,8 @@
                 class="detail-section"
                 *ngIf="!selectedItem.researchers?.length"
               >
-                <h4>{{ "NO_RESEARCHERS" | translate }}</h4>
-                <p>{{ "NO_RESEARCHERS_DESCRIPTION" | translate }}</p>
+                <h4>No Researchers</h4>
+                <p>No researchers are currently associated with this keyword.</p>
               </div>
             </div>
 
@@ -1307,7 +1293,7 @@
               </div>
               <div class="detail-row" *ngIf="selectedItem.type">
                 <i class="fas fa-tag"></i>
-                <span>{{ "TYPE" | translate }}: {{ selectedItem.type }}</span>
+                <span>Type: {{ selectedItem.type }}</span>
               </div>
             </div>
 
@@ -1323,18 +1309,146 @@
               <div class="detail-row" *ngIf="selectedItem.manufacturer">
                 <i class="fas fa-industry"></i>
                 <span
-                  >{{ "MANUFACTURER" | translate }}:
+                  >Manufacturer:
                   {{ selectedItem.manufacturer }}</span
                 >
               </div>
               <div class="detail-row" *ngIf="selectedItem.model">
                 <i class="fas fa-cog"></i>
-                <span>{{ "MODEL" | translate }}: {{ selectedItem.model }}</span>
+                <span>Model: {{ selectedItem.model }}</span>
               </div>
             </div>
           </ng-container>
         </div>
       </div>
     </div>
+
+    <div class="analytics-overlay" *ngIf="showAnalytics && canViewAnalytics()" (click)="toggleAnalytics()">
+      <div class="analytics-window" (click)="$event.stopPropagation()">
+        <div class="analytics-header">
+          <h3><i class="fas fa-chart-bar"></i> System Analytics</h3>
+          <button class="btn-close-analytics" (click)="toggleAnalytics()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="analytics-content" *ngIf="analyticsData">
+          <div class="analytics-grid">
+            <div class="analytics-item">
+              <div class="analytics-icon institutions">
+                <i class="fas fa-hospital"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Institutions</span>
+                <span class="analytics-value">{{ analyticsData.totalInstitutions }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon analyses">
+                <i class="fas fa-flask"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Analyses</span>
+                <span class="analytics-value">{{ analyticsData.totalAnalyses }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon researchers">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Researchers</span>
+                <span class="analytics-value">{{ analyticsData.totalResearchers }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon instruments">
+                <i class="fas fa-microscope"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Instruments</span>
+                <span class="analytics-value">{{ analyticsData.totalInstruments }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon keywords">
+                <i class="fas fa-tags"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Keywords</span>
+                <span class="analytics-value">{{ analyticsData.totalKeywords }}</span>
+              </div>
+            </div>
+            
+            <div class="analytics-item">
+              <div class="analytics-icon microorganisms">
+                <i class="fas fa-bug"></i>
+              </div>
+              <div class="analytics-info">
+                <span class="analytics-label">Microorganisms</span>
+                <span class="analytics-value">{{ analyticsData.totalMicroorganisms }}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="analytics-section">
+            <h4 class="analytics-section-title">
+              <i class="fas fa-trophy"></i> Top Institutions by Analyses
+            </h4>
+            <div class="top-institutions-list" *ngIf="topInstitutionsData.length > 0">
+              <div class="top-institution-item" *ngFor="let institution of topInstitutionsData; let i = index"
+                   (click)="loadInstitutionBreakdown(institution.institutionId)"
+                   [class.selected]="selectedInstitutionId === institution.institutionId">
+                <div class="institution-rank" [class.gold]="i === 0" [class.silver]="i === 1" [class.bronze]="i === 2">
+                  {{ i + 1 }}
+                </div>
+                <div class="institution-details">
+                  <span class="institution-name">{{ institution.institutionName }}</span>
+                  <span class="institution-count">{{ institution.analysisCount }} analyses</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="analytics-section" *ngIf="institutionBreakdownData">
+            <h4 class="analytics-section-title">
+              <i class="fas fa-building"></i> {{ institutionBreakdownData.institutionName }} - Detailed Breakdown
+            </h4>
+            <div class="breakdown-grid">
+              <div class="breakdown-item">
+                <i class="fas fa-flask breakdown-icon"></i>
+                <div class="breakdown-info">
+                  <span class="breakdown-label">Analyses</span>
+                  <span class="breakdown-value">{{ institutionBreakdownData.totalAnalyses }}</span>
+                </div>
+              </div>
+              <div class="breakdown-item">
+                <i class="fas fa-user-md breakdown-icon"></i>
+                <div class="breakdown-info">
+                  <span class="breakdown-label">Researchers</span>
+                  <span class="breakdown-value">{{ institutionBreakdownData.totalResearchers }}</span>
+                </div>
+              </div>
+              <div class="breakdown-item">
+                <i class="fas fa-microscope breakdown-icon"></i>
+                <div class="breakdown-info">
+                  <span class="breakdown-label">Instruments</span>
+                  <span class="breakdown-value">{{ institutionBreakdownData.totalInstruments }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="analytics-loading" *ngIf="!analyticsData">
+          <i class="fas fa-spinner fa-spin"></i>
+          <span>Loading analytics...</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+

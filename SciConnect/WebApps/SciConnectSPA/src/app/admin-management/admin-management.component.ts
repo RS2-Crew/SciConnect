@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthentificationService } from '../identity/domain/infrastructure/authentification.service';
 import { AppStateService } from '../shared/app-state/app-state.service';
-import { Role } from '../shared/app-state/role';
+import { FormUtils } from '../shared/utils/form-utils';
 
 @Component({
   selector: 'app-admin-management',
@@ -41,7 +41,7 @@ export class AdminManagementComponent implements OnInit {
 
   public onGenerateVerificationCode(): void {
     if (this.generateCodeForm.invalid) {
-      this.markFormGroupTouched();
+      FormUtils.markFormGroupTouched(this.generateCodeForm);
       return;
     }
 
@@ -57,15 +57,8 @@ export class AdminManagementComponent implements OnInit {
       },
       error: (error) => {
         this.isLoading = false;
-        this.errorMessage = this.getErrorMessage(error);
+        this.errorMessage = this.getHttpErrorMessage(error);
       }
-    });
-  }
-
-  private markFormGroupTouched(): void {
-    Object.keys(this.generateCodeForm.controls).forEach(key => {
-      const control = this.generateCodeForm.get(key);
-      control?.markAsTouched();
     });
   }
 
@@ -74,7 +67,7 @@ export class AdminManagementComponent implements OnInit {
     this.errorMessage = '';
   }
 
-  private getErrorMessage(error: any): string {
+  private getHttpErrorMessage(error: any): string {
     if (error?.error?.message) {
       return error.error.message;
     }

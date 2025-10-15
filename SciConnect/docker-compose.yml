@@ -23,5 +23,11 @@ services:
       context: ./WebApps/SciConnectSPA
       dockerfile: Dockerfile
 
+  analyticsservice:
+    image: ${DOCKER_REGISTRY-}analyticsservice
+    build:
+      context: .
+      dockerfile: AnalyticsService/Dockerfile
+
 volumes:
   mssql_data:

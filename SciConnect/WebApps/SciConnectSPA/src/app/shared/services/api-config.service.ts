@@ -17,4 +17,8 @@ export class ApiConfigService {
   getIdentityApiUrl(): string {
     return `http://localhost:4000/api/v1/identity`; // Identity service runs on port 4000
   }
+
+  getAnalyticsApiUrl(): string {
+    return `http://localhost:4002/api/v1/analytics`; // Analytics service runs on port 4002
+  }
 }

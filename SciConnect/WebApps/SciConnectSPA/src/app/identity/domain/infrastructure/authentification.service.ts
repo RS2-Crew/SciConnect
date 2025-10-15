@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 import { ILoginRequest } from "../models/login-request";
 import { Observable, switchMap, take } from "rxjs";
 import { ILoginResponse } from "../models/login-response";
-import { ILogoutRequest } from "../models/logout-request";
 import { IRegisterRequest } from "../models/register-request";
 import { AppStateService } from "../../../shared/app-state/app-state.service";
 
@@ -18,10 +17,6 @@ export class AuthentificationService {
 
   public login(request: ILoginRequest): Observable<ILoginResponse> {
     return this.httpClient.post<ILoginResponse>(`${this.url}/login`, request);
-  }
-
-  public logout(request: ILogoutRequest): Observable<any>{
-    return this.httpClient.post(`${this.url}/logout`, request);
   }
 
   public registerGuest(request: IRegisterRequest): Observable<any> {

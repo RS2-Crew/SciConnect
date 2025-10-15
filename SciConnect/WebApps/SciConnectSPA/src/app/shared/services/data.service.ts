@@ -44,11 +44,10 @@ export class DataService {
   }
 
   private getHeaders(): HttpHeaders {
-    const appState = this.appStateService.getAppState();
     let token = '';
-    appState.subscribe(state => {
+    this.appStateService.getAppState().subscribe(state => {
       token = state.accessToken || '';
-    });
+    }).unsubscribe();
     
     return new HttpHeaders({
       'Content-Type': 'application/json',
@@ -102,11 +101,6 @@ export class DataService {
         return forkJoin(institutionRequests);
       })
     );
-  }
-
-  getInstitutionByName(name: string): Observable<Institution[]> {
-    return this.http.get<InstitutionViewModel[]>(`${this.baseUrl}/institutions/${name}`, { headers: this.getHeaders() })
-      .pipe(map(institutions => institutions as Institution[]));
   }
 
   getInstitutionWithAnalyses(institutionName: string): Observable<Institution> {
@@ -163,11 +157,6 @@ export class DataService {
     );
   }
 
-  getAnalysisByName(name: string): Observable<Analysis[]> {
-    return this.http.get<AnalysisViewModel[]>(`${this.baseUrl}/analyses/${name}`, { headers: this.getHeaders() })
-      .pipe(map(analyses => analyses as Analysis[]));
-  }
-
   getAnalysisWithInstitutions(analysisName: string): Observable<Analysis> {
     return this.http.get<Analysis>(`${this.baseUrl}/analysis/with-institutions/${analysisName}`, { headers: this.getHeaders() });
   }
@@ -203,11 +192,6 @@ export class DataService {
     );
   }
 
-  getInstrumentByName(name: string): Observable<Instrument[]> {
-    return this.http.get<InstrumentViewModel[]>(`${this.baseUrl}/instruments/${name}`, { headers: this.getHeaders() })
-      .pipe(map(instruments => instruments as Instrument[]));
-  }
-
   getInstitutionsByInstrument(instrumentName: string): Observable<Institution[]> {
     return this.http.get<Institution[]>(`${this.baseUrl}/instrument/with-institutions/${instrumentName}`, { headers: this.getHeaders() });
   }
@@ -237,11 +221,6 @@ export class DataService {
         return forkJoin(keywordRequests);
       })
     );
-  }
-
-  getKeywordByName(name: string): Observable<Keyword[]> {
-    return this.http.get<KeywordViewModel[]>(`${this.baseUrl}/keywords/${name}`, { headers: this.getHeaders() })
-      .pipe(map(keywords => keywords as Keyword[]));
   }
 
   getEmployeesByKeyword(keywordName: string): Observable<Employee[]> {
@@ -280,11 +259,6 @@ export class DataService {
         return forkJoin(employeeRequests);
       })
     );
-  }
-
-  getEmployeeByName(firstName: string, lastName: string): Observable<Employee[]> {
-    return this.http.get<EmployeeViewModel[]>(`${this.baseUrl}/employees/${firstName}/${lastName}`, { headers: this.getHeaders() })
-      .pipe(map(employees => employees as Employee[]));
   }
 
   getEmployeeWithInstitution(firstName: string, lastName: string): Observable<Employee> {
@@ -329,11 +303,6 @@ export class DataService {
     );
   }
 
-  getMicroorganismByName(name: string): Observable<Microorganism[]> {
-    return this.http.get<MicroorganismViewModel[]>(`${this.baseUrl}/microorganisms/${name}`, { headers: this.getHeaders() })
-      .pipe(map(microorganisms => microorganisms as Microorganism[]));
-  }
-
   getMicroorganismWithAnalysis(microorganismName: string): Observable<Microorganism> {
     return this.http.get<Microorganism>(`${this.baseUrl}/microorganism/with-analysis/${microorganismName}`, { headers: this.getHeaders() });
   }
@@ -350,15 +319,6 @@ export class DataService {
 
   getFilterState(): FilterState {
     return this.filterStateSubject.value;
-  }
-
-  getAnalysesForInstitution(institutionName: string): Observable<Analysis[]> {
-    return this.getInstitutionWithAnalyses(institutionName)
-      .pipe(
-        map(institution => {
-          return institution['analyses'] || [];
-        })
-      );
   }
 
   createInstitution(name: string, description: string, city: string, street: string, country: string, streetNumber: string): Observable<number> {
@@ -424,47 +384,23 @@ export class DataService {
       );
   }
 
-  disconnectInstitutionFromAnalysis(institutionId: number, analysisId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/institutions/${institutionId}/analysis/${analysisId}`, { headers: this.getHeaders() });
-  }
-
   connectInstitutionToInstrument(institutionId: number, instrumentId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/institutions/${institutionId}/instruments/${instrumentId}`, {}, { headers: this.getHeaders() });
-  }
-
-  disconnectInstitutionFromInstrument(institutionId: number, instrumentId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/institutions/${institutionId}/instruments/${instrumentId}`, { headers: this.getHeaders() });
   }
 
   connectInstitutionToMicroorganism(institutionId: number, microorganismId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/institutions/${institutionId}/microorganism/${microorganismId}`, {}, { headers: this.getHeaders() });
   }
 
-  disconnectInstitutionFromMicroorganism(institutionId: number, microorganismId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/institutions/${institutionId}/microorganism/${microorganismId}`, { headers: this.getHeaders() });
-  }
-
   connectResearcherToKeyword(researcherId: number, keywordId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/employee/${researcherId}/keyword/${keywordId}`, {}, { headers: this.getHeaders() });
-  }
-
-  disconnectResearcherFromKeyword(researcherId: number, keywordId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/employee/${researcherId}/keyword/${keywordId}`, { headers: this.getHeaders() });
   }
 
   connectAnalysisToMicroorganism(analysisId: number, microorganismId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/analysis/${analysisId}/microorganism/${microorganismId}`, {}, { headers: this.getHeaders() });
   }
 
-  disconnectAnalysisFromMicroorganism(analysisId: number, microorganismId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/analysis/${analysisId}/microorganism/${microorganismId}`, { headers: this.getHeaders() });
-  }
-
   connectAnalysisToInstrument(analysisId: number, instrumentId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/analysis/${analysisId}/instrument/${instrumentId}`, {}, { headers: this.getHeaders() });
-  }
-
-  disconnectAnalysisFromInstrument(analysisId: number, instrumentId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/analysis/${analysisId}/instrument/${instrumentId}`, { headers: this.getHeaders() });
   }
 }
