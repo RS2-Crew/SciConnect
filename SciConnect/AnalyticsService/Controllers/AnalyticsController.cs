@@ -1,5 +1,6 @@
 using AnalyticsService.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AnalyticsService.Controllers
 {
@@ -17,6 +18,7 @@ namespace AnalyticsService.Controllers
         }
 
         [HttpGet("summary")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAnalyticsSummary()
@@ -34,6 +36,7 @@ namespace AnalyticsService.Controllers
         }
 
         [HttpGet("institution/{institutionId}/breakdown")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -56,15 +59,17 @@ namespace AnalyticsService.Controllers
         }
 
         [HttpGet("institutions/top")]
+        [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetTopInstitutions([FromQuery] int limit = 5)
         {
             try
             {
-                if (limit <= 0 || limit > 100)
+                if (limit <= 0 || limit > 200)
                 {
-                    limit = 5;
+                    return BadRequest("Limit must be between 1 and 200");
                 }
 
                 var result = await _analyticsService.GetTopInstitutionsAsync(limit);
