@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthentificationFacadeService } from '../../domain/application-services/authentification-facade.service';
 import { ThemeService } from '../../../shared/services/theme.service';
+import { FormUtils } from '../../../shared/utils/form-utils';
 
 interface ILoginFormData {
   username: string;
@@ -59,7 +60,7 @@ export class LoginFormComponent implements OnInit {
 
   public onLoginFormSubmit(): void {
     if (this.loginForm.invalid) {
-      this.markFormGroupTouched();
+      FormUtils.markFormGroupTouched(this.loginForm);
       return;
     }
 
@@ -82,7 +83,7 @@ export class LoginFormComponent implements OnInit {
       },
       error: (error) => {
         this.isLoading = false;
-        this.loginError = this.getErrorMessage(error);
+        this.loginError = FormUtils.getHttpErrorMessage(error, 'login');
       }
     });
   }
@@ -92,27 +93,8 @@ export class LoginFormComponent implements OnInit {
     this.loginError = 'Password reset functionality will be available soon. Please contact your administrator.';
   }
 
-  private markFormGroupTouched(): void {
-    Object.keys(this.loginForm.controls).forEach(key => {
-      const control = this.loginForm.get(key);
-      control?.markAsTouched();
-    });
-  }
-
   private clearMessages(): void {
     this.loginError = '';
     this.loginSuccess = '';
-  }
-
-  private getErrorMessage(error: any): string {
-    if (error.status === 401) {
-      return 'Invalid username or password. Please check your credentials.';
-    } else if (error.status === 0) {
-      return 'Unable to connect to the server. Please check your internet connection.';
-    } else if (error.status >= 500) {
-      return 'Server error. Please try again later.';
-    } else {
-      return 'An unexpected error occurred. Please try again.';
-    }
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-indentity',
+  selector: 'app-identity',
   templateUrl: './identity.component.html',
   styleUrl: './identity.component.css'
 })

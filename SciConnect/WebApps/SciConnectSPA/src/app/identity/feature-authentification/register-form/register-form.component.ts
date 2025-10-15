@@ -5,6 +5,7 @@ import { AuthentificationFacadeService } from '../../domain/application-services
 import { Observable } from 'rxjs';
 import { IRegisterRequest } from '../../domain/models/register-request';
 import { ThemeService } from '../../../shared/services/theme.service';
+import { FormUtils } from '../../../shared/utils/form-utils';
 
 interface IRegisterFormData {
   firstName: string;
@@ -127,14 +128,14 @@ export class RegisterFormComponent implements OnInit {
       },
       error: (error) => {
         this.isLoading = false;
-        this.registerError = this.getErrorMessage(error);
+        this.registerError = FormUtils.getHttpErrorMessage(error, 'register');
       }
     });
   }
 
   public onRegisterFormSubmit(): void {
     if (this.registerForm.invalid) {
-      this.markFormGroupTouched();
+      FormUtils.markFormGroupTouched(this.registerForm);
       return;
     }
 
@@ -191,7 +192,7 @@ export class RegisterFormComponent implements OnInit {
       },
       error: (error) => {
         this.isLoading = false;
-        this.registerError = this.getErrorMessage(error);
+        this.registerError = FormUtils.getHttpErrorMessage(error, 'register');
       }
     });
   }
@@ -212,28 +213,9 @@ export class RegisterFormComponent implements OnInit {
     return null;
   }
 
-  private markFormGroupTouched(): void {
-    Object.keys(this.registerForm.controls).forEach(key => {
-      const control = this.registerForm.get(key);
-      control?.markAsTouched();
-    });
-  }
-
   private clearMessages(): void {
     this.registerError = '';
     this.registerSuccess = '';
-  }
-
-  private getErrorMessage(error: any): string {
-    if (error.status === 400) {
-      return error.error || 'Invalid registration data. Please check your information.';
-    } else if (error.status === 0) {
-      return 'Unable to connect to the server. Please check your internet connection.';
-    } else if (error.status >= 500) {
-      return 'Server error. Please try again later.';
-    } else {
-      return 'An unexpected error occurred. Please try again.';
-    }
   }
 
   public getPasswordStrength(): string {

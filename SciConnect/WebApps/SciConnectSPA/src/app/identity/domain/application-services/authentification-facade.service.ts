@@ -90,4 +90,8 @@ export class AuthentificationFacadeService {
       })
     );
   }
+
+  public logout(): void {
+    this.appStateService.clearAppState();
+  }
 }

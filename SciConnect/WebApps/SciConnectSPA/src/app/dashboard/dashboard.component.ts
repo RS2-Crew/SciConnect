@@ -17,6 +17,7 @@ import { AppStateService } from '../shared/app-state/app-state.service';
 import { DataService } from '../shared/services/data.service';
 import { AnalyticsService, SummaryAnalyticsResponse, InstitutionBreakdownResponse, TopInstitutionResponse } from '../shared/services/analytics.service';
 import { ThemeService } from '../shared/services/theme.service';
+import { AuthentificationFacadeService } from '../identity/domain/application-services/authentification-facade.service';
 
 import {
   Institution,
@@ -143,7 +144,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     private dataService: DataService,
     private analyticsService: AnalyticsService,
     public themeService: ThemeService,
-    private router: Router
+    private router: Router,
+    private authentificationFacadeService: AuthentificationFacadeService
   ) {}
 
   ngOnInit(): void {
@@ -1572,7 +1574,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   onLogout(): void {
-    this.appStateService.clearAppState();
+    this.authentificationFacadeService.logout();
     this.router.navigate(['/identity/login']);
   }
 

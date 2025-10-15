@@ -1320,6 +1320,39 @@
   font-size: 1.2rem;
 }
 
+/* Logout Styles */
+.floating-logout {
+  display: flex;
+  justify-content: center;
+}
+
+.logout-btn {
+  background: rgba(244, 67, 54, 0.8);
+  border: 1px solid rgba(244, 67, 54, 0.9);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn:hover {
+  background: rgba(244, 67, 54, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(244, 67, 54, 0.4);
+}
+
+.logout-btn i {
+  font-size: 1.2rem;
+}
+
 .analytics-overlay {
   position: fixed;
   top: 0;
