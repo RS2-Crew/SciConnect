@@ -18,6 +18,7 @@ import { DataService } from '../shared/services/data.service';
 import { AnalyticsService, SummaryAnalyticsResponse, InstitutionBreakdownResponse, TopInstitutionResponse } from '../shared/services/analytics.service';
 import { ThemeService } from '../shared/services/theme.service';
 import { AuthentificationFacadeService } from '../identity/domain/application-services/authentification-facade.service';
+import { FilterUtils } from '../shared/utils/filter-utils';
 
 import {
   Institution,
@@ -158,6 +159,90 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
+  private handleCrudOperation(
+    operation$: ReturnType<typeof this.dataService.createInstitution>,
+    onSuccess?: () => void
+  ): void {
+    operation$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: () => {
+          if (onSuccess) onSuccess();
+          this.loadInitialData();
+          if (this.showAnalytics) {
+            this.refreshAnalyticsData();
+          }
+        },
+        error: () => {}
+      });
+  }
+
+  private handleConnectionOperation(
+    operation$: ReturnType<typeof this.dataService.connectInstitutionToAnalysis>,
+    onSuccess?: () => void
+  ): void {
+    operation$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: () => {
+          if (onSuccess) onSuccess();
+          this.loadInitialData();
+          if (this.showAnalytics) {
+            this.refreshAnalyticsData();
+          }
+        },
+        error: () => {}
+      });
+  }
+
+  private connect(
+    operation$: ReturnType<typeof this.dataService.connectInstitutionToAnalysis>,
+    resetIds: () => void
+  ): void {
+    this.handleConnectionOperation(operation$, resetIds);
+  }
+
+  private getRelatedIds<T extends { id: number }>(entities: T[] | undefined): number[] {
+    return entities?.map(e => e.id) || [];
+  }
+
+  private getInstitutionIdsByMicroorganism(microorganismId: number): number[] {
+    return this.allInstitutions
+      .filter(inst => inst.microorganisms?.some(m => m.id === microorganismId))
+      .map(inst => inst.id);
+  }
+
+  private getInstitutionIdsByInstrument(instrumentId: number): number[] {
+    return this.allInstitutions
+      .filter(inst => inst.instruments?.some(i => i.id === instrumentId))
+      .map(inst => inst.id);
+  }
+
+  private getInstitutionIdsByKeyword(keywordId: number): number[] {
+    const keyword = this.allKeywords.find(kw => kw.id === keywordId);
+    if (!keyword) return [];
+    
+    const researcherIds = this.getRelatedIds(keyword.researchers);
+    return this.allResearchers
+      .filter(res => researcherIds.includes(res.id))
+      .map(res => res.institution?.id)
+      .filter((id): id is number => id !== undefined);
+  }
+
+  private getResearcherIdsByInstitution(institutionId: number): number[] {
+    return this.allResearchers
+      .filter(res => res.institution?.id === institutionId)
+      .map(res => res.id);
+  }
+
+  private getInstitutionIdsFromResearchers(researcherIds: number[]): number[] {
+    return this.allResearchers
+      .filter(res => researcherIds.includes(res.id))
+      .map(res => res.institution?.id)
+      .filter((id): id is number => id !== undefined);
+  }
+
+
   private loadUserInfo(): void {
     this.appStateService
       .getAppState()
@@ -168,7 +253,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
             ? `${state.firstName} ${state.lastName}`
             : state.username || 'User';
         
-        // Extract roles
         if (state.roles) {
           this.userRoles = Array.isArray(state.roles) 
             ? state.roles.map(role => role.toString()) 
@@ -209,7 +293,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.allResearchers = data.researchers;
         this.allKeywords = data.keywords;
 
-        // Initialize filtered lists
         this.filteredInstitutions = [...this.allInstitutions];
         this.filteredAnalyses = [...this.allAnalyses];
         this.filteredMicroorganisms = [...this.allMicroorganisms];
@@ -219,11 +302,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
   }
 
-
   setActiveTab(tab: 'analyses' | 'researchers' | 'database'): void {
     this.activeTab = tab;
     this.updateResults();
   }
+
   onSearchBlur(): void {
     setTimeout(() => {
       this.showSearchSuggestions = false;
@@ -237,12 +320,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Helper function to get selected item by ID
     const getSelectedItem = (id: number | null, items: any[]): any => {
       return id ? items.find((item) => item.id === id) : null;
     };
 
-    // Get selected items
     const selectedInstitution = getSelectedItem(
       this.selectedInstitution,
       this.allInstitutions
@@ -429,25 +510,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     );
     this.selectedInstitutionDetails = institution || null;
 
-    if (institution?.name.includes('Tech')) {
-      console.log('Selected Tech University:', {
-        id: institution.id,
-        name: institution.name,
-        analyses: institution.analyses?.map((a) => ({
-          id: a.id,
-          name: a.name,
-        })),
-        instruments: institution.instruments?.map((i) => ({
-          id: i.id,
-          name: i.name,
-        })),
-        microorganisms: institution.microorganisms?.map((m) => ({
-          id: m.id,
-          name: m.name,
-        })),
-      });
-    }
-
     this.updateFilteredOptions();
     this.updateResults();
   }
@@ -505,14 +567,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   private addRelatedEntities(): void {
-    // When filtering by institution, we don't want to add other selected entities
-    // because we want to show only entities that belong to the selected institution
+    // Add selected entities to results if they're not already included
+    // This ensures the selected item is always visible even if filters are narrow
+    
     if (this.selectedInstitution) {
-      // Only add the selected institution itself
-      const institutionId =
-        typeof this.selectedInstitution === 'string'
-          ? parseInt(this.selectedInstitution)
-          : this.selectedInstitution;
+      const institutionId = FilterUtils.parseId(this.selectedInstitution);
       const selectedInstitution = this.allInstitutions.find(
         (inst) => inst.id === institutionId
       );
@@ -527,15 +586,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
           ...this.filteredResults.institutions,
         ];
       }
-      return; // Don't add other selected entities when filtering by institution
     }
 
-    // For other types of filters, add the selected entities
     if (this.selectedAnalysis) {
-      const analysisId =
-        typeof this.selectedAnalysis === 'string'
-          ? parseInt(this.selectedAnalysis)
-          : this.selectedAnalysis;
+      const analysisId = FilterUtils.parseId(this.selectedAnalysis);
       const selectedAnalysis = this.allAnalyses.find(
         (anal) => anal.id === analysisId
       );
@@ -551,10 +605,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     if (this.selectedMicroorganism) {
-      const microorganismId =
-        typeof this.selectedMicroorganism === 'string'
-          ? parseInt(this.selectedMicroorganism)
-          : this.selectedMicroorganism;
+      const microorganismId = FilterUtils.parseId(this.selectedMicroorganism);
       const selectedMicroorganism = this.allMicroorganisms.find(
         (micro) => micro.id === microorganismId
       );
@@ -572,10 +623,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     if (this.selectedInstrument) {
-      const instrumentId =
-        typeof this.selectedInstrument === 'string'
-          ? parseInt(this.selectedInstrument)
-          : this.selectedInstrument;
+      const instrumentId = FilterUtils.parseId(this.selectedInstrument);
       const selectedInstrument = this.allInstruments.find(
         (inst) => inst.id === instrumentId
       );
@@ -593,10 +641,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     if (this.selectedResearcher) {
-      const researcherId =
-        typeof this.selectedResearcher === 'string'
-          ? parseInt(this.selectedResearcher)
-          : this.selectedResearcher;
+      const researcherId = FilterUtils.parseId(this.selectedResearcher);
       const selectedResearcher = this.allResearchers.find(
         (res) => res.id === researcherId
       );
@@ -612,10 +657,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     if (this.selectedKeyword) {
-      const keywordId =
-        typeof this.selectedKeyword === 'string'
-          ? parseInt(this.selectedKeyword)
-          : this.selectedKeyword;
+      const keywordId = FilterUtils.parseId(this.selectedKeyword);
       const selectedKeyword = this.allKeywords.find(
         (kw) => kw.id === keywordId
       );
@@ -638,97 +680,48 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return institutions;
     }
 
-    // Apply filters based on selected dropdown items
-    // Show all institutions that match the selected criteria
+    // Apply filters
     if (this.selectedInstitution) {
-      const institutionId =
-        typeof this.selectedInstitution === 'string'
-          ? parseInt(this.selectedInstitution)
-          : this.selectedInstitution;
-      institutions = institutions.filter((inst) => inst.id === institutionId);
+      const institutionId = FilterUtils.parseId(this.selectedInstitution);
+      institutions = institutions.filter(inst => inst.id === institutionId);
     }
 
     if (this.selectedAnalysis) {
-      const analysisId =
-        typeof this.selectedAnalysis === 'string'
-          ? parseInt(this.selectedAnalysis)
-          : this.selectedAnalysis;
-      const selectedAnalysis = this.allAnalyses.find(
-        (anal) => anal.id === analysisId
-      );
-      if (selectedAnalysis?.institutions) {
-        const analysisInstitutionIds = selectedAnalysis.institutions.map(
-          (inst) => inst.id
-        );
-        institutions = institutions.filter((inst) =>
-          analysisInstitutionIds.includes(inst.id)
-        );
-      }
+      const analysisId = FilterUtils.parseId(this.selectedAnalysis);
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === analysisId);
+      const analysisInstitutionIds = this.getRelatedIds(selectedAnalysis?.institutions);
+      institutions = institutions.filter(inst => analysisInstitutionIds.includes(inst.id));
     }
 
     if (this.selectedInstrument) {
-      const instrumentId =
-        typeof this.selectedInstrument === 'string'
-          ? parseInt(this.selectedInstrument)
-          : this.selectedInstrument;
-      const selectedInstrument = this.allInstruments.find(
-        (inst) => inst.id === instrumentId
-      );
-      if (selectedInstrument) {
-        institutions = institutions.filter((inst) =>
-          inst.instruments?.some((instrument) => instrument.id === instrumentId)
-        );
+      const instrumentId = FilterUtils.parseId(this.selectedInstrument);
+      if (instrumentId !== null) {
+        const validInstitutionIds = this.getInstitutionIdsByInstrument(instrumentId);
+        institutions = institutions.filter(inst => validInstitutionIds.includes(inst.id));
       }
     }
 
     if (this.selectedMicroorganism) {
-      const microorganismId =
-        typeof this.selectedMicroorganism === 'string'
-          ? parseInt(this.selectedMicroorganism)
-          : this.selectedMicroorganism;
-      const selectedMicroorganism = this.allMicroorganisms.find(
-        (micro) => micro.id === microorganismId
-      );
-      if (selectedMicroorganism) {
-        institutions = institutions.filter((inst) =>
-          inst.microorganisms?.some((micro) => micro.id === microorganismId)
-        );
+      const microorganismId = FilterUtils.parseId(this.selectedMicroorganism);
+      if (microorganismId !== null) {
+        const validInstitutionIds = this.getInstitutionIdsByMicroorganism(microorganismId);
+        institutions = institutions.filter(inst => validInstitutionIds.includes(inst.id));
       }
     }
 
     if (this.selectedResearcher) {
-      const researcherId =
-        typeof this.selectedResearcher === 'string'
-          ? parseInt(this.selectedResearcher)
-          : this.selectedResearcher;
-      const selectedResearcher = this.allResearchers.find(
-        (res) => res.id === researcherId
-      );
+      const researcherId = FilterUtils.parseId(this.selectedResearcher);
+      const selectedResearcher = this.allResearchers.find(res => res.id === researcherId);
       if (selectedResearcher?.institution) {
-        institutions = institutions.filter(
-          (inst) => inst.id === selectedResearcher.institution?.id
-        );
+        institutions = institutions.filter(inst => inst.id === selectedResearcher.institution?.id);
       }
     }
 
     if (this.selectedKeyword) {
-      const keywordId =
-        typeof this.selectedKeyword === 'string'
-          ? parseInt(this.selectedKeyword)
-          : this.selectedKeyword;
-      const selectedKeyword = this.allKeywords.find(
-        (kw) => kw.id === keywordId
-      );
-      if (selectedKeyword) {
-        const keywordResearcherIds =
-          selectedKeyword.researchers?.map((res) => res.id) || [];
-        const keywordInstitutionIds = this.allResearchers
-          .filter((res) => keywordResearcherIds.includes(res.id))
-          .map((res) => res.institution?.id)
-          .filter((id) => id !== undefined);
-        institutions = institutions.filter((inst) =>
-          keywordInstitutionIds.includes(inst.id)
-        );
+      const keywordId = FilterUtils.parseId(this.selectedKeyword);
+      if (keywordId !== null) {
+        const validInstitutionIds = this.getInstitutionIdsByKeyword(keywordId);
+        institutions = institutions.filter(inst => validInstitutionIds.includes(inst.id));
       }
     }
 
@@ -742,119 +735,60 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return analyses;
     }
 
-    // When institution is selected, ONLY use institution filter and ignore all other filters
+    // Apply ALL filters with AND logic (intersection)
     if (this.selectedInstitution) {
-      const institutionId =
-        typeof this.selectedInstitution === 'string'
-          ? parseInt(this.selectedInstitution)
-          : this.selectedInstitution;
-      const selectedInstitution = this.allInstitutions.find(
-        (inst) => inst.id === institutionId
-      );
-      if (selectedInstitution) {
-        if (
-          selectedInstitution.analyses &&
-          selectedInstitution.analyses.length > 0
-        ) {
-          // Show only analyses that are directly associated with the selected institution
-          const institutionAnalysisIds = selectedInstitution.analyses.map(
-            (a) => a.id
-          );
-          analyses = analyses.filter((analysis) =>
-            institutionAnalysisIds.includes(analysis.id)
-          );
-        } else {
-          analyses = [];
-        }
-
-        return analyses; // Return early, don't apply other filters
+      const institutionId = FilterUtils.parseId(this.selectedInstitution);
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === institutionId);
+      
+      if (selectedInstitution?.analyses && selectedInstitution.analyses.length > 0) {
+        const institutionAnalysisIds = this.getRelatedIds(selectedInstitution.analyses);
+        analyses = analyses.filter(analysis => institutionAnalysisIds.includes(analysis.id));
+      } else {
+        // If institution has no analyses, return empty
+        return [];
       }
     }
 
-    // Apply other filters only if institution is not selected
     if (this.selectedAnalysis) {
-      const analysisId =
-        typeof this.selectedAnalysis === 'string'
-          ? parseInt(this.selectedAnalysis)
-          : this.selectedAnalysis;
-      analyses = analyses.filter((anal) => anal.id === analysisId);
+      const analysisId = FilterUtils.parseId(this.selectedAnalysis);
+      analyses = analyses.filter(anal => anal.id === analysisId);
     }
 
     if (this.selectedMicroorganism) {
-      const microorganismId =
-        typeof this.selectedMicroorganism === 'string'
-          ? parseInt(this.selectedMicroorganism)
-          : this.selectedMicroorganism;
-      const selectedMicroorganism = this.allMicroorganisms.find(
-        (micro) => micro.id === microorganismId
-      );
-      if (selectedMicroorganism) {
-        analyses = analyses.filter((analysis) =>
-          analysis.microorganisms?.some((micro) => micro.id === microorganismId)
+      const microorganismId = FilterUtils.parseId(this.selectedMicroorganism);
+      if (microorganismId !== null) {
+        analyses = analyses.filter(analysis =>
+          analysis.microorganisms?.some(micro => micro.id === microorganismId)
         );
       }
     }
 
     if (this.selectedInstrument) {
-      const instrumentId =
-        typeof this.selectedInstrument === 'string'
-          ? parseInt(this.selectedInstrument)
-          : this.selectedInstrument;
-      const selectedInstrument = this.allInstruments.find(
-        (inst) => inst.id === instrumentId
-      );
-      if (selectedInstrument) {
-        const instrumentInstitutionIds = this.allInstitutions
-          .filter((inst) =>
-            inst.instruments?.some(
-              (instrument) => instrument.id === instrumentId
-            )
-          )
-          .map((inst) => inst.id);
-        analyses = analyses.filter((analysis) =>
-          analysis.institutions?.some((inst) =>
-            instrumentInstitutionIds.includes(inst.id)
-          )
+      const instrumentId = FilterUtils.parseId(this.selectedInstrument);
+      if (instrumentId !== null) {
+        const instrumentInstitutionIds = this.getInstitutionIdsByInstrument(instrumentId);
+        analyses = analyses.filter(analysis =>
+          analysis.institutions?.some(inst => instrumentInstitutionIds.includes(inst.id))
         );
       }
     }
 
     if (this.selectedResearcher) {
-      const researcherId =
-        typeof this.selectedResearcher === 'string'
-          ? parseInt(this.selectedResearcher)
-          : this.selectedResearcher;
-      const selectedResearcher = this.allResearchers.find(
-        (res) => res.id === researcherId
-      );
+      const researcherId = FilterUtils.parseId(this.selectedResearcher);
+      const selectedResearcher = this.allResearchers.find(res => res.id === researcherId);
       if (selectedResearcher?.institution) {
-        analyses = analyses.filter((analysis) =>
-          analysis.institutions?.some(
-            (inst) => inst.id === selectedResearcher.institution?.id
-          )
+        analyses = analyses.filter(analysis =>
+          analysis.institutions?.some(inst => inst.id === selectedResearcher.institution?.id)
         );
       }
     }
 
     if (this.selectedKeyword) {
-      const keywordId =
-        typeof this.selectedKeyword === 'string'
-          ? parseInt(this.selectedKeyword)
-          : this.selectedKeyword;
-      const selectedKeyword = this.allKeywords.find(
-        (kw) => kw.id === keywordId
-      );
-      if (selectedKeyword) {
-        const keywordResearcherIds =
-          selectedKeyword.researchers?.map((res) => res.id) || [];
-        const keywordInstitutionIds = this.allResearchers
-          .filter((res) => keywordResearcherIds.includes(res.id))
-          .map((res) => res.institution?.id)
-          .filter((id) => id !== undefined);
-        analyses = analyses.filter((analysis) =>
-          analysis.institutions?.some((inst) =>
-            keywordInstitutionIds.includes(inst.id)
-          )
+      const keywordId = FilterUtils.parseId(this.selectedKeyword);
+      if (keywordId !== null) {
+        const keywordInstitutionIds = this.getInstitutionIdsByKeyword(keywordId);
+        analyses = analyses.filter(analysis =>
+          analysis.institutions?.some(inst => keywordInstitutionIds.includes(inst.id))
         );
       }
     }
@@ -869,139 +803,76 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return instruments;
     }
 
-    // When institution is selected, ONLY use institution filter and ignore all other filters
+    // Apply ALL filters with AND logic (intersection)
     if (this.selectedInstitution) {
-      const institutionId =
-        typeof this.selectedInstitution === 'string'
-          ? parseInt(this.selectedInstitution)
-          : this.selectedInstitution;
-      const selectedInstitution = this.allInstitutions.find(
-        (inst) => inst.id === institutionId
-      );
-      if (selectedInstitution) {
-        if (
-          selectedInstitution.instruments &&
-          selectedInstitution.instruments.length > 0
-        ) {
-          const institutionInstrumentIds = selectedInstitution.instruments.map(
-            (inst) => inst.id
-          );
-          instruments = instruments.filter((inst) =>
-            institutionInstrumentIds.includes(inst.id)
-          );
-        } else {
-          instruments = [];
-        }
-
-        return instruments; // Return early, don't apply other filters
+      const institutionId = FilterUtils.parseId(this.selectedInstitution);
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === institutionId);
+      
+      if (selectedInstitution?.instruments && selectedInstitution.instruments.length > 0) {
+        const institutionInstrumentIds = this.getRelatedIds(selectedInstitution.instruments);
+        instruments = instruments.filter(inst => institutionInstrumentIds.includes(inst.id));
+      } else {
+        // If institution has no instruments, return empty
+        return [];
       }
     }
 
-    // Apply other filters only if institution is not selected
     if (this.selectedInstrument) {
-      const instrumentId =
-        typeof this.selectedInstrument === 'string'
-          ? parseInt(this.selectedInstrument)
-          : this.selectedInstrument;
-      instruments = instruments.filter((inst) => inst.id === instrumentId);
+      const instrumentId = FilterUtils.parseId(this.selectedInstrument);
+      instruments = instruments.filter(inst => inst.id === instrumentId);
     }
 
     if (this.selectedAnalysis) {
-      const analysisId =
-        typeof this.selectedAnalysis === 'string'
-          ? parseInt(this.selectedAnalysis)
-          : this.selectedAnalysis;
-      const selectedAnalysis = this.allAnalyses.find(
-        (anal) => anal.id === analysisId
-      );
-      if (selectedAnalysis?.institutions) {
-        const analysisInstitutionIds = selectedAnalysis.institutions.map(
-          (inst) => inst.id
-        );
-        const analysisInstitutionInstruments = this.allInstitutions
-          .filter((inst) => analysisInstitutionIds.includes(inst.id))
-          .flatMap((inst) => inst.instruments || []);
-        const analysisInstrumentIds = analysisInstitutionInstruments.map(
-          (inst) => inst.id
-        );
-        instruments = instruments.filter((inst) =>
-          analysisInstrumentIds.includes(inst.id)
-        );
-      }
+      const analysisId = FilterUtils.parseId(this.selectedAnalysis);
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === analysisId);
+      const analysisInstitutionIds = this.getRelatedIds(selectedAnalysis?.institutions);
+      
+      const analysisInstitutionInstruments = this.allInstitutions
+        .filter(inst => analysisInstitutionIds.includes(inst.id))
+        .flatMap(inst => inst.instruments || []);
+      const analysisInstrumentIds = this.getRelatedIds(analysisInstitutionInstruments);
+      
+      instruments = instruments.filter(inst => analysisInstrumentIds.includes(inst.id));
     }
 
     if (this.selectedMicroorganism) {
-      const microorganismId =
-        typeof this.selectedMicroorganism === 'string'
-          ? parseInt(this.selectedMicroorganism)
-          : this.selectedMicroorganism;
-      const selectedMicroorganism = this.allMicroorganisms.find(
-        (micro) => micro.id === microorganismId
-      );
-      if (selectedMicroorganism) {
-        const microorganismInstitutionIds = this.allInstitutions
-          .filter((inst) =>
-            inst.microorganisms?.some((micro) => micro.id === microorganismId)
-          )
-          .map((inst) => inst.id);
+      const microorganismId = FilterUtils.parseId(this.selectedMicroorganism);
+      if (microorganismId !== null) {
+        const microorganismInstitutionIds = this.getInstitutionIdsByMicroorganism(microorganismId);
+        
         const microorganismInstitutionInstruments = this.allInstitutions
-          .filter((inst) => microorganismInstitutionIds.includes(inst.id))
-          .flatMap((inst) => inst.instruments || []);
-        const microorganismInstrumentIds =
-          microorganismInstitutionInstruments.map((inst) => inst.id);
-        instruments = instruments.filter((inst) =>
-          microorganismInstrumentIds.includes(inst.id)
-        );
+          .filter(inst => microorganismInstitutionIds.includes(inst.id))
+          .flatMap(inst => inst.instruments || []);
+        const microorganismInstrumentIds = this.getRelatedIds(microorganismInstitutionInstruments);
+        
+        instruments = instruments.filter(inst => microorganismInstrumentIds.includes(inst.id));
       }
     }
 
     if (this.selectedResearcher) {
-      const researcherId =
-        typeof this.selectedResearcher === 'string'
-          ? parseInt(this.selectedResearcher)
-          : this.selectedResearcher;
-      const selectedResearcher = this.allResearchers.find(
-        (res) => res.id === researcherId
-      );
+      const researcherId = FilterUtils.parseId(this.selectedResearcher);
+      const selectedResearcher = this.allResearchers.find(res => res.id === researcherId);
+      
       if (selectedResearcher?.institution) {
         const researcherInstitution = this.allInstitutions.find(
-          (inst) => inst.id === selectedResearcher.institution?.id
+          inst => inst.id === selectedResearcher.institution?.id
         );
-        if (researcherInstitution?.instruments) {
-          const researcherInstrumentIds = researcherInstitution.instruments.map(
-            (inst) => inst.id
-          );
-          instruments = instruments.filter((inst) =>
-            researcherInstrumentIds.includes(inst.id)
-          );
-        }
+        const researcherInstrumentIds = this.getRelatedIds(researcherInstitution?.instruments);
+        instruments = instruments.filter(inst => researcherInstrumentIds.includes(inst.id));
       }
     }
 
     if (this.selectedKeyword) {
-      const keywordId =
-        typeof this.selectedKeyword === 'string'
-          ? parseInt(this.selectedKeyword)
-          : this.selectedKeyword;
-      const selectedKeyword = this.allKeywords.find(
-        (kw) => kw.id === keywordId
-      );
-      if (selectedKeyword) {
-        const keywordResearcherIds =
-          selectedKeyword.researchers?.map((res) => res.id) || [];
-        const keywordInstitutionIds = this.allResearchers
-          .filter((res) => keywordResearcherIds.includes(res.id))
-          .map((res) => res.institution?.id)
-          .filter((id) => id !== undefined);
+      const keywordId = FilterUtils.parseId(this.selectedKeyword);
+      if (keywordId !== null) {
+        const keywordInstitutionIds = this.getInstitutionIdsByKeyword(keywordId);
+        
         const keywordInstitutionInstruments = this.allInstitutions
-          .filter((inst) => keywordInstitutionIds.includes(inst.id))
-          .flatMap((inst) => inst.instruments || []);
-        const keywordInstrumentIds = keywordInstitutionInstruments.map(
-          (inst) => inst.id
-        );
-        instruments = instruments.filter((inst) =>
-          keywordInstrumentIds.includes(inst.id)
-        );
+          .filter(inst => keywordInstitutionIds.includes(inst.id))
+          .flatMap(inst => inst.instruments || []);
+        const keywordInstrumentIds = this.getRelatedIds(keywordInstitutionInstruments);
+        
+        instruments = instruments.filter(inst => keywordInstrumentIds.includes(inst.id));
       }
     }
 
@@ -1016,165 +887,87 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     if (this.selectedKeyword) {
-      const keywordId =
-        typeof this.selectedKeyword === 'string'
-          ? parseInt(this.selectedKeyword)
-          : this.selectedKeyword;
-      keywords = keywords.filter((kw) => kw.id === keywordId);
+      const keywordId = FilterUtils.parseId(this.selectedKeyword);
+      keywords = keywords.filter(kw => kw.id === keywordId);
     }
 
     if (this.selectedResearcher) {
-      const researcherId =
-        typeof this.selectedResearcher === 'string'
-          ? parseInt(this.selectedResearcher)
-          : this.selectedResearcher;
-      const selectedResearcher = this.allResearchers.find(
-        (res) => res.id === researcherId
-      );
-      if (
-        selectedResearcher?.keywords &&
-        selectedResearcher.keywords.length > 0
-      ) {
-        // Show keywords that are directly associated with this specific researcher
-        const researcherKeywordIds = selectedResearcher.keywords.map(
-          (kw) => kw.id
-        );
-        keywords = keywords.filter((kw) =>
-          researcherKeywordIds.includes(kw.id)
-        );
+      const researcherId = FilterUtils.parseId(this.selectedResearcher);
+      const selectedResearcher = this.allResearchers.find(res => res.id === researcherId);
+      
+      if (selectedResearcher?.keywords && selectedResearcher.keywords.length > 0) {
+        const researcherKeywordIds = this.getRelatedIds(selectedResearcher.keywords);
+        keywords = keywords.filter(kw => researcherKeywordIds.includes(kw.id));
       }
     }
 
     if (this.selectedInstitution) {
-      const institutionId =
-        typeof this.selectedInstitution === 'string'
-          ? parseInt(this.selectedInstitution)
-          : this.selectedInstitution;
-      const selectedInstitution = this.allInstitutions.find(
-        (inst) => inst.id === institutionId
-      );
-      if (selectedInstitution) {
-        if (
-          selectedInstitution.keywords &&
-          selectedInstitution.keywords.length > 0
-        ) {
+      const institutionId = FilterUtils.parseId(this.selectedInstitution);
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === institutionId);
+      
+      if (selectedInstitution && institutionId !== null) {
+        if (selectedInstitution.keywords && selectedInstitution.keywords.length > 0) {
           // Use keywords directly associated with the institution
-          const institutionKeywordIds = selectedInstitution.keywords.map(
-            (kw) => kw.id
-          );
-          keywords = keywords.filter((kw) =>
-            institutionKeywordIds.includes(kw.id)
-          );
+          const institutionKeywordIds = this.getRelatedIds(selectedInstitution.keywords);
+          keywords = keywords.filter(kw => institutionKeywordIds.includes(kw.id));
         } else {
           // Fallback: find keywords through researchers at this institution
-          const institutionResearcherIds = this.allResearchers
-            .filter((res) => res.institution?.id === institutionId)
-            .map((res) => res.id);
+          const institutionResearcherIds = this.getResearcherIdsByInstitution(institutionId);
           const institutionKeywordIds = this.allKeywords
-            .filter((kw) =>
-              kw.researchers?.some((res) =>
-                institutionResearcherIds.includes(res.id)
-              )
-            )
-            .map((kw) => kw.id);
-          keywords = keywords.filter((kw) =>
-            institutionKeywordIds.includes(kw.id)
-          );
+            .filter(kw => kw.researchers?.some(res => institutionResearcherIds.includes(res.id)))
+            .map(kw => kw.id);
+          keywords = keywords.filter(kw => institutionKeywordIds.includes(kw.id));
         }
       }
     }
 
     if (this.selectedAnalysis) {
-      const analysisId =
-        typeof this.selectedAnalysis === 'string'
-          ? parseInt(this.selectedAnalysis)
-          : this.selectedAnalysis;
-      const selectedAnalysis = this.allAnalyses.find(
-        (anal) => anal.id === analysisId
-      );
-      if (selectedAnalysis?.institutions) {
-        const analysisInstitutionIds = selectedAnalysis.institutions.map(
-          (inst) => inst.id
-        );
-        const analysisResearcherIds = this.allResearchers
-          .filter((res) =>
-            analysisInstitutionIds.includes(res.institution?.id || 0)
-          )
-          .map((res) => res.id);
-        const analysisKeywordIds = this.allKeywords
-          .filter((kw) =>
-            kw.researchers?.some((res) =>
-              analysisResearcherIds.includes(res.id)
-            )
-          )
-          .map((kw) => kw.id);
-        keywords = keywords.filter((kw) => analysisKeywordIds.includes(kw.id));
-      }
+      const analysisId = FilterUtils.parseId(this.selectedAnalysis);
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === analysisId);
+      const analysisInstitutionIds = this.getRelatedIds(selectedAnalysis?.institutions);
+      
+      const analysisResearcherIds = this.allResearchers
+        .filter(res => analysisInstitutionIds.includes(res.institution?.id || 0))
+        .map(res => res.id);
+      
+      const analysisKeywordIds = this.allKeywords
+        .filter(kw => kw.researchers?.some(res => analysisResearcherIds.includes(res.id)))
+        .map(kw => kw.id);
+      
+      keywords = keywords.filter(kw => analysisKeywordIds.includes(kw.id));
     }
 
     if (this.selectedMicroorganism) {
-      const microorganismId =
-        typeof this.selectedMicroorganism === 'string'
-          ? parseInt(this.selectedMicroorganism)
-          : this.selectedMicroorganism;
-      const selectedMicroorganism = this.allMicroorganisms.find(
-        (micro) => micro.id === microorganismId
-      );
-      if (selectedMicroorganism) {
-        const microorganismInstitutionIds = this.allInstitutions
-          .filter((inst) =>
-            inst.microorganisms?.some((micro) => micro.id === microorganismId)
-          )
-          .map((inst) => inst.id);
+      const microorganismId = FilterUtils.parseId(this.selectedMicroorganism);
+      if (microorganismId !== null) {
+        const microorganismInstitutionIds = this.getInstitutionIdsByMicroorganism(microorganismId);
+        
         const microorganismResearcherIds = this.allResearchers
-          .filter((res) =>
-            microorganismInstitutionIds.includes(res.institution?.id || 0)
-          )
-          .map((res) => res.id);
+          .filter(res => microorganismInstitutionIds.includes(res.institution?.id || 0))
+          .map(res => res.id);
+        
         const microorganismKeywordIds = this.allKeywords
-          .filter((kw) =>
-            kw.researchers?.some((res) =>
-              microorganismResearcherIds.includes(res.id)
-            )
-          )
-          .map((kw) => kw.id);
-        keywords = keywords.filter((kw) =>
-          microorganismKeywordIds.includes(kw.id)
-        );
+          .filter(kw => kw.researchers?.some(res => microorganismResearcherIds.includes(res.id)))
+          .map(kw => kw.id);
+        
+        keywords = keywords.filter(kw => microorganismKeywordIds.includes(kw.id));
       }
     }
 
     if (this.selectedInstrument) {
-      const instrumentId =
-        typeof this.selectedInstrument === 'string'
-          ? parseInt(this.selectedInstrument)
-          : this.selectedInstrument;
-      const selectedInstrument = this.allInstruments.find(
-        (inst) => inst.id === instrumentId
-      );
-      if (selectedInstrument) {
-        const instrumentInstitutionIds = this.allInstitutions
-          .filter((inst) =>
-            inst.instruments?.some(
-              (instrument) => instrument.id === instrumentId
-            )
-          )
-          .map((inst) => inst.id);
+      const instrumentId = FilterUtils.parseId(this.selectedInstrument);
+      if (instrumentId !== null) {
+        const instrumentInstitutionIds = this.getInstitutionIdsByInstrument(instrumentId);
+        
         const instrumentResearcherIds = this.allResearchers
-          .filter((res) =>
-            instrumentInstitutionIds.includes(res.institution?.id || 0)
-          )
-          .map((res) => res.id);
+          .filter(res => instrumentInstitutionIds.includes(res.institution?.id || 0))
+          .map(res => res.id);
+        
         const instrumentKeywordIds = this.allKeywords
-          .filter((kw) =>
-            kw.researchers?.some((res) =>
-              instrumentResearcherIds.includes(res.id)
-            )
-          )
-          .map((kw) => kw.id);
-        keywords = keywords.filter((kw) =>
-          instrumentKeywordIds.includes(kw.id)
-        );
+          .filter(kw => kw.researchers?.some(res => instrumentResearcherIds.includes(res.id)))
+          .map(kw => kw.id);
+        
+        keywords = keywords.filter(kw => instrumentKeywordIds.includes(kw.id));
       }
     }
 
@@ -1189,112 +982,62 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     if (this.selectedResearcher) {
-      const researcherId =
-        typeof this.selectedResearcher === 'string'
-          ? parseInt(this.selectedResearcher)
-          : this.selectedResearcher;
-      researchers = researchers.filter((res) => res.id === researcherId);
+      const researcherId = FilterUtils.parseId(this.selectedResearcher);
+      researchers = researchers.filter(res => res.id === researcherId);
     }
 
     if (this.selectedInstitution) {
-      const institutionId =
-        typeof this.selectedInstitution === 'string'
-          ? parseInt(this.selectedInstitution)
-          : this.selectedInstitution;
-      const selectedInstitution = this.allInstitutions.find(
-        (inst) => inst.id === institutionId
-      );
+      const institutionId = FilterUtils.parseId(this.selectedInstitution);
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === institutionId);
+      
       if (selectedInstitution) {
-        if (
-          selectedInstitution.employees &&
-          selectedInstitution.employees.length > 0
-        ) {
+        if (selectedInstitution.employees && selectedInstitution.employees.length > 0) {
           // Use employees directly associated with the institution
-          const institutionEmployeeIds = selectedInstitution.employees.map(
-            (emp) => emp.id
-          );
-          researchers = researchers.filter((researcher) =>
-            institutionEmployeeIds.includes(researcher.id)
-          );
+          const institutionEmployeeIds = this.getRelatedIds(selectedInstitution.employees);
+          researchers = researchers.filter(researcher => institutionEmployeeIds.includes(researcher.id));
         } else {
           // Fallback: filter by institution relationship
-          researchers = researchers.filter(
-            (researcher) => researcher.institution?.id === institutionId
-          );
+          researchers = researchers.filter(researcher => researcher.institution?.id === institutionId);
         }
       }
     }
 
     if (this.selectedKeyword) {
-      const keywordId =
-        typeof this.selectedKeyword === 'string'
-          ? parseInt(this.selectedKeyword)
-          : this.selectedKeyword;
-      const selectedKeyword = this.allKeywords.find(
-        (kw) => kw.id === keywordId
-      );
+      const keywordId = FilterUtils.parseId(this.selectedKeyword);
+      const selectedKeyword = this.allKeywords.find(kw => kw.id === keywordId);
+      
       if (selectedKeyword) {
-        researchers = researchers.filter((researcher) =>
-          researcher.keywords?.some((kw) => kw.id === keywordId)
+        researchers = researchers.filter(researcher =>
+          researcher.keywords?.some(kw => kw.id === keywordId)
         );
       }
     }
 
     if (this.selectedAnalysis) {
-      const analysisId =
-        typeof this.selectedAnalysis === 'string'
-          ? parseInt(this.selectedAnalysis)
-          : this.selectedAnalysis;
-      const selectedAnalysis = this.allAnalyses.find(
-        (anal) => anal.id === analysisId
+      const analysisId = FilterUtils.parseId(this.selectedAnalysis);
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === analysisId);
+      const analysisInstitutionIds = this.getRelatedIds(selectedAnalysis?.institutions);
+      
+      researchers = researchers.filter(researcher =>
+        analysisInstitutionIds.includes(researcher.institution?.id || 0)
       );
-      if (selectedAnalysis?.institutions) {
-        const analysisInstitutionIds = selectedAnalysis.institutions.map(
-          (inst) => inst.id
-        );
-        researchers = researchers.filter((researcher) =>
-          analysisInstitutionIds.includes(researcher.institution?.id || 0)
-        );
-      }
     }
 
     if (this.selectedMicroorganism) {
-      const microorganismId =
-        typeof this.selectedMicroorganism === 'string'
-          ? parseInt(this.selectedMicroorganism)
-          : this.selectedMicroorganism;
-      const selectedMicroorganism = this.allMicroorganisms.find(
-        (micro) => micro.id === microorganismId
-      );
-      if (selectedMicroorganism) {
-        const microorganismInstitutionIds = this.allInstitutions
-          .filter((inst) =>
-            inst.microorganisms?.some((micro) => micro.id === microorganismId)
-          )
-          .map((inst) => inst.id);
-        researchers = researchers.filter((researcher) =>
+      const microorganismId = FilterUtils.parseId(this.selectedMicroorganism);
+      if (microorganismId !== null) {
+        const microorganismInstitutionIds = this.getInstitutionIdsByMicroorganism(microorganismId);
+        researchers = researchers.filter(researcher =>
           microorganismInstitutionIds.includes(researcher.institution?.id || 0)
         );
       }
     }
 
     if (this.selectedInstrument) {
-      const instrumentId =
-        typeof this.selectedInstrument === 'string'
-          ? parseInt(this.selectedInstrument)
-          : this.selectedInstrument;
-      const selectedInstrument = this.allInstruments.find(
-        (inst) => inst.id === instrumentId
-      );
-      if (selectedInstrument) {
-        const instrumentInstitutionIds = this.allInstitutions
-          .filter((inst) =>
-            inst.instruments?.some(
-              (instrument) => instrument.id === instrumentId
-            )
-          )
-          .map((inst) => inst.id);
-        researchers = researchers.filter((researcher) =>
+      const instrumentId = FilterUtils.parseId(this.selectedInstrument);
+      if (instrumentId !== null) {
+        const instrumentInstitutionIds = this.getInstitutionIdsByInstrument(instrumentId);
+        researchers = researchers.filter(researcher =>
           instrumentInstitutionIds.includes(researcher.institution?.id || 0)
         );
       }
@@ -1310,130 +1053,72 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return microorganisms;
     }
 
-    // When institution is selected, ONLY use institution filter and ignore all other filters
+    // Apply ALL filters with AND logic (intersection)
     if (this.selectedInstitution) {
-      const institutionId =
-        typeof this.selectedInstitution === 'string'
-          ? parseInt(this.selectedInstitution)
-          : this.selectedInstitution;
-      const selectedInstitution = this.allInstitutions.find(
-        (inst) => inst.id === institutionId
-      );
-      if (selectedInstitution) {
-        if (
-          selectedInstitution.microorganisms &&
-          selectedInstitution.microorganisms.length > 0
-        ) {
-          const institutionMicroorganismIds =
-            selectedInstitution.microorganisms.map((micro) => micro.id);
-          microorganisms = microorganisms.filter((micro) =>
-            institutionMicroorganismIds.includes(micro.id)
-          );
-        } else {
-          microorganisms = [];
-        }
-
-        return microorganisms; // Return early, don't apply other filters
+      const institutionId = FilterUtils.parseId(this.selectedInstitution);
+      const selectedInstitution = this.allInstitutions.find(inst => inst.id === institutionId);
+      
+      if (selectedInstitution?.microorganisms && selectedInstitution.microorganisms.length > 0) {
+        const institutionMicroorganismIds = this.getRelatedIds(selectedInstitution.microorganisms);
+        microorganisms = microorganisms.filter(micro => institutionMicroorganismIds.includes(micro.id));
+      } else {
+        // If institution has no microorganisms, return empty
+        return [];
       }
     }
 
-    // Apply other filters only if institution is not selected
     if (this.selectedMicroorganism) {
-      const microorganismId =
-        typeof this.selectedMicroorganism === 'string'
-          ? parseInt(this.selectedMicroorganism)
-          : this.selectedMicroorganism;
-      microorganisms = microorganisms.filter(
-        (micro) => micro.id === microorganismId
-      );
+      const microorganismId = FilterUtils.parseId(this.selectedMicroorganism);
+      microorganisms = microorganisms.filter(micro => micro.id === microorganismId);
     }
 
     if (this.selectedAnalysis) {
-      const analysisId =
-        typeof this.selectedAnalysis === 'string'
-          ? parseInt(this.selectedAnalysis)
-          : this.selectedAnalysis;
-      const selectedAnalysis = this.allAnalyses.find(
-        (anal) => anal.id === analysisId
-      );
-      if (selectedAnalysis?.microorganisms) {
-        const analysisMicroorganismIds = selectedAnalysis.microorganisms.map(
-          (micro) => micro.id
-        );
-        microorganisms = microorganisms.filter((micro) =>
-          analysisMicroorganismIds.includes(micro.id)
-        );
-      }
+      const analysisId = FilterUtils.parseId(this.selectedAnalysis);
+      const selectedAnalysis = this.allAnalyses.find(anal => anal.id === analysisId);
+      const analysisMicroorganismIds = this.getRelatedIds(selectedAnalysis?.microorganisms);
+      microorganisms = microorganisms.filter(micro => analysisMicroorganismIds.includes(micro.id));
     }
 
     if (this.selectedInstrument) {
-      const instrumentId =
-        typeof this.selectedInstrument === 'string'
-          ? parseInt(this.selectedInstrument)
-          : this.selectedInstrument;
-      const selectedInstrument = this.allInstruments.find(
-        (inst) => inst.id === instrumentId
-      );
-      if (selectedInstrument) {
-        const instrumentInstitutionIds = this.allInstitutions
-          .filter((inst) =>
-            inst.instruments?.some(
-              (instrument) => instrument.id === instrumentId
-            )
-          )
-          .map((inst) => inst.id);
+      const instrumentId = FilterUtils.parseId(this.selectedInstrument);
+      if (instrumentId !== null) {
+        const instrumentInstitutionIds = this.getInstitutionIdsByInstrument(instrumentId);
+        
         const instrumentInstitutionMicroorganismIds = this.allInstitutions
-          .filter((inst) => instrumentInstitutionIds.includes(inst.id))
-          .flatMap((inst) => inst.microorganisms || [])
-          .map((micro) => micro.id);
-        microorganisms = microorganisms.filter((micro) =>
+          .filter(inst => instrumentInstitutionIds.includes(inst.id))
+          .flatMap(inst => inst.microorganisms || [])
+          .map(micro => micro.id);
+        
+        microorganisms = microorganisms.filter(micro =>
           instrumentInstitutionMicroorganismIds.includes(micro.id)
         );
       }
     }
 
     if (this.selectedResearcher) {
-      const researcherId =
-        typeof this.selectedResearcher === 'string'
-          ? parseInt(this.selectedResearcher)
-          : this.selectedResearcher;
-      const selectedResearcher = this.allResearchers.find(
-        (res) => res.id === researcherId
-      );
+      const researcherId = FilterUtils.parseId(this.selectedResearcher);
+      const selectedResearcher = this.allResearchers.find(res => res.id === researcherId);
+      
       if (selectedResearcher?.institution) {
         const researcherInstitution = this.allInstitutions.find(
-          (inst) => inst.id === selectedResearcher.institution?.id
+          inst => inst.id === selectedResearcher.institution?.id
         );
-        if (researcherInstitution?.microorganisms) {
-          const researcherMicroorganismIds =
-            researcherInstitution.microorganisms.map((micro) => micro.id);
-          microorganisms = microorganisms.filter((micro) =>
-            researcherMicroorganismIds.includes(micro.id)
-          );
-        }
+        const researcherMicroorganismIds = this.getRelatedIds(researcherInstitution?.microorganisms);
+        microorganisms = microorganisms.filter(micro => researcherMicroorganismIds.includes(micro.id));
       }
     }
 
     if (this.selectedKeyword) {
-      const keywordId =
-        typeof this.selectedKeyword === 'string'
-          ? parseInt(this.selectedKeyword)
-          : this.selectedKeyword;
-      const selectedKeyword = this.allKeywords.find(
-        (kw) => kw.id === keywordId
-      );
-      if (selectedKeyword) {
-        const keywordResearcherIds =
-          selectedKeyword.researchers?.map((res) => res.id) || [];
-        const keywordInstitutionIds = this.allResearchers
-          .filter((res) => keywordResearcherIds.includes(res.id))
-          .map((res) => res.institution?.id)
-          .filter((id) => id !== undefined);
+      const keywordId = FilterUtils.parseId(this.selectedKeyword);
+      if (keywordId !== null) {
+        const keywordInstitutionIds = this.getInstitutionIdsByKeyword(keywordId);
+        
         const keywordInstitutionMicroorganismIds = this.allInstitutions
-          .filter((inst) => keywordInstitutionIds.includes(inst.id))
-          .flatMap((inst) => inst.microorganisms || [])
-          .map((micro) => micro.id);
-        microorganisms = microorganisms.filter((micro) =>
+          .filter(inst => keywordInstitutionIds.includes(inst.id))
+          .flatMap(inst => inst.microorganisms || [])
+          .map(micro => micro.id);
+        
+        microorganisms = microorganisms.filter(micro =>
           keywordInstitutionMicroorganismIds.includes(micro.id)
         );
       }
@@ -1467,47 +1152,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.updateResults();
   }
 
-  showInstitutionDetails(institution: Institution): void {
-    this.selectedItem = institution;
-    this.modalTitle = institution.name;
-    this.modalType = 'institution';
+  private showDetails(item: any, type: string): void {
+    this.selectedItem = item;
+    this.modalTitle = this.getDisplayName(item);
+    this.modalType = type;
     this.showModal = true;
   }
 
-  showResearcherDetails(researcher: Employee): void {
-    this.selectedItem = researcher;
-    this.modalTitle = `${researcher.firstName} ${researcher.lastName}`;
-    this.modalType = 'researcher';
-    this.showModal = true;
-  }
-
-  showAnalysisDetails(analysis: Analysis): void {
-    this.selectedItem = analysis;
-    this.modalTitle = analysis.name;
-    this.modalType = 'analysis';
-    this.showModal = true;
-  }
-
-  showKeywordDetails(keyword: Keyword): void {
-    this.selectedItem = keyword;
-    this.modalTitle = keyword.name;
-    this.modalType = 'keyword';
-    this.showModal = true;
-  }
-
-  showMicroorganismDetails(microorganism: Microorganism): void {
-    this.selectedItem = microorganism;
-    this.modalTitle = microorganism.name;
-    this.modalType = 'microorganism';
-    this.showModal = true;
-  }
-
-  showInstrumentDetails(instrument: Instrument): void {
-    this.selectedItem = instrument;
-    this.modalTitle = instrument.name;
-    this.modalType = 'instrument';
-    this.showModal = true;
-  }
+  showInstitutionDetails = (institution: Institution) => this.showDetails(institution, 'institution');
+  showResearcherDetails = (researcher: Employee) => this.showDetails(researcher, 'researcher');
+  showAnalysisDetails = (analysis: Analysis) => this.showDetails(analysis, 'analysis');
+  showKeywordDetails = (keyword: Keyword) => this.showDetails(keyword, 'keyword');
+  showMicroorganismDetails = (microorganism: Microorganism) => this.showDetails(microorganism, 'microorganism');
+  showInstrumentDetails = (instrument: Instrument) => this.showDetails(instrument, 'instrument');
 
   closeModal(): void {
     this.showModal = false;
@@ -1523,25 +1180,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return 'Unknown';
   }
 
-  getInstitutionNames(institutions: Institution[] | undefined): string {
-    return institutions?.map((inst) => inst.name).join(', ') || '';
+  getEntityNames(entities: any[] | undefined, nameMapper: (entity: any) => string = (e) => e.name): string {
+    return entities?.map(nameMapper).join(', ') || '';
   }
 
-  getKeywordNames(keywords: Keyword[] | undefined): string {
-    return keywords?.map((kw) => kw.name).join(', ') || '';
-  }
-
-  getResearcherNames(researchers: Employee[] | undefined): string {
-    return (
-      researchers
-        ?.map((res) => `${res.firstName} ${res.lastName}`)
-        .join(', ') || ''
-    );
-  }
-
-  getMicroorganismNames(microorganisms: Microorganism[] | undefined): string {
-    return microorganisms?.map((micro) => micro.name).join(', ') || '';
-  }
+  getInstitutionNames = (institutions: Institution[] | undefined) => this.getEntityNames(institutions);
+  getKeywordNames = (keywords: Keyword[] | undefined) => this.getEntityNames(keywords);
+  getResearcherNames = (researchers: Employee[] | undefined) => this.getEntityNames(researchers, (r) => `${r.firstName} ${r.lastName}`);
+  getMicroorganismNames = (microorganisms: Microorganism[] | undefined) => this.getEntityNames(microorganisms);
 
   getMicroorganismInstitutions(microorganism: Microorganism): string {
     const institutions = this.allInstitutions.filter((inst) =>
@@ -1597,10 +1243,22 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public toggleAnalytics(): void {
     this.showAnalytics = !this.showAnalytics;
     
-    // Fetch fresh data every time the analytics window is opened
     if (this.showAnalytics) {
+      // Fetch fresh data every time the analytics window is opened
       this.loadAnalyticsData();
+    } else {
+      // Clear breakdown data when closing analytics panel
+      this.clearAnalyticsBreakdown();
     }
+  }
+
+  /**
+   * Clear institution breakdown selection
+   * Called when analytics panel is closed or when breakdown needs to be reset
+   */
+  private clearAnalyticsBreakdown(): void {
+    this.selectedInstitutionId = null;
+    this.institutionBreakdownData = null;
   }
 
   private loadAnalyticsData(): void {
@@ -1633,6 +1291,34 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
   }
 
+  /**
+   * Refresh all analytics data (summary, top institutions, and current breakdown)
+   * Called after CRUD operations to keep analytics in sync
+   */
+  private refreshAnalyticsData(): void {
+    if (this.canViewAnalytics() && this.showAnalytics) {
+      // Reload summary analytics
+      this.analyticsService.getAnalyticsSummary()
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (data) => {
+            this.analyticsData = data;
+          },
+          error: (error) => {
+            console.error('Error refreshing analytics data:', error);
+          }
+        });
+      
+      // Reload top institutions
+      this.loadTopInstitutions();
+      
+      // Reload institution breakdown if one is currently selected
+      if (this.selectedInstitutionId !== null) {
+        this.loadInstitutionBreakdown(this.selectedInstitutionId);
+      }
+    }
+  }
+
   public loadInstitutionBreakdown(institutionId: number): void {
     this.selectedInstitutionId = institutionId;
     this.analyticsService.getInstitutionBreakdown(institutionId)
@@ -1651,284 +1337,145 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public createInstitution(): void {
     if (!this.newInstitutionName || !this.newInstitutionCity || !this.newInstitutionStreet || !this.newInstitutionCountry || !this.newInstitutionStreetNumber) return;
     
-    this.dataService.createInstitution(this.newInstitutionName, this.newInstitutionDesc, this.newInstitutionCity, this.newInstitutionStreet, this.newInstitutionCountry, this.newInstitutionStreetNumber).subscribe({
-      next: () => {
+    this.handleCrudOperation(
+      this.dataService.createInstitution(this.newInstitutionName, this.newInstitutionDesc, this.newInstitutionCity, this.newInstitutionStreet, this.newInstitutionCountry, this.newInstitutionStreetNumber),
+      () => {
         this.newInstitutionName = '';
         this.newInstitutionDesc = '';
         this.newInstitutionCity = '';
         this.newInstitutionStreet = '';
         this.newInstitutionCountry = '';
         this.newInstitutionStreetNumber = '';
-        this.loadInitialData();
-      },
-      error: (error) => {}
-    });
+      }
+    );
   }
 
   public deleteInstitution(name: string): void {
-    this.dataService.deleteInstitution(name).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {}
-    });
+    this.handleCrudOperation(this.dataService.deleteInstitution(name));
   }
 
   public createInstrument(): void {
     if (!this.newInstrumentName) return;
     
-    this.dataService.createInstrument(this.newInstrumentName, this.newInstrumentDesc).subscribe({
-      next: () => {
+    this.handleCrudOperation(
+      this.dataService.createInstrument(this.newInstrumentName, this.newInstrumentDesc),
+      () => {
         this.newInstrumentName = '';
         this.newInstrumentDesc = '';
-        this.loadInitialData();
-      },
-      error: (error) => {}
-    });
+      }
+    );
   }
 
   public deleteInstrument(name: string): void {
-    this.dataService.deleteInstrument(name).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {}
-    });
+    this.handleCrudOperation(this.dataService.deleteInstrument(name));
   }
 
   public createKeyword(): void {
     if (!this.newKeywordName) return;
     
-    this.dataService.createKeyword(this.newKeywordName).subscribe({
-      next: () => {
-        this.newKeywordName = '';
-        this.loadInitialData();
-      },
-      error: (error) => {}
-    });
+    this.handleCrudOperation(
+      this.dataService.createKeyword(this.newKeywordName),
+      () => { this.newKeywordName = ''; }
+    );
   }
 
   public deleteKeyword(name: string): void {
-    this.dataService.deleteKeyword(name).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {}
-    });
+    this.handleCrudOperation(this.dataService.deleteKeyword(name));
   }
 
   public createAnalysis(): void {
     if (!this.newAnalysisName) return;
     
-    this.dataService.createAnalysis(this.newAnalysisName, this.newAnalysisDesc).subscribe({
-      next: () => {
+    this.handleCrudOperation(
+      this.dataService.createAnalysis(this.newAnalysisName, this.newAnalysisDesc),
+      () => {
         this.newAnalysisName = '';
         this.newAnalysisDesc = '';
-        this.loadInitialData();
-      },
-      error: (error) => {}
-    });
+      }
+    );
   }
 
   public deleteAnalysis(name: string): void {
-    this.dataService.deleteAnalysis(name).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {}
-    });
+    this.handleCrudOperation(this.dataService.deleteAnalysis(name));
   }
 
   public createEmployee(): void {
     if (!this.newEmployeeFirstName || !this.newEmployeeLastName || !this.newEmployeeEmail || !this.newEmployeeInstitutionId) return;
     
-    this.dataService.createEmployee(this.newEmployeeFirstName, this.newEmployeeLastName, this.newEmployeeEmail, this.newEmployeeInstitutionId).subscribe({
-      next: () => {
+    this.handleCrudOperation(
+      this.dataService.createEmployee(this.newEmployeeFirstName, this.newEmployeeLastName, this.newEmployeeEmail, this.newEmployeeInstitutionId),
+      () => {
         this.newEmployeeFirstName = '';
         this.newEmployeeLastName = '';
         this.newEmployeeEmail = '';
         this.newEmployeeInstitutionId = null;
-        this.loadInitialData();
-      },
-      error: (error) => {}
-    });
+      }
+    );
   }
 
   public deleteEmployee(id: number): void {
-    this.dataService.deleteEmployee(id).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {}
-    });
-  }
-
-  public get allEmployees(): Employee[] {
-    return this.allResearchers;
+    this.handleCrudOperation(this.dataService.deleteEmployee(id));
   }
 
   public createMicroorganism(): void {
     if (!this.newMicroorganismName) return;
     
-    this.dataService.createMicroorganism(this.newMicroorganismName).subscribe({
-      next: () => {
-        this.newMicroorganismName = '';
-        this.loadInitialData();
-      },
-      error: (error) => {}
-    });
+    this.handleCrudOperation(
+      this.dataService.createMicroorganism(this.newMicroorganismName),
+      () => { this.newMicroorganismName = ''; }
+    );
   }
 
   public deleteMicroorganism(name: string): void {
-    this.dataService.deleteMicroorganism(name).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {}
-    });
+    this.handleCrudOperation(this.dataService.deleteMicroorganism(name));
   }
 
   public connectInstitutionToAnalysis(): void {
     if (!this.selectedConnectionInstitution || !this.selectedConnectionAnalysis) return;
-    
-    this.dataService.connectInstitutionToAnalysis(this.selectedConnectionInstitution, this.selectedConnectionAnalysis).subscribe({
-      next: () => {
-        this.selectedConnectionInstitution = null;
-        this.selectedConnectionAnalysis = null;
-        this.loadInitialData();
-      },
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
-  }
-
-  public disconnectInstitutionFromAnalysis(institutionId: number, analysisId: number): void {
-    this.dataService.disconnectInstitutionFromAnalysis(institutionId, analysisId).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
+    this.connect(
+      this.dataService.connectInstitutionToAnalysis(this.selectedConnectionInstitution, this.selectedConnectionAnalysis),
+      () => { this.selectedConnectionInstitution = null; this.selectedConnectionAnalysis = null; }
+    );
   }
 
   public connectInstitutionToInstrument(): void {
     if (!this.selectedConnectionInstitution || !this.selectedConnectionInstrument) return;
-    
-    this.dataService.connectInstitutionToInstrument(this.selectedConnectionInstitution, this.selectedConnectionInstrument).subscribe({
-      next: () => {
-        this.selectedConnectionInstitution = null;
-        this.selectedConnectionInstrument = null;
-        this.loadInitialData();
-      },
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
-  }
-
-  public disconnectInstitutionFromInstrument(institutionId: number, instrumentId: number): void {
-    this.dataService.disconnectInstitutionFromInstrument(institutionId, instrumentId).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
+    this.connect(
+      this.dataService.connectInstitutionToInstrument(this.selectedConnectionInstitution, this.selectedConnectionInstrument),
+      () => { this.selectedConnectionInstitution = null; this.selectedConnectionInstrument = null; }
+    );
   }
 
   public connectInstitutionToMicroorganism(): void {
     if (!this.selectedConnectionInstitution || !this.selectedConnectionMicroorganism) return;
-    
-    this.dataService.connectInstitutionToMicroorganism(this.selectedConnectionInstitution, this.selectedConnectionMicroorganism).subscribe({
-      next: () => {
-        this.selectedConnectionInstitution = null;
-        this.selectedConnectionMicroorganism = null;
-        this.loadInitialData();
-      },
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
-  }
-
-  public disconnectInstitutionFromMicroorganism(institutionId: number, microorganismId: number): void {
-    this.dataService.disconnectInstitutionFromMicroorganism(institutionId, microorganismId).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
+    this.connect(
+      this.dataService.connectInstitutionToMicroorganism(this.selectedConnectionInstitution, this.selectedConnectionMicroorganism),
+      () => { this.selectedConnectionInstitution = null; this.selectedConnectionMicroorganism = null; }
+    );
   }
 
   public connectResearcherToKeyword(): void {
     if (!this.selectedConnectionResearcher || !this.selectedConnectionKeyword) return;
-    
-    this.dataService.connectResearcherToKeyword(this.selectedConnectionResearcher, this.selectedConnectionKeyword).subscribe({
-      next: () => {
-        this.selectedConnectionResearcher = null;
-        this.selectedConnectionKeyword = null;
-        this.loadInitialData();
-      },
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
-  }
-
-  public disconnectResearcherFromKeyword(researcherId: number, keywordId: number): void {
-    this.dataService.disconnectResearcherFromKeyword(researcherId, keywordId).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
+    this.connect(
+      this.dataService.connectResearcherToKeyword(this.selectedConnectionResearcher, this.selectedConnectionKeyword),
+      () => { this.selectedConnectionResearcher = null; this.selectedConnectionKeyword = null; }
+    );
   }
 
   public connectAnalysisToMicroorganism(): void {
     if (!this.selectedConnectionAnalysis || !this.selectedConnectionMicroorganism) return;
-    
-    this.dataService.connectAnalysisToMicroorganism(this.selectedConnectionAnalysis, this.selectedConnectionMicroorganism).subscribe({
-      next: () => {
-        this.selectedConnectionAnalysis = null;
-        this.selectedConnectionMicroorganism = null;
-        this.loadInitialData();
-      },
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
-  }
-
-  public disconnectAnalysisFromMicroorganism(analysisId: number, microorganismId: number): void {
-    this.dataService.disconnectAnalysisFromMicroorganism(analysisId, microorganismId).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
+    this.connect(
+      this.dataService.connectAnalysisToMicroorganism(this.selectedConnectionAnalysis, this.selectedConnectionMicroorganism),
+      () => { this.selectedConnectionAnalysis = null; this.selectedConnectionMicroorganism = null; }
+    );
   }
 
   public connectAnalysisToInstrument(): void {
     if (!this.selectedConnectionAnalysis || !this.selectedConnectionInstrument) return;
-    
-    this.dataService.connectAnalysisToInstrument(this.selectedConnectionAnalysis, this.selectedConnectionInstrument).subscribe({
-      next: () => {
-        this.selectedConnectionAnalysis = null;
-        this.selectedConnectionInstrument = null;
-        this.loadInitialData();
-      },
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
-  }
-
-  public disconnectAnalysisFromInstrument(analysisId: number, instrumentId: number): void {
-    this.dataService.disconnectAnalysisFromInstrument(analysisId, instrumentId).subscribe({
-      next: () => this.loadInitialData(),
-      error: (error) => {
-        if (error.status === 404) {
-        }
-      }
-    });
+    this.connect(
+      this.dataService.connectAnalysisToInstrument(this.selectedConnectionAnalysis, this.selectedConnectionInstrument),
+      () => { this.selectedConnectionAnalysis = null; this.selectedConnectionInstrument = null; }
+    );
   }
 }
+
