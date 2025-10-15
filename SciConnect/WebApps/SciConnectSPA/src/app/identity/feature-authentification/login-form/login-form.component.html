@@ -1,14 +1,14 @@
-<div class="login-container" [class.dark-theme]="isDarkTheme">
+<div class="login-container" [class.dark-theme]="themeService.isDarkTheme">
   <div class="login-card">
     <div class="theme-toggle">
-      <button class="theme-btn" (click)="toggleTheme()" [attr.aria-label]="isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'">
-        <i class="fas" [class.fa-sun]="isDarkTheme" [class.fa-moon]="!isDarkTheme"></i>
+      <button class="theme-btn" (click)="themeService.toggleTheme()" [attr.aria-label]="themeService.isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'">
+        <i class="fas" [class.fa-sun]="themeService.isDarkTheme" [class.fa-moon]="!themeService.isDarkTheme"></i>
       </button>
     </div>
     
     <div class="login-header">
       <div class="login-logo">
-        <img [src]="getLogoPath()" alt="SciConnect Logo" class="logo-image">
+        <img [src]="themeService.getLogoPath()" alt="SciConnect Logo" class="logo-image">
       </div>
       <h1 class="login-title">SciConnect</h1>
     </div>

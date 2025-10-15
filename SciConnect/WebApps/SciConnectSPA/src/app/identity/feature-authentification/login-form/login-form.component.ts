@@ -1,8 +1,8 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
 import { AuthentificationFacadeService } from '../../domain/application-services/authentification-facade.service';
+import { ThemeService } from '../../../shared/services/theme.service';
 
 interface ILoginFormData {
   username: string;
@@ -20,12 +20,11 @@ export class LoginFormComponent implements OnInit {
   public loginError: string = '';
   public loginSuccess: string = '';
   public showPassword: boolean = false;
-  public isDarkTheme: boolean = false;
 
   constructor(
     private routerService: Router,
     private authentificationService: AuthentificationFacadeService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    public themeService: ThemeService
   ) {
     this.loginForm = new FormGroup({
       username: new FormControl("", [
@@ -42,11 +41,6 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     // Clear any existing error/success messages
     this.clearMessages();
-    // Load theme preference from localStorage only in browser
-    if (isPlatformBrowser(this.platformId)) {
-      this.loadThemePreference();
-      this.applyTheme();
-    }
   }
 
   public isFieldInvalid(fieldName: string): boolean {
@@ -61,14 +55,6 @@ export class LoginFormComponent implements OnInit {
 
   public togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
-  }
-
-  public toggleTheme(): void {
-    this.isDarkTheme = !this.isDarkTheme;
-    this.applyTheme();
-    if (isPlatformBrowser(this.platformId)) {
-      this.saveThemePreference();
-    }
   }
 
   public onLoginFormSubmit(): void {
@@ -128,36 +114,5 @@ export class LoginFormComponent implements OnInit {
     } else {
       return 'An unexpected error occurred. Please try again.';
     }
-  }
-
-  private loadThemePreference(): void {
-    try {
-      const savedTheme = localStorage.getItem('sciConnectTheme');
-      this.isDarkTheme = savedTheme === 'dark';
-    } catch (error) {
-      console.warn('Could not load theme preference:', error);
-    }
-  }
-
-  private saveThemePreference(): void {
-    try {
-      localStorage.setItem('sciConnectTheme', this.isDarkTheme ? 'dark' : 'light');
-    } catch (error) {
-      console.warn('Could not save theme preference:', error);
-    }
-  }
-
-  private applyTheme(): void {
-    if (this.isDarkTheme) {
-      document.body.classList.add('dark-theme');
-    } else {
-      document.body.classList.remove('dark-theme');
-    }
-  }
-
-  public getLogoPath(): string {
-    return this.isDarkTheme 
-      ? 'assets/images/dark_theme_logo.png' 
-      : 'assets/images/white_theme_logo.png';
   }
 }

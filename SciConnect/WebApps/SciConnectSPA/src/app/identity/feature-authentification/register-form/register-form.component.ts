@@ -1,10 +1,10 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
 import { AuthentificationFacadeService } from '../../domain/application-services/authentification-facade.service';
 import { Observable } from 'rxjs';
 import { IRegisterRequest } from '../../domain/models/register-request';
+import { ThemeService } from '../../../shared/services/theme.service';
 
 interface IRegisterFormData {
   firstName: string;
@@ -29,13 +29,12 @@ export class RegisterFormComponent implements OnInit {
   public registerSuccess: string = '';
   public showPassword: boolean = false;
   public showConfirmPassword: boolean = false;
-  public isDarkTheme: boolean = false;
   public showVerificationCode: boolean = false;
 
   constructor(
     private routerService: Router,
     private authentificationService: AuthentificationFacadeService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    public themeService: ThemeService
   ) {
     this.registerForm = new FormGroup({
       firstName: new FormControl("", [
@@ -73,18 +72,10 @@ export class RegisterFormComponent implements OnInit {
 
     // Add custom validator after form creation
     this.registerForm.setValidators(this.passwordMatchValidator);
-
-    // Load theme preference from localStorage only in browser
-    if (isPlatformBrowser(this.platformId)) {
-      this.loadThemePreference();
-    }
   }
 
   ngOnInit(): void {
     this.clearMessages();
-    if (isPlatformBrowser(this.platformId)) {
-      this.applyTheme();
-    }
   }
 
   public isFieldInvalid(fieldName: string): boolean {
@@ -103,14 +94,6 @@ export class RegisterFormComponent implements OnInit {
 
   public toggleConfirmPasswordVisibility(): void {
     this.showConfirmPassword = !this.showConfirmPassword;
-  }
-
-  public toggleTheme(): void {
-    this.isDarkTheme = !this.isDarkTheme;
-    this.applyTheme();
-    if (isPlatformBrowser(this.platformId)) {
-      this.saveThemePreference();
-    }
   }
 
   public onRoleChange(): void {
@@ -253,31 +236,6 @@ export class RegisterFormComponent implements OnInit {
     }
   }
 
-  private loadThemePreference(): void {
-    try {
-      const savedTheme = localStorage.getItem('sciConnectTheme');
-      this.isDarkTheme = savedTheme === 'dark';
-    } catch (error) {
-      console.warn('Could not load theme preference:', error);
-    }
-  }
-
-  private saveThemePreference(): void {
-    try {
-      localStorage.setItem('sciConnectTheme', this.isDarkTheme ? 'dark' : 'light');
-    } catch (error) {
-      console.warn('Could not save theme preference:', error);
-    }
-  }
-
-  private applyTheme(): void {
-    if (this.isDarkTheme) {
-      document.body.classList.add('dark-theme');
-    } else {
-      document.body.classList.remove('dark-theme');
-    }
-  }
-
   public getPasswordStrength(): string {
     const password = this.registerForm.get('password')?.value;
     if (!password) return '';
@@ -302,11 +260,5 @@ export class RegisterFormComponent implements OnInit {
       case 'strong': return '#28a745';
       default: return '#6c757d';
     }
-  }
-
-  public getLogoPath(): string {
-    return this.isDarkTheme 
-      ? 'assets/images/dark_theme_logo.png' 
-      : 'assets/images/white_theme_logo.png';
   }
 }

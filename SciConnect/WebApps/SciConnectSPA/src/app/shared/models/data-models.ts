@@ -124,11 +124,3 @@ export interface FilterState {
   selectedEmployees: Employee[];
   selectedMicroorganisms: Microorganism[];
 }
-
-// Panel state interface
-export interface PanelState {
-  isExpanded: boolean;
-  isLoading: boolean;
-  items: any[];
-  selectedItems: any[];
-}
