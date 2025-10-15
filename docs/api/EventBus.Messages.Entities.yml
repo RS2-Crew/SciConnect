@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventBus.Messages.Entities
+  commentId: N:EventBus.Messages.Entities
+  id: EventBus.Messages.Entities
+  children:
+  - EventBus.Messages.Entities.EmployeeCreatedEvent
+  - EventBus.Messages.Entities.InstitutionCreatedEvent
+  - EventBus.Messages.Entities.SimpleEntityCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: EventBus.Messages.Entities
+  nameWithType: EventBus.Messages.Entities
+  fullName: EventBus.Messages.Entities
+  type: Namespace
+  assemblies:
+  - EventBus.Messages
+references:
+- uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+  commentId: T:EventBus.Messages.Entities.EmployeeCreatedEvent
+  href: EventBus.Messages.Entities.EmployeeCreatedEvent.html
+  name: EmployeeCreatedEvent
+  nameWithType: EmployeeCreatedEvent
+  fullName: EventBus.Messages.Entities.EmployeeCreatedEvent
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent
+  commentId: T:EventBus.Messages.Entities.InstitutionCreatedEvent
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html
+  name: InstitutionCreatedEvent
+  nameWithType: InstitutionCreatedEvent
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent
+- uid: EventBus.Messages.Entities.SimpleEntityCreatedEvent
+  commentId: T:EventBus.Messages.Entities.SimpleEntityCreatedEvent
+  href: EventBus.Messages.Entities.SimpleEntityCreatedEvent.html
+  name: SimpleEntityCreatedEvent
+  nameWithType: SimpleEntityCreatedEvent
+  fullName: EventBus.Messages.Entities.SimpleEntityCreatedEvent

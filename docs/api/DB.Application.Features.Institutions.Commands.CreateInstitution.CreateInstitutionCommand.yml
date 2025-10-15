@@ -1,0 +1,808 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  id: CreateInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution
+  children:
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website
+  langs:
+  - csharp
+  - vb
+  name: CreateInstitutionCommand
+  nameWithType: CreateInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateInstitutionCommand
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 9
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: 'public class CreateInstitutionCommand : IRequest<int>, IBaseRequest'
+    content.vb: Public Class CreateInstitutionCommand Implements IRequest(Of Integer), IBaseRequest
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequest{System.Int32}
+  - MediatR.IBaseRequest
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id
+  id: Id
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: CreateInstitutionCommand.Id
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Id
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 11
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public int Id { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name
+  id: Name
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: CreateInstitutionCommand.Name
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Name
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street
+  id: Street
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: Street
+  nameWithType: CreateInstitutionCommand.Street
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Street
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 13
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string Street { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Street As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber
+  id: StreetNumber
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: StreetNumber
+  nameWithType: CreateInstitutionCommand.StreetNumber
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: StreetNumber
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 14
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string StreetNumber { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StreetNumber As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City
+  id: City
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: City
+  nameWithType: CreateInstitutionCommand.City
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: City
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 15
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string City { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property City As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country
+  id: Country
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: Country
+  nameWithType: CreateInstitutionCommand.Country
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Country
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 16
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string Country { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Country As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone
+  id: Phone
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: Phone
+  nameWithType: CreateInstitutionCommand.Phone
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Phone
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 17
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string? Phone { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Phone As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email
+  id: Email
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: CreateInstitutionCommand.Email
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Email
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 18
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string? Email { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website
+  commentId: P:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website
+  id: Website
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: Website
+  nameWithType: CreateInstitutionCommand.Website
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Website
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 19
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public string? Website { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Website As String
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website*
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)'
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  langs:
+  - csharp
+  - vb
+  name: CreateInstitutionCommand(int, string, string, string, string, string, string?, string?, string?)
+  nameWithType: CreateInstitutionCommand.CreateInstitutionCommand(int, string, string, string, string, string, string?, string?, string?)
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.CreateInstitutionCommand(int, string, string, string, string, string, string?, string?, string?)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/CreateInstitution/CreateInstitutionCommand.cs
+    startLine: 21
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.CreateInstitution
+  syntax:
+    content: public CreateInstitutionCommand(int id, string name, string street, string streetNumber, string city, string country, string? phone, string? email, string? website)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: name
+      type: System.String
+    - id: street
+      type: System.String
+    - id: streetNumber
+      type: System.String
+    - id: city
+      type: System.String
+    - id: country
+      type: System.String
+    - id: phone
+      type: System.String
+    - id: email
+      type: System.String
+    - id: website
+      type: System.String
+    content.vb: Public Sub New(id As Integer, name As String, street As String, streetNumber As String, city As String, country As String, phone As String, email As String, website As String)
+  overload: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.#ctor*
+  nameWithType.vb: CreateInstitutionCommand.New(Integer, String, String, String, String, String, String, String, String)
+  fullName.vb: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.New(Integer, String, String, String, String, String, String, String, String)
+  name.vb: New(Integer, String, String, String, String, String, String, String, String)
+references:
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.CreateInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.CreateInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.CreateInstitution
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+    name: CreateInstitution
+    href: DB.Application.Features.Institutions.Commands.CreateInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+    name: CreateInstitution
+    href: DB.Application.Features.Institutions.Commands.CreateInstitution.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequest{System.Int32}
+  commentId: T:MediatR.IRequest{System.Int32}
+  parent: MediatR
+  definition: MediatR.IRequest`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: IRequest<int>
+  nameWithType: IRequest<int>
+  fullName: MediatR.IRequest<int>
+  nameWithType.vb: IRequest(Of Integer)
+  fullName.vb: MediatR.IRequest(Of Integer)
+  name.vb: IRequest(Of Integer)
+  spec.csharp:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: MediatR.IBaseRequest
+  commentId: T:MediatR.IBaseRequest
+  parent: MediatR
+  isExternal: true
+  name: IBaseRequest
+  nameWithType: IBaseRequest
+  fullName: MediatR.IBaseRequest
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequest`1
+  commentId: T:MediatR.IRequest`1
+  isExternal: true
+  name: IRequest<TResponse>
+  nameWithType: IRequest<TResponse>
+  fullName: MediatR.IRequest<TResponse>
+  nameWithType.vb: IRequest(Of TResponse)
+  fullName.vb: MediatR.IRequest(Of TResponse)
+  name.vb: IRequest(Of TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: <
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_Id
+  name: Id
+  nameWithType: CreateInstitutionCommand.Id
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_Name
+  name: Name
+  nameWithType: CreateInstitutionCommand.Name
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_Street
+  name: Street
+  nameWithType: CreateInstitutionCommand.Street
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Street
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_StreetNumber
+  name: StreetNumber
+  nameWithType: CreateInstitutionCommand.StreetNumber
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.StreetNumber
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_City
+  name: City
+  nameWithType: CreateInstitutionCommand.City
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.City
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_Country
+  name: Country
+  nameWithType: CreateInstitutionCommand.Country
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Country
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_Phone
+  name: Phone
+  nameWithType: CreateInstitutionCommand.Phone
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Phone
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_Email
+  name: Email
+  nameWithType: CreateInstitutionCommand.Email
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Email
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_Website
+  name: Website
+  nameWithType: CreateInstitutionCommand.Website
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.Website
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.#ctor*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.#ctor
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html#DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand__ctor_System_Int32_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_
+  name: CreateInstitutionCommand
+  nameWithType: CreateInstitutionCommand.CreateInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.CreateInstitutionCommand
+  nameWithType.vb: CreateInstitutionCommand.New
+  fullName.vb: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.New
+  name.vb: New

@@ -1,0 +1,925 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  commentId: T:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  id: CreateKeywordCommandHandler
+  parent: DB.Application.Features.Keywords.Commands.CreateKeyword
+  children:
+  - DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.#ctor(DB.Application.Contracts.Persistance.IKeywordRepository,DB.Application.Contracts.Factories.IKeywordFactory,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler},MassTransit.IPublishEndpoint)
+  - DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: CreateKeywordCommandHandler
+  nameWithType: CreateKeywordCommandHandler
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Keywords/Commands/CreateKeyword/CreateKeywordCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateKeywordCommandHandler
+    path: ../SciConnect/Services/DB/DB.Application/Features/Keywords/Commands/CreateKeyword/CreateKeywordCommandHandler.cs
+    startLine: 14
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Keywords.Commands.CreateKeyword
+  syntax:
+    content: 'public class CreateKeywordCommandHandler : IRequestHandler<CreateKeywordCommand, int>'
+    content.vb: Public Class CreateKeywordCommandHandler Implements IRequestHandler(Of CreateKeywordCommand, Integer)
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.#ctor(DB.Application.Contracts.Persistance.IKeywordRepository,DB.Application.Contracts.Factories.IKeywordFactory,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler},MassTransit.IPublishEndpoint)
+  commentId: M:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.#ctor(DB.Application.Contracts.Persistance.IKeywordRepository,DB.Application.Contracts.Factories.IKeywordFactory,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler},MassTransit.IPublishEndpoint)
+  id: '#ctor(DB.Application.Contracts.Persistance.IKeywordRepository,DB.Application.Contracts.Factories.IKeywordFactory,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler},MassTransit.IPublishEndpoint)'
+  parent: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: CreateKeywordCommandHandler(IKeywordRepository, IKeywordFactory, ILogger<CreateKeywordCommandHandler>, IPublishEndpoint)
+  nameWithType: CreateKeywordCommandHandler.CreateKeywordCommandHandler(IKeywordRepository, IKeywordFactory, ILogger<CreateKeywordCommandHandler>, IPublishEndpoint)
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.CreateKeywordCommandHandler(DB.Application.Contracts.Persistance.IKeywordRepository, DB.Application.Contracts.Factories.IKeywordFactory, Microsoft.Extensions.Logging.ILogger<DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler>, MassTransit.IPublishEndpoint)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Keywords/Commands/CreateKeyword/CreateKeywordCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Keywords/Commands/CreateKeyword/CreateKeywordCommandHandler.cs
+    startLine: 21
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Keywords.Commands.CreateKeyword
+  syntax:
+    content: public CreateKeywordCommandHandler(IKeywordRepository keywordRepository, IKeywordFactory keywordFactory, ILogger<CreateKeywordCommandHandler> logger, IPublishEndpoint publishEndpoint)
+    parameters:
+    - id: keywordRepository
+      type: DB.Application.Contracts.Persistance.IKeywordRepository
+    - id: keywordFactory
+      type: DB.Application.Contracts.Factories.IKeywordFactory
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler}
+    - id: publishEndpoint
+      type: MassTransit.IPublishEndpoint
+    content.vb: Public Sub New(keywordRepository As IKeywordRepository, keywordFactory As IKeywordFactory, logger As ILogger(Of CreateKeywordCommandHandler), publishEndpoint As IPublishEndpoint)
+  overload: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.#ctor*
+  nameWithType.vb: CreateKeywordCommandHandler.New(IKeywordRepository, IKeywordFactory, ILogger(Of CreateKeywordCommandHandler), IPublishEndpoint)
+  fullName.vb: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.New(DB.Application.Contracts.Persistance.IKeywordRepository, DB.Application.Contracts.Factories.IKeywordFactory, Microsoft.Extensions.Logging.ILogger(Of DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler), MassTransit.IPublishEndpoint)
+  name.vb: New(IKeywordRepository, IKeywordFactory, ILogger(Of CreateKeywordCommandHandler), IPublishEndpoint)
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+  commentId: M:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+  id: Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+  parent: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(CreateKeywordCommand, CancellationToken)
+  nameWithType: CreateKeywordCommandHandler.Handle(CreateKeywordCommand, CancellationToken)
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Keywords/Commands/CreateKeyword/CreateKeywordCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Handle
+    path: ../SciConnect/Services/DB/DB.Application/Features/Keywords/Commands/CreateKeyword/CreateKeywordCommandHandler.cs
+    startLine: 33
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Keywords.Commands.CreateKeyword
+  summary: Handles a request
+  example: []
+  syntax:
+    content: public Task<int> Handle(CreateKeywordCommand request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+      description: The request
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: Response from the request
+    content.vb: Public Function Handle(request As CreateKeywordCommand, cancellationToken As CancellationToken) As Task(Of Integer)
+  overload: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle*
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+references:
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+  commentId: N:DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.html
+  name: DB.Application.Features.Keywords.Commands.CreateKeyword
+  nameWithType: DB.Application.Features.Keywords.Commands.CreateKeyword
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}
+  commentId: T:MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}
+  parent: MediatR
+  definition: MediatR.IRequestHandler`2
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  name: IRequestHandler<CreateKeywordCommand, int>
+  nameWithType: IRequestHandler<CreateKeywordCommand, int>
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand, int>
+  nameWithType.vb: IRequestHandler(Of CreateKeywordCommand, Integer)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand, Integer)
+  name.vb: IRequestHandler(Of CreateKeywordCommand, Integer)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    name: CreateKeywordCommand
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    name: CreateKeywordCommand
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequestHandler`2
+  commentId: T:MediatR.IRequestHandler`2
+  isExternal: true
+  name: IRequestHandler<TRequest, TResponse>
+  nameWithType: IRequestHandler<TRequest, TResponse>
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse)
+  name.vb: IRequestHandler(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.#ctor*
+  commentId: Overload:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.#ctor
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.html#DB_Application_Features_Keywords_Commands_CreateKeyword_CreateKeywordCommandHandler__ctor_DB_Application_Contracts_Persistance_IKeywordRepository_DB_Application_Contracts_Factories_IKeywordFactory_Microsoft_Extensions_Logging_ILogger_DB_Application_Features_Keywords_Commands_CreateKeyword_CreateKeywordCommandHandler__MassTransit_IPublishEndpoint_
+  name: CreateKeywordCommandHandler
+  nameWithType: CreateKeywordCommandHandler.CreateKeywordCommandHandler
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.CreateKeywordCommandHandler
+  nameWithType.vb: CreateKeywordCommandHandler.New
+  fullName.vb: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.New
+  name.vb: New
+- uid: DB.Application.Contracts.Persistance.IKeywordRepository
+  commentId: T:DB.Application.Contracts.Persistance.IKeywordRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IKeywordRepository.html
+  name: IKeywordRepository
+  nameWithType: IKeywordRepository
+  fullName: DB.Application.Contracts.Persistance.IKeywordRepository
+- uid: DB.Application.Contracts.Factories.IKeywordFactory
+  commentId: T:DB.Application.Contracts.Factories.IKeywordFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IKeywordFactory.html
+  name: IKeywordFactory
+  nameWithType: IKeywordFactory
+  fullName: DB.Application.Contracts.Factories.IKeywordFactory
+- uid: Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<CreateKeywordCommandHandler>
+  nameWithType: ILogger<CreateKeywordCommandHandler>
+  fullName: Microsoft.Extensions.Logging.ILogger<DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler>
+  nameWithType.vb: ILogger(Of CreateKeywordCommandHandler)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler)
+  name.vb: ILogger(Of CreateKeywordCommandHandler)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+    name: CreateKeywordCommandHandler
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+    name: CreateKeywordCommandHandler
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.html
+  - name: )
+- uid: MassTransit.IPublishEndpoint
+  commentId: T:MassTransit.IPublishEndpoint
+  parent: MassTransit
+  isExternal: true
+  name: IPublishEndpoint
+  nameWithType: IPublishEndpoint
+  fullName: MassTransit.IPublishEndpoint
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: MassTransit
+  commentId: N:MassTransit
+  isExternal: true
+  name: MassTransit
+  nameWithType: MassTransit
+  fullName: MassTransit
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle*
+  commentId: Overload:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.html#DB_Application_Features_Keywords_Commands_CreateKeyword_CreateKeywordCommandHandler_Handle_DB_Application_Features_Keywords_Commands_CreateKeyword_CreateKeywordCommand_System_Threading_CancellationToken_
+  name: Handle
+  nameWithType: CreateKeywordCommandHandler.Handle
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.Handle
+- uid: MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+  parent: MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}
+  definition: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  name: Handle(CreateKeywordCommand, CancellationToken)
+  nameWithType: IRequestHandler<CreateKeywordCommand, int>.Handle(CreateKeywordCommand, CancellationToken)
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand, int>.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of CreateKeywordCommand, Integer).Handle(CreateKeywordCommand, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand, Integer).Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    name: CreateKeywordCommand
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Int32}.Handle(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    name: CreateKeywordCommand
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  commentId: T:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  parent: DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  name: CreateKeywordCommand
+  nameWithType: CreateKeywordCommand
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: Handle(TRequest, CancellationToken)
+  nameWithType: IRequestHandler<TRequest, TResponse>.Handle(TRequest, CancellationToken)
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>.Handle(TRequest, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse).Handle(TRequest, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse).Handle(TRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

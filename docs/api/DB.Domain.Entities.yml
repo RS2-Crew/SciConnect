@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  id: DB.Domain.Entities
+  children:
+  - DB.Domain.Entities.Analysis
+  - DB.Domain.Entities.Employee
+  - DB.Domain.Entities.Institution
+  - DB.Domain.Entities.Instrument
+  - DB.Domain.Entities.Keyword
+  - DB.Domain.Entities.Microorganism
+  langs:
+  - csharp
+  - vb
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  type: Namespace
+  assemblies:
+  - DB.Domain
+references:
+- uid: DB.Domain.Entities.Analysis
+  commentId: T:DB.Domain.Entities.Analysis
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Analysis.html
+  name: Analysis
+  nameWithType: Analysis
+  fullName: DB.Domain.Entities.Analysis
+- uid: DB.Domain.Entities.Employee
+  commentId: T:DB.Domain.Entities.Employee
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Employee.html
+  name: Employee
+  nameWithType: Employee
+  fullName: DB.Domain.Entities.Employee
+- uid: DB.Domain.Entities.Institution
+  commentId: T:DB.Domain.Entities.Institution
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Institution.html
+  name: Institution
+  nameWithType: Institution
+  fullName: DB.Domain.Entities.Institution
+- uid: DB.Domain.Entities.Instrument
+  commentId: T:DB.Domain.Entities.Instrument
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Instrument.html
+  name: Instrument
+  nameWithType: Instrument
+  fullName: DB.Domain.Entities.Instrument
+- uid: DB.Domain.Entities.Keyword
+  commentId: T:DB.Domain.Entities.Keyword
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Keyword.html
+  name: Keyword
+  nameWithType: Keyword
+  fullName: DB.Domain.Entities.Keyword
+- uid: DB.Domain.Entities.Microorganism
+  commentId: T:DB.Domain.Entities.Microorganism
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Microorganism.html
+  name: Microorganism
+  nameWithType: Microorganism
+  fullName: DB.Domain.Entities.Microorganism
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

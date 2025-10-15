@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+  commentId: N:DB.Application.Features.Instruments.Commands.CreateInstrument
+  id: DB.Application.Features.Instruments.Commands.CreateInstrument
+  children:
+  - DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+  - DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Instruments.Commands.CreateInstrument
+  nameWithType: DB.Application.Features.Instruments.Commands.CreateInstrument
+  fullName: DB.Application.Features.Instruments.Commands.CreateInstrument
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+  commentId: T:DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+  parent: DB.Application.Features.Instruments.Commands.CreateInstrument
+  href: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand.html
+  name: CreateInstrumentCommand
+  nameWithType: CreateInstrumentCommand
+  fullName: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+- uid: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator
+  commentId: T:DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator
+  href: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator.html
+  name: CreateInstrumentCommandValidator
+  nameWithType: CreateInstrumentCommandValidator
+  fullName: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator
+- uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+  commentId: N:DB.Application.Features.Instruments.Commands.CreateInstrument
+  href: DB.html
+  name: DB.Application.Features.Instruments.Commands.CreateInstrument
+  nameWithType: DB.Application.Features.Instruments.Commands.CreateInstrument
+  fullName: DB.Application.Features.Instruments.Commands.CreateInstrument
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+    name: CreateInstrument
+    href: DB.Application.Features.Instruments.Commands.CreateInstrument.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+    name: CreateInstrument
+    href: DB.Application.Features.Instruments.Commands.CreateInstrument.html

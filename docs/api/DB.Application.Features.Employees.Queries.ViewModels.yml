@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Employees.Queries.ViewModels
+  commentId: N:DB.Application.Features.Employees.Queries.ViewModels
+  id: DB.Application.Features.Employees.Queries.ViewModels
+  children:
+  - DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Employees.Queries.ViewModels
+  nameWithType: DB.Application.Features.Employees.Queries.ViewModels
+  fullName: DB.Application.Features.Employees.Queries.ViewModels
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+  commentId: T:DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+  parent: DB.Application.Features.Employees.Queries.ViewModels
+  href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  name: EmployeeViewModel
+  nameWithType: EmployeeViewModel
+  fullName: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+- uid: DB.Application.Features.Employees.Queries.ViewModels
+  commentId: N:DB.Application.Features.Employees.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Employees.Queries.ViewModels
+  nameWithType: DB.Application.Features.Employees.Queries.ViewModels
+  fullName: DB.Application.Features.Employees.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Employees.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Employees.Queries.ViewModels.html

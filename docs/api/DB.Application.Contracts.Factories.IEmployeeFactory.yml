@@ -1,0 +1,212 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IEmployeeFactory
+  commentId: T:DB.Application.Contracts.Factories.IEmployeeFactory
+  id: IEmployeeFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IEmployeeFactory.Create(DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand,DB.Domain.Entities.Institution)
+  langs:
+  - csharp
+  - vb
+  name: IEmployeeFactory
+  nameWithType: IEmployeeFactory
+  fullName: DB.Application.Contracts.Factories.IEmployeeFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IEmployeeFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeFactory.cs
+    startLine: 5
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IEmployeeFactory
+    content.vb: Public Interface IEmployeeFactory
+- uid: DB.Application.Contracts.Factories.IEmployeeFactory.Create(DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand,DB.Domain.Entities.Institution)
+  commentId: M:DB.Application.Contracts.Factories.IEmployeeFactory.Create(DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand,DB.Domain.Entities.Institution)
+  id: Create(DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand,DB.Domain.Entities.Institution)
+  parent: DB.Application.Contracts.Factories.IEmployeeFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateEmployeeCommand, Institution)
+  nameWithType: IEmployeeFactory.Create(CreateEmployeeCommand, Institution)
+  fullName: DB.Application.Contracts.Factories.IEmployeeFactory.Create(DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand, DB.Domain.Entities.Institution)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Create
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeFactory.cs
+    startLine: 7
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: Employee Create(CreateEmployeeCommand command, Institution institution)
+    parameters:
+    - id: command
+      type: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+    - id: institution
+      type: DB.Domain.Entities.Institution
+    return:
+      type: DB.Domain.Entities.Employee
+    content.vb: Function Create(command As CreateEmployeeCommand, institution As Institution) As Employee
+  overload: DB.Application.Contracts.Factories.IEmployeeFactory.Create*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IEmployeeFactory.Create*
+  commentId: Overload:DB.Application.Contracts.Factories.IEmployeeFactory.Create
+  href: DB.Application.Contracts.Factories.IEmployeeFactory.html#DB_Application_Contracts_Factories_IEmployeeFactory_Create_DB_Application_Features_Employees_Commands_CreateEmployee_CreateEmployeeCommand_DB_Domain_Entities_Institution_
+  name: Create
+  nameWithType: IEmployeeFactory.Create
+  fullName: DB.Application.Contracts.Factories.IEmployeeFactory.Create
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+  commentId: T:DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+  parent: DB.Application.Features.Employees.Commands.CreateEmployee
+  href: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand.html
+  name: CreateEmployeeCommand
+  nameWithType: CreateEmployeeCommand
+  fullName: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+- uid: DB.Domain.Entities.Institution
+  commentId: T:DB.Domain.Entities.Institution
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Institution.html
+  name: Institution
+  nameWithType: Institution
+  fullName: DB.Domain.Entities.Institution
+- uid: DB.Domain.Entities.Employee
+  commentId: T:DB.Domain.Entities.Employee
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Employee.html
+  name: Employee
+  nameWithType: Employee
+  fullName: DB.Domain.Entities.Employee
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee
+  commentId: N:DB.Application.Features.Employees.Commands.CreateEmployee
+  href: DB.html
+  name: DB.Application.Features.Employees.Commands.CreateEmployee
+  nameWithType: DB.Application.Features.Employees.Commands.CreateEmployee
+  fullName: DB.Application.Features.Employees.Commands.CreateEmployee
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.CreateEmployee
+    name: CreateEmployee
+    href: DB.Application.Features.Employees.Commands.CreateEmployee.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.CreateEmployee
+    name: CreateEmployee
+    href: DB.Application.Features.Employees.Commands.CreateEmployee.html
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

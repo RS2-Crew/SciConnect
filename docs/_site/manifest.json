@@ -1,0 +1,4033 @@
+{
+  "source_base_path": "C:/Users/Dida/Desktop/SciConnect/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Consumer.EntityChangedConsumer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Consumer.EntityChangedConsumer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Consumer.EntityChangedConsumer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Consumer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Consumer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Consumer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Controllers.AutocompleteController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Controllers.AutocompleteController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Controllers.AutocompleteController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Domain.Models.AutocompleteEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Domain.Models.AutocompleteEntry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Domain.Models.AutocompleteEntry",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Domain.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Domain.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Domain.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Infrastructure.Persistence.AutoDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Infrastructure.Persistence.AutoDbContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Infrastructure.Persistence.AutoDbContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Autocomplete.API.Infrastructure.Persistence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Autocomplete.API.Infrastructure.Persistence.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Autocomplete.API.Infrastructure.Persistence",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.API.Controllers.DBController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.API.Controllers.DBController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.API.Controllers.DBController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.API.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.API.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.API.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.API.Extensions.ServiceProviderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.API.Extensions.ServiceProviderExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.API.Extensions.ServiceProviderExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.API.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.API.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.API.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.ApplicationServiceRegistration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.ApplicationServiceRegistration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.ApplicationServiceRegistration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Behaviors.UnhandledExceptionBehavior-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Behaviors.UnhandledExceptionBehavior-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Behaviors.UnhandledExceptionBehavior<TRequest, TResponse>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Behaviors.ValidationBehavior-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Behaviors.ValidationBehavior-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Behaviors.ValidationBehavior<TRequest, TResponse>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Behaviors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Behaviors.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Behaviors",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IAnalysisFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IAnalysisFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IAnalysisFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IAnalysisViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IAnalysisViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IAnalysisViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IEmployeeFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IEmployeeFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IEmployeeFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IEmployeeViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IEmployeeViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IEmployeeViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IInstitutionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IInstitutionFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IInstitutionFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IInstitutionViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IInstitutionViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IInstitutionViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IInstrumentFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IInstrumentFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IInstrumentFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IInstrumentViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IInstrumentViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IInstrumentViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IKeywordFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IKeywordFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IKeywordFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IKeywordViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IKeywordViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IKeywordViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IMicroorganismFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IMicroorganismFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IMicroorganismFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories.IMicroorganismViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Factories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Factories.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Factories",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.IAnalysisRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.IAnalysisRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance.IAnalysisRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.IAsyncRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.IAsyncRepository-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance.IAsyncRepository<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.IEmployeeRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.IEmployeeRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance.IEmployeeRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.IInstitutionRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.IInstitutionRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance.IInstitutionRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.IInstrumentRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.IInstrumentRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance.IInstrumentRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.IKeywordRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.IKeywordRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance.IKeywordRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.IMicroorganismRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.IMicroorganismRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance.IMicroorganismRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Contracts.Persistance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Contracts.Persistance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Contracts.Persistance",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Exceptions.ValidationFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Exceptions.ValidationFailedException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Exceptions.ValidationFailedException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Exceptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Exceptions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Commands.CreateAnalysis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Commands.CreateAnalysis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Commands.CreateAnalysis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Commands.DeleteAnalysis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Commands.DeleteAnalysis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Commands.DeleteAnalysis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analyses.Queries.GetAllAnalyses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analyses.Queries.GetAllAnalyses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analyses.Queries.GetAllAnalyses",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Commands.CreateAnalysis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Commands.CreateAnalysis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Commands.CreateAnalysis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetListOfAnalysis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetListOfAnalysis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetListOfAnalysis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Analysis.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Analysis.Queries.ViewModels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Analysis.Queries.ViewModels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.AddKeywordToEmploye.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.AddKeywordToEmploye.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.AddKeywordToEmploye",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.CreateEmployee.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.CreateEmployee",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Commands.DeleteEmployee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Commands.DeleteEmployee.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Commands.DeleteEmployee",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetAllEmployees.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetAllEmployees.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetAllEmployees",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.GetListOfEmployees.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.GetListOfEmployees.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.GetListOfEmployees",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Employees.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Employees.Queries.ViewModels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Employees.Queries.ViewModels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddInstrument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddInstrument.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddInstrument",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddKeywordToInstitution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.CreateInstitution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.CreateInstitution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Commands.DeleteInstitution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Commands.DeleteInstitution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Commands.DeleteInstitution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetAllInstitutions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetAllInstitutions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetAllInstitutions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetListOfInstitutions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetListOfInstitutions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetListOfInstitutions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Institutions.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Institutions.Queries.ViewModels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Institutions.Queries.ViewModels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Commands.CreateInstrument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Commands.CreateInstrument.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Commands.CreateInstrument",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Commands.DeleteInstrument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Commands.DeleteInstrument.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Commands.DeleteInstrument",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetAllInstruments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetAllInstruments.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetAllInstruments",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.GetListOfInstruments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.GetListOfInstruments.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.GetListOfInstruments",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Instruments.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Instruments.Queries.ViewModels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Instruments.Queries.ViewModels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Commands.CreateKeyword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Commands.CreateKeyword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Commands.DeleteKeyword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Commands.DeleteKeyword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Commands.DeleteKeyword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetAllKeywords.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetAllKeywords.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetAllKeywords",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.GetListOfKeywords.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.GetListOfKeywords.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.GetListOfKeywords",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Keywords.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Keywords.Queries.ViewModels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Keywords.Queries.ViewModels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Commands.CreateMicroorganism",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.ViewModels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries.ViewModels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.Features.Microorganisms.Queries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.Features.Microorganisms.Queries.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application.Features.Microorganisms.Queries",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Application.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Application",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Common.AggregateRoot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Common.AggregateRoot.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Common.AggregateRoot",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Common.EntityBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Common.EntityBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Common.EntityBase",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Common.ValueObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Common.ValueObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Common.ValueObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Common.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Common",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Entities.Analysis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Entities.Analysis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Entities.Analysis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Entities.Employee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Entities.Employee.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Entities.Employee",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Entities.Institution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Entities.Institution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Entities.Institution",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Entities.Instrument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Entities.Instrument.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Entities.Instrument",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Entities.Keyword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Entities.Keyword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Entities.Keyword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Entities.Microorganism.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Entities.Microorganism.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Entities.Microorganism",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Domain.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Domain.Entities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Domain.Entities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.AnalysisFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.AnalysisFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.AnalysisFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.AnalysisViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.AnalysisViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.AnalysisViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.EmployeeFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.EmployeeFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.EmployeeFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.EmployeeViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.EmployeeViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.EmployeeViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.InstitutionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.InstitutionFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.InstitutionFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.InstitutionViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.InstitutionViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.InstitutionViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.InstrumentFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.InstrumentFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.InstrumentFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.InstrumentViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.InstrumentViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.InstrumentViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.KeywordFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.KeywordFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.KeywordFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.KeywordViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.KeywordViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.KeywordViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.MicroorganismFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.MicroorganismFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.MicroorganismFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.MicroorganismViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.MicroorganismViewModelFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories.MicroorganismViewModelFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Factories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Factories.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Factories",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.InfrastructureServiceRegistration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.InfrastructureServiceRegistration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.InfrastructureServiceRegistration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Migrations.InitialMigration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Migrations.InitialMigration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Migrations.InitialMigration",
+      "Summary": "<p sourcefile=\"api/DB.Infrastructure.Migrations.InitialMigration.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.EntityConfigurations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.EntityConfigurations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.SqlServerContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.SqlServerContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.SqlServerContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.SqlServerContextSeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.SqlServerContextSeed.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance.SqlServerContextSeed",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Persistance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Persistance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Persistance",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.AnalysisRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.AnalysisRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories.AnalysisRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.EmployeeRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.EmployeeRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories.EmployeeRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.InstitutionRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.InstitutionRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories.InstitutionRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.InstrumentRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.InstrumentRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories.InstrumentRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.KeywordRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.KeywordRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories.KeywordRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.MicroorganismRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.MicroorganismRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories.MicroorganismRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.RepositoryBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.RepositoryBase-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories.RepositoryBase<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.Repositories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.Repositories.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure.Repositories",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DB.Infrastructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DB.Infrastructure.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DB.Infrastructure",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Entities.EmployeeCreatedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Entities.EmployeeCreatedEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Entities.EmployeeCreatedEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Entities.InstitutionCreatedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Entities.InstitutionCreatedEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Entities.InstitutionCreatedEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Entities.SimpleEntityCreatedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Entities.SimpleEntityCreatedEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Entities.SimpleEntityCreatedEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Entities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Entities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Events.AutocompleteEntityChanged.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Events.AutocompleteEntityChanged.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Events.AutocompleteEntityChanged",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Events.ChangeKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Events.ChangeKind.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Events.ChangeKind",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Events.EntityType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Events.EntityType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Events.EntityType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Events.IntegrationEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Events.IntegrationEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Events.IntegrationEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EventBus.Messages.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EventBus.Messages.Events.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EventBus.Messages.Events",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityServer.Entities.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityServer.Entities.User.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityServer.Entities.User",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityServer.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityServer.Entities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityServer.Entities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Consumers.EmailConsumer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Consumers.EmailConsumer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Consumers.EmailConsumer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Consumers.EntityCreated.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Consumers.EntityCreated.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Consumers.EntityCreated",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Consumers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Consumers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Consumers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Controllers.AuthenticationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Controllers.AuthenticationController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Controllers.AuthenticationController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Controllers.Base.RegistrationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Controllers.Base.RegistrationController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Controllers.Base.RegistrationController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Controllers.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Controllers.Base.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Controllers.Base",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Controllers.UserController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Controllers.UserController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Controllers.UserController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.DTOs.AuthenticationModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.DTOs.AuthenticationModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.DTOs.AuthenticationModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.DTOs.EmailMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.DTOs.EmailMessage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.DTOs.EmailMessage",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.DTOs.NewUserDTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.DTOs.NewUserDTO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.DTOs.NewUserDTO",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.DTOs.RefreshTokenModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.DTOs.RefreshTokenModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.DTOs.RefreshTokenModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.DTOs.UserCredentialsDTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.DTOs.UserCredentialsDTO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.DTOs.UserCredentialsDTO",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.DTOs.UserDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.DTOs.UserDetails.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.DTOs.UserDetails",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.DTOs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.DTOs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.DTOs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Data.ApplicationContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Data.ApplicationContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Data.ApplicationContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Data.EntityTypeConfiguration.RoleConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Data.EntityTypeConfiguration.RoleConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Data.EntityTypeConfiguration.RoleConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Data.EntityTypeConfiguration.UserConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Data.EntityTypeConfiguration.UserConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Data.EntityTypeConfiguration.UserConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Data.EntityTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Data.EntityTypeConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Data.EntityTypeConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Data.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Data",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Entities.RefreshToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Entities.RefreshToken.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Entities.RefreshToken",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Entities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Entities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Extentions.IdentitiyExtentions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Extentions.IdentitiyExtentions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Extentions.IdentitiyExtentions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Extentions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Extentions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Extentions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Mapper.IdentityProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Mapper.IdentityProfile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Mapper.IdentityProfile",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Mapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Mapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Mapper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Migrations.InitialMigration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Migrations.InitialMigration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Migrations.InitialMigration",
+      "Summary": "<p sourcefile=\"api/IdentityService.Migrations.InitialMigration.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Services.AuthenticationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Services.AuthenticationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Services.AuthenticationService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Services.EmailSender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Services.EmailSender.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Services.EmailSender",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Services.IAuthenticationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Services.IAuthenticationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Services.IAuthenticationService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Services.IEmailSender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Services.IEmailSender.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Services.IEmailSender",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/IdentityService.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/IdentityService.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "IdentityService.Services",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

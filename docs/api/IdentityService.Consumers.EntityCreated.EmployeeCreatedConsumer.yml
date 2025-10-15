@@ -1,0 +1,761 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  commentId: T:IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  id: EmployeeCreatedConsumer
+  parent: IdentityService.Consumers.EntityCreated
+  children:
+  - IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.#ctor(IdentityService.Services.IEmailSender,Microsoft.AspNetCore.Identity.UserManager{IdentityServer.Entities.User})
+  - IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+  langs:
+  - csharp
+  - vb
+  name: EmployeeCreatedConsumer
+  nameWithType: EmployeeCreatedConsumer
+  fullName: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  type: Class
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Consumers/EntityCreated/EmployeeCreatedConsumer.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: EmployeeCreatedConsumer
+    path: ../SciConnect/IdentityServer/IdentityService/Consumers/EntityCreated/EmployeeCreatedConsumer.cs
+    startLine: 9
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Consumers.EntityCreated
+  syntax:
+    content: 'public class EmployeeCreatedConsumer : IConsumer<EmployeeCreatedEvent>, IConsumer'
+    content.vb: Public Class EmployeeCreatedConsumer Implements IConsumer(Of EmployeeCreatedEvent), IConsumer
+  inheritance:
+  - System.Object
+  implements:
+  - MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}
+  - MassTransit.IConsumer
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.#ctor(IdentityService.Services.IEmailSender,Microsoft.AspNetCore.Identity.UserManager{IdentityServer.Entities.User})
+  commentId: M:IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.#ctor(IdentityService.Services.IEmailSender,Microsoft.AspNetCore.Identity.UserManager{IdentityServer.Entities.User})
+  id: '#ctor(IdentityService.Services.IEmailSender,Microsoft.AspNetCore.Identity.UserManager{IdentityServer.Entities.User})'
+  parent: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  langs:
+  - csharp
+  - vb
+  name: EmployeeCreatedConsumer(IEmailSender, UserManager<User>)
+  nameWithType: EmployeeCreatedConsumer.EmployeeCreatedConsumer(IEmailSender, UserManager<User>)
+  fullName: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.EmployeeCreatedConsumer(IdentityService.Services.IEmailSender, Microsoft.AspNetCore.Identity.UserManager<IdentityServer.Entities.User>)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Consumers/EntityCreated/EmployeeCreatedConsumer.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/IdentityServer/IdentityService/Consumers/EntityCreated/EmployeeCreatedConsumer.cs
+    startLine: 14
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Consumers.EntityCreated
+  syntax:
+    content: public EmployeeCreatedConsumer(IEmailSender emailSender, UserManager<User> userManager)
+    parameters:
+    - id: emailSender
+      type: IdentityService.Services.IEmailSender
+    - id: userManager
+      type: Microsoft.AspNetCore.Identity.UserManager{IdentityServer.Entities.User}
+    content.vb: Public Sub New(emailSender As IEmailSender, userManager As UserManager(Of User))
+  overload: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.#ctor*
+  nameWithType.vb: EmployeeCreatedConsumer.New(IEmailSender, UserManager(Of User))
+  fullName.vb: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.New(IdentityService.Services.IEmailSender, Microsoft.AspNetCore.Identity.UserManager(Of IdentityServer.Entities.User))
+  name.vb: New(IEmailSender, UserManager(Of User))
+- uid: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+  commentId: M:IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+  id: Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+  parent: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  langs:
+  - csharp
+  - vb
+  name: Consume(ConsumeContext<EmployeeCreatedEvent>)
+  nameWithType: EmployeeCreatedConsumer.Consume(ConsumeContext<EmployeeCreatedEvent>)
+  fullName: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume(MassTransit.ConsumeContext<EventBus.Messages.Entities.EmployeeCreatedEvent>)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Consumers/EntityCreated/EmployeeCreatedConsumer.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Consume
+    path: ../SciConnect/IdentityServer/IdentityService/Consumers/EntityCreated/EmployeeCreatedConsumer.cs
+    startLine: 20
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Consumers.EntityCreated
+  example: []
+  syntax:
+    content: public Task Consume(ConsumeContext<EmployeeCreatedEvent> context)
+    parameters:
+    - id: context
+      type: MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent}
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function Consume(context As ConsumeContext(Of EmployeeCreatedEvent)) As Task
+  overload: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume*
+  implements:
+  - MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+  nameWithType.vb: EmployeeCreatedConsumer.Consume(ConsumeContext(Of EmployeeCreatedEvent))
+  fullName.vb: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume(MassTransit.ConsumeContext(Of EventBus.Messages.Entities.EmployeeCreatedEvent))
+  name.vb: Consume(ConsumeContext(Of EmployeeCreatedEvent))
+references:
+- uid: IdentityService.Consumers.EntityCreated
+  commentId: N:IdentityService.Consumers.EntityCreated
+  href: IdentityService.html
+  name: IdentityService.Consumers.EntityCreated
+  nameWithType: IdentityService.Consumers.EntityCreated
+  fullName: IdentityService.Consumers.EntityCreated
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Consumers
+    name: Consumers
+    href: IdentityService.Consumers.html
+  - name: .
+  - uid: IdentityService.Consumers.EntityCreated
+    name: EntityCreated
+    href: IdentityService.Consumers.EntityCreated.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Consumers
+    name: Consumers
+    href: IdentityService.Consumers.html
+  - name: .
+  - uid: IdentityService.Consumers.EntityCreated
+    name: EntityCreated
+    href: IdentityService.Consumers.EntityCreated.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}
+  commentId: T:MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}
+  parent: MassTransit
+  definition: MassTransit.IConsumer`1
+  name: IConsumer<EmployeeCreatedEvent>
+  nameWithType: IConsumer<EmployeeCreatedEvent>
+  fullName: MassTransit.IConsumer<EventBus.Messages.Entities.EmployeeCreatedEvent>
+  nameWithType.vb: IConsumer(Of EmployeeCreatedEvent)
+  fullName.vb: MassTransit.IConsumer(Of EventBus.Messages.Entities.EmployeeCreatedEvent)
+  name.vb: IConsumer(Of EmployeeCreatedEvent)
+  spec.csharp:
+  - uid: MassTransit.IConsumer`1
+    name: IConsumer
+    isExternal: true
+  - name: <
+  - uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+    name: EmployeeCreatedEvent
+  - name: '>'
+  spec.vb:
+  - uid: MassTransit.IConsumer`1
+    name: IConsumer
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+    name: EmployeeCreatedEvent
+  - name: )
+- uid: MassTransit.IConsumer
+  commentId: T:MassTransit.IConsumer
+  parent: MassTransit
+  isExternal: true
+  name: IConsumer
+  nameWithType: IConsumer
+  fullName: MassTransit.IConsumer
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MassTransit.IConsumer`1
+  commentId: T:MassTransit.IConsumer`1
+  isExternal: true
+  name: IConsumer<TMessage>
+  nameWithType: IConsumer<TMessage>
+  fullName: MassTransit.IConsumer<TMessage>
+  nameWithType.vb: IConsumer(Of TMessage)
+  fullName.vb: MassTransit.IConsumer(Of TMessage)
+  name.vb: IConsumer(Of TMessage)
+  spec.csharp:
+  - uid: MassTransit.IConsumer`1
+    name: IConsumer
+    isExternal: true
+  - name: <
+  - name: TMessage
+  - name: '>'
+  spec.vb:
+  - uid: MassTransit.IConsumer`1
+    name: IConsumer
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TMessage
+  - name: )
+- uid: MassTransit
+  commentId: N:MassTransit
+  isExternal: true
+  name: MassTransit
+  nameWithType: MassTransit
+  fullName: MassTransit
+- uid: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.#ctor*
+  commentId: Overload:IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.#ctor
+  href: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.html#IdentityService_Consumers_EntityCreated_EmployeeCreatedConsumer__ctor_IdentityService_Services_IEmailSender_Microsoft_AspNetCore_Identity_UserManager_IdentityServer_Entities_User__
+  name: EmployeeCreatedConsumer
+  nameWithType: EmployeeCreatedConsumer.EmployeeCreatedConsumer
+  fullName: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.EmployeeCreatedConsumer
+  nameWithType.vb: EmployeeCreatedConsumer.New
+  fullName.vb: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.New
+  name.vb: New
+- uid: IdentityService.Services.IEmailSender
+  commentId: T:IdentityService.Services.IEmailSender
+  parent: IdentityService.Services
+  href: IdentityService.Services.IEmailSender.html
+  name: IEmailSender
+  nameWithType: IEmailSender
+  fullName: IdentityService.Services.IEmailSender
+- uid: Microsoft.AspNetCore.Identity.UserManager{IdentityServer.Entities.User}
+  commentId: T:Microsoft.AspNetCore.Identity.UserManager{IdentityServer.Entities.User}
+  parent: Microsoft.AspNetCore.Identity
+  definition: Microsoft.AspNetCore.Identity.UserManager`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  name: UserManager<User>
+  nameWithType: UserManager<User>
+  fullName: Microsoft.AspNetCore.Identity.UserManager<IdentityServer.Entities.User>
+  nameWithType.vb: UserManager(Of User)
+  fullName.vb: Microsoft.AspNetCore.Identity.UserManager(Of IdentityServer.Entities.User)
+  name.vb: UserManager(Of User)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: <
+  - uid: IdentityServer.Entities.User
+    name: User
+    href: IdentityServer.Entities.User.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: IdentityServer.Entities.User
+    name: User
+    href: IdentityServer.Entities.User.html
+  - name: )
+- uid: IdentityService.Services
+  commentId: N:IdentityService.Services
+  href: IdentityService.html
+  name: IdentityService.Services
+  nameWithType: IdentityService.Services
+  fullName: IdentityService.Services
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html
+- uid: Microsoft.AspNetCore.Identity.UserManager`1
+  commentId: T:Microsoft.AspNetCore.Identity.UserManager`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  name: UserManager<TUser>
+  nameWithType: UserManager<TUser>
+  fullName: Microsoft.AspNetCore.Identity.UserManager<TUser>
+  nameWithType.vb: UserManager(Of TUser)
+  fullName.vb: Microsoft.AspNetCore.Identity.UserManager(Of TUser)
+  name.vb: UserManager(Of TUser)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: <
+  - name: TUser
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.UserManager`1
+    name: UserManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TUser
+  - name: )
+- uid: Microsoft.AspNetCore.Identity
+  commentId: N:Microsoft.AspNetCore.Identity
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Identity
+  nameWithType: Microsoft.AspNetCore.Identity
+  fullName: Microsoft.AspNetCore.Identity
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+- uid: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume*
+  commentId: Overload:IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume
+  href: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.html#IdentityService_Consumers_EntityCreated_EmployeeCreatedConsumer_Consume_MassTransit_ConsumeContext_EventBus_Messages_Entities_EmployeeCreatedEvent__
+  name: Consume
+  nameWithType: EmployeeCreatedConsumer.Consume
+  fullName: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.Consume
+- uid: MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+  commentId: M:MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+  parent: MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}
+  definition: MassTransit.IConsumer`1.Consume(MassTransit.ConsumeContext{`0})
+  name: Consume(ConsumeContext<EmployeeCreatedEvent>)
+  nameWithType: IConsumer<EmployeeCreatedEvent>.Consume(ConsumeContext<EmployeeCreatedEvent>)
+  fullName: MassTransit.IConsumer<EventBus.Messages.Entities.EmployeeCreatedEvent>.Consume(MassTransit.ConsumeContext<EventBus.Messages.Entities.EmployeeCreatedEvent>)
+  nameWithType.vb: IConsumer(Of EmployeeCreatedEvent).Consume(ConsumeContext(Of EmployeeCreatedEvent))
+  fullName.vb: MassTransit.IConsumer(Of EventBus.Messages.Entities.EmployeeCreatedEvent).Consume(MassTransit.ConsumeContext(Of EventBus.Messages.Entities.EmployeeCreatedEvent))
+  name.vb: Consume(ConsumeContext(Of EmployeeCreatedEvent))
+  spec.csharp:
+  - uid: MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+    name: Consume
+    isExternal: true
+  - name: (
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: <
+  - uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+    name: EmployeeCreatedEvent
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: MassTransit.IConsumer{EventBus.Messages.Entities.EmployeeCreatedEvent}.Consume(MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent})
+    name: Consume
+    isExternal: true
+  - name: (
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+    name: EmployeeCreatedEvent
+  - name: )
+  - name: )
+- uid: MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent}
+  commentId: T:MassTransit.ConsumeContext{EventBus.Messages.Entities.EmployeeCreatedEvent}
+  parent: MassTransit
+  definition: MassTransit.ConsumeContext`1
+  name: ConsumeContext<EmployeeCreatedEvent>
+  nameWithType: ConsumeContext<EmployeeCreatedEvent>
+  fullName: MassTransit.ConsumeContext<EventBus.Messages.Entities.EmployeeCreatedEvent>
+  nameWithType.vb: ConsumeContext(Of EmployeeCreatedEvent)
+  fullName.vb: MassTransit.ConsumeContext(Of EventBus.Messages.Entities.EmployeeCreatedEvent)
+  name.vb: ConsumeContext(Of EmployeeCreatedEvent)
+  spec.csharp:
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: <
+  - uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+    name: EmployeeCreatedEvent
+  - name: '>'
+  spec.vb:
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+    name: EmployeeCreatedEvent
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: MassTransit.IConsumer`1.Consume(MassTransit.ConsumeContext{`0})
+  commentId: M:MassTransit.IConsumer`1.Consume(MassTransit.ConsumeContext{`0})
+  isExternal: true
+  name: Consume(ConsumeContext<TMessage>)
+  nameWithType: IConsumer<TMessage>.Consume(ConsumeContext<TMessage>)
+  fullName: MassTransit.IConsumer<TMessage>.Consume(MassTransit.ConsumeContext<TMessage>)
+  nameWithType.vb: IConsumer(Of TMessage).Consume(ConsumeContext(Of TMessage))
+  fullName.vb: MassTransit.IConsumer(Of TMessage).Consume(MassTransit.ConsumeContext(Of TMessage))
+  name.vb: Consume(ConsumeContext(Of TMessage))
+  spec.csharp:
+  - uid: MassTransit.IConsumer`1.Consume(MassTransit.ConsumeContext{`0})
+    name: Consume
+    isExternal: true
+  - name: (
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: <
+  - name: TMessage
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: MassTransit.IConsumer`1.Consume(MassTransit.ConsumeContext{`0})
+    name: Consume
+    isExternal: true
+  - name: (
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TMessage
+  - name: )
+  - name: )
+- uid: MassTransit.ConsumeContext`1
+  commentId: T:MassTransit.ConsumeContext`1
+  isExternal: true
+  name: ConsumeContext<T>
+  nameWithType: ConsumeContext<T>
+  fullName: MassTransit.ConsumeContext<T>
+  nameWithType.vb: ConsumeContext(Of T)
+  fullName.vb: MassTransit.ConsumeContext(Of T)
+  name.vb: ConsumeContext(Of T)
+  spec.csharp:
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: MassTransit.ConsumeContext`1
+    name: ConsumeContext
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

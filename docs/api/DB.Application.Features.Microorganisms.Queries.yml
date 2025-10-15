@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Microorganisms.Queries
+  commentId: N:DB.Application.Features.Microorganisms.Queries
+  id: DB.Application.Features.Microorganisms.Queries
+  children:
+  - DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Microorganisms.Queries
+  nameWithType: DB.Application.Features.Microorganisms.Queries
+  fullName: DB.Application.Features.Microorganisms.Queries
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery
+  commentId: T:DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery
+  parent: DB.Application.Features.Microorganisms.Queries
+  href: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery.html
+  name: GetListOfMicroorganismsQuery
+  nameWithType: GetListOfMicroorganismsQuery
+  fullName: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery
+- uid: DB.Application.Features.Microorganisms.Queries
+  commentId: N:DB.Application.Features.Microorganisms.Queries
+  href: DB.html
+  name: DB.Application.Features.Microorganisms.Queries
+  nameWithType: DB.Application.Features.Microorganisms.Queries
+  fullName: DB.Application.Features.Microorganisms.Queries
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html

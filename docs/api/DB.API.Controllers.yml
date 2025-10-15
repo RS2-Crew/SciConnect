@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.API.Controllers
+  commentId: N:DB.API.Controllers
+  id: DB.API.Controllers
+  children:
+  - DB.API.Controllers.DBController
+  langs:
+  - csharp
+  - vb
+  name: DB.API.Controllers
+  nameWithType: DB.API.Controllers
+  fullName: DB.API.Controllers
+  type: Namespace
+  assemblies:
+  - DB.API
+references:
+- uid: DB.API.Controllers.DBController
+  commentId: T:DB.API.Controllers.DBController
+  href: DB.API.Controllers.DBController.html
+  name: DBController
+  nameWithType: DBController
+  fullName: DB.API.Controllers.DBController

@@ -1,0 +1,150 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  id: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IAnalysisFactory
+  - DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  - DB.Application.Contracts.Factories.IEmployeeFactory
+  - DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  - DB.Application.Contracts.Factories.IInstitutionFactory
+  - DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  - DB.Application.Contracts.Factories.IInstrumentFactory
+  - DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+  - DB.Application.Contracts.Factories.IKeywordFactory
+  - DB.Application.Contracts.Factories.IKeywordViewModelFactory
+  - DB.Application.Contracts.Factories.IMicroorganismFactory
+  - DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Contracts.Factories.IAnalysisFactory
+  commentId: T:DB.Application.Contracts.Factories.IAnalysisFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IAnalysisFactory.html
+  name: IAnalysisFactory
+  nameWithType: IAnalysisFactory
+  fullName: DB.Application.Contracts.Factories.IAnalysisFactory
+- uid: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.html
+  name: IAnalysisViewModelFactory
+  nameWithType: IAnalysisViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+- uid: DB.Application.Contracts.Factories.IEmployeeFactory
+  commentId: T:DB.Application.Contracts.Factories.IEmployeeFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IEmployeeFactory.html
+  name: IEmployeeFactory
+  nameWithType: IEmployeeFactory
+  fullName: DB.Application.Contracts.Factories.IEmployeeFactory
+- uid: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.html
+  name: IEmployeeViewModelFactory
+  nameWithType: IEmployeeViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+- uid: DB.Application.Contracts.Factories.IInstitutionFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstitutionFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IInstitutionFactory.html
+  name: IInstitutionFactory
+  nameWithType: IInstitutionFactory
+  fullName: DB.Application.Contracts.Factories.IInstitutionFactory
+- uid: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.html
+  name: IInstitutionViewModelFactory
+  nameWithType: IInstitutionViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+- uid: DB.Application.Contracts.Factories.IInstrumentFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstrumentFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IInstrumentFactory.html
+  name: IInstrumentFactory
+  nameWithType: IInstrumentFactory
+  fullName: DB.Application.Contracts.Factories.IInstrumentFactory
+- uid: DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IInstrumentViewModelFactory.html
+  name: IInstrumentViewModelFactory
+  nameWithType: IInstrumentViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+- uid: DB.Application.Contracts.Factories.IKeywordFactory
+  commentId: T:DB.Application.Contracts.Factories.IKeywordFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IKeywordFactory.html
+  name: IKeywordFactory
+  nameWithType: IKeywordFactory
+  fullName: DB.Application.Contracts.Factories.IKeywordFactory
+- uid: DB.Application.Contracts.Factories.IKeywordViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IKeywordViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IKeywordViewModelFactory.html
+  name: IKeywordViewModelFactory
+  nameWithType: IKeywordViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IKeywordViewModelFactory
+- uid: DB.Application.Contracts.Factories.IMicroorganismFactory
+  commentId: T:DB.Application.Contracts.Factories.IMicroorganismFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IMicroorganismFactory.html
+  name: IMicroorganismFactory
+  nameWithType: IMicroorganismFactory
+  fullName: DB.Application.Contracts.Factories.IMicroorganismFactory
+- uid: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.html
+  name: IMicroorganismViewModelFactory
+  nameWithType: IMicroorganismViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html

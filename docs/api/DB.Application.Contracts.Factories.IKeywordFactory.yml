@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IKeywordFactory
+  commentId: T:DB.Application.Contracts.Factories.IKeywordFactory
+  id: IKeywordFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  langs:
+  - csharp
+  - vb
+  name: IKeywordFactory
+  nameWithType: IKeywordFactory
+  fullName: DB.Application.Contracts.Factories.IKeywordFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IKeywordFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IKeywordFactory
+    content.vb: Public Interface IKeywordFactory
+- uid: DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  commentId: M:DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  id: Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  parent: DB.Application.Contracts.Factories.IKeywordFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateKeywordCommand)
+  nameWithType: IKeywordFactory.Create(CreateKeywordCommand)
+  fullName: DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Create
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: Keyword Create(CreateKeywordCommand command)
+    parameters:
+    - id: command
+      type: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    return:
+      type: DB.Domain.Entities.Keyword
+    content.vb: Function Create(command As CreateKeywordCommand) As Keyword
+  overload: DB.Application.Contracts.Factories.IKeywordFactory.Create*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IKeywordFactory.Create*
+  commentId: Overload:DB.Application.Contracts.Factories.IKeywordFactory.Create
+  href: DB.Application.Contracts.Factories.IKeywordFactory.html#DB_Application_Contracts_Factories_IKeywordFactory_Create_DB_Application_Features_Keywords_Commands_CreateKeyword_CreateKeywordCommand_
+  name: Create
+  nameWithType: IKeywordFactory.Create
+  fullName: DB.Application.Contracts.Factories.IKeywordFactory.Create
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  commentId: T:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  parent: DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  name: CreateKeywordCommand
+  nameWithType: CreateKeywordCommand
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+- uid: DB.Domain.Entities.Keyword
+  commentId: T:DB.Domain.Entities.Keyword
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Keyword.html
+  name: Keyword
+  nameWithType: Keyword
+  fullName: DB.Domain.Entities.Keyword
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+  commentId: N:DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.html
+  name: DB.Application.Features.Keywords.Commands.CreateKeyword
+  nameWithType: DB.Application.Features.Keywords.Commands.CreateKeyword
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

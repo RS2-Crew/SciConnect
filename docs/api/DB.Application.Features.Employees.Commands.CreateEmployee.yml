@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee
+  commentId: N:DB.Application.Features.Employees.Commands.CreateEmployee
+  id: DB.Application.Features.Employees.Commands.CreateEmployee
+  children:
+  - DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+  - DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler
+  - DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Employees.Commands.CreateEmployee
+  nameWithType: DB.Application.Features.Employees.Commands.CreateEmployee
+  fullName: DB.Application.Features.Employees.Commands.CreateEmployee
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+  commentId: T:DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+  parent: DB.Application.Features.Employees.Commands.CreateEmployee
+  href: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand.html
+  name: CreateEmployeeCommand
+  nameWithType: CreateEmployeeCommand
+  fullName: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler
+  commentId: T:DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler
+  href: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler.html
+  name: CreateEmployeeCommandHandler
+  nameWithType: CreateEmployeeCommandHandler
+  fullName: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator
+  commentId: T:DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator
+  href: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator.html
+  name: CreateEmployeeCommandValidator
+  nameWithType: CreateEmployeeCommandValidator
+  fullName: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee
+  commentId: N:DB.Application.Features.Employees.Commands.CreateEmployee
+  href: DB.html
+  name: DB.Application.Features.Employees.Commands.CreateEmployee
+  nameWithType: DB.Application.Features.Employees.Commands.CreateEmployee
+  fullName: DB.Application.Features.Employees.Commands.CreateEmployee
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.CreateEmployee
+    name: CreateEmployee
+    href: DB.Application.Features.Employees.Commands.CreateEmployee.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.CreateEmployee
+    name: CreateEmployee
+    href: DB.Application.Features.Employees.Commands.CreateEmployee.html

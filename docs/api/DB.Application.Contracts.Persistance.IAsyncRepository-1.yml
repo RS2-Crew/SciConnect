@@ -1,0 +1,1078 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  commentId: T:DB.Application.Contracts.Persistance.IAsyncRepository`1
+  id: IAsyncRepository`1
+  parent: DB.Application.Contracts.Persistance
+  children:
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+  langs:
+  - csharp
+  - vb
+  name: IAsyncRepository<T>
+  nameWithType: IAsyncRepository<T>
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IAsyncRepository
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: 'public interface IAsyncRepository<T> where T : AggregateRoot'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IAsyncRepository(Of T As AggregateRoot)
+  nameWithType.vb: IAsyncRepository(Of T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T)
+  name.vb: IAsyncRepository(Of T)
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+  id: GetAllAsync
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: IAsyncRepository<T>.GetAllAsync()
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetAllAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<IReadOnlyList<T>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{{T}}}
+    content.vb: Function GetAllAsync() As Task(Of IReadOnlyList(Of T))
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync*
+  nameWithType.vb: IAsyncRepository(Of T).GetAllAsync()
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAllAsync()
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  id: GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Expression<Func<T, bool>>)
+  nameWithType: IAsyncRepository<T>.GetAsync(Expression<Func<T, bool>>)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAsync(System.Linq.Expressions.Expression<System.Func<T, bool>>)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 13
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
+    parameters:
+    - id: predicate
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{{T}}}
+    content.vb: Function GetAsync(predicate As Expression(Of Func(Of T, Boolean))) As Task(Of IReadOnlyList(Of T))
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync*
+  nameWithType.vb: IAsyncRepository(Of T).GetAsync(Expression(Of Func(Of T, Boolean)))
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)))
+  name.vb: GetAsync(Expression(Of Func(Of T, Boolean)))
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+  id: GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>, string?, bool)
+  nameWithType: IAsyncRepository<T>.GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>, string?, bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAsync(System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>>, string?, bool)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 14
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy, string? includeString = null, bool disableTracking = true)
+    parameters:
+    - id: predicate
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+    - id: orderBy
+      type: System.Func{System.Linq.IQueryable{{T}},System.Linq.IOrderedQueryable{{T}}}
+    - id: includeString
+      type: System.String
+    - id: disableTracking
+      type: System.Boolean
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{{T}}}
+    content.vb: Function GetAsync(predicate As Expression(Of Func(Of T, Boolean)), orderBy As Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), includeString As String = Nothing, disableTracking As Boolean = True) As Task(Of IReadOnlyList(Of T))
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync*
+  nameWithType.vb: IAsyncRepository(Of T).GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), String, Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of System.Linq.IQueryable(Of T), System.Linq.IOrderedQueryable(Of T)), String, Boolean)
+  name.vb: GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), String, Boolean)
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+  id: GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>?, List<Expression<Func<T, object>>>, bool)
+  nameWithType: IAsyncRepository<T>.GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>?, List<Expression<Func<T, object>>>, bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAsync(System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>>?, System.Collections.Generic.List<System.Linq.Expressions.Expression<System.Func<T, object>>>, bool)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 19
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy, List<Expression<Func<T, object>>> includes, bool disableTracking = true)
+    parameters:
+    - id: predicate
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+    - id: orderBy
+      type: System.Func{System.Linq.IQueryable{{T}},System.Linq.IOrderedQueryable{{T}}}
+    - id: includes
+      type: System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{{T},System.Object}}}
+    - id: disableTracking
+      type: System.Boolean
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{{T}}}
+    content.vb: Function GetAsync(predicate As Expression(Of Func(Of T, Boolean)), orderBy As Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), includes As List(Of Expression(Of Func(Of T, Object))), disableTracking As Boolean = True) As Task(Of IReadOnlyList(Of T))
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync*
+  nameWithType.vb: IAsyncRepository(Of T).GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), List(Of Expression(Of Func(Of T, Object))), Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of System.Linq.IQueryable(Of T), System.Linq.IOrderedQueryable(Of T)), System.Collections.Generic.List(Of System.Linq.Expressions.Expression(Of System.Func(Of T, Object))), Boolean)
+  name.vb: GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), List(Of Expression(Of Func(Of T, Object))), Boolean)
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+  id: GetByIdAsync(System.Int32)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync(int)
+  nameWithType: IAsyncRepository<T>.GetByIdAsync(int)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetByIdAsync(int)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetByIdAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 24
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<T?> GetByIdAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetByIdAsync(id As Integer) As Task(Of T)
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync*
+  nameWithType.vb: IAsyncRepository(Of T).GetByIdAsync(Integer)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetByIdAsync(Integer)
+  name.vb: GetByIdAsync(Integer)
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+  id: AddAsync(`0)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(T)
+  nameWithType: IAsyncRepository<T>.AddAsync(T)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.AddAsync(T)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: AddAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 25
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<T> AddAsync(T entity)
+    parameters:
+    - id: entity
+      type: '{T}'
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function AddAsync(entity As T) As Task(Of T)
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync*
+  nameWithType.vb: IAsyncRepository(Of T).AddAsync(T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).AddAsync(T)
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+  id: UpdateAsync(`0)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(T)
+  nameWithType: IAsyncRepository<T>.UpdateAsync(T)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.UpdateAsync(T)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: UpdateAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 26
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task UpdateAsync(T entity)
+    parameters:
+    - id: entity
+      type: '{T}'
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function UpdateAsync(entity As T) As Task
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync*
+  nameWithType.vb: IAsyncRepository(Of T).UpdateAsync(T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).UpdateAsync(T)
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+  id: DeleteAsync(`0)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(T)
+  nameWithType: IAsyncRepository<T>.DeleteAsync(T)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.DeleteAsync(T)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: DeleteAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 27
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task DeleteAsync(T entity)
+    parameters:
+    - id: entity
+      type: '{T}'
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DeleteAsync(entity As T) As Task
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync*
+  nameWithType.vb: IAsyncRepository(Of T).DeleteAsync(T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).DeleteAsync(T)
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+  id: GetQueryable(System.Boolean)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  langs:
+  - csharp
+  - vb
+  name: GetQueryable(bool)
+  nameWithType: IAsyncRepository<T>.GetQueryable(bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetQueryable(bool)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetQueryable
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IAsyncRepository.cs
+    startLine: 29
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: IQueryable<T> GetQueryable(bool disableTracking = true)
+    parameters:
+    - id: disableTracking
+      type: System.Boolean
+    return:
+      type: System.Linq.IQueryable{{T}}
+    content.vb: Function GetQueryable(disableTracking As Boolean = True) As IQueryable(Of T)
+  overload: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable*
+  nameWithType.vb: IAsyncRepository(Of T).GetQueryable(Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetQueryable(Boolean)
+  name.vb: GetQueryable(Boolean)
+references:
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync*
+  commentId: Overload:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAllAsync
+  name: GetAllAsync
+  nameWithType: IAsyncRepository<T>.GetAllAsync
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAllAsync
+  nameWithType.vb: IAsyncRepository(Of T).GetAllAsync
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAllAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{{T}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<T>>
+  nameWithType: Task<IReadOnlyList<T>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<T>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of T))
+  name.vb: Task(Of IReadOnlyList(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync*
+  commentId: Overload:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  name: GetAsync
+  nameWithType: IAsyncRepository<T>.GetAsync
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAsync
+  nameWithType.vb: IAsyncRepository(Of T).GetAsync
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAsync
+- uid: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+  commentId: T:System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}
+  parent: System.Linq.Expressions
+  definition: System.Linq.Expressions.Expression`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<Func<T, bool>>
+  nameWithType: Expression<Func<T, bool>>
+  fullName: System.Linq.Expressions.Expression<System.Func<T, bool>>
+  nameWithType.vb: Expression(Of Func(Of T, Boolean))
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean))
+  name.vb: Expression(Of Func(Of T, Boolean))
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+- uid: System.Linq.Expressions.Expression`1
+  commentId: T:System.Linq.Expressions.Expression`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<TDelegate>
+  nameWithType: Expression<TDelegate>
+  fullName: System.Linq.Expressions.Expression<TDelegate>
+  nameWithType.vb: Expression(Of TDelegate)
+  fullName.vb: System.Linq.Expressions.Expression(Of TDelegate)
+  name.vb: Expression(Of TDelegate)
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - name: TDelegate
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TDelegate
+  - name: )
+- uid: System.Linq.Expressions
+  commentId: N:System.Linq.Expressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq.Expressions
+  nameWithType: System.Linq.Expressions
+  fullName: System.Linq.Expressions
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+- uid: System.Func{System.Linq.IQueryable{{T}},System.Linq.IOrderedQueryable{{T}}}
+  commentId: T:System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<IQueryable<T>, IOrderedQueryable<T>>
+  nameWithType: Func<IQueryable<T>, IOrderedQueryable<T>>
+  fullName: System.Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>>
+  nameWithType.vb: Func(Of IQueryable(Of T), IOrderedQueryable(Of T))
+  fullName.vb: System.Func(Of System.Linq.IQueryable(Of T), System.Linq.IOrderedQueryable(Of T))
+  name.vb: Func(Of IQueryable(Of T), IOrderedQueryable(Of T))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{{T},System.Object}}}
+  commentId: T:System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Expression<Func<T, object>>>
+  nameWithType: List<Expression<Func<T, object>>>
+  fullName: System.Collections.Generic.List<System.Linq.Expressions.Expression<System.Func<T, object>>>
+  nameWithType.vb: List(Of Expression(Of Func(Of T, Object)))
+  fullName.vb: System.Collections.Generic.List(Of System.Linq.Expressions.Expression(Of System.Func(Of T, Object)))
+  name.vb: List(Of Expression(Of Func(Of T, Object)))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync*
+  commentId: Overload:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetByIdAsync_System_Int32_
+  name: GetByIdAsync
+  nameWithType: IAsyncRepository<T>.GetByIdAsync
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetByIdAsync
+  nameWithType.vb: IAsyncRepository(Of T).GetByIdAsync
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetByIdAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{`0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync*
+  commentId: Overload:DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_AddAsync__0_
+  name: AddAsync
+  nameWithType: IAsyncRepository<T>.AddAsync
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.AddAsync
+  nameWithType.vb: IAsyncRepository(Of T).AddAsync
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).AddAsync
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync*
+  commentId: Overload:DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_UpdateAsync__0_
+  name: UpdateAsync
+  nameWithType: IAsyncRepository<T>.UpdateAsync
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.UpdateAsync
+  nameWithType.vb: IAsyncRepository(Of T).UpdateAsync
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).UpdateAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync*
+  commentId: Overload:DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_DeleteAsync__0_
+  name: DeleteAsync
+  nameWithType: IAsyncRepository<T>.DeleteAsync
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.DeleteAsync
+  nameWithType.vb: IAsyncRepository(Of T).DeleteAsync
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).DeleteAsync
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable*
+  commentId: Overload:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetQueryable_System_Boolean_
+  name: GetQueryable
+  nameWithType: IAsyncRepository<T>.GetQueryable
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetQueryable
+  nameWithType.vb: IAsyncRepository(Of T).GetQueryable
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetQueryable
+- uid: System.Linq.IQueryable{{T}}
+  commentId: T:System.Linq.IQueryable{`0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq

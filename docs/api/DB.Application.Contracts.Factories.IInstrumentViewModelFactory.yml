@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+  id: IInstrumentViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel(DB.Domain.Entities.Instrument)
+  langs:
+  - csharp
+  - vb
+  name: IInstrumentViewModelFactory
+  nameWithType: IInstrumentViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IInstrumentViewModelFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentViewModelFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IInstrumentViewModelFactory
+    content.vb: Public Interface IInstrumentViewModelFactory
+- uid: DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel(DB.Domain.Entities.Instrument)
+  commentId: M:DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel(DB.Domain.Entities.Instrument)
+  id: CreateViewModel(DB.Domain.Entities.Instrument)
+  parent: DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateViewModel(Instrument)
+  nameWithType: IInstrumentViewModelFactory.CreateViewModel(Instrument)
+  fullName: DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel(DB.Domain.Entities.Instrument)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateViewModel
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentViewModelFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: InstrumentViewModel CreateViewModel(Instrument instrument)
+    parameters:
+    - id: instrument
+      type: DB.Domain.Entities.Instrument
+    return:
+      type: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+    content.vb: Function CreateViewModel(instrument As Instrument) As InstrumentViewModel
+  overload: DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel*
+  commentId: Overload:DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel
+  href: DB.Application.Contracts.Factories.IInstrumentViewModelFactory.html#DB_Application_Contracts_Factories_IInstrumentViewModelFactory_CreateViewModel_DB_Domain_Entities_Instrument_
+  name: CreateViewModel
+  nameWithType: IInstrumentViewModelFactory.CreateViewModel
+  fullName: DB.Application.Contracts.Factories.IInstrumentViewModelFactory.CreateViewModel
+- uid: DB.Domain.Entities.Instrument
+  commentId: T:DB.Domain.Entities.Instrument
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Instrument.html
+  name: Instrument
+  nameWithType: Instrument
+  fullName: DB.Domain.Entities.Instrument
+- uid: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+  commentId: T:DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+  parent: DB.Application.Features.Instruments.Queries.ViewModels
+  href: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel.html
+  name: InstrumentViewModel
+  nameWithType: InstrumentViewModel
+  fullName: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+- uid: DB.Application.Features.Instruments.Queries.ViewModels
+  commentId: N:DB.Application.Features.Instruments.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Instruments.Queries.ViewModels
+  nameWithType: DB.Application.Features.Instruments.Queries.ViewModels
+  fullName: DB.Application.Features.Instruments.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Instruments.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Instruments.Queries.ViewModels.html

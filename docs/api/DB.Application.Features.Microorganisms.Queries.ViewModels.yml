@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+  commentId: N:DB.Application.Features.Microorganisms.Queries.ViewModels
+  id: DB.Application.Features.Microorganisms.Queries.ViewModels
+  children:
+  - DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Microorganisms.Queries.ViewModels
+  nameWithType: DB.Application.Features.Microorganisms.Queries.ViewModels
+  fullName: DB.Application.Features.Microorganisms.Queries.ViewModels
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+  commentId: T:DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+  parent: DB.Application.Features.Microorganisms.Queries.ViewModels
+  href: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel.html
+  name: MicroorganismViewModel
+  nameWithType: MicroorganismViewModel
+  fullName: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+- uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+  commentId: N:DB.Application.Features.Microorganisms.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Microorganisms.Queries.ViewModels
+  nameWithType: DB.Application.Features.Microorganisms.Queries.ViewModels
+  fullName: DB.Application.Features.Microorganisms.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Microorganisms.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Microorganisms.Queries.ViewModels.html

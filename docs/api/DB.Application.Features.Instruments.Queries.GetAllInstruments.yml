@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  commentId: N:DB.Application.Features.Instruments.Queries.GetAllInstruments
+  id: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  children:
+  - DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery
+  - DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  nameWithType: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  fullName: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery
+  commentId: T:DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery
+  parent: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  href: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery.html
+  name: GetAllInstrumentsQuery
+  nameWithType: GetAllInstrumentsQuery
+  fullName: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery
+- uid: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler
+  commentId: T:DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler
+  href: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler.html
+  name: GetAllInstrumentsQueryHandler
+  nameWithType: GetAllInstrumentsQueryHandler
+  fullName: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler
+- uid: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  commentId: N:DB.Application.Features.Instruments.Queries.GetAllInstruments
+  href: DB.html
+  name: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  nameWithType: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  fullName: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.GetAllInstruments
+    name: GetAllInstruments
+    href: DB.Application.Features.Instruments.Queries.GetAllInstruments.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.GetAllInstruments
+    name: GetAllInstruments
+    href: DB.Application.Features.Instruments.Queries.GetAllInstruments.html

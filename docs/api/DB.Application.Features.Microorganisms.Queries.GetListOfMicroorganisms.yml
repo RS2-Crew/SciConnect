@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  commentId: N:DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  id: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  children:
+  - DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  nameWithType: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  fullName: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler
+  commentId: T:DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler
+  href: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler.html
+  name: GetListOfMicroorganismsQueryHandler
+  nameWithType: GetListOfMicroorganismsQueryHandler
+  fullName: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler

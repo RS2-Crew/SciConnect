@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IInstitutionFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstitutionFactory
+  id: IInstitutionFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IInstitutionFactory.Create(DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand)
+  langs:
+  - csharp
+  - vb
+  name: IInstitutionFactory
+  nameWithType: IInstitutionFactory
+  fullName: DB.Application.Contracts.Factories.IInstitutionFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IInstitutionFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IInstitutionFactory
+    content.vb: Public Interface IInstitutionFactory
+- uid: DB.Application.Contracts.Factories.IInstitutionFactory.Create(DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand)
+  commentId: M:DB.Application.Contracts.Factories.IInstitutionFactory.Create(DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand)
+  id: Create(DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand)
+  parent: DB.Application.Contracts.Factories.IInstitutionFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateInstitutionCommand)
+  nameWithType: IInstitutionFactory.Create(CreateInstitutionCommand)
+  fullName: DB.Application.Contracts.Factories.IInstitutionFactory.Create(DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Create
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: Institution Create(CreateInstitutionCommand command)
+    parameters:
+    - id: command
+      type: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+    return:
+      type: DB.Domain.Entities.Institution
+    content.vb: Function Create(command As CreateInstitutionCommand) As Institution
+  overload: DB.Application.Contracts.Factories.IInstitutionFactory.Create*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IInstitutionFactory.Create*
+  commentId: Overload:DB.Application.Contracts.Factories.IInstitutionFactory.Create
+  href: DB.Application.Contracts.Factories.IInstitutionFactory.html#DB_Application_Contracts_Factories_IInstitutionFactory_Create_DB_Application_Features_Institutions_Commands_CreateInstitution_CreateInstitutionCommand_
+  name: Create
+  nameWithType: IInstitutionFactory.Create
+  fullName: DB.Application.Contracts.Factories.IInstitutionFactory.Create
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html
+  name: CreateInstitutionCommand
+  nameWithType: CreateInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+- uid: DB.Domain.Entities.Institution
+  commentId: T:DB.Domain.Entities.Institution
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Institution.html
+  name: Institution
+  nameWithType: Institution
+  fullName: DB.Domain.Entities.Institution
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.CreateInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.CreateInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.CreateInstitution
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+    name: CreateInstitution
+    href: DB.Application.Features.Institutions.Commands.CreateInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+    name: CreateInstitution
+    href: DB.Application.Features.Institutions.Commands.CreateInstitution.html
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

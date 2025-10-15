@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  commentId: N:DB.Application.Features.Keywords.Commands.DeleteKeyword
+  id: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  children:
+  - DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand
+  - DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  nameWithType: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  fullName: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand
+  commentId: T:DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand
+  parent: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  href: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand.html
+  name: DeleteKeywordCommand
+  nameWithType: DeleteKeywordCommand
+  fullName: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand
+- uid: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler
+  commentId: T:DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler
+  href: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler.html
+  name: DeleteKeywordCommandHandler
+  nameWithType: DeleteKeywordCommandHandler
+  fullName: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler
+- uid: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  commentId: N:DB.Application.Features.Keywords.Commands.DeleteKeyword
+  href: DB.html
+  name: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  nameWithType: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  fullName: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.DeleteKeyword
+    name: DeleteKeyword
+    href: DB.Application.Features.Keywords.Commands.DeleteKeyword.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.DeleteKeyword
+    name: DeleteKeyword
+    href: DB.Application.Features.Keywords.Commands.DeleteKeyword.html

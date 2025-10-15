@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  commentId: N:DB.Application.Features.Instruments.Commands.DeleteInstrument
+  id: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  children:
+  - DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+  - DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  nameWithType: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+  commentId: T:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+  parent: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  name: DeleteInstrumentCommand
+  nameWithType: DeleteInstrumentCommand
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  commentId: T:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.html
+  name: DeleteInstrumentCommandHandler
+  nameWithType: DeleteInstrumentCommandHandler
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  commentId: N:DB.Application.Features.Instruments.Commands.DeleteInstrument
+  href: DB.html
+  name: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  nameWithType: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+    name: DeleteInstrument
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+    name: DeleteInstrument
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.html

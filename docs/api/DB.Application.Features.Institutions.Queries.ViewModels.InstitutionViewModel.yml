@@ -1,0 +1,1086 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  commentId: T:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  id: InstitutionViewModel
+  parent: DB.Application.Features.Institutions.Queries.ViewModels
+  children:
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website
+  langs:
+  - csharp
+  - vb
+  name: InstitutionViewModel
+  nameWithType: InstitutionViewModel
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: InstitutionViewModel
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 13
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public class InstitutionViewModel
+    content.vb: Public Class InstitutionViewModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id
+  id: Id
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: InstitutionViewModel.Id
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Id
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 15
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name
+  id: Name
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: InstitutionViewModel.Name
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Name
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 16
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street
+  id: Street
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Street
+  nameWithType: InstitutionViewModel.Street
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Street
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 17
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string Street { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Street As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber
+  id: StreetNumber
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: StreetNumber
+  nameWithType: InstitutionViewModel.StreetNumber
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: StreetNumber
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 18
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string StreetNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StreetNumber As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City
+  id: City
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: City
+  nameWithType: InstitutionViewModel.City
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: City
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 19
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string City { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property City As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country
+  id: Country
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Country
+  nameWithType: InstitutionViewModel.Country
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Country
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 20
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string Country { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Country As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone
+  id: Phone
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Phone
+  nameWithType: InstitutionViewModel.Phone
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Phone
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 21
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string? Phone { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Phone As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email
+  id: Email
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: InstitutionViewModel.Email
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Email
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 22
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string? Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website
+  id: Website
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Website
+  nameWithType: InstitutionViewModel.Website
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Website
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 23
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public string? Website { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Website As String
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments
+  id: Instruments
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Instruments
+  nameWithType: InstitutionViewModel.Instruments
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Instruments
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 25
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public IEnumerable<InstrumentBasicViewModel> Instruments { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel}
+    content.vb: Public Property Instruments As IEnumerable(Of InstrumentBasicViewModel)
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees
+  id: Employees
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Employees
+  nameWithType: InstitutionViewModel.Employees
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Employees
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 27
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public IEnumerable<EmployeeViewModel> Employees { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}
+    content.vb: Public Property Employees As IEnumerable(Of EmployeeViewModel)
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses
+  id: Analyses
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Analyses
+  nameWithType: InstitutionViewModel.Analyses
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Analyses
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 28
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public IEnumerable<AnalysisViewModel> Analyses { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}
+    content.vb: Public Property Analyses As IEnumerable(Of AnalysisViewModel)
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords
+  id: Keywords
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Keywords
+  nameWithType: InstitutionViewModel.Keywords
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Keywords
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 29
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public IEnumerable<KeywordViewModel> Keywords { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel}
+    content.vb: Public Property Keywords As IEnumerable(Of KeywordViewModel)
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords*
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms
+  commentId: P:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms
+  id: Microorganisms
+  parent: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: Microorganisms
+  nameWithType: InstitutionViewModel.Microorganisms
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Microorganisms
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/ViewModels/InstitutionViewModel.cs
+    startLine: 30
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.ViewModels
+  syntax:
+    content: public IEnumerable<MicroorganismViewModel> Microorganisms { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel}
+    content.vb: Public Property Microorganisms As IEnumerable(Of MicroorganismViewModel)
+  overload: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms*
+references:
+- uid: DB.Application.Features.Institutions.Queries.ViewModels
+  commentId: N:DB.Application.Features.Institutions.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.ViewModels
+  nameWithType: DB.Application.Features.Institutions.Queries.ViewModels
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Institutions.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Institutions.Queries.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Id
+  name: Id
+  nameWithType: InstitutionViewModel.Id
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Name
+  name: Name
+  nameWithType: InstitutionViewModel.Name
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Street
+  name: Street
+  nameWithType: InstitutionViewModel.Street
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Street
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_StreetNumber
+  name: StreetNumber
+  nameWithType: InstitutionViewModel.StreetNumber
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.StreetNumber
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_City
+  name: City
+  nameWithType: InstitutionViewModel.City
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.City
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Country
+  name: Country
+  nameWithType: InstitutionViewModel.Country
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Country
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Phone
+  name: Phone
+  nameWithType: InstitutionViewModel.Phone
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Phone
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Email
+  name: Email
+  nameWithType: InstitutionViewModel.Email
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Email
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Website
+  name: Website
+  nameWithType: InstitutionViewModel.Website
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Website
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Instruments
+  name: Instruments
+  nameWithType: InstitutionViewModel.Instruments
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Instruments
+- uid: System.Collections.Generic.IEnumerable{DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel}
+  commentId: T:System.Collections.Generic.IEnumerable{DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<InstrumentBasicViewModel>
+  nameWithType: IEnumerable<InstrumentBasicViewModel>
+  fullName: System.Collections.Generic.IEnumerable<DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel>
+  nameWithType.vb: IEnumerable(Of InstrumentBasicViewModel)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel)
+  name.vb: IEnumerable(Of InstrumentBasicViewModel)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel
+    name: InstrumentBasicViewModel
+    href: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel
+    name: InstrumentBasicViewModel
+    href: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Employees
+  name: Employees
+  nameWithType: InstitutionViewModel.Employees
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Employees
+- uid: System.Collections.Generic.IEnumerable{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}
+  commentId: T:System.Collections.Generic.IEnumerable{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<EmployeeViewModel>
+  nameWithType: IEnumerable<EmployeeViewModel>
+  fullName: System.Collections.Generic.IEnumerable<DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel>
+  nameWithType.vb: IEnumerable(Of EmployeeViewModel)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel)
+  name.vb: IEnumerable(Of EmployeeViewModel)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    name: EmployeeViewModel
+    href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    name: EmployeeViewModel
+    href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  - name: )
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Analyses
+  name: Analyses
+  nameWithType: InstitutionViewModel.Analyses
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Analyses
+- uid: System.Collections.Generic.IEnumerable{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}
+  commentId: T:System.Collections.Generic.IEnumerable{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<AnalysisViewModel>
+  nameWithType: IEnumerable<AnalysisViewModel>
+  fullName: System.Collections.Generic.IEnumerable<DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel>
+  nameWithType.vb: IEnumerable(Of AnalysisViewModel)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel)
+  name.vb: IEnumerable(Of AnalysisViewModel)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    name: AnalysisViewModel
+    href: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    name: AnalysisViewModel
+    href: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html
+  - name: )
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Keywords
+  name: Keywords
+  nameWithType: InstitutionViewModel.Keywords
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Keywords
+- uid: System.Collections.Generic.IEnumerable{DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel}
+  commentId: T:System.Collections.Generic.IEnumerable{DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<KeywordViewModel>
+  nameWithType: IEnumerable<KeywordViewModel>
+  fullName: System.Collections.Generic.IEnumerable<DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel>
+  nameWithType.vb: IEnumerable(Of KeywordViewModel)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel)
+  name.vb: IEnumerable(Of KeywordViewModel)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+    name: KeywordViewModel
+    href: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+    name: KeywordViewModel
+    href: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel.html
+  - name: )
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html#DB_Application_Features_Institutions_Queries_ViewModels_InstitutionViewModel_Microorganisms
+  name: Microorganisms
+  nameWithType: InstitutionViewModel.Microorganisms
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.Microorganisms
+- uid: System.Collections.Generic.IEnumerable{DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel}
+  commentId: T:System.Collections.Generic.IEnumerable{DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<MicroorganismViewModel>
+  nameWithType: IEnumerable<MicroorganismViewModel>
+  fullName: System.Collections.Generic.IEnumerable<DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel>
+  nameWithType.vb: IEnumerable(Of MicroorganismViewModel)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel)
+  name.vb: IEnumerable(Of MicroorganismViewModel)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+    name: MicroorganismViewModel
+    href: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+    name: MicroorganismViewModel
+    href: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel.html
+  - name: )

@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IMicroorganismFactory
+  commentId: T:DB.Application.Contracts.Factories.IMicroorganismFactory
+  id: IMicroorganismFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IMicroorganismFactory.Create(DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand)
+  langs:
+  - csharp
+  - vb
+  name: IMicroorganismFactory
+  nameWithType: IMicroorganismFactory
+  fullName: DB.Application.Contracts.Factories.IMicroorganismFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IMicroorganismFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IMicroorganismFactory
+    content.vb: Public Interface IMicroorganismFactory
+- uid: DB.Application.Contracts.Factories.IMicroorganismFactory.Create(DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand)
+  commentId: M:DB.Application.Contracts.Factories.IMicroorganismFactory.Create(DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand)
+  id: Create(DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand)
+  parent: DB.Application.Contracts.Factories.IMicroorganismFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateMicroorganismCommand)
+  nameWithType: IMicroorganismFactory.Create(CreateMicroorganismCommand)
+  fullName: DB.Application.Contracts.Factories.IMicroorganismFactory.Create(DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Create
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: Microorganism Create(CreateMicroorganismCommand command)
+    parameters:
+    - id: command
+      type: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+    return:
+      type: DB.Domain.Entities.Microorganism
+    content.vb: Function Create(command As CreateMicroorganismCommand) As Microorganism
+  overload: DB.Application.Contracts.Factories.IMicroorganismFactory.Create*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IMicroorganismFactory.Create*
+  commentId: Overload:DB.Application.Contracts.Factories.IMicroorganismFactory.Create
+  href: DB.Application.Contracts.Factories.IMicroorganismFactory.html#DB_Application_Contracts_Factories_IMicroorganismFactory_Create_DB_Application_Features_Microorganisms_Commands_CreateMicroorganism_CreateMicroorganismCommand_
+  name: Create
+  nameWithType: IMicroorganismFactory.Create
+  fullName: DB.Application.Contracts.Factories.IMicroorganismFactory.Create
+- uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+  commentId: T:DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+  parent: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  href: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand.html
+  name: CreateMicroorganismCommand
+  nameWithType: CreateMicroorganismCommand
+  fullName: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+- uid: DB.Domain.Entities.Microorganism
+  commentId: T:DB.Domain.Entities.Microorganism
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Microorganism.html
+  name: Microorganism
+  nameWithType: Microorganism
+  fullName: DB.Domain.Entities.Microorganism
+- uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  commentId: N:DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  href: DB.html
+  name: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  nameWithType: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  fullName: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands
+    name: Commands
+    href: DB.Application.Features.Microorganisms.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+    name: CreateMicroorganism
+    href: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands
+    name: Commands
+    href: DB.Application.Features.Microorganisms.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+    name: CreateMicroorganism
+    href: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.html
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

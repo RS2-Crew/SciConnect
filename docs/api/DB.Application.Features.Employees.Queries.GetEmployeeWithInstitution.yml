@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  commentId: N:DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  id: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  children:
+  - DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler
+  - DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  nameWithType: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  fullName: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery
+  commentId: T:DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery
+  parent: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  href: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery.html
+  name: GetInstitutionByEmployeeQuery
+  nameWithType: GetInstitutionByEmployeeQuery
+  fullName: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery
+- uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler
+  commentId: T:DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler
+  href: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler.html
+  name: GetInstituionByEmployeeQueryHandler
+  nameWithType: GetInstituionByEmployeeQueryHandler
+  fullName: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler
+- uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  commentId: N:DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  href: DB.html
+  name: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  nameWithType: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  fullName: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+    name: GetEmployeeWithInstitution
+    href: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+    name: GetEmployeeWithInstitution
+    href: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.html

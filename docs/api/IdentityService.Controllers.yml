@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Controllers
+  commentId: N:IdentityService.Controllers
+  id: IdentityService.Controllers
+  children:
+  - IdentityService.Controllers.AuthenticationController
+  - IdentityService.Controllers.UserController
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Controllers
+  nameWithType: IdentityService.Controllers
+  fullName: IdentityService.Controllers
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Controllers.AuthenticationController
+  commentId: T:IdentityService.Controllers.AuthenticationController
+  href: IdentityService.Controllers.AuthenticationController.html
+  name: AuthenticationController
+  nameWithType: AuthenticationController
+  fullName: IdentityService.Controllers.AuthenticationController
+- uid: IdentityService.Controllers.UserController
+  commentId: T:IdentityService.Controllers.UserController
+  href: IdentityService.Controllers.UserController.html
+  name: UserController
+  nameWithType: UserController
+  fullName: IdentityService.Controllers.UserController

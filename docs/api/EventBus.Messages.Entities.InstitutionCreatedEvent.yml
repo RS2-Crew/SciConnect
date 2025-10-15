@@ -1,0 +1,652 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent
+  commentId: T:EventBus.Messages.Entities.InstitutionCreatedEvent
+  id: InstitutionCreatedEvent
+  parent: EventBus.Messages.Entities
+  children:
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.City
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.Country
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.Email
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.Id
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.Name
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.Phone
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.Street
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber
+  - EventBus.Messages.Entities.InstitutionCreatedEvent.Website
+  langs:
+  - csharp
+  - vb
+  name: InstitutionCreatedEvent
+  nameWithType: InstitutionCreatedEvent
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: InstitutionCreatedEvent
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 8
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public class InstitutionCreatedEvent
+    content.vb: Public Class InstitutionCreatedEvent
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Id
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.Id
+  id: Id
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: InstitutionCreatedEvent.Id
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Id
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Id
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 10
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.Id*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Name
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.Name
+  id: Name
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: InstitutionCreatedEvent.Name
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Name
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Name
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 11
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.Name*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Street
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.Street
+  id: Street
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: Street
+  nameWithType: InstitutionCreatedEvent.Street
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Street
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Street
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 12
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string Street { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Street As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.Street*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber
+  id: StreetNumber
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: StreetNumber
+  nameWithType: InstitutionCreatedEvent.StreetNumber
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: StreetNumber
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 13
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string StreetNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property StreetNumber As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.City
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.City
+  id: City
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: City
+  nameWithType: InstitutionCreatedEvent.City
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.City
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: City
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 14
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string City { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property City As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.City*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Country
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.Country
+  id: Country
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: Country
+  nameWithType: InstitutionCreatedEvent.Country
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Country
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Country
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 15
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string Country { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Country As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.Country*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Phone
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.Phone
+  id: Phone
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: Phone
+  nameWithType: InstitutionCreatedEvent.Phone
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Phone
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Phone
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 16
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string? Phone { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Phone As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.Phone*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Email
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.Email
+  id: Email
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: InstitutionCreatedEvent.Email
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Email
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Email
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 17
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string? Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.Email*
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Website
+  commentId: P:EventBus.Messages.Entities.InstitutionCreatedEvent.Website
+  id: Website
+  parent: EventBus.Messages.Entities.InstitutionCreatedEvent
+  langs:
+  - csharp
+  - vb
+  name: Website
+  nameWithType: InstitutionCreatedEvent.Website
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Website
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Website
+    path: ../SciConnect/Common/EventBus.Messages/Entities/InstitutionCreatedEvent.cs
+    startLine: 18
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Entities
+  syntax:
+    content: public string? Website { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Website As String
+  overload: EventBus.Messages.Entities.InstitutionCreatedEvent.Website*
+references:
+- uid: EventBus.Messages.Entities
+  commentId: N:EventBus.Messages.Entities
+  href: EventBus.html
+  name: EventBus.Messages.Entities
+  nameWithType: EventBus.Messages.Entities
+  fullName: EventBus.Messages.Entities
+  spec.csharp:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Entities
+    name: Entities
+    href: EventBus.Messages.Entities.html
+  spec.vb:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Entities
+    name: Entities
+    href: EventBus.Messages.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Id*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.Id
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_Id
+  name: Id
+  nameWithType: InstitutionCreatedEvent.Id
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Name*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.Name
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_Name
+  name: Name
+  nameWithType: InstitutionCreatedEvent.Name
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Street*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.Street
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_Street
+  name: Street
+  nameWithType: InstitutionCreatedEvent.Street
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Street
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_StreetNumber
+  name: StreetNumber
+  nameWithType: InstitutionCreatedEvent.StreetNumber
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.StreetNumber
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.City*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.City
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_City
+  name: City
+  nameWithType: InstitutionCreatedEvent.City
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.City
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Country*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.Country
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_Country
+  name: Country
+  nameWithType: InstitutionCreatedEvent.Country
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Country
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Phone*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.Phone
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_Phone
+  name: Phone
+  nameWithType: InstitutionCreatedEvent.Phone
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Phone
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Email*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.Email
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_Email
+  name: Email
+  nameWithType: InstitutionCreatedEvent.Email
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Email
+- uid: EventBus.Messages.Entities.InstitutionCreatedEvent.Website*
+  commentId: Overload:EventBus.Messages.Entities.InstitutionCreatedEvent.Website
+  href: EventBus.Messages.Entities.InstitutionCreatedEvent.html#EventBus_Messages_Entities_InstitutionCreatedEvent_Website
+  name: Website
+  nameWithType: InstitutionCreatedEvent.Website
+  fullName: EventBus.Messages.Entities.InstitutionCreatedEvent.Website

@@ -1,0 +1,834 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  commentId: T:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  id: GetAllAnalysesQueryHandler
+  parent: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  children:
+  - DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.#ctor(DB.Application.Contracts.Persistance.IAnalysisRepository,DB.Application.Contracts.Factories.IAnalysisViewModelFactory)
+  - DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: GetAllAnalysesQueryHandler
+  nameWithType: GetAllAnalysesQueryHandler
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Analysis/Queries/GetAllAnalysis/GetAllAnalysisHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetAllAnalysesQueryHandler
+    path: ../SciConnect/Services/DB/DB.Application/Features/Analysis/Queries/GetAllAnalysis/GetAllAnalysisHandler.cs
+    startLine: 13
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  syntax:
+    content: 'public class GetAllAnalysesQueryHandler : IRequestHandler<GetAllAnalysesQuery, IReadOnlyList<AnalysisViewModel>>'
+    content.vb: Public Class GetAllAnalysesQueryHandler Implements IRequestHandler(Of GetAllAnalysesQuery, IReadOnlyList(Of AnalysisViewModel))
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.#ctor(DB.Application.Contracts.Persistance.IAnalysisRepository,DB.Application.Contracts.Factories.IAnalysisViewModelFactory)
+  commentId: M:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.#ctor(DB.Application.Contracts.Persistance.IAnalysisRepository,DB.Application.Contracts.Factories.IAnalysisViewModelFactory)
+  id: '#ctor(DB.Application.Contracts.Persistance.IAnalysisRepository,DB.Application.Contracts.Factories.IAnalysisViewModelFactory)'
+  parent: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: GetAllAnalysesQueryHandler(IAnalysisRepository, IAnalysisViewModelFactory)
+  nameWithType: GetAllAnalysesQueryHandler.GetAllAnalysesQueryHandler(IAnalysisRepository, IAnalysisViewModelFactory)
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.GetAllAnalysesQueryHandler(DB.Application.Contracts.Persistance.IAnalysisRepository, DB.Application.Contracts.Factories.IAnalysisViewModelFactory)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Analysis/Queries/GetAllAnalysis/GetAllAnalysisHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Analysis/Queries/GetAllAnalysis/GetAllAnalysisHandler.cs
+    startLine: 18
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  syntax:
+    content: public GetAllAnalysesQueryHandler(IAnalysisRepository analysisRepository, IAnalysisViewModelFactory viewModelFactory)
+    parameters:
+    - id: analysisRepository
+      type: DB.Application.Contracts.Persistance.IAnalysisRepository
+    - id: viewModelFactory
+      type: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+    content.vb: Public Sub New(analysisRepository As IAnalysisRepository, viewModelFactory As IAnalysisViewModelFactory)
+  overload: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.#ctor*
+  nameWithType.vb: GetAllAnalysesQueryHandler.New(IAnalysisRepository, IAnalysisViewModelFactory)
+  fullName.vb: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.New(DB.Application.Contracts.Persistance.IAnalysisRepository, DB.Application.Contracts.Factories.IAnalysisViewModelFactory)
+  name.vb: New(IAnalysisRepository, IAnalysisViewModelFactory)
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+  commentId: M:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+  id: Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+  parent: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(GetAllAnalysesQuery, CancellationToken)
+  nameWithType: GetAllAnalysesQueryHandler.Handle(GetAllAnalysesQuery, CancellationToken)
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Analysis/Queries/GetAllAnalysis/GetAllAnalysisHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Handle
+    path: ../SciConnect/Services/DB/DB.Application/Features/Analysis/Queries/GetAllAnalysis/GetAllAnalysisHandler.cs
+    startLine: 24
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  summary: Handles a request
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<AnalysisViewModel>> Handle(GetAllAnalysesQuery request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+      description: The request
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}
+      description: Response from the request
+    content.vb: Public Function Handle(request As GetAllAnalysesQuery, cancellationToken As CancellationToken) As Task(Of IReadOnlyList(Of AnalysisViewModel))
+  overload: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle*
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+references:
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  commentId: N:DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  href: DB.html
+  name: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  nameWithType: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries
+    name: Queries
+    href: DB.Application.Features.Analyses.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+    name: GetAllAnalyses
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries
+    name: Queries
+    href: DB.Application.Features.Analyses.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+    name: GetAllAnalyses
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}
+  commentId: T:MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}
+  parent: MediatR
+  definition: MediatR.IRequestHandler`2
+  href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  name: IRequestHandler<GetAllAnalysesQuery, IReadOnlyList<AnalysisViewModel>>
+  nameWithType: IRequestHandler<GetAllAnalysesQuery, IReadOnlyList<AnalysisViewModel>>
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery, System.Collections.Generic.IReadOnlyList<DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel>>
+  nameWithType.vb: IRequestHandler(Of GetAllAnalysesQuery, IReadOnlyList(Of AnalysisViewModel))
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery, System.Collections.Generic.IReadOnlyList(Of DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel))
+  name.vb: IRequestHandler(Of GetAllAnalysesQuery, IReadOnlyList(Of AnalysisViewModel))
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+    name: GetAllAnalysesQuery
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    name: AnalysisViewModel
+    href: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+    name: GetAllAnalysesQuery
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    name: AnalysisViewModel
+    href: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html
+  - name: )
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequestHandler`2
+  commentId: T:MediatR.IRequestHandler`2
+  isExternal: true
+  name: IRequestHandler<TRequest, TResponse>
+  nameWithType: IRequestHandler<TRequest, TResponse>
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse)
+  name.vb: IRequestHandler(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.#ctor*
+  commentId: Overload:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.#ctor
+  href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.html#DB_Application_Features_Analyses_Queries_GetAllAnalyses_GetAllAnalysesQueryHandler__ctor_DB_Application_Contracts_Persistance_IAnalysisRepository_DB_Application_Contracts_Factories_IAnalysisViewModelFactory_
+  name: GetAllAnalysesQueryHandler
+  nameWithType: GetAllAnalysesQueryHandler.GetAllAnalysesQueryHandler
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.GetAllAnalysesQueryHandler
+  nameWithType.vb: GetAllAnalysesQueryHandler.New
+  fullName.vb: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.New
+  name.vb: New
+- uid: DB.Application.Contracts.Persistance.IAnalysisRepository
+  commentId: T:DB.Application.Contracts.Persistance.IAnalysisRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IAnalysisRepository.html
+  name: IAnalysisRepository
+  nameWithType: IAnalysisRepository
+  fullName: DB.Application.Contracts.Persistance.IAnalysisRepository
+- uid: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.html
+  name: IAnalysisViewModelFactory
+  nameWithType: IAnalysisViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle*
+  commentId: Overload:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle
+  href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.html#DB_Application_Features_Analyses_Queries_GetAllAnalyses_GetAllAnalysesQueryHandler_Handle_DB_Application_Features_Analyses_Queries_GetAllAnalyses_GetAllAnalysesQuery_System_Threading_CancellationToken_
+  name: Handle
+  nameWithType: GetAllAnalysesQueryHandler.Handle
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.Handle
+- uid: MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+  parent: MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}
+  definition: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  name: Handle(GetAllAnalysesQuery, CancellationToken)
+  nameWithType: IRequestHandler<GetAllAnalysesQuery, IReadOnlyList<AnalysisViewModel>>.Handle(GetAllAnalysesQuery, CancellationToken)
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery, System.Collections.Generic.IReadOnlyList<DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel>>.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of GetAllAnalysesQuery, IReadOnlyList(Of AnalysisViewModel)).Handle(GetAllAnalysesQuery, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery, System.Collections.Generic.IReadOnlyList(Of DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel)).Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+    name: GetAllAnalysesQuery
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}.Handle(DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+    name: GetAllAnalysesQuery
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+  commentId: T:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+  parent: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  name: GetAllAnalysesQuery
+  nameWithType: GetAllAnalysesQuery
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<AnalysisViewModel>>
+  nameWithType: Task<IReadOnlyList<AnalysisViewModel>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of AnalysisViewModel))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel))
+  name.vb: Task(Of IReadOnlyList(Of AnalysisViewModel))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    name: AnalysisViewModel
+    href: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    name: AnalysisViewModel
+    href: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html
+  - name: )
+  - name: )
+- uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: Handle(TRequest, CancellationToken)
+  nameWithType: IRequestHandler<TRequest, TResponse>.Handle(TRequest, CancellationToken)
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>.Handle(TRequest, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse).Handle(TRequest, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse).Handle(TRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

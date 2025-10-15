@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventBus.Messages.Events
+  commentId: N:EventBus.Messages.Events
+  id: EventBus.Messages.Events
+  children:
+  - EventBus.Messages.Events.AutocompleteEntityChanged
+  - EventBus.Messages.Events.ChangeKind
+  - EventBus.Messages.Events.EntityType
+  - EventBus.Messages.Events.IntegrationEvent
+  langs:
+  - csharp
+  - vb
+  name: EventBus.Messages.Events
+  nameWithType: EventBus.Messages.Events
+  fullName: EventBus.Messages.Events
+  type: Namespace
+  assemblies:
+  - EventBus.Messages
+references:
+- uid: EventBus.Messages.Events.EntityType
+  commentId: T:EventBus.Messages.Events.EntityType
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.EntityType.html
+  name: EntityType
+  nameWithType: EntityType
+  fullName: EventBus.Messages.Events.EntityType
+- uid: EventBus.Messages.Events.ChangeKind
+  commentId: T:EventBus.Messages.Events.ChangeKind
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.ChangeKind.html
+  name: ChangeKind
+  nameWithType: ChangeKind
+  fullName: EventBus.Messages.Events.ChangeKind
+- uid: EventBus.Messages.Events.IntegrationEvent
+  commentId: T:EventBus.Messages.Events.IntegrationEvent
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.IntegrationEvent.html
+  name: IntegrationEvent
+  nameWithType: IntegrationEvent
+  fullName: EventBus.Messages.Events.IntegrationEvent
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged
+  commentId: T:EventBus.Messages.Events.AutocompleteEntityChanged
+  href: EventBus.Messages.Events.AutocompleteEntityChanged.html
+  name: AutocompleteEntityChanged
+  nameWithType: AutocompleteEntityChanged
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged
+- uid: EventBus.Messages.Events
+  commentId: N:EventBus.Messages.Events
+  href: EventBus.html
+  name: EventBus.Messages.Events
+  nameWithType: EventBus.Messages.Events
+  fullName: EventBus.Messages.Events
+  spec.csharp:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html
+  spec.vb:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html

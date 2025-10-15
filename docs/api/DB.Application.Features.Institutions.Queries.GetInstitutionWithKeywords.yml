@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  id: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  children:
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery
+  parent: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery.html
+  name: GetKeywordsByInstitutionQuery
+  nameWithType: GetKeywordsByInstitutionQuery
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler.html
+  name: GetKeywordsByInstitutionQueryHandler
+  nameWithType: GetKeywordsByInstitutionQueryHandler
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+    name: GetInstitutionWithKeywords
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+    name: GetInstitutionWithKeywords
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.html

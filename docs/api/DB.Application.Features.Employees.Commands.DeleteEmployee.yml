@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Employees.Commands.DeleteEmployee
+  commentId: N:DB.Application.Features.Employees.Commands.DeleteEmployee
+  id: DB.Application.Features.Employees.Commands.DeleteEmployee
+  children:
+  - DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand
+  - DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Employees.Commands.DeleteEmployee
+  nameWithType: DB.Application.Features.Employees.Commands.DeleteEmployee
+  fullName: DB.Application.Features.Employees.Commands.DeleteEmployee
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand
+  commentId: T:DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand
+  parent: DB.Application.Features.Employees.Commands.DeleteEmployee
+  href: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand.html
+  name: DeleteEmployeeCommand
+  nameWithType: DeleteEmployeeCommand
+  fullName: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand
+- uid: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler
+  commentId: T:DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler
+  href: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler.html
+  name: DeleteEmployeeCommandHandler
+  nameWithType: DeleteEmployeeCommandHandler
+  fullName: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler
+- uid: DB.Application.Features.Employees.Commands.DeleteEmployee
+  commentId: N:DB.Application.Features.Employees.Commands.DeleteEmployee
+  href: DB.html
+  name: DB.Application.Features.Employees.Commands.DeleteEmployee
+  nameWithType: DB.Application.Features.Employees.Commands.DeleteEmployee
+  fullName: DB.Application.Features.Employees.Commands.DeleteEmployee
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.DeleteEmployee
+    name: DeleteEmployee
+    href: DB.Application.Features.Employees.Commands.DeleteEmployee.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.DeleteEmployee
+    name: DeleteEmployee
+    href: DB.Application.Features.Employees.Commands.DeleteEmployee.html

@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  id: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  children:
+  - DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand
+  - DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  fullName: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  href: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand.html
+  name: AddMicroorganismToInstitutionCommand
+  nameWithType: AddMicroorganismToInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand
+- uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler
+  commentId: T:DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler
+  href: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler.html
+  name: AddMicroorganismToInstitutionCommandHandler
+  nameWithType: AddMicroorganismToInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler
+- uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  fullName: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+    name: AddMicroorganismToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+    name: AddMicroorganismToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.html

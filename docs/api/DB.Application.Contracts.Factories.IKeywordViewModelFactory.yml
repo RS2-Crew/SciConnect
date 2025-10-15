@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IKeywordViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IKeywordViewModelFactory
+  id: IKeywordViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel(DB.Domain.Entities.Keyword)
+  langs:
+  - csharp
+  - vb
+  name: IKeywordViewModelFactory
+  nameWithType: IKeywordViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IKeywordViewModelFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IKeywordViewModelFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordViewModelFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IKeywordViewModelFactory
+    content.vb: Public Interface IKeywordViewModelFactory
+- uid: DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel(DB.Domain.Entities.Keyword)
+  commentId: M:DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel(DB.Domain.Entities.Keyword)
+  id: CreateViewModel(DB.Domain.Entities.Keyword)
+  parent: DB.Application.Contracts.Factories.IKeywordViewModelFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateViewModel(Keyword)
+  nameWithType: IKeywordViewModelFactory.CreateViewModel(Keyword)
+  fullName: DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel(DB.Domain.Entities.Keyword)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateViewModel
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IKeywordViewModelFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: KeywordViewModel CreateViewModel(Keyword keyword)
+    parameters:
+    - id: keyword
+      type: DB.Domain.Entities.Keyword
+    return:
+      type: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+    content.vb: Function CreateViewModel(keyword As Keyword) As KeywordViewModel
+  overload: DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel*
+  commentId: Overload:DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel
+  href: DB.Application.Contracts.Factories.IKeywordViewModelFactory.html#DB_Application_Contracts_Factories_IKeywordViewModelFactory_CreateViewModel_DB_Domain_Entities_Keyword_
+  name: CreateViewModel
+  nameWithType: IKeywordViewModelFactory.CreateViewModel
+  fullName: DB.Application.Contracts.Factories.IKeywordViewModelFactory.CreateViewModel
+- uid: DB.Domain.Entities.Keyword
+  commentId: T:DB.Domain.Entities.Keyword
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Keyword.html
+  name: Keyword
+  nameWithType: Keyword
+  fullName: DB.Domain.Entities.Keyword
+- uid: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+  commentId: T:DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+  parent: DB.Application.Features.Keywords.Queries.ViewModels
+  href: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel.html
+  name: KeywordViewModel
+  nameWithType: KeywordViewModel
+  fullName: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+- uid: DB.Application.Features.Keywords.Queries.ViewModels
+  commentId: N:DB.Application.Features.Keywords.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Keywords.Queries.ViewModels
+  nameWithType: DB.Application.Features.Keywords.Queries.ViewModels
+  fullName: DB.Application.Features.Keywords.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Keywords.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Keywords.Queries.ViewModels.html

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Extentions
+  commentId: N:IdentityService.Extentions
+  id: IdentityService.Extentions
+  children:
+  - IdentityService.Extentions.IdentitiyExtentions
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Extentions
+  nameWithType: IdentityService.Extentions
+  fullName: IdentityService.Extentions
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Extentions.IdentitiyExtentions
+  commentId: T:IdentityService.Extentions.IdentitiyExtentions
+  href: IdentityService.Extentions.IdentitiyExtentions.html
+  name: IdentitiyExtentions
+  nameWithType: IdentitiyExtentions
+  fullName: IdentityService.Extentions.IdentitiyExtentions

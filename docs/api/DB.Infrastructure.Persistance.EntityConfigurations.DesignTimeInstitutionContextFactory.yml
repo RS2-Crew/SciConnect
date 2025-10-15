@@ -1,0 +1,594 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+  id: DesignTimeInstitutionContextFactory
+  parent: DB.Infrastructure.Persistance.EntityConfigurations
+  children:
+  - DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext(System.String[])
+  langs:
+  - csharp
+  - vb
+  name: DesignTimeInstitutionContextFactory
+  nameWithType: DesignTimeInstitutionContextFactory
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+  type: Class
+  source:
+    remote:
+      path: SciConnect/DB.Infrastructure/Persistance/EntityConfigurations/DesignTimeInstitutionContextFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: DesignTimeInstitutionContextFactory
+    path: ../SciConnect/DB.Infrastructure/Persistance/EntityConfigurations/DesignTimeInstitutionContextFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Infrastructure
+  namespace: DB.Infrastructure.Persistance.EntityConfigurations
+  syntax:
+    content: 'public class DesignTimeInstitutionContextFactory : IDesignTimeDbContextFactory<SqlServerContext>'
+    content.vb: Public Class DesignTimeInstitutionContextFactory Implements IDesignTimeDbContextFactory(Of SqlServerContext)
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext(System.String[])
+  commentId: M:DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext(System.String[])
+  id: CreateDbContext(System.String[])
+  parent: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateDbContext(string[])
+  nameWithType: DesignTimeInstitutionContextFactory.CreateDbContext(string[])
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext(string[])
+  type: Method
+  source:
+    remote:
+      path: SciConnect/DB.Infrastructure/Persistance/EntityConfigurations/DesignTimeInstitutionContextFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateDbContext
+    path: ../SciConnect/DB.Infrastructure/Persistance/EntityConfigurations/DesignTimeInstitutionContextFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Infrastructure
+  namespace: DB.Infrastructure.Persistance.EntityConfigurations
+  summary: Creates a new instance of a derived context.
+  example: []
+  syntax:
+    content: public SqlServerContext CreateDbContext(string[] args)
+    parameters:
+    - id: args
+      type: System.String[]
+      description: Arguments provided by the design-time service.
+    return:
+      type: DB.Infrastructure.Persistance.SqlServerContext
+      description: An instance of <xref href="DB.Infrastructure.Persistance.SqlServerContext" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function CreateDbContext(args As String()) As SqlServerContext
+  overload: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext*
+  implements:
+  - Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}.CreateDbContext(System.String[])
+  nameWithType.vb: DesignTimeInstitutionContextFactory.CreateDbContext(String())
+  fullName.vb: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext(String())
+  name.vb: CreateDbContext(String())
+references:
+- uid: DB.Infrastructure.Persistance.EntityConfigurations
+  commentId: N:DB.Infrastructure.Persistance.EntityConfigurations
+  href: DB.html
+  name: DB.Infrastructure.Persistance.EntityConfigurations
+  nameWithType: DB.Infrastructure.Persistance.EntityConfigurations
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance
+    name: Persistance
+    href: DB.Infrastructure.Persistance.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations
+    name: EntityConfigurations
+    href: DB.Infrastructure.Persistance.EntityConfigurations.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance
+    name: Persistance
+    href: DB.Infrastructure.Persistance.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations
+    name: EntityConfigurations
+    href: DB.Infrastructure.Persistance.EntityConfigurations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}
+  commentId: T:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}
+  parent: Microsoft.EntityFrameworkCore.Design
+  definition: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  name: IDesignTimeDbContextFactory<SqlServerContext>
+  nameWithType: IDesignTimeDbContextFactory<SqlServerContext>
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<DB.Infrastructure.Persistance.SqlServerContext>
+  nameWithType.vb: IDesignTimeDbContextFactory(Of SqlServerContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of DB.Infrastructure.Persistance.SqlServerContext)
+  name.vb: IDesignTimeDbContextFactory(Of SqlServerContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: <
+  - uid: DB.Infrastructure.Persistance.SqlServerContext
+    name: SqlServerContext
+    href: DB.Infrastructure.Persistance.SqlServerContext.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Infrastructure.Persistance.SqlServerContext
+    name: SqlServerContext
+    href: DB.Infrastructure.Persistance.SqlServerContext.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+  commentId: T:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  name: IDesignTimeDbContextFactory<TContext>
+  nameWithType: IDesignTimeDbContextFactory<TContext>
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<TContext>
+  nameWithType.vb: IDesignTimeDbContextFactory(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of TContext)
+  name.vb: IDesignTimeDbContextFactory(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: Microsoft.EntityFrameworkCore.Design
+  commentId: N:Microsoft.EntityFrameworkCore.Design
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore.Design
+  nameWithType: Microsoft.EntityFrameworkCore.Design
+  fullName: Microsoft.EntityFrameworkCore.Design
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Design
+    name: Design
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Design
+    name: Design
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design
+- uid: DB.Infrastructure.Persistance.SqlServerContext
+  commentId: T:DB.Infrastructure.Persistance.SqlServerContext
+  parent: DB.Infrastructure.Persistance
+  href: DB.Infrastructure.Persistance.SqlServerContext.html
+  name: SqlServerContext
+  nameWithType: SqlServerContext
+  fullName: DB.Infrastructure.Persistance.SqlServerContext
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext*
+  commentId: Overload:DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext
+  href: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.html#DB_Infrastructure_Persistance_EntityConfigurations_DesignTimeInstitutionContextFactory_CreateDbContext_System_String___
+  name: CreateDbContext
+  nameWithType: DesignTimeInstitutionContextFactory.CreateDbContext
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.CreateDbContext
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}.CreateDbContext(System.String[])
+  commentId: M:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}.CreateDbContext(System.String[])
+  parent: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}
+  definition: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  name: CreateDbContext(string[])
+  nameWithType: IDesignTimeDbContextFactory<SqlServerContext>.CreateDbContext(string[])
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<DB.Infrastructure.Persistance.SqlServerContext>.CreateDbContext(string[])
+  nameWithType.vb: IDesignTimeDbContextFactory(Of SqlServerContext).CreateDbContext(String())
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of DB.Infrastructure.Persistance.SqlServerContext).CreateDbContext(String())
+  name.vb: CreateDbContext(String())
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{DB.Infrastructure.Persistance.SqlServerContext}.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: DB.Infrastructure.Persistance
+  commentId: N:DB.Infrastructure.Persistance
+  href: DB.html
+  name: DB.Infrastructure.Persistance
+  nameWithType: DB.Infrastructure.Persistance
+  fullName: DB.Infrastructure.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance
+    name: Persistance
+    href: DB.Infrastructure.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance
+    name: Persistance
+    href: DB.Infrastructure.Persistance.html
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+  commentId: M:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  name: CreateDbContext(string[])
+  nameWithType: IDesignTimeDbContextFactory<TContext>.CreateDbContext(string[])
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<TContext>.CreateDbContext(string[])
+  nameWithType.vb: IDesignTimeDbContextFactory(Of TContext).CreateDbContext(String())
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of TContext).CreateDbContext(String())
+  name.vb: CreateDbContext(String())
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )

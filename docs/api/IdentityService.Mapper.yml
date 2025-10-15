@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Mapper
+  commentId: N:IdentityService.Mapper
+  id: IdentityService.Mapper
+  children:
+  - IdentityService.Mapper.IdentityProfile
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Mapper
+  nameWithType: IdentityService.Mapper
+  fullName: IdentityService.Mapper
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Mapper.IdentityProfile
+  commentId: T:IdentityService.Mapper.IdentityProfile
+  href: IdentityService.Mapper.IdentityProfile.html
+  name: IdentityProfile
+  nameWithType: IdentityProfile
+  fullName: IdentityService.Mapper.IdentityProfile

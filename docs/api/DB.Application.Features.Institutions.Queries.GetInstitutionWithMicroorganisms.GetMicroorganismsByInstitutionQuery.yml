@@ -1,0 +1,491 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery
+  id: GetMicroorganismsByInstitutionQuery
+  parent: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  children:
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.#ctor(System.String)
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName
+  langs:
+  - csharp
+  - vb
+  name: GetMicroorganismsByInstitutionQuery
+  nameWithType: GetMicroorganismsByInstitutionQuery
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/GetInstitutionWithMicroorganisms/GetMicroorganismsByInstitutionQuery.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetMicroorganismsByInstitutionQuery
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/GetInstitutionWithMicroorganisms/GetMicroorganismsByInstitutionQuery.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  syntax:
+    content: 'public class GetMicroorganismsByInstitutionQuery : IRequest<InstitutionViewModel>, IBaseRequest'
+    content.vb: Public Class GetMicroorganismsByInstitutionQuery Implements IRequest(Of InstitutionViewModel), IBaseRequest
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequest{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}
+  - MediatR.IBaseRequest
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName
+  commentId: P:DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName
+  id: InstitutionName
+  parent: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery
+  langs:
+  - csharp
+  - vb
+  name: InstitutionName
+  nameWithType: GetMicroorganismsByInstitutionQuery.InstitutionName
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/GetInstitutionWithMicroorganisms/GetMicroorganismsByInstitutionQuery.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: InstitutionName
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/GetInstitutionWithMicroorganisms/GetMicroorganismsByInstitutionQuery.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  syntax:
+    content: public string InstitutionName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property InstitutionName As String
+  overload: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName*
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.#ctor(System.String)
+  commentId: M:DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery
+  langs:
+  - csharp
+  - vb
+  name: GetMicroorganismsByInstitutionQuery(string)
+  nameWithType: GetMicroorganismsByInstitutionQuery.GetMicroorganismsByInstitutionQuery(string)
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.GetMicroorganismsByInstitutionQuery(string)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/GetInstitutionWithMicroorganisms/GetMicroorganismsByInstitutionQuery.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Queries/GetInstitutionWithMicroorganisms/GetMicroorganismsByInstitutionQuery.cs
+    startLine: 14
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  syntax:
+    content: public GetMicroorganismsByInstitutionQuery(string institutionName)
+    parameters:
+    - id: institutionName
+      type: System.String
+    content.vb: Public Sub New(institutionName As String)
+  overload: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.#ctor*
+  nameWithType.vb: GetMicroorganismsByInstitutionQuery.New(String)
+  fullName.vb: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.New(String)
+  name.vb: New(String)
+references:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+    name: GetInstitutionWithMicroorganisms
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+    name: GetInstitutionWithMicroorganisms
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequest{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}
+  commentId: T:MediatR.IRequest{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}
+  parent: MediatR
+  definition: MediatR.IRequest`1
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  name: IRequest<InstitutionViewModel>
+  nameWithType: IRequest<InstitutionViewModel>
+  fullName: MediatR.IRequest<DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel>
+  nameWithType.vb: IRequest(Of InstitutionViewModel)
+  fullName.vb: MediatR.IRequest(Of DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel)
+  name.vb: IRequest(Of InstitutionViewModel)
+  spec.csharp:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: <
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    name: InstitutionViewModel
+    href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    name: InstitutionViewModel
+    href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  - name: )
+- uid: MediatR.IBaseRequest
+  commentId: T:MediatR.IBaseRequest
+  parent: MediatR
+  isExternal: true
+  name: IBaseRequest
+  nameWithType: IBaseRequest
+  fullName: MediatR.IBaseRequest
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequest`1
+  commentId: T:MediatR.IRequest`1
+  isExternal: true
+  name: IRequest<TResponse>
+  nameWithType: IRequest<TResponse>
+  fullName: MediatR.IRequest<TResponse>
+  nameWithType.vb: IRequest(Of TResponse)
+  fullName.vb: MediatR.IRequest(Of TResponse)
+  name.vb: IRequest(Of TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: <
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequest`1
+    name: IRequest
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.html#DB_Application_Features_Institutions_Queries_GetInstitutionWithMicroorganisms_GetMicroorganismsByInstitutionQuery_InstitutionName
+  name: InstitutionName
+  nameWithType: GetMicroorganismsByInstitutionQuery.InstitutionName
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.InstitutionName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.#ctor*
+  commentId: Overload:DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.#ctor
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.html#DB_Application_Features_Institutions_Queries_GetInstitutionWithMicroorganisms_GetMicroorganismsByInstitutionQuery__ctor_System_String_
+  name: GetMicroorganismsByInstitutionQuery
+  nameWithType: GetMicroorganismsByInstitutionQuery.GetMicroorganismsByInstitutionQuery
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.GetMicroorganismsByInstitutionQuery
+  nameWithType.vb: GetMicroorganismsByInstitutionQuery.New
+  fullName.vb: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery.New
+  name.vb: New

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Exceptions
+  commentId: N:DB.Application.Exceptions
+  id: DB.Application.Exceptions
+  children:
+  - DB.Application.Exceptions.ValidationFailedException
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Exceptions
+  nameWithType: DB.Application.Exceptions
+  fullName: DB.Application.Exceptions
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Exceptions.ValidationFailedException
+  commentId: T:DB.Application.Exceptions.ValidationFailedException
+  href: DB.Application.Exceptions.ValidationFailedException.html
+  name: ValidationFailedException
+  nameWithType: ValidationFailedException
+  fullName: DB.Application.Exceptions.ValidationFailedException

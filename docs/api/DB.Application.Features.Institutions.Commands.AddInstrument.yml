@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.AddInstrument
+  commentId: N:DB.Application.Features.Institutions.Commands.AddInstrument
+  id: DB.Application.Features.Institutions.Commands.AddInstrument
+  children:
+  - DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand
+  - DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Commands.AddInstrument
+  nameWithType: DB.Application.Features.Institutions.Commands.AddInstrument
+  fullName: DB.Application.Features.Institutions.Commands.AddInstrument
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.AddInstrument
+  href: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand.html
+  name: AddInstrumentToInstitutionCommand
+  nameWithType: AddInstrumentToInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand
+- uid: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler
+  commentId: T:DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler
+  href: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler.html
+  name: AddInstrumentToInstitutionCommandHandler
+  nameWithType: AddInstrumentToInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler
+- uid: DB.Application.Features.Institutions.Commands.AddInstrument
+  commentId: N:DB.Application.Features.Institutions.Commands.AddInstrument
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.AddInstrument
+  nameWithType: DB.Application.Features.Institutions.Commands.AddInstrument
+  fullName: DB.Application.Features.Institutions.Commands.AddInstrument
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddInstrument
+    name: AddInstrument
+    href: DB.Application.Features.Institutions.Commands.AddInstrument.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddInstrument
+    name: AddInstrument
+    href: DB.Application.Features.Institutions.Commands.AddInstrument.html

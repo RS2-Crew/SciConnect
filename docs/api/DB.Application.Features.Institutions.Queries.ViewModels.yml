@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.ViewModels
+  commentId: N:DB.Application.Features.Institutions.Queries.ViewModels
+  id: DB.Application.Features.Institutions.Queries.ViewModels
+  children:
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel
+  - DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Queries.ViewModels
+  nameWithType: DB.Application.Features.Institutions.Queries.ViewModels
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel
+  commentId: T:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel.html
+  name: InstitutionBasicViewModel
+  nameWithType: InstitutionBasicViewModel
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  commentId: T:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  parent: DB.Application.Features.Institutions.Queries.ViewModels
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  name: InstitutionViewModel
+  nameWithType: InstitutionViewModel
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+- uid: DB.Application.Features.Institutions.Queries.ViewModels
+  commentId: N:DB.Application.Features.Institutions.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.ViewModels
+  nameWithType: DB.Application.Features.Institutions.Queries.ViewModels
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Institutions.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Institutions.Queries.ViewModels.html

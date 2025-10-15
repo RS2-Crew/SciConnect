@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IAnalysisFactory
+  commentId: T:DB.Application.Contracts.Factories.IAnalysisFactory
+  id: IAnalysisFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IAnalysisFactory.Create(DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand)
+  langs:
+  - csharp
+  - vb
+  name: IAnalysisFactory
+  nameWithType: IAnalysisFactory
+  fullName: DB.Application.Contracts.Factories.IAnalysisFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IAnalysisFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisFactory.cs
+    startLine: 11
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IAnalysisFactory
+    content.vb: Public Interface IAnalysisFactory
+- uid: DB.Application.Contracts.Factories.IAnalysisFactory.Create(DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand)
+  commentId: M:DB.Application.Contracts.Factories.IAnalysisFactory.Create(DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand)
+  id: Create(DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand)
+  parent: DB.Application.Contracts.Factories.IAnalysisFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateAnalysisCommand)
+  nameWithType: IAnalysisFactory.Create(CreateAnalysisCommand)
+  fullName: DB.Application.Contracts.Factories.IAnalysisFactory.Create(DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Create
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisFactory.cs
+    startLine: 13
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: Analysis Create(CreateAnalysisCommand command)
+    parameters:
+    - id: command
+      type: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+    return:
+      type: DB.Domain.Entities.Analysis
+    content.vb: Function Create(command As CreateAnalysisCommand) As Analysis
+  overload: DB.Application.Contracts.Factories.IAnalysisFactory.Create*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IAnalysisFactory.Create*
+  commentId: Overload:DB.Application.Contracts.Factories.IAnalysisFactory.Create
+  href: DB.Application.Contracts.Factories.IAnalysisFactory.html#DB_Application_Contracts_Factories_IAnalysisFactory_Create_DB_Application_Features_Analyses_Commands_CreateAnalysis_CreateAnalysisCommand_
+  name: Create
+  nameWithType: IAnalysisFactory.Create
+  fullName: DB.Application.Contracts.Factories.IAnalysisFactory.Create
+- uid: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+  commentId: T:DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+  parent: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  href: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand.html
+  name: CreateAnalysisCommand
+  nameWithType: CreateAnalysisCommand
+  fullName: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+- uid: DB.Domain.Entities.Analysis
+  commentId: T:DB.Domain.Entities.Analysis
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Analysis.html
+  name: Analysis
+  nameWithType: Analysis
+  fullName: DB.Domain.Entities.Analysis
+- uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  commentId: N:DB.Application.Features.Analyses.Commands.CreateAnalysis
+  href: DB.html
+  name: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  nameWithType: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  fullName: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands
+    name: Commands
+    href: DB.Application.Features.Analyses.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+    name: CreateAnalysis
+    href: DB.Application.Features.Analyses.Commands.CreateAnalysis.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands
+    name: Commands
+    href: DB.Application.Features.Analyses.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+    name: CreateAnalysis
+    href: DB.Application.Features.Analyses.Commands.CreateAnalysis.html
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

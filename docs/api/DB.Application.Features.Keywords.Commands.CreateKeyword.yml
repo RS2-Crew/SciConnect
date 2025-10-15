@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+  commentId: N:DB.Application.Features.Keywords.Commands.CreateKeyword
+  id: DB.Application.Features.Keywords.Commands.CreateKeyword
+  children:
+  - DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  - DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  - DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Keywords.Commands.CreateKeyword
+  nameWithType: DB.Application.Features.Keywords.Commands.CreateKeyword
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  commentId: T:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  parent: DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  name: CreateKeywordCommand
+  nameWithType: CreateKeywordCommand
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  commentId: T:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler.html
+  name: CreateKeywordCommandHandler
+  nameWithType: CreateKeywordCommandHandler
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator
+  commentId: T:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator.html
+  name: CreateKeywordCommandValidator
+  nameWithType: CreateKeywordCommandValidator
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+  commentId: N:DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.html
+  name: DB.Application.Features.Keywords.Commands.CreateKeyword
+  nameWithType: DB.Application.Features.Keywords.Commands.CreateKeyword
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html

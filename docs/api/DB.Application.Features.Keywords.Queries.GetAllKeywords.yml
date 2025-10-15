@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  commentId: N:DB.Application.Features.Keywords.Queries.GetAllKeywords
+  id: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  children:
+  - DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery
+  - DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  nameWithType: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  fullName: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery
+  commentId: T:DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery
+  parent: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  href: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery.html
+  name: GetAllKeywordsQuery
+  nameWithType: GetAllKeywordsQuery
+  fullName: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery
+- uid: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler
+  commentId: T:DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler
+  href: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler.html
+  name: GetAllKeywordsQueryHandler
+  nameWithType: GetAllKeywordsQueryHandler
+  fullName: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler
+- uid: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  commentId: N:DB.Application.Features.Keywords.Queries.GetAllKeywords
+  href: DB.html
+  name: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  nameWithType: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  fullName: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.GetAllKeywords
+    name: GetAllKeywords
+    href: DB.Application.Features.Keywords.Queries.GetAllKeywords.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.GetAllKeywords
+    name: GetAllKeywords
+    href: DB.Application.Features.Keywords.Queries.GetAllKeywords.html

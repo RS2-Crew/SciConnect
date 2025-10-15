@@ -1,0 +1,800 @@
+### YamlMime:TableOfContent
+items:
+- uid: Autocomplete.API.Consumer
+  name: Autocomplete.API.Consumer
+  type: Namespace
+  items:
+  - uid: Autocomplete.API.Consumer.EntityChangedConsumer
+    name: EntityChangedConsumer
+    type: Class
+- uid: Autocomplete.API.Controllers
+  name: Autocomplete.API.Controllers
+  type: Namespace
+  items:
+  - uid: Autocomplete.API.Controllers.AutocompleteController
+    name: AutocompleteController
+    type: Class
+- uid: Autocomplete.API.Domain.Models
+  name: Autocomplete.API.Domain.Models
+  type: Namespace
+  items:
+  - uid: Autocomplete.API.Domain.Models.AutocompleteEntry
+    name: AutocompleteEntry
+    type: Class
+- uid: Autocomplete.API.Infrastructure.Persistence
+  name: Autocomplete.API.Infrastructure.Persistence
+  type: Namespace
+  items:
+  - uid: Autocomplete.API.Infrastructure.Persistence.AutoDbContext
+    name: AutoDbContext
+    type: Class
+- uid: DB.Application
+  name: DB.Application
+  type: Namespace
+  items:
+  - uid: DB.Application.ApplicationServiceRegistration
+    name: ApplicationServiceRegistration
+    type: Class
+- uid: DB.Application.Behaviors
+  name: DB.Application.Behaviors
+  type: Namespace
+  items:
+  - uid: DB.Application.Behaviors.UnhandledExceptionBehavior`2
+    name: UnhandledExceptionBehavior<TRequest, TResponse>
+    type: Class
+  - uid: DB.Application.Behaviors.ValidationBehavior`2
+    name: ValidationBehavior<TRequest, TResponse>
+    type: Class
+- uid: DB.Application.Contracts.Factories
+  name: DB.Application.Contracts.Factories
+  type: Namespace
+  items:
+  - uid: DB.Application.Contracts.Factories.IAnalysisFactory
+    name: IAnalysisFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+    name: IAnalysisViewModelFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IEmployeeFactory
+    name: IEmployeeFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+    name: IEmployeeViewModelFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IInstitutionFactory
+    name: IInstitutionFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+    name: IInstitutionViewModelFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IInstrumentFactory
+    name: IInstrumentFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IInstrumentViewModelFactory
+    name: IInstrumentViewModelFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IKeywordFactory
+    name: IKeywordFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IKeywordViewModelFactory
+    name: IKeywordViewModelFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IMicroorganismFactory
+    name: IMicroorganismFactory
+    type: Interface
+  - uid: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+    name: IMicroorganismViewModelFactory
+    type: Interface
+- uid: DB.Application.Contracts.Persistance
+  name: DB.Application.Contracts.Persistance
+  type: Namespace
+  items:
+  - uid: DB.Application.Contracts.Persistance.IAnalysisRepository
+    name: IAnalysisRepository
+    type: Interface
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+    name: IAsyncRepository<T>
+    type: Interface
+  - uid: DB.Application.Contracts.Persistance.IEmployeeRepository
+    name: IEmployeeRepository
+    type: Interface
+  - uid: DB.Application.Contracts.Persistance.IInstitutionRepository
+    name: IInstitutionRepository
+    type: Interface
+  - uid: DB.Application.Contracts.Persistance.IInstrumentRepository
+    name: IInstrumentRepository
+    type: Interface
+  - uid: DB.Application.Contracts.Persistance.IKeywordRepository
+    name: IKeywordRepository
+    type: Interface
+  - uid: DB.Application.Contracts.Persistance.IMicroorganismRepository
+    name: IMicroorganismRepository
+    type: Interface
+- uid: DB.Application.Exceptions
+  name: DB.Application.Exceptions
+  type: Namespace
+  items:
+  - uid: DB.Application.Exceptions.ValidationFailedException
+    name: ValidationFailedException
+    type: Class
+- uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  name: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+    name: CreateAnalysisCommand
+    type: Class
+  - uid: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler
+    name: CreateAnalysisCommandHandler
+    type: Class
+- uid: DB.Application.Features.Analyses.Commands.DeleteAnalysis
+  name: DB.Application.Features.Analyses.Commands.DeleteAnalysis
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommand
+    name: DeleteAnalysisCommand
+    type: Class
+  - uid: DB.Application.Features.Analyses.Commands.DeleteAnalysis.DeleteAnalysisCommandHandler
+    name: DeleteAnalysisCommandHandler
+    type: Class
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  name: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+    name: GetAllAnalysesQuery
+    type: Class
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+    name: GetAllAnalysesQueryHandler
+    type: Class
+- uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  name: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand
+    name: AddMicroorganismToAnalysisCommand
+    type: Class
+  - uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler
+    name: AddMicroorganismToAnalysisCommandHandler
+    type: Class
+- uid: DB.Application.Features.Analysis.Commands.CreateAnalysis
+  name: DB.Application.Features.Analysis.Commands.CreateAnalysis
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator
+    name: CreateAnalysisCommandValidator
+    type: Class
+- uid: DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution
+  name: DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQuery
+    name: GetInstitutionsByAnalysisQuery
+    type: Class
+  - uid: DB.Application.Features.Analysis.Queries.GetAnalysisWithInstitution.GetInstitutionsByAnalysisQueryHandler
+    name: GetInstitutionsByAnalysisQueryHandler
+    type: Class
+- uid: DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism
+  name: DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQuery
+    name: GetMicroorganismsByAnalysisQuery
+    type: Class
+  - uid: DB.Application.Features.Analysis.Queries.GetAnalysisWithMicroorganism.GetMicroorganismsByAnalysisQueryHandler
+    name: GetMicroorganismsByAnalysisQueryHandler
+    type: Class
+- uid: DB.Application.Features.Analysis.Queries.GetListOfAnalysis
+  name: DB.Application.Features.Analysis.Queries.GetListOfAnalysis
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQuery
+    name: GetListOfAnalysisQuery
+    type: Class
+  - uid: DB.Application.Features.Analysis.Queries.GetListOfAnalysis.GetListOfAnalysisQueryHandler
+    name: GetListOfAnalysisQueryHandler
+    type: Class
+- uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses
+  name: DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQuery
+    name: GetAnalysisByMicroorganismQuery
+    type: Class
+  - uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithAnalyses.GetAnalysisByMicroorganismQueryHandler
+    name: GetAnalysisByMicroorganismQueryHandler
+    type: Class
+- uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  name: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery
+    name: GetInstitutionByMicroorganismQuery
+    type: Class
+- uid: DB.Application.Features.Analysis.Queries.ViewModels
+  name: DB.Application.Features.Analysis.Queries.ViewModels
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    name: AnalysisViewModel
+    type: Class
+- uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  name: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand
+    name: AddKeywordToEmployeCommand
+    type: Class
+  - uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler
+    name: AddKeywordToEmployeCommandHandler
+    type: Class
+- uid: DB.Application.Features.Employees.Commands.CreateEmployee
+  name: DB.Application.Features.Employees.Commands.CreateEmployee
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommand
+    name: CreateEmployeeCommand
+    type: Class
+  - uid: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandHandler
+    name: CreateEmployeeCommandHandler
+    type: Class
+  - uid: DB.Application.Features.Employees.Commands.CreateEmployee.CreateEmployeeCommandValidator
+    name: CreateEmployeeCommandValidator
+    type: Class
+- uid: DB.Application.Features.Employees.Commands.DeleteEmployee
+  name: DB.Application.Features.Employees.Commands.DeleteEmployee
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommand
+    name: DeleteEmployeeCommand
+    type: Class
+  - uid: DB.Application.Features.Employees.Commands.DeleteEmployee.DeleteEmployeeCommandHandler
+    name: DeleteEmployeeCommandHandler
+    type: Class
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees
+  name: DB.Application.Features.Employees.Queries.GetAllEmployees
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+    name: GetAllEmployeesQuery
+    type: Class
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler
+    name: GetAllEmployeesQueryHandler
+    type: Class
+- uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  name: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstituionByEmployeeQueryHandler
+    name: GetInstituionByEmployeeQueryHandler
+    type: Class
+  - uid: DB.Application.Features.Employees.Queries.GetEmployeeWithInstitution.GetInstitutionByEmployeeQuery
+    name: GetInstitutionByEmployeeQuery
+    type: Class
+- uid: DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords
+  name: DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQuery
+    name: GetKeywordsByEmployeeQuery
+    type: Class
+  - uid: DB.Application.Features.Employees.Queries.GetEmployeeWithKeywords.GetKeywordsByEmployeeQueryHandler
+    name: GetKeywordsByEmployeeQueryHandler
+    type: Class
+- uid: DB.Application.Features.Employees.Queries.GetListOfEmployees
+  name: DB.Application.Features.Employees.Queries.GetListOfEmployees
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQuery
+    name: GetListOfEmployeesQuery
+    type: Class
+  - uid: DB.Application.Features.Employees.Queries.GetListOfEmployees.GetListOfEmployeesQueryHandler
+    name: GetListOfEmployeesQueryHandler
+    type: Class
+- uid: DB.Application.Features.Employees.Queries.ViewModels
+  name: DB.Application.Features.Employees.Queries.ViewModels
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    name: EmployeeViewModel
+    type: Class
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  name: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+    name: AddAnalysisToInstitutionCommand
+    type: Class
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+    name: AddAnalysisToInstitutionCommandHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Commands.AddInstrument
+  name: DB.Application.Features.Institutions.Commands.AddInstrument
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommand
+    name: AddInstrumentToInstitutionCommand
+    type: Class
+  - uid: DB.Application.Features.Institutions.Commands.AddInstrument.AddInstrumentToInstitutionCommandHandler
+    name: AddInstrumentToInstitutionCommandHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  name: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand
+    name: AddKeywordToInstitutionCommand
+    type: Class
+  - uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler
+    name: AddKeywordToInstitutionCommandHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  name: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommand
+    name: AddMicroorganismToInstitutionCommand
+    type: Class
+  - uid: DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution.AddMicroorganismToInstitutionCommandHandler
+    name: AddMicroorganismToInstitutionCommandHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+  name: DB.Application.Features.Institutions.Commands.CreateInstitution
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+    name: CreateInstitutionCommand
+    type: Class
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler
+    name: CreateInstitutionCommandHandler
+    type: Class
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator
+    name: CreateInstitutionCommandValidator
+    type: Class
+- uid: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  name: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand
+    name: DeleteInstitutionCommand
+    type: Class
+  - uid: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler
+    name: DeleteInstitutionCommandHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetAllInstitutions
+  name: DB.Application.Features.Institutions.Queries.GetAllInstitutions
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQuery
+    name: GetAllInstitutionsQuery
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.GetAllInstitutions.GetAllInstitutionsQueryHandler
+    name: GetAllInstitutionsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery
+    name: GetAnalysesByInstitutionQuery
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler
+    name: GetAnalysesByInstitutionQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery
+    name: GetEmployeesByInstitutionQuery
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler
+    name: GetEmployeesByInstitutionQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery
+    name: GetInstrumentsByInstitutionQuery
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler
+    name: GetInstrumentsByInstitutionQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQuery
+    name: GetKeywordsByInstitutionQuery
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithKeywords.GetKeywordsByInstitutionQueryHandler
+    name: GetKeywordsByInstitutionQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQuery
+    name: GetMicroorganismsByInstitutionQuery
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithMicroorganisms.GetMicroorganismsByInstitutionQueryHandler
+    name: GetMicroorganismsByInstitutionQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetListOfInstitutions
+  name: DB.Application.Features.Institutions.Queries.GetListOfInstitutions
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQuery
+    name: GetListOfInstitutionsQuery
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.GetListOfInstitutions.GetListOfInstitutionsQueryHandler
+    name: GetListOfInstitutionsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  name: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler
+    name: GetInstitutionByMicroorganismQueryHandler
+    type: Class
+- uid: DB.Application.Features.Institutions.Queries.ViewModels
+  name: DB.Application.Features.Institutions.Queries.ViewModels
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionBasicViewModel
+    name: InstitutionBasicViewModel
+    type: Class
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    name: InstitutionViewModel
+    type: Class
+- uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+  name: DB.Application.Features.Instruments.Commands.CreateInstrument
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+    name: CreateInstrumentCommand
+    type: Class
+  - uid: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommandValidator
+    name: CreateInstrumentCommandValidator
+    type: Class
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  name: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+    name: DeleteInstrumentCommand
+    type: Class
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+    name: DeleteInstrumentCommandHandler
+    type: Class
+- uid: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  name: DB.Application.Features.Instruments.Queries.GetAllInstruments
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQuery
+    name: GetAllInstrumentsQuery
+    type: Class
+  - uid: DB.Application.Features.Instruments.Queries.GetAllInstruments.GetAllInstrumentsQueryHandler
+    name: GetAllInstrumentsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  name: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+    name: GetInstitutionsByInstrumentQuery
+    type: Class
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+    name: GetInstitutionsByInstrumentQueryHandler
+    type: Class
+- uid: DB.Application.Features.Instruments.Queries.GetListOfInstruments
+  name: DB.Application.Features.Instruments.Queries.GetListOfInstruments
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQuery
+    name: GetListOfInstrumentsQuery
+    type: Class
+  - uid: DB.Application.Features.Instruments.Queries.GetListOfInstruments.GetListOfInstrumentsQueryHandler
+    name: GetListOfInstrumentsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Instruments.Queries.ViewModels
+  name: DB.Application.Features.Instruments.Queries.ViewModels
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel
+    name: InstrumentBasicViewModel
+    type: Class
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+    name: InstrumentViewModel
+    type: Class
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+  name: DB.Application.Features.Keywords.Commands.CreateKeyword
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    name: CreateKeywordCommand
+    type: Class
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandHandler
+    name: CreateKeywordCommandHandler
+    type: Class
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommandValidator
+    name: CreateKeywordCommandValidator
+    type: Class
+- uid: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  name: DB.Application.Features.Keywords.Commands.DeleteKeyword
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommand
+    name: DeleteKeywordCommand
+    type: Class
+  - uid: DB.Application.Features.Keywords.Commands.DeleteKeyword.DeleteKeywordCommandHandler
+    name: DeleteKeywordCommandHandler
+    type: Class
+- uid: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  name: DB.Application.Features.Keywords.Queries.GetAllKeywords
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQuery
+    name: GetAllKeywordsQuery
+    type: Class
+  - uid: DB.Application.Features.Keywords.Queries.GetAllKeywords.GetAllKeywordsQueryHandler
+    name: GetAllKeywordsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  name: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery
+    name: GetEmployeesByKeywordQuery
+    type: Class
+  - uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler
+    name: GetEmployeesByKeywordQueryHandler
+    type: Class
+- uid: DB.Application.Features.Keywords.Queries.GetListOfKeywords
+  name: DB.Application.Features.Keywords.Queries.GetListOfKeywords
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQuery
+    name: GetListOfKeywordsQuery
+    type: Class
+  - uid: DB.Application.Features.Keywords.Queries.GetListOfKeywords.GetListOfKeywordsQueryHandler
+    name: GetListOfKeywordsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Keywords.Queries.ViewModels
+  name: DB.Application.Features.Keywords.Queries.ViewModels
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+    name: KeywordViewModel
+    type: Class
+- uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  name: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+    name: CreateMicroorganismCommand
+    type: Class
+  - uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator
+    name: CreateMicroorganismCommandValidator
+    type: Class
+- uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  name: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand
+    name: DeleteMicroorganismCommand
+    type: Class
+  - uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler
+    name: DeleteMicroorganismCommandHandler
+    type: Class
+- uid: DB.Application.Features.Microorganisms.Queries
+  name: DB.Application.Features.Microorganisms.Queries
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganismsQuery
+    name: GetListOfMicroorganismsQuery
+    type: Class
+- uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  name: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery
+    name: GetAllMicroorganismsQuery
+    type: Class
+  - uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler
+    name: GetListOfMicroorganismsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  name: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Microorganisms.Queries.GetListOfMicroorganisms.GetListOfMicroorganismsQueryHandler
+    name: GetListOfMicroorganismsQueryHandler
+    type: Class
+- uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+  name: DB.Application.Features.Microorganisms.Queries.ViewModels
+  type: Namespace
+  items:
+  - uid: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+    name: MicroorganismViewModel
+    type: Class
+- uid: DB.Domain.Common
+  name: DB.Domain.Common
+  type: Namespace
+  items:
+  - uid: DB.Domain.Common.AggregateRoot
+    name: AggregateRoot
+    type: Class
+  - uid: DB.Domain.Common.EntityBase
+    name: EntityBase
+    type: Class
+  - uid: DB.Domain.Common.ValueObject
+    name: ValueObject
+    type: Class
+- uid: DB.Domain.Entities
+  name: DB.Domain.Entities
+  type: Namespace
+  items:
+  - uid: DB.Domain.Entities.Analysis
+    name: Analysis
+    type: Class
+  - uid: DB.Domain.Entities.Employee
+    name: Employee
+    type: Class
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+    type: Class
+  - uid: DB.Domain.Entities.Instrument
+    name: Instrument
+    type: Class
+  - uid: DB.Domain.Entities.Keyword
+    name: Keyword
+    type: Class
+  - uid: DB.Domain.Entities.Microorganism
+    name: Microorganism
+    type: Class
+- uid: DB.Infrastructure
+  name: DB.Infrastructure
+  type: Namespace
+  items:
+  - uid: DB.Infrastructure.InfrastructureServiceRegistration
+    name: InfrastructureServiceRegistration
+    type: Class
+- uid: DB.Infrastructure.Factories
+  name: DB.Infrastructure.Factories
+  type: Namespace
+  items:
+  - uid: DB.Infrastructure.Factories.AnalysisFactory
+    name: AnalysisFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.AnalysisViewModelFactory
+    name: AnalysisViewModelFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.EmployeeFactory
+    name: EmployeeFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.EmployeeViewModelFactory
+    name: EmployeeViewModelFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.InstitutionFactory
+    name: InstitutionFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.InstitutionViewModelFactory
+    name: InstitutionViewModelFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.InstrumentFactory
+    name: InstrumentFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.InstrumentViewModelFactory
+    name: InstrumentViewModelFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.KeywordFactory
+    name: KeywordFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.KeywordViewModelFactory
+    name: KeywordViewModelFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.MicroorganismFactory
+    name: MicroorganismFactory
+    type: Class
+  - uid: DB.Infrastructure.Factories.MicroorganismViewModelFactory
+    name: MicroorganismViewModelFactory
+    type: Class
+- uid: DB.Infrastructure.Migrations
+  name: DB.Infrastructure.Migrations
+  type: Namespace
+  items:
+  - uid: DB.Infrastructure.Migrations.InitialMigration
+    name: InitialMigration
+    type: Class
+- uid: DB.Infrastructure.Persistance
+  name: DB.Infrastructure.Persistance
+  type: Namespace
+  items:
+  - uid: DB.Infrastructure.Persistance.SqlServerContext
+    name: SqlServerContext
+    type: Class
+  - uid: DB.Infrastructure.Persistance.SqlServerContextSeed
+    name: SqlServerContextSeed
+    type: Class
+- uid: DB.Infrastructure.Persistance.EntityConfigurations
+  name: DB.Infrastructure.Persistance.EntityConfigurations
+  type: Namespace
+  items:
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration
+    name: AnalysisEntityTypeConfiguration
+    type: Class
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+    name: DesignTimeInstitutionContextFactory
+    type: Class
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration
+    name: EmployeeEntityTypeConfiguration
+    type: Class
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration
+    name: InstitutionEntityTypeConfiguration
+    type: Class
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration
+    name: InstrumentEntityTypeConfiguration
+    type: Class
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration
+    name: KeywordEntityTypeConfiguration
+    type: Class
+  - uid: DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration
+    name: MicroorganismEntityTypeConfiguration
+    type: Class
+- uid: DB.Infrastructure.Repositories
+  name: DB.Infrastructure.Repositories
+  type: Namespace
+  items:
+  - uid: DB.Infrastructure.Repositories.AnalysisRepository
+    name: AnalysisRepository
+    type: Class
+  - uid: DB.Infrastructure.Repositories.EmployeeRepository
+    name: EmployeeRepository
+    type: Class
+  - uid: DB.Infrastructure.Repositories.InstitutionRepository
+    name: InstitutionRepository
+    type: Class
+  - uid: DB.Infrastructure.Repositories.InstrumentRepository
+    name: InstrumentRepository
+    type: Class
+  - uid: DB.Infrastructure.Repositories.KeywordRepository
+    name: KeywordRepository
+    type: Class
+  - uid: DB.Infrastructure.Repositories.MicroorganismRepository
+    name: MicroorganismRepository
+    type: Class
+  - uid: DB.Infrastructure.Repositories.RepositoryBase`1
+    name: RepositoryBase<T>
+    type: Class
+- uid: EventBus.Messages.Entities
+  name: EventBus.Messages.Entities
+  type: Namespace
+  items:
+  - uid: EventBus.Messages.Entities.EmployeeCreatedEvent
+    name: EmployeeCreatedEvent
+    type: Class
+  - uid: EventBus.Messages.Entities.InstitutionCreatedEvent
+    name: InstitutionCreatedEvent
+    type: Class
+  - uid: EventBus.Messages.Entities.SimpleEntityCreatedEvent
+    name: SimpleEntityCreatedEvent
+    type: Class
+- uid: EventBus.Messages.Events
+  name: EventBus.Messages.Events
+  type: Namespace
+  items:
+  - uid: EventBus.Messages.Events.AutocompleteEntityChanged
+    name: AutocompleteEntityChanged
+    type: Class
+  - uid: EventBus.Messages.Events.ChangeKind
+    name: ChangeKind
+    type: Enum
+  - uid: EventBus.Messages.Events.EntityType
+    name: EntityType
+    type: Enum
+  - uid: EventBus.Messages.Events.IntegrationEvent
+    name: IntegrationEvent
+    type: Class
+memberLayout: SamePage

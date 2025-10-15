@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  id: IEmployeeViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel(DB.Domain.Entities.Employee)
+  langs:
+  - csharp
+  - vb
+  name: IEmployeeViewModelFactory
+  nameWithType: IEmployeeViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IEmployeeViewModelFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeViewModelFactory.cs
+    startLine: 6
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IEmployeeViewModelFactory
+    content.vb: Public Interface IEmployeeViewModelFactory
+- uid: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel(DB.Domain.Entities.Employee)
+  commentId: M:DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel(DB.Domain.Entities.Employee)
+  id: CreateViewModel(DB.Domain.Entities.Employee)
+  parent: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateViewModel(Employee)
+  nameWithType: IEmployeeViewModelFactory.CreateViewModel(Employee)
+  fullName: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel(DB.Domain.Entities.Employee)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateViewModel
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IEmployeeViewModelFactory.cs
+    startLine: 8
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: EmployeeViewModel CreateViewModel(Employee employee)
+    parameters:
+    - id: employee
+      type: DB.Domain.Entities.Employee
+    return:
+      type: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    content.vb: Function CreateViewModel(employee As Employee) As EmployeeViewModel
+  overload: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel*
+  commentId: Overload:DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel
+  href: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.html#DB_Application_Contracts_Factories_IEmployeeViewModelFactory_CreateViewModel_DB_Domain_Entities_Employee_
+  name: CreateViewModel
+  nameWithType: IEmployeeViewModelFactory.CreateViewModel
+  fullName: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.CreateViewModel
+- uid: DB.Domain.Entities.Employee
+  commentId: T:DB.Domain.Entities.Employee
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Employee.html
+  name: Employee
+  nameWithType: Employee
+  fullName: DB.Domain.Entities.Employee
+- uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+  commentId: T:DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+  parent: DB.Application.Features.Employees.Queries.ViewModels
+  href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  name: EmployeeViewModel
+  nameWithType: EmployeeViewModel
+  fullName: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+- uid: DB.Application.Features.Employees.Queries.ViewModels
+  commentId: N:DB.Application.Features.Employees.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Employees.Queries.ViewModels
+  nameWithType: DB.Application.Features.Employees.Queries.ViewModels
+  fullName: DB.Application.Features.Employees.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Employees.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Employees.Queries.ViewModels.html

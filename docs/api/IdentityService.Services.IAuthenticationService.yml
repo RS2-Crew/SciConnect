@@ -1,0 +1,385 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Services.IAuthenticationService
+  commentId: T:IdentityService.Services.IAuthenticationService
+  id: IAuthenticationService
+  parent: IdentityService.Services
+  children:
+  - IdentityService.Services.IAuthenticationService.CreateAuthenticationModel(IdentityServer.Entities.User)
+  - IdentityService.Services.IAuthenticationService.RemoveRefreshToken(IdentityServer.Entities.User,System.String)
+  - IdentityService.Services.IAuthenticationService.ValidateUser(IdentityService.DTOs.UserCredentialsDTO)
+  langs:
+  - csharp
+  - vb
+  name: IAuthenticationService
+  nameWithType: IAuthenticationService
+  fullName: IdentityService.Services.IAuthenticationService
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IAuthenticationService
+    path: ../SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+    startLine: 5
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Services
+  syntax:
+    content: public interface IAuthenticationService
+    content.vb: Public Interface IAuthenticationService
+- uid: IdentityService.Services.IAuthenticationService.ValidateUser(IdentityService.DTOs.UserCredentialsDTO)
+  commentId: M:IdentityService.Services.IAuthenticationService.ValidateUser(IdentityService.DTOs.UserCredentialsDTO)
+  id: ValidateUser(IdentityService.DTOs.UserCredentialsDTO)
+  parent: IdentityService.Services.IAuthenticationService
+  langs:
+  - csharp
+  - vb
+  name: ValidateUser(UserCredentialsDTO)
+  nameWithType: IAuthenticationService.ValidateUser(UserCredentialsDTO)
+  fullName: IdentityService.Services.IAuthenticationService.ValidateUser(IdentityService.DTOs.UserCredentialsDTO)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: ValidateUser
+    path: ../SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+    startLine: 7
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Services
+  syntax:
+    content: Task<User?> ValidateUser(UserCredentialsDTO userCredentials)
+    parameters:
+    - id: userCredentials
+      type: IdentityService.DTOs.UserCredentialsDTO
+    return:
+      type: System.Threading.Tasks.Task{IdentityServer.Entities.User}
+    content.vb: Function ValidateUser(userCredentials As UserCredentialsDTO) As Task(Of User)
+  overload: IdentityService.Services.IAuthenticationService.ValidateUser*
+- uid: IdentityService.Services.IAuthenticationService.CreateAuthenticationModel(IdentityServer.Entities.User)
+  commentId: M:IdentityService.Services.IAuthenticationService.CreateAuthenticationModel(IdentityServer.Entities.User)
+  id: CreateAuthenticationModel(IdentityServer.Entities.User)
+  parent: IdentityService.Services.IAuthenticationService
+  langs:
+  - csharp
+  - vb
+  name: CreateAuthenticationModel(User)
+  nameWithType: IAuthenticationService.CreateAuthenticationModel(User)
+  fullName: IdentityService.Services.IAuthenticationService.CreateAuthenticationModel(IdentityServer.Entities.User)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateAuthenticationModel
+    path: ../SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+    startLine: 8
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Services
+  syntax:
+    content: Task<AuthenticationModel> CreateAuthenticationModel(User user)
+    parameters:
+    - id: user
+      type: IdentityServer.Entities.User
+    return:
+      type: System.Threading.Tasks.Task{IdentityService.DTOs.AuthenticationModel}
+    content.vb: Function CreateAuthenticationModel(user As User) As Task(Of AuthenticationModel)
+  overload: IdentityService.Services.IAuthenticationService.CreateAuthenticationModel*
+- uid: IdentityService.Services.IAuthenticationService.RemoveRefreshToken(IdentityServer.Entities.User,System.String)
+  commentId: M:IdentityService.Services.IAuthenticationService.RemoveRefreshToken(IdentityServer.Entities.User,System.String)
+  id: RemoveRefreshToken(IdentityServer.Entities.User,System.String)
+  parent: IdentityService.Services.IAuthenticationService
+  langs:
+  - csharp
+  - vb
+  name: RemoveRefreshToken(User, string)
+  nameWithType: IAuthenticationService.RemoveRefreshToken(User, string)
+  fullName: IdentityService.Services.IAuthenticationService.RemoveRefreshToken(IdentityServer.Entities.User, string)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: RemoveRefreshToken
+    path: ../SciConnect/IdentityServer/IdentityService/Services/IAuthenticationService.cs
+    startLine: 10
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Services
+  syntax:
+    content: Task RemoveRefreshToken(User user, string refreshToken)
+    parameters:
+    - id: user
+      type: IdentityServer.Entities.User
+    - id: refreshToken
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function RemoveRefreshToken(user As User, refreshToken As String) As Task
+  overload: IdentityService.Services.IAuthenticationService.RemoveRefreshToken*
+  nameWithType.vb: IAuthenticationService.RemoveRefreshToken(User, String)
+  fullName.vb: IdentityService.Services.IAuthenticationService.RemoveRefreshToken(IdentityServer.Entities.User, String)
+  name.vb: RemoveRefreshToken(User, String)
+references:
+- uid: IdentityService.Services
+  commentId: N:IdentityService.Services
+  href: IdentityService.html
+  name: IdentityService.Services
+  nameWithType: IdentityService.Services
+  fullName: IdentityService.Services
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html
+- uid: IdentityService.Services.IAuthenticationService.ValidateUser*
+  commentId: Overload:IdentityService.Services.IAuthenticationService.ValidateUser
+  href: IdentityService.Services.IAuthenticationService.html#IdentityService_Services_IAuthenticationService_ValidateUser_IdentityService_DTOs_UserCredentialsDTO_
+  name: ValidateUser
+  nameWithType: IAuthenticationService.ValidateUser
+  fullName: IdentityService.Services.IAuthenticationService.ValidateUser
+- uid: IdentityService.DTOs.UserCredentialsDTO
+  commentId: T:IdentityService.DTOs.UserCredentialsDTO
+  parent: IdentityService.DTOs
+  href: IdentityService.DTOs.UserCredentialsDTO.html
+  name: UserCredentialsDTO
+  nameWithType: UserCredentialsDTO
+  fullName: IdentityService.DTOs.UserCredentialsDTO
+- uid: System.Threading.Tasks.Task{IdentityServer.Entities.User}
+  commentId: T:System.Threading.Tasks.Task{IdentityServer.Entities.User}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<User>
+  nameWithType: Task<User>
+  fullName: System.Threading.Tasks.Task<IdentityServer.Entities.User>
+  nameWithType.vb: Task(Of User)
+  fullName.vb: System.Threading.Tasks.Task(Of IdentityServer.Entities.User)
+  name.vb: Task(Of User)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: IdentityServer.Entities.User
+    name: User
+    href: IdentityServer.Entities.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: IdentityServer.Entities.User
+    name: User
+    href: IdentityServer.Entities.User.html
+  - name: )
+- uid: IdentityService.DTOs
+  commentId: N:IdentityService.DTOs
+  href: IdentityService.html
+  name: IdentityService.DTOs
+  nameWithType: IdentityService.DTOs
+  fullName: IdentityService.DTOs
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.DTOs
+    name: DTOs
+    href: IdentityService.DTOs.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.DTOs
+    name: DTOs
+    href: IdentityService.DTOs.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: IdentityService.Services.IAuthenticationService.CreateAuthenticationModel*
+  commentId: Overload:IdentityService.Services.IAuthenticationService.CreateAuthenticationModel
+  href: IdentityService.Services.IAuthenticationService.html#IdentityService_Services_IAuthenticationService_CreateAuthenticationModel_IdentityServer_Entities_User_
+  name: CreateAuthenticationModel
+  nameWithType: IAuthenticationService.CreateAuthenticationModel
+  fullName: IdentityService.Services.IAuthenticationService.CreateAuthenticationModel
+- uid: IdentityServer.Entities.User
+  commentId: T:IdentityServer.Entities.User
+  parent: IdentityServer.Entities
+  href: IdentityServer.Entities.User.html
+  name: User
+  nameWithType: User
+  fullName: IdentityServer.Entities.User
+- uid: System.Threading.Tasks.Task{IdentityService.DTOs.AuthenticationModel}
+  commentId: T:System.Threading.Tasks.Task{IdentityService.DTOs.AuthenticationModel}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<AuthenticationModel>
+  nameWithType: Task<AuthenticationModel>
+  fullName: System.Threading.Tasks.Task<IdentityService.DTOs.AuthenticationModel>
+  nameWithType.vb: Task(Of AuthenticationModel)
+  fullName.vb: System.Threading.Tasks.Task(Of IdentityService.DTOs.AuthenticationModel)
+  name.vb: Task(Of AuthenticationModel)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: IdentityService.DTOs.AuthenticationModel
+    name: AuthenticationModel
+    href: IdentityService.DTOs.AuthenticationModel.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: IdentityService.DTOs.AuthenticationModel
+    name: AuthenticationModel
+    href: IdentityService.DTOs.AuthenticationModel.html
+  - name: )
+- uid: IdentityServer.Entities
+  commentId: N:IdentityServer.Entities
+  href: IdentityServer.html
+  name: IdentityServer.Entities
+  nameWithType: IdentityServer.Entities
+  fullName: IdentityServer.Entities
+  spec.csharp:
+  - uid: IdentityServer
+    name: IdentityServer
+    href: IdentityServer.html
+  - name: .
+  - uid: IdentityServer.Entities
+    name: Entities
+    href: IdentityServer.Entities.html
+  spec.vb:
+  - uid: IdentityServer
+    name: IdentityServer
+    href: IdentityServer.html
+  - name: .
+  - uid: IdentityServer.Entities
+    name: Entities
+    href: IdentityServer.Entities.html
+- uid: IdentityService.Services.IAuthenticationService.RemoveRefreshToken*
+  commentId: Overload:IdentityService.Services.IAuthenticationService.RemoveRefreshToken
+  href: IdentityService.Services.IAuthenticationService.html#IdentityService_Services_IAuthenticationService_RemoveRefreshToken_IdentityServer_Entities_User_System_String_
+  name: RemoveRefreshToken
+  nameWithType: IAuthenticationService.RemoveRefreshToken
+  fullName: IdentityService.Services.IAuthenticationService.RemoveRefreshToken
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  id: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  children:
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery
+  parent: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery.html
+  name: GetEmployeesByInstitutionQuery
+  nameWithType: GetEmployeesByInstitutionQuery
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQuery
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler.html
+  name: GetEmployeesByInstitutionQueryHandler
+  nameWithType: GetEmployeesByInstitutionQueryHandler
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.GetEmployeesByInstitutionQueryHandler
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+    name: GetInstitutionWithEmployees
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees
+    name: GetInstitutionWithEmployees
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithEmployees.html

@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Controllers.Base
+  commentId: N:IdentityService.Controllers.Base
+  id: IdentityService.Controllers.Base
+  children:
+  - IdentityService.Controllers.Base.RegistrationController
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Controllers.Base
+  nameWithType: IdentityService.Controllers.Base
+  fullName: IdentityService.Controllers.Base
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Controllers.Base.RegistrationController
+  commentId: T:IdentityService.Controllers.Base.RegistrationController
+  parent: IdentityService.Controllers.Base
+  href: IdentityService.Controllers.Base.RegistrationController.html
+  name: RegistrationController
+  nameWithType: RegistrationController
+  fullName: IdentityService.Controllers.Base.RegistrationController
+- uid: IdentityService.Controllers.Base
+  commentId: N:IdentityService.Controllers.Base
+  href: IdentityService.html
+  name: IdentityService.Controllers.Base
+  nameWithType: IdentityService.Controllers.Base
+  fullName: IdentityService.Controllers.Base
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Controllers
+    name: Controllers
+    href: IdentityService.Controllers.html
+  - name: .
+  - uid: IdentityService.Controllers.Base
+    name: Base
+    href: IdentityService.Controllers.Base.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Controllers
+    name: Controllers
+    href: IdentityService.Controllers.html
+  - name: .
+  - uid: IdentityService.Controllers.Base
+    name: Base
+    href: IdentityService.Controllers.Base.html

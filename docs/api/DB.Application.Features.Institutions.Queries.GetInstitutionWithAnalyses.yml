@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  id: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  children:
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery
+  parent: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery.html
+  name: GetAnalysesByInstitutionQuery
+  nameWithType: GetAnalysesByInstitutionQuery
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQuery
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler.html
+  name: GetAnalysesByInstitutionQueryHandler
+  nameWithType: GetAnalysesByInstitutionQueryHandler
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.GetAnalysesByInstitutionQueryHandler
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+    name: GetInstitutionWithAnalyses
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses
+    name: GetInstitutionWithAnalyses
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithAnalyses.html

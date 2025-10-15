@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Infrastructure.Persistance
+  commentId: N:DB.Infrastructure.Persistance
+  id: DB.Infrastructure.Persistance
+  children:
+  - DB.Infrastructure.Persistance.SqlServerContext
+  - DB.Infrastructure.Persistance.SqlServerContextSeed
+  langs:
+  - csharp
+  - vb
+  name: DB.Infrastructure.Persistance
+  nameWithType: DB.Infrastructure.Persistance
+  fullName: DB.Infrastructure.Persistance
+  type: Namespace
+  assemblies:
+  - DB.Infrastructure
+references:
+- uid: DB.Infrastructure.Persistance.SqlServerContext
+  commentId: T:DB.Infrastructure.Persistance.SqlServerContext
+  parent: DB.Infrastructure.Persistance
+  href: DB.Infrastructure.Persistance.SqlServerContext.html
+  name: SqlServerContext
+  nameWithType: SqlServerContext
+  fullName: DB.Infrastructure.Persistance.SqlServerContext
+- uid: DB.Infrastructure.Persistance.SqlServerContextSeed
+  commentId: T:DB.Infrastructure.Persistance.SqlServerContextSeed
+  href: DB.Infrastructure.Persistance.SqlServerContextSeed.html
+  name: SqlServerContextSeed
+  nameWithType: SqlServerContextSeed
+  fullName: DB.Infrastructure.Persistance.SqlServerContextSeed
+- uid: DB.Infrastructure.Persistance
+  commentId: N:DB.Infrastructure.Persistance
+  href: DB.html
+  name: DB.Infrastructure.Persistance
+  nameWithType: DB.Infrastructure.Persistance
+  fullName: DB.Infrastructure.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance
+    name: Persistance
+    href: DB.Infrastructure.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Persistance
+    name: Persistance
+    href: DB.Infrastructure.Persistance.html

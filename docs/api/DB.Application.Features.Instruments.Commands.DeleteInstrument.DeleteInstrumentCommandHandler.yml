@@ -1,0 +1,874 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  commentId: T:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  id: DeleteInstrumentCommandHandler
+  parent: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  children:
+  - DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler},MassTransit.IPublishEndpoint)
+  - DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: DeleteInstrumentCommandHandler
+  nameWithType: DeleteInstrumentCommandHandler
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Instruments/Commands/DeleteInstrument/DeleteInstrumentCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: DeleteInstrumentCommandHandler
+    path: ../SciConnect/Services/DB/DB.Application/Features/Instruments/Commands/DeleteInstrument/DeleteInstrumentCommandHandler.cs
+    startLine: 11
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  syntax:
+    content: 'public class DeleteInstrumentCommandHandler : IRequestHandler<DeleteInstrumentCommand, Unit>'
+    content.vb: Public Class DeleteInstrumentCommandHandler Implements IRequestHandler(Of DeleteInstrumentCommand, Unit)
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler},MassTransit.IPublishEndpoint)
+  commentId: M:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler},MassTransit.IPublishEndpoint)
+  id: '#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler},MassTransit.IPublishEndpoint)'
+  parent: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DeleteInstrumentCommandHandler(IInstrumentRepository, ILogger<DeleteInstrumentCommandHandler>, IPublishEndpoint)
+  nameWithType: DeleteInstrumentCommandHandler.DeleteInstrumentCommandHandler(IInstrumentRepository, ILogger<DeleteInstrumentCommandHandler>, IPublishEndpoint)
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.DeleteInstrumentCommandHandler(DB.Application.Contracts.Persistance.IInstrumentRepository, Microsoft.Extensions.Logging.ILogger<DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler>, MassTransit.IPublishEndpoint)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Instruments/Commands/DeleteInstrument/DeleteInstrumentCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Instruments/Commands/DeleteInstrument/DeleteInstrumentCommandHandler.cs
+    startLine: 17
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  syntax:
+    content: public DeleteInstrumentCommandHandler(IInstrumentRepository repository, ILogger<DeleteInstrumentCommandHandler> logger, IPublishEndpoint publishEndpoint)
+    parameters:
+    - id: repository
+      type: DB.Application.Contracts.Persistance.IInstrumentRepository
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler}
+    - id: publishEndpoint
+      type: MassTransit.IPublishEndpoint
+    content.vb: Public Sub New(repository As IInstrumentRepository, logger As ILogger(Of DeleteInstrumentCommandHandler), publishEndpoint As IPublishEndpoint)
+  overload: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.#ctor*
+  nameWithType.vb: DeleteInstrumentCommandHandler.New(IInstrumentRepository, ILogger(Of DeleteInstrumentCommandHandler), IPublishEndpoint)
+  fullName.vb: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.New(DB.Application.Contracts.Persistance.IInstrumentRepository, Microsoft.Extensions.Logging.ILogger(Of DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler), MassTransit.IPublishEndpoint)
+  name.vb: New(IInstrumentRepository, ILogger(Of DeleteInstrumentCommandHandler), IPublishEndpoint)
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+  commentId: M:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+  id: Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+  parent: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(DeleteInstrumentCommand, CancellationToken)
+  nameWithType: DeleteInstrumentCommandHandler.Handle(DeleteInstrumentCommand, CancellationToken)
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Instruments/Commands/DeleteInstrument/DeleteInstrumentCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Handle
+    path: ../SciConnect/Services/DB/DB.Application/Features/Instruments/Commands/DeleteInstrument/DeleteInstrumentCommandHandler.cs
+    startLine: 24
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  summary: Handles a request
+  example: []
+  syntax:
+    content: public Task<Unit> Handle(DeleteInstrumentCommand request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+      description: The request
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{MediatR.Unit}
+      description: Response from the request
+    content.vb: Public Function Handle(request As DeleteInstrumentCommand, cancellationToken As CancellationToken) As Task(Of Unit)
+  overload: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle*
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+references:
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  commentId: N:DB.Application.Features.Instruments.Commands.DeleteInstrument
+  href: DB.html
+  name: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  nameWithType: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+    name: DeleteInstrument
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument
+    name: DeleteInstrument
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}
+  commentId: T:MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}
+  parent: MediatR
+  definition: MediatR.IRequestHandler`2
+  href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  name: IRequestHandler<DeleteInstrumentCommand, Unit>
+  nameWithType: IRequestHandler<DeleteInstrumentCommand, Unit>
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand, MediatR.Unit>
+  nameWithType.vb: IRequestHandler(Of DeleteInstrumentCommand, Unit)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand, MediatR.Unit)
+  name.vb: IRequestHandler(Of DeleteInstrumentCommand, Unit)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+    name: DeleteInstrumentCommand
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  - name: ','
+  - name: " "
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+    name: DeleteInstrumentCommand
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  - name: ','
+  - name: " "
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequestHandler`2
+  commentId: T:MediatR.IRequestHandler`2
+  isExternal: true
+  name: IRequestHandler<TRequest, TResponse>
+  nameWithType: IRequestHandler<TRequest, TResponse>
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse)
+  name.vb: IRequestHandler(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.#ctor*
+  commentId: Overload:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.#ctor
+  href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.html#DB_Application_Features_Instruments_Commands_DeleteInstrument_DeleteInstrumentCommandHandler__ctor_DB_Application_Contracts_Persistance_IInstrumentRepository_Microsoft_Extensions_Logging_ILogger_DB_Application_Features_Instruments_Commands_DeleteInstrument_DeleteInstrumentCommandHandler__MassTransit_IPublishEndpoint_
+  name: DeleteInstrumentCommandHandler
+  nameWithType: DeleteInstrumentCommandHandler.DeleteInstrumentCommandHandler
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.DeleteInstrumentCommandHandler
+  nameWithType.vb: DeleteInstrumentCommandHandler.New
+  fullName.vb: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.New
+  name.vb: New
+- uid: DB.Application.Contracts.Persistance.IInstrumentRepository
+  commentId: T:DB.Application.Contracts.Persistance.IInstrumentRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IInstrumentRepository.html
+  name: IInstrumentRepository
+  nameWithType: IInstrumentRepository
+  fullName: DB.Application.Contracts.Persistance.IInstrumentRepository
+- uid: Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<DeleteInstrumentCommandHandler>
+  nameWithType: ILogger<DeleteInstrumentCommandHandler>
+  fullName: Microsoft.Extensions.Logging.ILogger<DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler>
+  nameWithType.vb: ILogger(Of DeleteInstrumentCommandHandler)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler)
+  name.vb: ILogger(Of DeleteInstrumentCommandHandler)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+    name: DeleteInstrumentCommandHandler
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler
+    name: DeleteInstrumentCommandHandler
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.html
+  - name: )
+- uid: MassTransit.IPublishEndpoint
+  commentId: T:MassTransit.IPublishEndpoint
+  parent: MassTransit
+  isExternal: true
+  name: IPublishEndpoint
+  nameWithType: IPublishEndpoint
+  fullName: MassTransit.IPublishEndpoint
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: MassTransit
+  commentId: N:MassTransit
+  isExternal: true
+  name: MassTransit
+  nameWithType: MassTransit
+  fullName: MassTransit
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle*
+  commentId: Overload:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle
+  href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.html#DB_Application_Features_Instruments_Commands_DeleteInstrument_DeleteInstrumentCommandHandler_Handle_DB_Application_Features_Instruments_Commands_DeleteInstrument_DeleteInstrumentCommand_System_Threading_CancellationToken_
+  name: Handle
+  nameWithType: DeleteInstrumentCommandHandler.Handle
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommandHandler.Handle
+- uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+  parent: MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}
+  definition: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  name: Handle(DeleteInstrumentCommand, CancellationToken)
+  nameWithType: IRequestHandler<DeleteInstrumentCommand, Unit>.Handle(DeleteInstrumentCommand, CancellationToken)
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand, MediatR.Unit>.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of DeleteInstrumentCommand, Unit).Handle(DeleteInstrumentCommand, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand, MediatR.Unit).Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+    name: DeleteInstrumentCommand
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,MediatR.Unit}.Handle(DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+    name: DeleteInstrumentCommand
+    href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+  commentId: T:DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+  parent: DB.Application.Features.Instruments.Commands.DeleteInstrument
+  href: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand.html
+  name: DeleteInstrumentCommand
+  nameWithType: DeleteInstrumentCommand
+  fullName: DB.Application.Features.Instruments.Commands.DeleteInstrument.DeleteInstrumentCommand
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{MediatR.Unit}
+  commentId: T:System.Threading.Tasks.Task{MediatR.Unit}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Unit>
+  nameWithType: Task<Unit>
+  fullName: System.Threading.Tasks.Task<MediatR.Unit>
+  nameWithType.vb: Task(Of Unit)
+  fullName.vb: System.Threading.Tasks.Task(Of MediatR.Unit)
+  name.vb: Task(Of Unit)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: )
+- uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: Handle(TRequest, CancellationToken)
+  nameWithType: IRequestHandler<TRequest, TResponse>.Handle(TRequest, CancellationToken)
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>.Handle(TRequest, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse).Handle(TRequest, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse).Handle(TRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

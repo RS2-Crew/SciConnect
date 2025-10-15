@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.DTOs
+  commentId: N:IdentityService.DTOs
+  id: IdentityService.DTOs
+  children:
+  - IdentityService.DTOs.AuthenticationModel
+  - IdentityService.DTOs.EmailMessage
+  - IdentityService.DTOs.NewUserDTO
+  - IdentityService.DTOs.RefreshTokenModel
+  - IdentityService.DTOs.UserCredentialsDTO
+  - IdentityService.DTOs.UserDetails
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.DTOs
+  nameWithType: IdentityService.DTOs
+  fullName: IdentityService.DTOs
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.DTOs.AuthenticationModel
+  commentId: T:IdentityService.DTOs.AuthenticationModel
+  parent: IdentityService.DTOs
+  href: IdentityService.DTOs.AuthenticationModel.html
+  name: AuthenticationModel
+  nameWithType: AuthenticationModel
+  fullName: IdentityService.DTOs.AuthenticationModel
+- uid: IdentityService.DTOs.EmailMessage
+  commentId: T:IdentityService.DTOs.EmailMessage
+  href: IdentityService.DTOs.EmailMessage.html
+  name: EmailMessage
+  nameWithType: EmailMessage
+  fullName: IdentityService.DTOs.EmailMessage
+- uid: IdentityService.DTOs.NewUserDTO
+  commentId: T:IdentityService.DTOs.NewUserDTO
+  parent: IdentityService.DTOs
+  href: IdentityService.DTOs.NewUserDTO.html
+  name: NewUserDTO
+  nameWithType: NewUserDTO
+  fullName: IdentityService.DTOs.NewUserDTO
+- uid: IdentityService.DTOs.RefreshTokenModel
+  commentId: T:IdentityService.DTOs.RefreshTokenModel
+  parent: IdentityService.DTOs
+  href: IdentityService.DTOs.RefreshTokenModel.html
+  name: RefreshTokenModel
+  nameWithType: RefreshTokenModel
+  fullName: IdentityService.DTOs.RefreshTokenModel
+- uid: IdentityService.DTOs.UserCredentialsDTO
+  commentId: T:IdentityService.DTOs.UserCredentialsDTO
+  parent: IdentityService.DTOs
+  href: IdentityService.DTOs.UserCredentialsDTO.html
+  name: UserCredentialsDTO
+  nameWithType: UserCredentialsDTO
+  fullName: IdentityService.DTOs.UserCredentialsDTO
+- uid: IdentityService.DTOs.UserDetails
+  commentId: T:IdentityService.DTOs.UserDetails
+  parent: IdentityService.DTOs
+  href: IdentityService.DTOs.UserDetails.html
+  name: UserDetails
+  nameWithType: UserDetails
+  fullName: IdentityService.DTOs.UserDetails
+- uid: IdentityService.DTOs
+  commentId: N:IdentityService.DTOs
+  href: IdentityService.html
+  name: IdentityService.DTOs
+  nameWithType: IdentityService.DTOs
+  fullName: IdentityService.DTOs
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.DTOs
+    name: DTOs
+    href: IdentityService.DTOs.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.DTOs
+    name: DTOs
+    href: IdentityService.DTOs.html

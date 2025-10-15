@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityServer.Entities
+  commentId: N:IdentityServer.Entities
+  id: IdentityServer.Entities
+  children:
+  - IdentityServer.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: IdentityServer.Entities
+  nameWithType: IdentityServer.Entities
+  fullName: IdentityServer.Entities
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityServer.Entities.User
+  commentId: T:IdentityServer.Entities.User
+  parent: IdentityServer.Entities
+  href: IdentityServer.Entities.User.html
+  name: User
+  nameWithType: User
+  fullName: IdentityServer.Entities.User
+- uid: IdentityServer.Entities
+  commentId: N:IdentityServer.Entities
+  href: IdentityServer.html
+  name: IdentityServer.Entities
+  nameWithType: IdentityServer.Entities
+  fullName: IdentityServer.Entities
+  spec.csharp:
+  - uid: IdentityServer
+    name: IdentityServer
+    href: IdentityServer.html
+  - name: .
+  - uid: IdentityServer.Entities
+    name: Entities
+    href: IdentityServer.Entities.html
+  spec.vb:
+  - uid: IdentityServer
+    name: IdentityServer
+    href: IdentityServer.html
+  - name: .
+  - uid: IdentityServer.Entities
+    name: Entities
+    href: IdentityServer.Entities.html

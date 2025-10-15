@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  id: IInstitutionViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel(DB.Domain.Entities.Institution)
+  langs:
+  - csharp
+  - vb
+  name: IInstitutionViewModelFactory
+  nameWithType: IInstitutionViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IInstitutionViewModelFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionViewModelFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IInstitutionViewModelFactory
+    content.vb: Public Interface IInstitutionViewModelFactory
+- uid: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel(DB.Domain.Entities.Institution)
+  commentId: M:DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel(DB.Domain.Entities.Institution)
+  id: CreateViewModel(DB.Domain.Entities.Institution)
+  parent: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateViewModel(Institution)
+  nameWithType: IInstitutionViewModelFactory.CreateViewModel(Institution)
+  fullName: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel(DB.Domain.Entities.Institution)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateViewModel
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstitutionViewModelFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: InstitutionViewModel CreateViewModel(Institution institution)
+    parameters:
+    - id: institution
+      type: DB.Domain.Entities.Institution
+    return:
+      type: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    content.vb: Function CreateViewModel(institution As Institution) As InstitutionViewModel
+  overload: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel*
+  commentId: Overload:DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel
+  href: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.html#DB_Application_Contracts_Factories_IInstitutionViewModelFactory_CreateViewModel_DB_Domain_Entities_Institution_
+  name: CreateViewModel
+  nameWithType: IInstitutionViewModelFactory.CreateViewModel
+  fullName: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.CreateViewModel
+- uid: DB.Domain.Entities.Institution
+  commentId: T:DB.Domain.Entities.Institution
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Institution.html
+  name: Institution
+  nameWithType: Institution
+  fullName: DB.Domain.Entities.Institution
+- uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  commentId: T:DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+  parent: DB.Application.Features.Institutions.Queries.ViewModels
+  href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  name: InstitutionViewModel
+  nameWithType: InstitutionViewModel
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+- uid: DB.Application.Features.Institutions.Queries.ViewModels
+  commentId: N:DB.Application.Features.Institutions.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.ViewModels
+  nameWithType: DB.Application.Features.Institutions.Queries.ViewModels
+  fullName: DB.Application.Features.Institutions.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Institutions.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Institutions.Queries.ViewModels.html

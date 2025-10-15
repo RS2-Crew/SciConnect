@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  id: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  children:
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery
+  - DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery
+  parent: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery.html
+  name: GetInstrumentsByInstitutionQuery
+  nameWithType: GetInstrumentsByInstitutionQuery
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQuery
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler
+  commentId: T:DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler
+  href: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler.html
+  name: GetInstrumentsByInstitutionQueryHandler
+  nameWithType: GetInstrumentsByInstitutionQueryHandler
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.GetInstrumentsByInstitutionQueryHandler
+- uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  commentId: N:DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  href: DB.html
+  name: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  nameWithType: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  fullName: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+    name: GetInstitutionWithInstruments
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries
+    name: Queries
+    href: DB.Application.Features.Institutions.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments
+    name: GetInstitutionWithInstruments
+    href: DB.Application.Features.Institutions.Queries.GetInstitutionWithInstruments.html

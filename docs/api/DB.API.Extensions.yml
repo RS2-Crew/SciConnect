@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.API.Extensions
+  commentId: N:DB.API.Extensions
+  id: DB.API.Extensions
+  children:
+  - DB.API.Extensions.ServiceProviderExtensions
+  langs:
+  - csharp
+  - vb
+  name: DB.API.Extensions
+  nameWithType: DB.API.Extensions
+  fullName: DB.API.Extensions
+  type: Namespace
+  assemblies:
+  - DB.API
+references:
+- uid: DB.API.Extensions.ServiceProviderExtensions
+  commentId: T:DB.API.Extensions.ServiceProviderExtensions
+  href: DB.API.Extensions.ServiceProviderExtensions.html
+  name: ServiceProviderExtensions
+  nameWithType: ServiceProviderExtensions
+  fullName: DB.API.Extensions.ServiceProviderExtensions

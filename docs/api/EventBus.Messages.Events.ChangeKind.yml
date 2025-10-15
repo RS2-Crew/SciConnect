@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventBus.Messages.Events.ChangeKind
+  commentId: T:EventBus.Messages.Events.ChangeKind
+  id: ChangeKind
+  parent: EventBus.Messages.Events
+  children:
+  - EventBus.Messages.Events.ChangeKind.Created
+  - EventBus.Messages.Events.ChangeKind.Deleted
+  - EventBus.Messages.Events.ChangeKind.Updated
+  langs:
+  - csharp
+  - vb
+  name: ChangeKind
+  nameWithType: ChangeKind
+  fullName: EventBus.Messages.Events.ChangeKind
+  type: Enum
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: ChangeKind
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 18
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: public enum ChangeKind
+    content.vb: Public Enum ChangeKind
+- uid: EventBus.Messages.Events.ChangeKind.Created
+  commentId: F:EventBus.Messages.Events.ChangeKind.Created
+  id: Created
+  parent: EventBus.Messages.Events.ChangeKind
+  langs:
+  - csharp
+  - vb
+  name: Created
+  nameWithType: ChangeKind.Created
+  fullName: EventBus.Messages.Events.ChangeKind.Created
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Created
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 20
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Created = 0
+    return:
+      type: EventBus.Messages.Events.ChangeKind
+- uid: EventBus.Messages.Events.ChangeKind.Updated
+  commentId: F:EventBus.Messages.Events.ChangeKind.Updated
+  id: Updated
+  parent: EventBus.Messages.Events.ChangeKind
+  langs:
+  - csharp
+  - vb
+  name: Updated
+  nameWithType: ChangeKind.Updated
+  fullName: EventBus.Messages.Events.ChangeKind.Updated
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Updated
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 21
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Updated = 1
+    return:
+      type: EventBus.Messages.Events.ChangeKind
+- uid: EventBus.Messages.Events.ChangeKind.Deleted
+  commentId: F:EventBus.Messages.Events.ChangeKind.Deleted
+  id: Deleted
+  parent: EventBus.Messages.Events.ChangeKind
+  langs:
+  - csharp
+  - vb
+  name: Deleted
+  nameWithType: ChangeKind.Deleted
+  fullName: EventBus.Messages.Events.ChangeKind.Deleted
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Deleted
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 22
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Deleted = 2
+    return:
+      type: EventBus.Messages.Events.ChangeKind
+references:
+- uid: EventBus.Messages.Events
+  commentId: N:EventBus.Messages.Events
+  href: EventBus.html
+  name: EventBus.Messages.Events
+  nameWithType: EventBus.Messages.Events
+  fullName: EventBus.Messages.Events
+  spec.csharp:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html
+  spec.vb:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html
+- uid: EventBus.Messages.Events.ChangeKind
+  commentId: T:EventBus.Messages.Events.ChangeKind
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.ChangeKind.html
+  name: ChangeKind
+  nameWithType: ChangeKind
+  fullName: EventBus.Messages.Events.ChangeKind

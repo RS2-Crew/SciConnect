@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.CreateInstitution
+  id: DB.Application.Features.Institutions.Commands.CreateInstitution
+  children:
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler
+  - DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Commands.CreateInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.CreateInstitution
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.CreateInstitution
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand.html
+  name: CreateInstitutionCommand
+  nameWithType: CreateInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommand
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler
+  commentId: T:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler.html
+  name: CreateInstitutionCommandHandler
+  nameWithType: CreateInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandHandler
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator
+  commentId: T:DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator
+  href: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator.html
+  name: CreateInstitutionCommandValidator
+  nameWithType: CreateInstitutionCommandValidator
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution.CreateInstitutionCommandValidator
+- uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.CreateInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.CreateInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.CreateInstitution
+  fullName: DB.Application.Features.Institutions.Commands.CreateInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+    name: CreateInstitution
+    href: DB.Application.Features.Institutions.Commands.CreateInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.CreateInstitution
+    name: CreateInstitution
+    href: DB.Application.Features.Institutions.Commands.CreateInstitution.html

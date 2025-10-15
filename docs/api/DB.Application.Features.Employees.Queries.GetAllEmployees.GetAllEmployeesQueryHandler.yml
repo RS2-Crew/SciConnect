@@ -1,0 +1,834 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler
+  commentId: T:DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler
+  id: GetAllEmployeesQueryHandler
+  parent: DB.Application.Features.Employees.Queries.GetAllEmployees
+  children:
+  - DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.#ctor(DB.Application.Contracts.Persistance.IEmployeeRepository,DB.Application.Contracts.Factories.IEmployeeViewModelFactory)
+  - DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: GetAllEmployeesQueryHandler
+  nameWithType: GetAllEmployeesQueryHandler
+  fullName: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Employees/Queries/GetAllEmployees/GetAllEmployeesQueryHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetAllEmployeesQueryHandler
+    path: ../SciConnect/Services/DB/DB.Application/Features/Employees/Queries/GetAllEmployees/GetAllEmployeesQueryHandler.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Employees.Queries.GetAllEmployees
+  syntax:
+    content: 'public class GetAllEmployeesQueryHandler : IRequestHandler<GetAllEmployeesQuery, IReadOnlyList<EmployeeViewModel>>'
+    content.vb: Public Class GetAllEmployeesQueryHandler Implements IRequestHandler(Of GetAllEmployeesQuery, IReadOnlyList(Of EmployeeViewModel))
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.#ctor(DB.Application.Contracts.Persistance.IEmployeeRepository,DB.Application.Contracts.Factories.IEmployeeViewModelFactory)
+  commentId: M:DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.#ctor(DB.Application.Contracts.Persistance.IEmployeeRepository,DB.Application.Contracts.Factories.IEmployeeViewModelFactory)
+  id: '#ctor(DB.Application.Contracts.Persistance.IEmployeeRepository,DB.Application.Contracts.Factories.IEmployeeViewModelFactory)'
+  parent: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: GetAllEmployeesQueryHandler(IEmployeeRepository, IEmployeeViewModelFactory)
+  nameWithType: GetAllEmployeesQueryHandler.GetAllEmployeesQueryHandler(IEmployeeRepository, IEmployeeViewModelFactory)
+  fullName: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.GetAllEmployeesQueryHandler(DB.Application.Contracts.Persistance.IEmployeeRepository, DB.Application.Contracts.Factories.IEmployeeViewModelFactory)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Employees/Queries/GetAllEmployees/GetAllEmployeesQueryHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Employees/Queries/GetAllEmployees/GetAllEmployeesQueryHandler.cs
+    startLine: 17
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Employees.Queries.GetAllEmployees
+  syntax:
+    content: public GetAllEmployeesQueryHandler(IEmployeeRepository employeeRepository, IEmployeeViewModelFactory viewModelFactory)
+    parameters:
+    - id: employeeRepository
+      type: DB.Application.Contracts.Persistance.IEmployeeRepository
+    - id: viewModelFactory
+      type: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+    content.vb: Public Sub New(employeeRepository As IEmployeeRepository, viewModelFactory As IEmployeeViewModelFactory)
+  overload: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.#ctor*
+  nameWithType.vb: GetAllEmployeesQueryHandler.New(IEmployeeRepository, IEmployeeViewModelFactory)
+  fullName.vb: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.New(DB.Application.Contracts.Persistance.IEmployeeRepository, DB.Application.Contracts.Factories.IEmployeeViewModelFactory)
+  name.vb: New(IEmployeeRepository, IEmployeeViewModelFactory)
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+  commentId: M:DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+  id: Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+  parent: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(GetAllEmployeesQuery, CancellationToken)
+  nameWithType: GetAllEmployeesQueryHandler.Handle(GetAllEmployeesQuery, CancellationToken)
+  fullName: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Employees/Queries/GetAllEmployees/GetAllEmployeesQueryHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Handle
+    path: ../SciConnect/Services/DB/DB.Application/Features/Employees/Queries/GetAllEmployees/GetAllEmployeesQueryHandler.cs
+    startLine: 23
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Employees.Queries.GetAllEmployees
+  summary: Handles a request
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<EmployeeViewModel>> Handle(GetAllEmployeesQuery request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+      description: The request
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}
+      description: Response from the request
+    content.vb: Public Function Handle(request As GetAllEmployeesQuery, cancellationToken As CancellationToken) As Task(Of IReadOnlyList(Of EmployeeViewModel))
+  overload: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle*
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+references:
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees
+  commentId: N:DB.Application.Features.Employees.Queries.GetAllEmployees
+  href: DB.html
+  name: DB.Application.Features.Employees.Queries.GetAllEmployees
+  nameWithType: DB.Application.Features.Employees.Queries.GetAllEmployees
+  fullName: DB.Application.Features.Employees.Queries.GetAllEmployees
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees
+    name: GetAllEmployees
+    href: DB.Application.Features.Employees.Queries.GetAllEmployees.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries
+    name: Queries
+    href: DB.Application.Features.Employees.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees
+    name: GetAllEmployees
+    href: DB.Application.Features.Employees.Queries.GetAllEmployees.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}
+  commentId: T:MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}
+  parent: MediatR
+  definition: MediatR.IRequestHandler`2
+  href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html
+  name: IRequestHandler<GetAllEmployeesQuery, IReadOnlyList<EmployeeViewModel>>
+  nameWithType: IRequestHandler<GetAllEmployeesQuery, IReadOnlyList<EmployeeViewModel>>
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery, System.Collections.Generic.IReadOnlyList<DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel>>
+  nameWithType.vb: IRequestHandler(Of GetAllEmployeesQuery, IReadOnlyList(Of EmployeeViewModel))
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery, System.Collections.Generic.IReadOnlyList(Of DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel))
+  name.vb: IRequestHandler(Of GetAllEmployeesQuery, IReadOnlyList(Of EmployeeViewModel))
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+    name: GetAllEmployeesQuery
+    href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    name: EmployeeViewModel
+    href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+    name: GetAllEmployeesQuery
+    href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    name: EmployeeViewModel
+    href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  - name: )
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequestHandler`2
+  commentId: T:MediatR.IRequestHandler`2
+  isExternal: true
+  name: IRequestHandler<TRequest, TResponse>
+  nameWithType: IRequestHandler<TRequest, TResponse>
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse)
+  name.vb: IRequestHandler(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.#ctor*
+  commentId: Overload:DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.#ctor
+  href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.html#DB_Application_Features_Employees_Queries_GetAllEmployees_GetAllEmployeesQueryHandler__ctor_DB_Application_Contracts_Persistance_IEmployeeRepository_DB_Application_Contracts_Factories_IEmployeeViewModelFactory_
+  name: GetAllEmployeesQueryHandler
+  nameWithType: GetAllEmployeesQueryHandler.GetAllEmployeesQueryHandler
+  fullName: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.GetAllEmployeesQueryHandler
+  nameWithType.vb: GetAllEmployeesQueryHandler.New
+  fullName.vb: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.New
+  name.vb: New
+- uid: DB.Application.Contracts.Persistance.IEmployeeRepository
+  commentId: T:DB.Application.Contracts.Persistance.IEmployeeRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IEmployeeRepository.html
+  name: IEmployeeRepository
+  nameWithType: IEmployeeRepository
+  fullName: DB.Application.Contracts.Persistance.IEmployeeRepository
+- uid: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IEmployeeViewModelFactory.html
+  name: IEmployeeViewModelFactory
+  nameWithType: IEmployeeViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IEmployeeViewModelFactory
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle*
+  commentId: Overload:DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle
+  href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.html#DB_Application_Features_Employees_Queries_GetAllEmployees_GetAllEmployeesQueryHandler_Handle_DB_Application_Features_Employees_Queries_GetAllEmployees_GetAllEmployeesQuery_System_Threading_CancellationToken_
+  name: Handle
+  nameWithType: GetAllEmployeesQueryHandler.Handle
+  fullName: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQueryHandler.Handle
+- uid: MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+  parent: MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}
+  definition: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html
+  name: Handle(GetAllEmployeesQuery, CancellationToken)
+  nameWithType: IRequestHandler<GetAllEmployeesQuery, IReadOnlyList<EmployeeViewModel>>.Handle(GetAllEmployeesQuery, CancellationToken)
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery, System.Collections.Generic.IReadOnlyList<DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel>>.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of GetAllEmployeesQuery, IReadOnlyList(Of EmployeeViewModel)).Handle(GetAllEmployeesQuery, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery, System.Collections.Generic.IReadOnlyList(Of DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel)).Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+    name: GetAllEmployeesQuery
+    href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}.Handle(DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+    name: GetAllEmployeesQuery
+    href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+  commentId: T:DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+  parent: DB.Application.Features.Employees.Queries.GetAllEmployees
+  href: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery.html
+  name: GetAllEmployeesQuery
+  nameWithType: GetAllEmployeesQuery
+  fullName: DB.Application.Features.Employees.Queries.GetAllEmployees.GetAllEmployeesQuery
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<EmployeeViewModel>>
+  nameWithType: Task<IReadOnlyList<EmployeeViewModel>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of EmployeeViewModel))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel))
+  name.vb: Task(Of IReadOnlyList(Of EmployeeViewModel))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    name: EmployeeViewModel
+    href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel
+    name: EmployeeViewModel
+    href: DB.Application.Features.Employees.Queries.ViewModels.EmployeeViewModel.html
+  - name: )
+  - name: )
+- uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: Handle(TRequest, CancellationToken)
+  nameWithType: IRequestHandler<TRequest, TResponse>.Handle(TRequest, CancellationToken)
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>.Handle(TRequest, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse).Handle(TRequest, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse).Handle(TRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

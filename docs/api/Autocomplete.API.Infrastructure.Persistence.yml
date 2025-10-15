@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: Autocomplete.API.Infrastructure.Persistence
+  commentId: N:Autocomplete.API.Infrastructure.Persistence
+  id: Autocomplete.API.Infrastructure.Persistence
+  children:
+  - Autocomplete.API.Infrastructure.Persistence.AutoDbContext
+  langs:
+  - csharp
+  - vb
+  name: Autocomplete.API.Infrastructure.Persistence
+  nameWithType: Autocomplete.API.Infrastructure.Persistence
+  fullName: Autocomplete.API.Infrastructure.Persistence
+  type: Namespace
+  assemblies:
+  - Autocomplete.API
+references:
+- uid: Autocomplete.API.Infrastructure.Persistence.AutoDbContext
+  commentId: T:Autocomplete.API.Infrastructure.Persistence.AutoDbContext
+  parent: Autocomplete.API.Infrastructure.Persistence
+  href: Autocomplete.API.Infrastructure.Persistence.AutoDbContext.html
+  name: AutoDbContext
+  nameWithType: AutoDbContext
+  fullName: Autocomplete.API.Infrastructure.Persistence.AutoDbContext
+- uid: Autocomplete.API.Infrastructure.Persistence
+  commentId: N:Autocomplete.API.Infrastructure.Persistence
+  href: Autocomplete.html
+  name: Autocomplete.API.Infrastructure.Persistence
+  nameWithType: Autocomplete.API.Infrastructure.Persistence
+  fullName: Autocomplete.API.Infrastructure.Persistence
+  spec.csharp:
+  - uid: Autocomplete
+    name: Autocomplete
+    href: Autocomplete.html
+  - name: .
+  - uid: Autocomplete.API
+    name: API
+    href: Autocomplete.API.html
+  - name: .
+  - uid: Autocomplete.API.Infrastructure
+    name: Infrastructure
+    href: Autocomplete.API.Infrastructure.html
+  - name: .
+  - uid: Autocomplete.API.Infrastructure.Persistence
+    name: Persistence
+    href: Autocomplete.API.Infrastructure.Persistence.html
+  spec.vb:
+  - uid: Autocomplete
+    name: Autocomplete
+    href: Autocomplete.html
+  - name: .
+  - uid: Autocomplete.API
+    name: API
+    href: Autocomplete.API.html
+  - name: .
+  - uid: Autocomplete.API.Infrastructure
+    name: Infrastructure
+    href: Autocomplete.API.Infrastructure.html
+  - name: .
+  - uid: Autocomplete.API.Infrastructure.Persistence
+    name: Persistence
+    href: Autocomplete.API.Infrastructure.Persistence.html

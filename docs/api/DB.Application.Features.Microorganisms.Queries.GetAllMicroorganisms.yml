@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  commentId: N:DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  id: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  children:
+  - DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery
+  - DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  nameWithType: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  fullName: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery
+  commentId: T:DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery
+  parent: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  href: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery.html
+  name: GetAllMicroorganismsQuery
+  nameWithType: GetAllMicroorganismsQuery
+  fullName: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetAllMicroorganismsQuery
+- uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler
+  commentId: T:DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler
+  href: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler.html
+  name: GetListOfMicroorganismsQueryHandler
+  nameWithType: GetListOfMicroorganismsQueryHandler
+  fullName: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.GetListOfMicroorganismsQueryHandler
+- uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  commentId: N:DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  href: DB.html
+  name: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  nameWithType: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  fullName: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+    name: GetAllMicroorganisms
+    href: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
+    name: GetAllMicroorganisms
+    href: DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms.html

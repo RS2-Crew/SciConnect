@@ -1,0 +1,512 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Infrastructure.Factories.KeywordFactory
+  commentId: T:DB.Infrastructure.Factories.KeywordFactory
+  id: KeywordFactory
+  parent: DB.Infrastructure.Factories
+  children:
+  - DB.Infrastructure.Factories.KeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  langs:
+  - csharp
+  - vb
+  name: KeywordFactory
+  nameWithType: KeywordFactory
+  fullName: DB.Infrastructure.Factories.KeywordFactory
+  type: Class
+  source:
+    remote:
+      path: SciConnect/DB.Infrastructure/Factories/KeywordFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: KeywordFactory
+    path: ../SciConnect/DB.Infrastructure/Factories/KeywordFactory.cs
+    startLine: 11
+  assemblies:
+  - DB.Infrastructure
+  namespace: DB.Infrastructure.Factories
+  syntax:
+    content: 'public class KeywordFactory : IKeywordFactory'
+    content.vb: Public Class KeywordFactory Implements IKeywordFactory
+  inheritance:
+  - System.Object
+  implements:
+  - DB.Application.Contracts.Factories.IKeywordFactory
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Infrastructure.Factories.KeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  commentId: M:DB.Infrastructure.Factories.KeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  id: Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  parent: DB.Infrastructure.Factories.KeywordFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateKeywordCommand)
+  nameWithType: KeywordFactory.Create(CreateKeywordCommand)
+  fullName: DB.Infrastructure.Factories.KeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/DB.Infrastructure/Factories/KeywordFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Create
+    path: ../SciConnect/DB.Infrastructure/Factories/KeywordFactory.cs
+    startLine: 13
+  assemblies:
+  - DB.Infrastructure
+  namespace: DB.Infrastructure.Factories
+  example: []
+  syntax:
+    content: public Keyword Create(CreateKeywordCommand command)
+    parameters:
+    - id: command
+      type: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    return:
+      type: DB.Domain.Entities.Keyword
+    content.vb: Public Function Create(command As CreateKeywordCommand) As Keyword
+  overload: DB.Infrastructure.Factories.KeywordFactory.Create*
+  implements:
+  - DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+references:
+- uid: DB.Infrastructure.Factories
+  commentId: N:DB.Infrastructure.Factories
+  href: DB.html
+  name: DB.Infrastructure.Factories
+  nameWithType: DB.Infrastructure.Factories
+  fullName: DB.Infrastructure.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Factories
+    name: Factories
+    href: DB.Infrastructure.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Infrastructure
+    name: Infrastructure
+    href: DB.Infrastructure.html
+  - name: .
+  - uid: DB.Infrastructure.Factories
+    name: Factories
+    href: DB.Infrastructure.Factories.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DB.Application.Contracts.Factories.IKeywordFactory
+  commentId: T:DB.Application.Contracts.Factories.IKeywordFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IKeywordFactory.html
+  name: IKeywordFactory
+  nameWithType: IKeywordFactory
+  fullName: DB.Application.Contracts.Factories.IKeywordFactory
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Infrastructure.Factories.KeywordFactory.Create*
+  commentId: Overload:DB.Infrastructure.Factories.KeywordFactory.Create
+  href: DB.Infrastructure.Factories.KeywordFactory.html#DB_Infrastructure_Factories_KeywordFactory_Create_DB_Application_Features_Keywords_Commands_CreateKeyword_CreateKeywordCommand_
+  name: Create
+  nameWithType: KeywordFactory.Create
+  fullName: DB.Infrastructure.Factories.KeywordFactory.Create
+- uid: DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  commentId: M:DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  parent: DB.Application.Contracts.Factories.IKeywordFactory
+  name: Create(CreateKeywordCommand)
+  nameWithType: IKeywordFactory.Create(CreateKeywordCommand)
+  fullName: DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+    name: Create
+  - name: (
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    name: CreateKeywordCommand
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Factories.IKeywordFactory.Create(DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand)
+    name: Create
+  - name: (
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+    name: CreateKeywordCommand
+  - name: )
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  commentId: T:DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+  parent: DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand.html
+  name: CreateKeywordCommand
+  nameWithType: CreateKeywordCommand
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword.CreateKeywordCommand
+- uid: DB.Domain.Entities.Keyword
+  commentId: T:DB.Domain.Entities.Keyword
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Keyword.html
+  name: Keyword
+  nameWithType: Keyword
+  fullName: DB.Domain.Entities.Keyword
+- uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+  commentId: N:DB.Application.Features.Keywords.Commands.CreateKeyword
+  href: DB.html
+  name: DB.Application.Features.Keywords.Commands.CreateKeyword
+  nameWithType: DB.Application.Features.Keywords.Commands.CreateKeyword
+  fullName: DB.Application.Features.Keywords.Commands.CreateKeyword
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands
+    name: Commands
+    href: DB.Application.Features.Keywords.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Commands.CreateKeyword
+    name: CreateKeyword
+    href: DB.Application.Features.Keywords.Commands.CreateKeyword.html
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Consumers
+  commentId: N:IdentityService.Consumers
+  id: IdentityService.Consumers
+  children:
+  - IdentityService.Consumers.EmailConsumer
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Consumers
+  nameWithType: IdentityService.Consumers
+  fullName: IdentityService.Consumers
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Consumers.EmailConsumer
+  commentId: T:IdentityService.Consumers.EmailConsumer
+  href: IdentityService.Consumers.EmailConsumer.html
+  name: EmailConsumer
+  nameWithType: EmailConsumer
+  fullName: IdentityService.Consumers.EmailConsumer

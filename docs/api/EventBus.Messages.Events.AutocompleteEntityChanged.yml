@@ -1,0 +1,582 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged
+  commentId: T:EventBus.Messages.Events.AutocompleteEntityChanged
+  id: AutocompleteEntityChanged
+  parent: EventBus.Messages.Events
+  children:
+  - EventBus.Messages.Events.AutocompleteEntityChanged.Id
+  - EventBus.Messages.Events.AutocompleteEntityChanged.Kind
+  - EventBus.Messages.Events.AutocompleteEntityChanged.Name
+  - EventBus.Messages.Events.AutocompleteEntityChanged.Type
+  langs:
+  - csharp
+  - vb
+  name: AutocompleteEntityChanged
+  nameWithType: AutocompleteEntityChanged
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: AutocompleteEntityChanged
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 31
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: 'public sealed record AutocompleteEntityChanged : IntegrationEvent, IEquatable<IntegrationEvent>, IEquatable<AutocompleteEntityChanged>'
+    content.vb: Public NotInheritable Class AutocompleteEntityChanged Inherits IntegrationEvent Implements IEquatable(Of IntegrationEvent), IEquatable(Of AutocompleteEntityChanged)
+  inheritance:
+  - System.Object
+  - EventBus.Messages.Events.IntegrationEvent
+  implements:
+  - System.IEquatable{EventBus.Messages.Events.IntegrationEvent}
+  - System.IEquatable{EventBus.Messages.Events.AutocompleteEntityChanged}
+  inheritedMembers:
+  - EventBus.Messages.Events.IntegrationEvent.OccurredAt
+  - EventBus.Messages.Events.IntegrationEvent.CorrelationId
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Type
+  commentId: P:EventBus.Messages.Events.AutocompleteEntityChanged.Type
+  id: Type
+  parent: EventBus.Messages.Events.AutocompleteEntityChanged
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: AutocompleteEntityChanged.Type
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Type
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Type
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 33
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: public EntityType Type { get; init; }
+    parameters: []
+    return:
+      type: EventBus.Messages.Events.EntityType
+    content.vb: Public Property Type As EntityType
+  overload: EventBus.Messages.Events.AutocompleteEntityChanged.Type*
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Kind
+  commentId: P:EventBus.Messages.Events.AutocompleteEntityChanged.Kind
+  id: Kind
+  parent: EventBus.Messages.Events.AutocompleteEntityChanged
+  langs:
+  - csharp
+  - vb
+  name: Kind
+  nameWithType: AutocompleteEntityChanged.Kind
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Kind
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Kind
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 34
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: public ChangeKind Kind { get; init; }
+    parameters: []
+    return:
+      type: EventBus.Messages.Events.ChangeKind
+    content.vb: Public Property Kind As ChangeKind
+  overload: EventBus.Messages.Events.AutocompleteEntityChanged.Kind*
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Id
+  commentId: P:EventBus.Messages.Events.AutocompleteEntityChanged.Id
+  id: Id
+  parent: EventBus.Messages.Events.AutocompleteEntityChanged
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: AutocompleteEntityChanged.Id
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Id
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Id
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 35
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: public int Id { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: EventBus.Messages.Events.AutocompleteEntityChanged.Id*
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Name
+  commentId: P:EventBus.Messages.Events.AutocompleteEntityChanged.Name
+  id: Name
+  parent: EventBus.Messages.Events.AutocompleteEntityChanged
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: AutocompleteEntityChanged.Name
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Name
+  type: Property
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Name
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 36
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: public string? Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: EventBus.Messages.Events.AutocompleteEntityChanged.Name*
+references:
+- uid: EventBus.Messages.Events
+  commentId: N:EventBus.Messages.Events
+  href: EventBus.html
+  name: EventBus.Messages.Events
+  nameWithType: EventBus.Messages.Events
+  fullName: EventBus.Messages.Events
+  spec.csharp:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html
+  spec.vb:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EventBus.Messages.Events.IntegrationEvent
+  commentId: T:EventBus.Messages.Events.IntegrationEvent
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.IntegrationEvent.html
+  name: IntegrationEvent
+  nameWithType: IntegrationEvent
+  fullName: EventBus.Messages.Events.IntegrationEvent
+- uid: System.IEquatable{EventBus.Messages.Events.IntegrationEvent}
+  commentId: T:System.IEquatable{EventBus.Messages.Events.IntegrationEvent}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<IntegrationEvent>
+  nameWithType: IEquatable<IntegrationEvent>
+  fullName: System.IEquatable<EventBus.Messages.Events.IntegrationEvent>
+  nameWithType.vb: IEquatable(Of IntegrationEvent)
+  fullName.vb: System.IEquatable(Of EventBus.Messages.Events.IntegrationEvent)
+  name.vb: IEquatable(Of IntegrationEvent)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: EventBus.Messages.Events.IntegrationEvent
+    name: IntegrationEvent
+    href: EventBus.Messages.Events.IntegrationEvent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EventBus.Messages.Events.IntegrationEvent
+    name: IntegrationEvent
+    href: EventBus.Messages.Events.IntegrationEvent.html
+  - name: )
+- uid: System.IEquatable{EventBus.Messages.Events.AutocompleteEntityChanged}
+  commentId: T:System.IEquatable{EventBus.Messages.Events.AutocompleteEntityChanged}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<AutocompleteEntityChanged>
+  nameWithType: IEquatable<AutocompleteEntityChanged>
+  fullName: System.IEquatable<EventBus.Messages.Events.AutocompleteEntityChanged>
+  nameWithType.vb: IEquatable(Of AutocompleteEntityChanged)
+  fullName.vb: System.IEquatable(Of EventBus.Messages.Events.AutocompleteEntityChanged)
+  name.vb: IEquatable(Of AutocompleteEntityChanged)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: EventBus.Messages.Events.AutocompleteEntityChanged
+    name: AutocompleteEntityChanged
+    href: EventBus.Messages.Events.AutocompleteEntityChanged.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EventBus.Messages.Events.AutocompleteEntityChanged
+    name: AutocompleteEntityChanged
+    href: EventBus.Messages.Events.AutocompleteEntityChanged.html
+  - name: )
+- uid: EventBus.Messages.Events.IntegrationEvent.OccurredAt
+  commentId: P:EventBus.Messages.Events.IntegrationEvent.OccurredAt
+  parent: EventBus.Messages.Events.IntegrationEvent
+  href: EventBus.Messages.Events.IntegrationEvent.html#EventBus_Messages_Events_IntegrationEvent_OccurredAt
+  name: OccurredAt
+  nameWithType: IntegrationEvent.OccurredAt
+  fullName: EventBus.Messages.Events.IntegrationEvent.OccurredAt
+- uid: EventBus.Messages.Events.IntegrationEvent.CorrelationId
+  commentId: P:EventBus.Messages.Events.IntegrationEvent.CorrelationId
+  parent: EventBus.Messages.Events.IntegrationEvent
+  href: EventBus.Messages.Events.IntegrationEvent.html#EventBus_Messages_Events_IntegrationEvent_CorrelationId
+  name: CorrelationId
+  nameWithType: IntegrationEvent.CorrelationId
+  fullName: EventBus.Messages.Events.IntegrationEvent.CorrelationId
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Type*
+  commentId: Overload:EventBus.Messages.Events.AutocompleteEntityChanged.Type
+  href: EventBus.Messages.Events.AutocompleteEntityChanged.html#EventBus_Messages_Events_AutocompleteEntityChanged_Type
+  name: Type
+  nameWithType: AutocompleteEntityChanged.Type
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Type
+- uid: EventBus.Messages.Events.EntityType
+  commentId: T:EventBus.Messages.Events.EntityType
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.EntityType.html
+  name: EntityType
+  nameWithType: EntityType
+  fullName: EventBus.Messages.Events.EntityType
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Kind*
+  commentId: Overload:EventBus.Messages.Events.AutocompleteEntityChanged.Kind
+  href: EventBus.Messages.Events.AutocompleteEntityChanged.html#EventBus_Messages_Events_AutocompleteEntityChanged_Kind
+  name: Kind
+  nameWithType: AutocompleteEntityChanged.Kind
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Kind
+- uid: EventBus.Messages.Events.ChangeKind
+  commentId: T:EventBus.Messages.Events.ChangeKind
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.ChangeKind.html
+  name: ChangeKind
+  nameWithType: ChangeKind
+  fullName: EventBus.Messages.Events.ChangeKind
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Id*
+  commentId: Overload:EventBus.Messages.Events.AutocompleteEntityChanged.Id
+  href: EventBus.Messages.Events.AutocompleteEntityChanged.html#EventBus_Messages_Events_AutocompleteEntityChanged_Id
+  name: Id
+  nameWithType: AutocompleteEntityChanged.Id
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: EventBus.Messages.Events.AutocompleteEntityChanged.Name*
+  commentId: Overload:EventBus.Messages.Events.AutocompleteEntityChanged.Name
+  href: EventBus.Messages.Events.AutocompleteEntityChanged.html#EventBus_Messages_Events_AutocompleteEntityChanged_Name
+  name: Name
+  nameWithType: AutocompleteEntityChanged.Name
+  fullName: EventBus.Messages.Events.AutocompleteEntityChanged.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  commentId: N:DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  id: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  children:
+  - DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+  - DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  nameWithType: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  fullName: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+  commentId: T:DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+  parent: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  href: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand.html
+  name: CreateMicroorganismCommand
+  nameWithType: CreateMicroorganismCommand
+  fullName: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommand
+- uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator
+  commentId: T:DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator
+  href: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator.html
+  name: CreateMicroorganismCommandValidator
+  nameWithType: CreateMicroorganismCommandValidator
+  fullName: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.CreateMicroorganismCommandValidator
+- uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  commentId: N:DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  href: DB.html
+  name: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  nameWithType: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  fullName: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands
+    name: Commands
+    href: DB.Application.Features.Microorganisms.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+    name: CreateMicroorganism
+    href: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands
+    name: Commands
+    href: DB.Application.Features.Microorganisms.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism
+    name: CreateMicroorganism
+    href: DB.Application.Features.Microorganisms.Commands.CreateMicroorganism.html

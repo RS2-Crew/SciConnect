@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  commentId: N:DB.Application.Features.Analyses.Commands.CreateAnalysis
+  id: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  children:
+  - DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+  - DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  nameWithType: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  fullName: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+  commentId: T:DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+  parent: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  href: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand.html
+  name: CreateAnalysisCommand
+  nameWithType: CreateAnalysisCommand
+  fullName: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommand
+- uid: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler
+  commentId: T:DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler
+  href: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler.html
+  name: CreateAnalysisCommandHandler
+  nameWithType: CreateAnalysisCommandHandler
+  fullName: DB.Application.Features.Analyses.Commands.CreateAnalysis.CreateAnalysisCommandHandler
+- uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  commentId: N:DB.Application.Features.Analyses.Commands.CreateAnalysis
+  href: DB.html
+  name: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  nameWithType: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  fullName: DB.Application.Features.Analyses.Commands.CreateAnalysis
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands
+    name: Commands
+    href: DB.Application.Features.Analyses.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+    name: CreateAnalysis
+    href: DB.Application.Features.Analyses.Commands.CreateAnalysis.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands
+    name: Commands
+    href: DB.Application.Features.Analyses.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Commands.CreateAnalysis
+    name: CreateAnalysis
+    href: DB.Application.Features.Analyses.Commands.CreateAnalysis.html

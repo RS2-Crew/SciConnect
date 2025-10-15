@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  commentId: N:DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  id: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  children:
+  - DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+  - DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  nameWithType: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  commentId: T:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+  href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler.html
+  name: GetAllAnalysesQueryHandler
+  nameWithType: GetAllAnalysesQueryHandler
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQueryHandler
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+  commentId: T:DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+  parent: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery.html
+  name: GetAllAnalysesQuery
+  nameWithType: GetAllAnalysesQuery
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses.GetAllAnalysesQuery
+- uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  commentId: N:DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  href: DB.html
+  name: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  nameWithType: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  fullName: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries
+    name: Queries
+    href: DB.Application.Features.Analyses.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+    name: GetAllAnalyses
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analyses
+    name: Analyses
+    href: DB.Application.Features.Analyses.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries
+    name: Queries
+    href: DB.Application.Features.Analyses.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analyses.Queries.GetAllAnalyses
+    name: GetAllAnalyses
+    href: DB.Application.Features.Analyses.Queries.GetAllAnalyses.html

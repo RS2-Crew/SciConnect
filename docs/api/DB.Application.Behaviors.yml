@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Behaviors
+  commentId: N:DB.Application.Behaviors
+  id: DB.Application.Behaviors
+  children:
+  - DB.Application.Behaviors.UnhandledExceptionBehavior`2
+  - DB.Application.Behaviors.ValidationBehavior`2
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Behaviors
+  nameWithType: DB.Application.Behaviors
+  fullName: DB.Application.Behaviors
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Behaviors.UnhandledExceptionBehavior`2
+  commentId: T:DB.Application.Behaviors.UnhandledExceptionBehavior`2
+  href: DB.Application.Behaviors.UnhandledExceptionBehavior-2.html
+  name: UnhandledExceptionBehavior<TRequest, TResponse>
+  nameWithType: UnhandledExceptionBehavior<TRequest, TResponse>
+  fullName: DB.Application.Behaviors.UnhandledExceptionBehavior<TRequest, TResponse>
+  nameWithType.vb: UnhandledExceptionBehavior(Of TRequest, TResponse)
+  fullName.vb: DB.Application.Behaviors.UnhandledExceptionBehavior(Of TRequest, TResponse)
+  name.vb: UnhandledExceptionBehavior(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: DB.Application.Behaviors.UnhandledExceptionBehavior`2
+    name: UnhandledExceptionBehavior
+    href: DB.Application.Behaviors.UnhandledExceptionBehavior-2.html
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: DB.Application.Behaviors.UnhandledExceptionBehavior`2
+    name: UnhandledExceptionBehavior
+    href: DB.Application.Behaviors.UnhandledExceptionBehavior-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: DB.Application.Behaviors.ValidationBehavior`2
+  commentId: T:DB.Application.Behaviors.ValidationBehavior`2
+  href: DB.Application.Behaviors.ValidationBehavior-2.html
+  name: ValidationBehavior<TRequest, TResponse>
+  nameWithType: ValidationBehavior<TRequest, TResponse>
+  fullName: DB.Application.Behaviors.ValidationBehavior<TRequest, TResponse>
+  nameWithType.vb: ValidationBehavior(Of TRequest, TResponse)
+  fullName.vb: DB.Application.Behaviors.ValidationBehavior(Of TRequest, TResponse)
+  name.vb: ValidationBehavior(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: DB.Application.Behaviors.ValidationBehavior`2
+    name: ValidationBehavior
+    href: DB.Application.Behaviors.ValidationBehavior-2.html
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: DB.Application.Behaviors.ValidationBehavior`2
+    name: ValidationBehavior
+    href: DB.Application.Behaviors.ValidationBehavior-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )

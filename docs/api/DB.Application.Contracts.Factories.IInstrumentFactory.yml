@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IInstrumentFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstrumentFactory
+  id: IInstrumentFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IInstrumentFactory.Create(DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand)
+  langs:
+  - csharp
+  - vb
+  name: IInstrumentFactory
+  nameWithType: IInstrumentFactory
+  fullName: DB.Application.Contracts.Factories.IInstrumentFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IInstrumentFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentFactory.cs
+    startLine: 11
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IInstrumentFactory
+    content.vb: Public Interface IInstrumentFactory
+- uid: DB.Application.Contracts.Factories.IInstrumentFactory.Create(DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand)
+  commentId: M:DB.Application.Contracts.Factories.IInstrumentFactory.Create(DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand)
+  id: Create(DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand)
+  parent: DB.Application.Contracts.Factories.IInstrumentFactory
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateInstrumentCommand)
+  nameWithType: IInstrumentFactory.Create(CreateInstrumentCommand)
+  fullName: DB.Application.Contracts.Factories.IInstrumentFactory.Create(DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Create
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IInstrumentFactory.cs
+    startLine: 13
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: Instrument Create(CreateInstrumentCommand command)
+    parameters:
+    - id: command
+      type: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+    return:
+      type: DB.Domain.Entities.Instrument
+    content.vb: Function Create(command As CreateInstrumentCommand) As Instrument
+  overload: DB.Application.Contracts.Factories.IInstrumentFactory.Create*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IInstrumentFactory.Create*
+  commentId: Overload:DB.Application.Contracts.Factories.IInstrumentFactory.Create
+  href: DB.Application.Contracts.Factories.IInstrumentFactory.html#DB_Application_Contracts_Factories_IInstrumentFactory_Create_DB_Application_Features_Instruments_Commands_CreateInstrument_CreateInstrumentCommand_
+  name: Create
+  nameWithType: IInstrumentFactory.Create
+  fullName: DB.Application.Contracts.Factories.IInstrumentFactory.Create
+- uid: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+  commentId: T:DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+  parent: DB.Application.Features.Instruments.Commands.CreateInstrument
+  href: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand.html
+  name: CreateInstrumentCommand
+  nameWithType: CreateInstrumentCommand
+  fullName: DB.Application.Features.Instruments.Commands.CreateInstrument.CreateInstrumentCommand
+- uid: DB.Domain.Entities.Instrument
+  commentId: T:DB.Domain.Entities.Instrument
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Instrument.html
+  name: Instrument
+  nameWithType: Instrument
+  fullName: DB.Domain.Entities.Instrument
+- uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+  commentId: N:DB.Application.Features.Instruments.Commands.CreateInstrument
+  href: DB.html
+  name: DB.Application.Features.Instruments.Commands.CreateInstrument
+  nameWithType: DB.Application.Features.Instruments.Commands.CreateInstrument
+  fullName: DB.Application.Features.Instruments.Commands.CreateInstrument
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+    name: CreateInstrument
+    href: DB.Application.Features.Instruments.Commands.CreateInstrument.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands
+    name: Commands
+    href: DB.Application.Features.Instruments.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Commands.CreateInstrument
+    name: CreateInstrument
+    href: DB.Application.Features.Instruments.Commands.CreateInstrument.html
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html

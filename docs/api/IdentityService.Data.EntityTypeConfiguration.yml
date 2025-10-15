@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Data.EntityTypeConfiguration
+  commentId: N:IdentityService.Data.EntityTypeConfiguration
+  id: IdentityService.Data.EntityTypeConfiguration
+  children:
+  - IdentityService.Data.EntityTypeConfiguration.RoleConfiguration
+  - IdentityService.Data.EntityTypeConfiguration.UserConfiguration
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Data.EntityTypeConfiguration
+  nameWithType: IdentityService.Data.EntityTypeConfiguration
+  fullName: IdentityService.Data.EntityTypeConfiguration
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Data.EntityTypeConfiguration.RoleConfiguration
+  commentId: T:IdentityService.Data.EntityTypeConfiguration.RoleConfiguration
+  href: IdentityService.Data.EntityTypeConfiguration.RoleConfiguration.html
+  name: RoleConfiguration
+  nameWithType: RoleConfiguration
+  fullName: IdentityService.Data.EntityTypeConfiguration.RoleConfiguration
+- uid: IdentityService.Data.EntityTypeConfiguration.UserConfiguration
+  commentId: T:IdentityService.Data.EntityTypeConfiguration.UserConfiguration
+  href: IdentityService.Data.EntityTypeConfiguration.UserConfiguration.html
+  name: UserConfiguration
+  nameWithType: UserConfiguration
+  fullName: IdentityService.Data.EntityTypeConfiguration.UserConfiguration

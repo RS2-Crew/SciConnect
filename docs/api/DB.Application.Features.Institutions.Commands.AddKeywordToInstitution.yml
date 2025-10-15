@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  id: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  children:
+  - DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand
+  - DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  fullName: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  href: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand.html
+  name: AddKeywordToInstitutionCommand
+  nameWithType: AddKeywordToInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommand
+- uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler
+  commentId: T:DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler
+  href: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler.html
+  name: AddKeywordToInstitutionCommandHandler
+  nameWithType: AddKeywordToInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.AddKeywordToInstitutionCommandHandler
+- uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  fullName: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+    name: AddKeywordToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution
+    name: AddKeywordToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddKeywordToInstitution.html

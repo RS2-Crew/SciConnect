@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.DeleteInstitution
+  id: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  children:
+  - DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand
+  - DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  fullName: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  href: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand.html
+  name: DeleteInstitutionCommand
+  nameWithType: DeleteInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommand
+- uid: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler
+  commentId: T:DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler
+  href: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler.html
+  name: DeleteInstitutionCommandHandler
+  nameWithType: DeleteInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.DeleteInstitution.DeleteInstitutionCommandHandler
+- uid: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.DeleteInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  fullName: DB.Application.Features.Institutions.Commands.DeleteInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.DeleteInstitution
+    name: DeleteInstitution
+    href: DB.Application.Features.Institutions.Commands.DeleteInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.DeleteInstitution
+    name: DeleteInstitution
+    href: DB.Application.Features.Institutions.Commands.DeleteInstitution.html

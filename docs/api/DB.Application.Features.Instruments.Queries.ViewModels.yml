@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Instruments.Queries.ViewModels
+  commentId: N:DB.Application.Features.Instruments.Queries.ViewModels
+  id: DB.Application.Features.Instruments.Queries.ViewModels
+  children:
+  - DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel
+  - DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Instruments.Queries.ViewModels
+  nameWithType: DB.Application.Features.Instruments.Queries.ViewModels
+  fullName: DB.Application.Features.Instruments.Queries.ViewModels
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel
+  commentId: T:DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel
+  href: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel.html
+  name: InstrumentBasicViewModel
+  nameWithType: InstrumentBasicViewModel
+  fullName: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentBasicViewModel
+- uid: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+  commentId: T:DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+  parent: DB.Application.Features.Instruments.Queries.ViewModels
+  href: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel.html
+  name: InstrumentViewModel
+  nameWithType: InstrumentViewModel
+  fullName: DB.Application.Features.Instruments.Queries.ViewModels.InstrumentViewModel
+- uid: DB.Application.Features.Instruments.Queries.ViewModels
+  commentId: N:DB.Application.Features.Instruments.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Instruments.Queries.ViewModels
+  nameWithType: DB.Application.Features.Instruments.Queries.ViewModels
+  fullName: DB.Application.Features.Instruments.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Instruments.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Instruments.Queries.ViewModels.html

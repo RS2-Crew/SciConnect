@@ -1,0 +1,68 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Services
+  commentId: N:IdentityService.Services
+  id: IdentityService.Services
+  children:
+  - IdentityService.Services.AuthenticationService
+  - IdentityService.Services.EmailSender
+  - IdentityService.Services.IAuthenticationService
+  - IdentityService.Services.IEmailSender
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Services
+  nameWithType: IdentityService.Services
+  fullName: IdentityService.Services
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Services.AuthenticationService
+  commentId: T:IdentityService.Services.AuthenticationService
+  href: IdentityService.Services.AuthenticationService.html
+  name: AuthenticationService
+  nameWithType: AuthenticationService
+  fullName: IdentityService.Services.AuthenticationService
+- uid: IdentityService.Services.EmailSender
+  commentId: T:IdentityService.Services.EmailSender
+  href: IdentityService.Services.EmailSender.html
+  name: EmailSender
+  nameWithType: EmailSender
+  fullName: IdentityService.Services.EmailSender
+- uid: IdentityService.Services.IAuthenticationService
+  commentId: T:IdentityService.Services.IAuthenticationService
+  parent: IdentityService.Services
+  href: IdentityService.Services.IAuthenticationService.html
+  name: IAuthenticationService
+  nameWithType: IAuthenticationService
+  fullName: IdentityService.Services.IAuthenticationService
+- uid: IdentityService.Services.IEmailSender
+  commentId: T:IdentityService.Services.IEmailSender
+  parent: IdentityService.Services
+  href: IdentityService.Services.IEmailSender.html
+  name: IEmailSender
+  nameWithType: IEmailSender
+  fullName: IdentityService.Services.IEmailSender
+- uid: IdentityService.Services
+  commentId: N:IdentityService.Services
+  href: IdentityService.html
+  name: IdentityService.Services
+  nameWithType: IdentityService.Services
+  fullName: IdentityService.Services
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html

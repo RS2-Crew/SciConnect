@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Domain.Common
+  commentId: N:DB.Domain.Common
+  id: DB.Domain.Common
+  children:
+  - DB.Domain.Common.AggregateRoot
+  - DB.Domain.Common.EntityBase
+  - DB.Domain.Common.ValueObject
+  langs:
+  - csharp
+  - vb
+  name: DB.Domain.Common
+  nameWithType: DB.Domain.Common
+  fullName: DB.Domain.Common
+  type: Namespace
+  assemblies:
+  - DB.Domain
+references:
+- uid: DB.Domain.Common.AggregateRoot
+  commentId: T:DB.Domain.Common.AggregateRoot
+  parent: DB.Domain.Common
+  href: DB.Domain.Common.AggregateRoot.html
+  name: AggregateRoot
+  nameWithType: AggregateRoot
+  fullName: DB.Domain.Common.AggregateRoot
+- uid: DB.Domain.Common.EntityBase
+  commentId: T:DB.Domain.Common.EntityBase
+  parent: DB.Domain.Common
+  href: DB.Domain.Common.EntityBase.html
+  name: EntityBase
+  nameWithType: EntityBase
+  fullName: DB.Domain.Common.EntityBase
+- uid: DB.Domain.Common.ValueObject
+  commentId: T:DB.Domain.Common.ValueObject
+  parent: DB.Domain.Common
+  href: DB.Domain.Common.ValueObject.html
+  name: ValueObject
+  nameWithType: ValueObject
+  fullName: DB.Domain.Common.ValueObject
+- uid: DB.Domain.Common
+  commentId: N:DB.Domain.Common
+  href: DB.html
+  name: DB.Domain.Common
+  nameWithType: DB.Domain.Common
+  fullName: DB.Domain.Common
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Common
+    name: Common
+    href: DB.Domain.Common.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Common
+    name: Common
+    href: DB.Domain.Common.html

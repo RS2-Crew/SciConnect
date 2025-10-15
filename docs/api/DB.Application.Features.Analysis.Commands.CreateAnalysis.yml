@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Analysis.Commands.CreateAnalysis
+  commentId: N:DB.Application.Features.Analysis.Commands.CreateAnalysis
+  id: DB.Application.Features.Analysis.Commands.CreateAnalysis
+  children:
+  - DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Analysis.Commands.CreateAnalysis
+  nameWithType: DB.Application.Features.Analysis.Commands.CreateAnalysis
+  fullName: DB.Application.Features.Analysis.Commands.CreateAnalysis
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator
+  commentId: T:DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator
+  href: DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator.html
+  name: CreateAnalysisCommandValidator
+  nameWithType: CreateAnalysisCommandValidator
+  fullName: DB.Application.Features.Analysis.Commands.CreateAnalysis.CreateAnalysisCommandValidator

@@ -1,0 +1,1491 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Persistance.IInstitutionRepository
+  commentId: T:DB.Application.Contracts.Persistance.IInstitutionRepository
+  id: IInstitutionRepository
+  parent: DB.Application.Contracts.Persistance
+  children:
+  - DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync(System.String)
+  - DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IInstitutionRepository
+  nameWithType: IInstitutionRepository
+  fullName: DB.Application.Contracts.Persistance.IInstitutionRepository
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IInstitutionRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IInstitutionRepository
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IInstitutionRepository.cs
+    startLine: 9
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: 'public interface IInstitutionRepository : IAsyncRepository<Institution>'
+    content.vb: Public Interface IInstitutionRepository Inherits IAsyncRepository(Of Institution)
+  inheritedMembers:
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAllAsync
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}})
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.String,System.Boolean)
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Object}}},System.Boolean)
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetByIdAsync(System.Int32)
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.AddAsync(DB.Domain.Entities.Institution)
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.UpdateAsync(DB.Domain.Entities.Institution)
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.DeleteAsync(DB.Domain.Entities.Institution)
+  - DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetQueryable(System.Boolean)
+- uid: DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync(System.String)
+  commentId: M:DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync(System.String)
+  id: GetByNameAsync(System.String)
+  parent: DB.Application.Contracts.Persistance.IInstitutionRepository
+  langs:
+  - csharp
+  - vb
+  name: GetByNameAsync(string)
+  nameWithType: IInstitutionRepository.GetByNameAsync(string)
+  fullName: DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync(string)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IInstitutionRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetByNameAsync
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IInstitutionRepository.cs
+    startLine: 11
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<Institution?> GetByNameAsync(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{DB.Domain.Entities.Institution}
+    content.vb: Function GetByNameAsync(name As String) As Task(Of Institution)
+  overload: DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync*
+  nameWithType.vb: IInstitutionRepository.GetByNameAsync(String)
+  fullName.vb: DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync(String)
+  name.vb: GetByNameAsync(String)
+- uid: DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName(System.String)
+  commentId: M:DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName(System.String)
+  id: GetInstitutionByName(System.String)
+  parent: DB.Application.Contracts.Persistance.IInstitutionRepository
+  langs:
+  - csharp
+  - vb
+  name: GetInstitutionByName(string)
+  nameWithType: IInstitutionRepository.GetInstitutionByName(string)
+  fullName: DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName(string)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Persistance/IInstitutionRepository.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetInstitutionByName
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Persistance/IInstitutionRepository.cs
+    startLine: 14
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Persistance
+  syntax:
+    content: Task<IReadOnlyCollection<Institution>> GetInstitutionByName(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyCollection{DB.Domain.Entities.Institution}}
+    content.vb: Function GetInstitutionByName(name As String) As Task(Of IReadOnlyCollection(Of Institution))
+  overload: DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName*
+  nameWithType.vb: IInstitutionRepository.GetInstitutionByName(String)
+  fullName.vb: DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName(String)
+  name.vb: GetInstitutionByName(String)
+references:
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAllAsync
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAllAsync
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAllAsync
+  name: GetAllAsync()
+  nameWithType: IAsyncRepository<Institution>.GetAllAsync()
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.GetAllAsync()
+  nameWithType.vb: IAsyncRepository(Of Institution).GetAllAsync()
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).GetAllAsync()
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAllAsync
+    name: GetAllAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAllAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAllAsync
+    name: GetAllAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAllAsync
+  - name: (
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}})
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}})
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  name: GetAsync(Expression<Func<Institution, bool>>)
+  nameWithType: IAsyncRepository<Institution>.GetAsync(Expression<Func<Institution, bool>>)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.GetAsync(System.Linq.Expressions.Expression<System.Func<DB.Domain.Entities.Institution, bool>>)
+  nameWithType.vb: IAsyncRepository(Of Institution).GetAsync(Expression(Of Func(Of Institution, Boolean)))
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of DB.Domain.Entities.Institution, Boolean)))
+  name.vb: GetAsync(Expression(Of Func(Of Institution, Boolean)))
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}})
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}})
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.String,System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.String,System.Boolean)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_String_System_Boolean_
+  name: GetAsync(Expression<Func<Institution, bool>>, Func<IQueryable<Institution>, IOrderedQueryable<Institution>>, string, bool)
+  nameWithType: IAsyncRepository<Institution>.GetAsync(Expression<Func<Institution, bool>>, Func<IQueryable<Institution>, IOrderedQueryable<Institution>>, string, bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.GetAsync(System.Linq.Expressions.Expression<System.Func<DB.Domain.Entities.Institution, bool>>, System.Func<System.Linq.IQueryable<DB.Domain.Entities.Institution>, System.Linq.IOrderedQueryable<DB.Domain.Entities.Institution>>, string, bool)
+  nameWithType.vb: IAsyncRepository(Of Institution).GetAsync(Expression(Of Func(Of Institution, Boolean)), Func(Of IQueryable(Of Institution), IOrderedQueryable(Of Institution)), String, Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of DB.Domain.Entities.Institution, Boolean)), System.Func(Of System.Linq.IQueryable(Of DB.Domain.Entities.Institution), System.Linq.IOrderedQueryable(Of DB.Domain.Entities.Institution)), String, Boolean)
+  name.vb: GetAsync(Expression(Of Func(Of Institution, Boolean)), Func(Of IQueryable(Of Institution), IOrderedQueryable(Of Institution)), String, Boolean)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.String,System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_String_System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.String,System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_String_System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Object}}},System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Object}}},System.Boolean)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Collections_Generic_List_System_Linq_Expressions_Expression_System_Func__0_System_Object____System_Boolean_
+  name: GetAsync(Expression<Func<Institution, bool>>, Func<IQueryable<Institution>, IOrderedQueryable<Institution>>, List<Expression<Func<Institution, object>>>, bool)
+  nameWithType: IAsyncRepository<Institution>.GetAsync(Expression<Func<Institution, bool>>, Func<IQueryable<Institution>, IOrderedQueryable<Institution>>, List<Expression<Func<Institution, object>>>, bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.GetAsync(System.Linq.Expressions.Expression<System.Func<DB.Domain.Entities.Institution, bool>>, System.Func<System.Linq.IQueryable<DB.Domain.Entities.Institution>, System.Linq.IOrderedQueryable<DB.Domain.Entities.Institution>>, System.Collections.Generic.List<System.Linq.Expressions.Expression<System.Func<DB.Domain.Entities.Institution, object>>>, bool)
+  nameWithType.vb: IAsyncRepository(Of Institution).GetAsync(Expression(Of Func(Of Institution, Boolean)), Func(Of IQueryable(Of Institution), IOrderedQueryable(Of Institution)), List(Of Expression(Of Func(Of Institution, Object))), Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of DB.Domain.Entities.Institution, Boolean)), System.Func(Of System.Linq.IQueryable(Of DB.Domain.Entities.Institution), System.Linq.IOrderedQueryable(Of DB.Domain.Entities.Institution)), System.Collections.Generic.List(Of System.Linq.Expressions.Expression(Of System.Func(Of DB.Domain.Entities.Institution, Object))), Boolean)
+  name.vb: GetAsync(Expression(Of Func(Of Institution, Boolean)), Func(Of IQueryable(Of Institution), IOrderedQueryable(Of Institution)), List(Of Expression(Of Func(Of Institution, Object))), Boolean)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Object}}},System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Collections_Generic_List_System_Linq_Expressions_Expression_System_Func__0_System_Object____System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetAsync(System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Boolean}},System.Func{System.Linq.IQueryable{DB.Domain.Entities.Institution},System.Linq.IOrderedQueryable{DB.Domain.Entities.Institution}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{DB.Domain.Entities.Institution,System.Object}}},System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Collections_Generic_List_System_Linq_Expressions_Expression_System_Func__0_System_Object____System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetByIdAsync(System.Int32)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetByIdAsync(System.Int32)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetByIdAsync_System_Int32_
+  name: GetByIdAsync(int)
+  nameWithType: IAsyncRepository<Institution>.GetByIdAsync(int)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.GetByIdAsync(int)
+  nameWithType.vb: IAsyncRepository(Of Institution).GetByIdAsync(Integer)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).GetByIdAsync(Integer)
+  name.vb: GetByIdAsync(Integer)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetByIdAsync(System.Int32)
+    name: GetByIdAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetByIdAsync(System.Int32)
+    name: GetByIdAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.AddAsync(DB.Domain.Entities.Institution)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.AddAsync(DB.Domain.Entities.Institution)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_AddAsync__0_
+  name: AddAsync(Institution)
+  nameWithType: IAsyncRepository<Institution>.AddAsync(Institution)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.AddAsync(DB.Domain.Entities.Institution)
+  nameWithType.vb: IAsyncRepository(Of Institution).AddAsync(Institution)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).AddAsync(DB.Domain.Entities.Institution)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.AddAsync(DB.Domain.Entities.Institution)
+    name: AddAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_AddAsync__0_
+  - name: (
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.AddAsync(DB.Domain.Entities.Institution)
+    name: AddAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_AddAsync__0_
+  - name: (
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.UpdateAsync(DB.Domain.Entities.Institution)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.UpdateAsync(DB.Domain.Entities.Institution)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_UpdateAsync__0_
+  name: UpdateAsync(Institution)
+  nameWithType: IAsyncRepository<Institution>.UpdateAsync(Institution)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.UpdateAsync(DB.Domain.Entities.Institution)
+  nameWithType.vb: IAsyncRepository(Of Institution).UpdateAsync(Institution)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).UpdateAsync(DB.Domain.Entities.Institution)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.UpdateAsync(DB.Domain.Entities.Institution)
+    name: UpdateAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_UpdateAsync__0_
+  - name: (
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.UpdateAsync(DB.Domain.Entities.Institution)
+    name: UpdateAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_UpdateAsync__0_
+  - name: (
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.DeleteAsync(DB.Domain.Entities.Institution)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.DeleteAsync(DB.Domain.Entities.Institution)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_DeleteAsync__0_
+  name: DeleteAsync(Institution)
+  nameWithType: IAsyncRepository<Institution>.DeleteAsync(Institution)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.DeleteAsync(DB.Domain.Entities.Institution)
+  nameWithType.vb: IAsyncRepository(Of Institution).DeleteAsync(Institution)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).DeleteAsync(DB.Domain.Entities.Institution)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.DeleteAsync(DB.Domain.Entities.Institution)
+    name: DeleteAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_DeleteAsync__0_
+  - name: (
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.DeleteAsync(DB.Domain.Entities.Institution)
+    name: DeleteAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_DeleteAsync__0_
+  - name: (
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetQueryable(System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetQueryable(System.Boolean)
+  parent: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetQueryable_System_Boolean_
+  name: GetQueryable(bool)
+  nameWithType: IAsyncRepository<Institution>.GetQueryable(bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>.GetQueryable(bool)
+  nameWithType.vb: IAsyncRepository(Of Institution).GetQueryable(Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution).GetQueryable(Boolean)
+  name.vb: GetQueryable(Boolean)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetQueryable(System.Boolean)
+    name: GetQueryable
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetQueryable_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}.GetQueryable(System.Boolean)
+    name: GetQueryable
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetQueryable_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAllAsync
+  name: GetAllAsync()
+  nameWithType: IAsyncRepository<T>.GetAllAsync()
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAllAsync()
+  nameWithType.vb: IAsyncRepository(Of T).GetAllAsync()
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAllAsync()
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+    name: GetAllAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAllAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAllAsync
+    name: GetAllAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAllAsync
+  - name: (
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  commentId: T:DB.Application.Contracts.Persistance.IAsyncRepository{DB.Domain.Entities.Institution}
+  parent: DB.Application.Contracts.Persistance
+  definition: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  name: IAsyncRepository<Institution>
+  nameWithType: IAsyncRepository<Institution>
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<DB.Domain.Entities.Institution>
+  nameWithType.vb: IAsyncRepository(Of Institution)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of DB.Domain.Entities.Institution)
+  name.vb: IAsyncRepository(Of Institution)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+    name: IAsyncRepository
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: '>'
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+    name: IAsyncRepository
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+  isExternal: true
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  name: GetAsync(Expression<Func<T, bool>>)
+  nameWithType: IAsyncRepository<T>.GetAsync(Expression<Func<T, bool>>)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAsync(System.Linq.Expressions.Expression<System.Func<T, bool>>)
+  nameWithType.vb: IAsyncRepository(Of T).GetAsync(Expression(Of Func(Of T, Boolean)))
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)))
+  name.vb: GetAsync(Expression(Of Func(Of T, Boolean)))
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+  isExternal: true
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_String_System_Boolean_
+  name: GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>, string, bool)
+  nameWithType: IAsyncRepository<T>.GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>, string, bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAsync(System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>>, string, bool)
+  nameWithType.vb: IAsyncRepository(Of T).GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), String, Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of System.Linq.IQueryable(Of T), System.Linq.IOrderedQueryable(Of T)), String, Boolean)
+  name.vb: GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), String, Boolean)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_String_System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_String_System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+  isExternal: true
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Collections_Generic_List_System_Linq_Expressions_Expression_System_Func__0_System_Object____System_Boolean_
+  name: GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>, List<Expression<Func<T, object>>>, bool)
+  nameWithType: IAsyncRepository<T>.GetAsync(Expression<Func<T, bool>>, Func<IQueryable<T>, IOrderedQueryable<T>>, List<Expression<Func<T, object>>>, bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetAsync(System.Linq.Expressions.Expression<System.Func<T, bool>>, System.Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>>, System.Collections.Generic.List<System.Linq.Expressions.Expression<System.Func<T, object>>>, bool)
+  nameWithType.vb: IAsyncRepository(Of T).GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), List(Of Expression(Of Func(Of T, Object))), Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetAsync(System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)), System.Func(Of System.Linq.IQueryable(Of T), System.Linq.IOrderedQueryable(Of T)), System.Collections.Generic.List(Of System.Linq.Expressions.Expression(Of System.Func(Of T, Object))), Boolean)
+  name.vb: GetAsync(Expression(Of Func(Of T, Boolean)), Func(Of IQueryable(Of T), IOrderedQueryable(Of T)), List(Of Expression(Of Func(Of T, Object))), Boolean)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Collections_Generic_List_System_Linq_Expressions_Expression_System_Func__0_System_Object____System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Object}}},System.Boolean)
+    name: GetAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Collections_Generic_List_System_Linq_Expressions_Expression_System_Func__0_System_Object____System_Boolean_
+  - name: (
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Linq.IOrderedQueryable`1
+    name: IOrderedQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+  isExternal: true
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetByIdAsync_System_Int32_
+  name: GetByIdAsync(int)
+  nameWithType: IAsyncRepository<T>.GetByIdAsync(int)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetByIdAsync(int)
+  nameWithType.vb: IAsyncRepository(Of T).GetByIdAsync(Integer)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetByIdAsync(Integer)
+  name.vb: GetByIdAsync(Integer)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+    name: GetByIdAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetByIdAsync(System.Int32)
+    name: GetByIdAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_AddAsync__0_
+  name: AddAsync(T)
+  nameWithType: IAsyncRepository<T>.AddAsync(T)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.AddAsync(T)
+  nameWithType.vb: IAsyncRepository(Of T).AddAsync(T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).AddAsync(T)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+    name: AddAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_AddAsync__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.AddAsync(`0)
+    name: AddAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_AddAsync__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_UpdateAsync__0_
+  name: UpdateAsync(T)
+  nameWithType: IAsyncRepository<T>.UpdateAsync(T)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.UpdateAsync(T)
+  nameWithType.vb: IAsyncRepository(Of T).UpdateAsync(T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).UpdateAsync(T)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+    name: UpdateAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_UpdateAsync__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.UpdateAsync(`0)
+    name: UpdateAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_UpdateAsync__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_DeleteAsync__0_
+  name: DeleteAsync(T)
+  nameWithType: IAsyncRepository<T>.DeleteAsync(T)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.DeleteAsync(T)
+  nameWithType.vb: IAsyncRepository(Of T).DeleteAsync(T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).DeleteAsync(T)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+    name: DeleteAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_DeleteAsync__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.DeleteAsync(`0)
+    name: DeleteAsync
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_DeleteAsync__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+  commentId: M:DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+  isExternal: true
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetQueryable_System_Boolean_
+  name: GetQueryable(bool)
+  nameWithType: IAsyncRepository<T>.GetQueryable(bool)
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>.GetQueryable(bool)
+  nameWithType.vb: IAsyncRepository(Of T).GetQueryable(Boolean)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T).GetQueryable(Boolean)
+  name.vb: GetQueryable(Boolean)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+    name: GetQueryable
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetQueryable_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1.GetQueryable(System.Boolean)
+    name: GetQueryable
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html#DB_Application_Contracts_Persistance_IAsyncRepository_1_GetQueryable_System_Boolean_
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  commentId: T:DB.Application.Contracts.Persistance.IAsyncRepository`1
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  name: IAsyncRepository<T>
+  nameWithType: IAsyncRepository<T>
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>
+  nameWithType.vb: IAsyncRepository(Of T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T)
+  name.vb: IAsyncRepository(Of T)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+    name: IAsyncRepository
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+    name: IAsyncRepository
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync*
+  commentId: Overload:DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync
+  href: DB.Application.Contracts.Persistance.IInstitutionRepository.html#DB_Application_Contracts_Persistance_IInstitutionRepository_GetByNameAsync_System_String_
+  name: GetByNameAsync
+  nameWithType: IInstitutionRepository.GetByNameAsync
+  fullName: DB.Application.Contracts.Persistance.IInstitutionRepository.GetByNameAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{DB.Domain.Entities.Institution}
+  commentId: T:System.Threading.Tasks.Task{DB.Domain.Entities.Institution}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Institution>
+  nameWithType: Task<Institution>
+  fullName: System.Threading.Tasks.Task<DB.Domain.Entities.Institution>
+  nameWithType.vb: Task(Of Institution)
+  fullName.vb: System.Threading.Tasks.Task(Of DB.Domain.Entities.Institution)
+  name.vb: Task(Of Institution)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName*
+  commentId: Overload:DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName
+  href: DB.Application.Contracts.Persistance.IInstitutionRepository.html#DB_Application_Contracts_Persistance_IInstitutionRepository_GetInstitutionByName_System_String_
+  name: GetInstitutionByName
+  nameWithType: IInstitutionRepository.GetInstitutionByName
+  fullName: DB.Application.Contracts.Persistance.IInstitutionRepository.GetInstitutionByName
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyCollection{DB.Domain.Entities.Institution}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyCollection{DB.Domain.Entities.Institution}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyCollection<Institution>>
+  nameWithType: Task<IReadOnlyCollection<Institution>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyCollection<DB.Domain.Entities.Institution>>
+  nameWithType.vb: Task(Of IReadOnlyCollection(Of Institution))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyCollection(Of DB.Domain.Entities.Institution))
+  name.vb: Task(Of IReadOnlyCollection(Of Institution))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Domain.Entities.Institution
+    name: Institution
+  - name: )
+  - name: )

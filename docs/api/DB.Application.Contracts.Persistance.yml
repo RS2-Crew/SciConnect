@@ -1,0 +1,128 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  id: DB.Application.Contracts.Persistance
+  children:
+  - DB.Application.Contracts.Persistance.IAnalysisRepository
+  - DB.Application.Contracts.Persistance.IAsyncRepository`1
+  - DB.Application.Contracts.Persistance.IEmployeeRepository
+  - DB.Application.Contracts.Persistance.IInstitutionRepository
+  - DB.Application.Contracts.Persistance.IInstrumentRepository
+  - DB.Application.Contracts.Persistance.IKeywordRepository
+  - DB.Application.Contracts.Persistance.IMicroorganismRepository
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Contracts.Persistance.IAnalysisRepository
+  commentId: T:DB.Application.Contracts.Persistance.IAnalysisRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IAnalysisRepository.html
+  name: IAnalysisRepository
+  nameWithType: IAnalysisRepository
+  fullName: DB.Application.Contracts.Persistance.IAnalysisRepository
+- uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+  commentId: T:DB.Application.Contracts.Persistance.IAsyncRepository`1
+  href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  name: IAsyncRepository<T>
+  nameWithType: IAsyncRepository<T>
+  fullName: DB.Application.Contracts.Persistance.IAsyncRepository<T>
+  nameWithType.vb: IAsyncRepository(Of T)
+  fullName.vb: DB.Application.Contracts.Persistance.IAsyncRepository(Of T)
+  name.vb: IAsyncRepository(Of T)
+  spec.csharp:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+    name: IAsyncRepository
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DB.Application.Contracts.Persistance.IAsyncRepository`1
+    name: IAsyncRepository
+    href: DB.Application.Contracts.Persistance.IAsyncRepository-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DB.Application.Contracts.Persistance.IEmployeeRepository
+  commentId: T:DB.Application.Contracts.Persistance.IEmployeeRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IEmployeeRepository.html
+  name: IEmployeeRepository
+  nameWithType: IEmployeeRepository
+  fullName: DB.Application.Contracts.Persistance.IEmployeeRepository
+- uid: DB.Application.Contracts.Persistance.IInstitutionRepository
+  commentId: T:DB.Application.Contracts.Persistance.IInstitutionRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IInstitutionRepository.html
+  name: IInstitutionRepository
+  nameWithType: IInstitutionRepository
+  fullName: DB.Application.Contracts.Persistance.IInstitutionRepository
+- uid: DB.Application.Contracts.Persistance.IInstrumentRepository
+  commentId: T:DB.Application.Contracts.Persistance.IInstrumentRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IInstrumentRepository.html
+  name: IInstrumentRepository
+  nameWithType: IInstrumentRepository
+  fullName: DB.Application.Contracts.Persistance.IInstrumentRepository
+- uid: DB.Application.Contracts.Persistance.IKeywordRepository
+  commentId: T:DB.Application.Contracts.Persistance.IKeywordRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IKeywordRepository.html
+  name: IKeywordRepository
+  nameWithType: IKeywordRepository
+  fullName: DB.Application.Contracts.Persistance.IKeywordRepository
+- uid: DB.Application.Contracts.Persistance.IMicroorganismRepository
+  commentId: T:DB.Application.Contracts.Persistance.IMicroorganismRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IMicroorganismRepository.html
+  name: IMicroorganismRepository
+  nameWithType: IMicroorganismRepository
+  fullName: DB.Application.Contracts.Persistance.IMicroorganismRepository
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html

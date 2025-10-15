@@ -1,0 +1,768 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  commentId: T:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  id: AddAnalysisToInstitutionCommandHandler
+  parent: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  children:
+  - DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.#ctor(DB.Application.Contracts.Persistance.IInstitutionRepository,DB.Application.Contracts.Persistance.IAnalysisRepository)
+  - DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: AddAnalysisToInstitutionCommandHandler
+  nameWithType: AddAnalysisToInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/AddAnalysisToInstitution/AddAnalysisToInstitutionCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: AddAnalysisToInstitutionCommandHandler
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/AddAnalysisToInstitution/AddAnalysisToInstitutionCommandHandler.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  syntax:
+    content: 'public class AddAnalysisToInstitutionCommandHandler : IRequestHandler<AddAnalysisToInstitutionCommand, Unit>'
+    content.vb: Public Class AddAnalysisToInstitutionCommandHandler Implements IRequestHandler(Of AddAnalysisToInstitutionCommand, Unit)
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.#ctor(DB.Application.Contracts.Persistance.IInstitutionRepository,DB.Application.Contracts.Persistance.IAnalysisRepository)
+  commentId: M:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.#ctor(DB.Application.Contracts.Persistance.IInstitutionRepository,DB.Application.Contracts.Persistance.IAnalysisRepository)
+  id: '#ctor(DB.Application.Contracts.Persistance.IInstitutionRepository,DB.Application.Contracts.Persistance.IAnalysisRepository)'
+  parent: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: AddAnalysisToInstitutionCommandHandler(IInstitutionRepository, IAnalysisRepository)
+  nameWithType: AddAnalysisToInstitutionCommandHandler.AddAnalysisToInstitutionCommandHandler(IInstitutionRepository, IAnalysisRepository)
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.AddAnalysisToInstitutionCommandHandler(DB.Application.Contracts.Persistance.IInstitutionRepository, DB.Application.Contracts.Persistance.IAnalysisRepository)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/AddAnalysisToInstitution/AddAnalysisToInstitutionCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/AddAnalysisToInstitution/AddAnalysisToInstitutionCommandHandler.cs
+    startLine: 16
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  syntax:
+    content: public AddAnalysisToInstitutionCommandHandler(IInstitutionRepository institutionRepository, IAnalysisRepository analysisRepository)
+    parameters:
+    - id: institutionRepository
+      type: DB.Application.Contracts.Persistance.IInstitutionRepository
+    - id: analysisRepository
+      type: DB.Application.Contracts.Persistance.IAnalysisRepository
+    content.vb: Public Sub New(institutionRepository As IInstitutionRepository, analysisRepository As IAnalysisRepository)
+  overload: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.#ctor*
+  nameWithType.vb: AddAnalysisToInstitutionCommandHandler.New(IInstitutionRepository, IAnalysisRepository)
+  fullName.vb: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.New(DB.Application.Contracts.Persistance.IInstitutionRepository, DB.Application.Contracts.Persistance.IAnalysisRepository)
+  name.vb: New(IInstitutionRepository, IAnalysisRepository)
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+  commentId: M:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+  id: Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+  parent: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(AddAnalysisToInstitutionCommand, CancellationToken)
+  nameWithType: AddAnalysisToInstitutionCommandHandler.Handle(AddAnalysisToInstitutionCommand, CancellationToken)
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/AddAnalysisToInstitution/AddAnalysisToInstitutionCommandHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Handle
+    path: ../SciConnect/Services/DB/DB.Application/Features/Institutions/Commands/AddAnalysisToInstitution/AddAnalysisToInstitutionCommandHandler.cs
+    startLine: 22
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  summary: Handles a request
+  example: []
+  syntax:
+    content: public Task<Unit> Handle(AddAnalysisToInstitutionCommand request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+      description: The request
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{MediatR.Unit}
+      description: Response from the request
+    content.vb: Public Function Handle(request As AddAnalysisToInstitutionCommand, cancellationToken As CancellationToken) As Task(Of Unit)
+  overload: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle*
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+references:
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+    name: AddAnalysisToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+    name: AddAnalysisToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}
+  commentId: T:MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}
+  parent: MediatR
+  definition: MediatR.IRequestHandler`2
+  href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  name: IRequestHandler<AddAnalysisToInstitutionCommand, Unit>
+  nameWithType: IRequestHandler<AddAnalysisToInstitutionCommand, Unit>
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand, MediatR.Unit>
+  nameWithType.vb: IRequestHandler(Of AddAnalysisToInstitutionCommand, Unit)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand, MediatR.Unit)
+  name.vb: IRequestHandler(Of AddAnalysisToInstitutionCommand, Unit)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+    name: AddAnalysisToInstitutionCommand
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  - name: ','
+  - name: " "
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+    name: AddAnalysisToInstitutionCommand
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  - name: ','
+  - name: " "
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequestHandler`2
+  commentId: T:MediatR.IRequestHandler`2
+  isExternal: true
+  name: IRequestHandler<TRequest, TResponse>
+  nameWithType: IRequestHandler<TRequest, TResponse>
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse)
+  name.vb: IRequestHandler(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.#ctor*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.#ctor
+  href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.html#DB_Application_Features_Institutions_Commands_AddAnalysisToInstitution_AddAnalysisToInstitutionCommandHandler__ctor_DB_Application_Contracts_Persistance_IInstitutionRepository_DB_Application_Contracts_Persistance_IAnalysisRepository_
+  name: AddAnalysisToInstitutionCommandHandler
+  nameWithType: AddAnalysisToInstitutionCommandHandler.AddAnalysisToInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.AddAnalysisToInstitutionCommandHandler
+  nameWithType.vb: AddAnalysisToInstitutionCommandHandler.New
+  fullName.vb: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.New
+  name.vb: New
+- uid: DB.Application.Contracts.Persistance.IInstitutionRepository
+  commentId: T:DB.Application.Contracts.Persistance.IInstitutionRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IInstitutionRepository.html
+  name: IInstitutionRepository
+  nameWithType: IInstitutionRepository
+  fullName: DB.Application.Contracts.Persistance.IInstitutionRepository
+- uid: DB.Application.Contracts.Persistance.IAnalysisRepository
+  commentId: T:DB.Application.Contracts.Persistance.IAnalysisRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IAnalysisRepository.html
+  name: IAnalysisRepository
+  nameWithType: IAnalysisRepository
+  fullName: DB.Application.Contracts.Persistance.IAnalysisRepository
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle*
+  commentId: Overload:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle
+  href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.html#DB_Application_Features_Institutions_Commands_AddAnalysisToInstitution_AddAnalysisToInstitutionCommandHandler_Handle_DB_Application_Features_Institutions_Commands_AddAnalysisToInstitution_AddAnalysisToInstitutionCommand_System_Threading_CancellationToken_
+  name: Handle
+  nameWithType: AddAnalysisToInstitutionCommandHandler.Handle
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.Handle
+- uid: MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+  parent: MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}
+  definition: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  name: Handle(AddAnalysisToInstitutionCommand, CancellationToken)
+  nameWithType: IRequestHandler<AddAnalysisToInstitutionCommand, Unit>.Handle(AddAnalysisToInstitutionCommand, CancellationToken)
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand, MediatR.Unit>.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of AddAnalysisToInstitutionCommand, Unit).Handle(AddAnalysisToInstitutionCommand, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand, MediatR.Unit).Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+    name: AddAnalysisToInstitutionCommand
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,MediatR.Unit}.Handle(DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+    name: AddAnalysisToInstitutionCommand
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  name: AddAnalysisToInstitutionCommand
+  nameWithType: AddAnalysisToInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{MediatR.Unit}
+  commentId: T:System.Threading.Tasks.Task{MediatR.Unit}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Unit>
+  nameWithType: Task<Unit>
+  fullName: System.Threading.Tasks.Task<MediatR.Unit>
+  nameWithType.vb: Task(Of Unit)
+  fullName.vb: System.Threading.Tasks.Task(Of MediatR.Unit)
+  name.vb: Task(Of Unit)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: MediatR.Unit
+    name: Unit
+    isExternal: true
+  - name: )
+- uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: Handle(TRequest, CancellationToken)
+  nameWithType: IRequestHandler<TRequest, TResponse>.Handle(TRequest, CancellationToken)
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>.Handle(TRequest, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse).Handle(TRequest, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse).Handle(TRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

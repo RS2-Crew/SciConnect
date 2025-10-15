@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Keywords.Queries.ViewModels
+  commentId: N:DB.Application.Features.Keywords.Queries.ViewModels
+  id: DB.Application.Features.Keywords.Queries.ViewModels
+  children:
+  - DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Keywords.Queries.ViewModels
+  nameWithType: DB.Application.Features.Keywords.Queries.ViewModels
+  fullName: DB.Application.Features.Keywords.Queries.ViewModels
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+  commentId: T:DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+  parent: DB.Application.Features.Keywords.Queries.ViewModels
+  href: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel.html
+  name: KeywordViewModel
+  nameWithType: KeywordViewModel
+  fullName: DB.Application.Features.Keywords.Queries.ViewModels.KeywordViewModel
+- uid: DB.Application.Features.Keywords.Queries.ViewModels
+  commentId: N:DB.Application.Features.Keywords.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Keywords.Queries.ViewModels
+  nameWithType: DB.Application.Features.Keywords.Queries.ViewModels
+  fullName: DB.Application.Features.Keywords.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Keywords.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Keywords.Queries.ViewModels.html

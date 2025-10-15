@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application
+  commentId: N:DB.Application
+  id: DB.Application
+  children:
+  - DB.Application.ApplicationServiceRegistration
+  langs:
+  - csharp
+  - vb
+  name: DB.Application
+  nameWithType: DB.Application
+  fullName: DB.Application
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.ApplicationServiceRegistration
+  commentId: T:DB.Application.ApplicationServiceRegistration
+  href: DB.Application.ApplicationServiceRegistration.html
+  name: ApplicationServiceRegistration
+  nameWithType: ApplicationServiceRegistration
+  fullName: DB.Application.ApplicationServiceRegistration

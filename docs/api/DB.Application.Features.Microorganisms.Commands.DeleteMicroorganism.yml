@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  commentId: N:DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  id: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  children:
+  - DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand
+  - DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  nameWithType: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  fullName: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand
+  commentId: T:DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand
+  parent: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  href: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand.html
+  name: DeleteMicroorganismCommand
+  nameWithType: DeleteMicroorganismCommand
+  fullName: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommand
+- uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler
+  commentId: T:DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler
+  href: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler.html
+  name: DeleteMicroorganismCommandHandler
+  nameWithType: DeleteMicroorganismCommandHandler
+  fullName: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.DeleteMicroorganismCommandHandler
+- uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  commentId: N:DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  href: DB.html
+  name: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  nameWithType: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  fullName: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands
+    name: Commands
+    href: DB.Application.Features.Microorganisms.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+    name: DeleteMicroorganism
+    href: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands
+    name: Commands
+    href: DB.Application.Features.Microorganisms.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism
+    name: DeleteMicroorganism
+    href: DB.Application.Features.Microorganisms.Commands.DeleteMicroorganism.html

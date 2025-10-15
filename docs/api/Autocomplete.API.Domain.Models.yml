@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Autocomplete.API.Domain.Models
+  commentId: N:Autocomplete.API.Domain.Models
+  id: Autocomplete.API.Domain.Models
+  children:
+  - Autocomplete.API.Domain.Models.AutocompleteEntry
+  langs:
+  - csharp
+  - vb
+  name: Autocomplete.API.Domain.Models
+  nameWithType: Autocomplete.API.Domain.Models
+  fullName: Autocomplete.API.Domain.Models
+  type: Namespace
+  assemblies:
+  - Autocomplete.API
+references:
+- uid: Autocomplete.API.Domain.Models.AutocompleteEntry
+  commentId: T:Autocomplete.API.Domain.Models.AutocompleteEntry
+  href: Autocomplete.API.Domain.Models.AutocompleteEntry.html
+  name: AutocompleteEntry
+  nameWithType: AutocompleteEntry
+  fullName: Autocomplete.API.Domain.Models.AutocompleteEntry

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Autocomplete.API.Controllers
+  commentId: N:Autocomplete.API.Controllers
+  id: Autocomplete.API.Controllers
+  children:
+  - Autocomplete.API.Controllers.AutocompleteController
+  langs:
+  - csharp
+  - vb
+  name: Autocomplete.API.Controllers
+  nameWithType: Autocomplete.API.Controllers
+  fullName: Autocomplete.API.Controllers
+  type: Namespace
+  assemblies:
+  - Autocomplete.API
+references:
+- uid: Autocomplete.API.Controllers.AutocompleteController
+  commentId: T:Autocomplete.API.Controllers.AutocompleteController
+  href: Autocomplete.API.Controllers.AutocompleteController.html
+  name: AutocompleteController
+  nameWithType: AutocompleteController
+  fullName: Autocomplete.API.Controllers.AutocompleteController

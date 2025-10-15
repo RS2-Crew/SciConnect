@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Autocomplete.API.Consumer
+  commentId: N:Autocomplete.API.Consumer
+  id: Autocomplete.API.Consumer
+  children:
+  - Autocomplete.API.Consumer.EntityChangedConsumer
+  langs:
+  - csharp
+  - vb
+  name: Autocomplete.API.Consumer
+  nameWithType: Autocomplete.API.Consumer
+  fullName: Autocomplete.API.Consumer
+  type: Namespace
+  assemblies:
+  - Autocomplete.API
+references:
+- uid: Autocomplete.API.Consumer.EntityChangedConsumer
+  commentId: T:Autocomplete.API.Consumer.EntityChangedConsumer
+  href: Autocomplete.API.Consumer.EntityChangedConsumer.html
+  name: EntityChangedConsumer
+  nameWithType: EntityChangedConsumer
+  fullName: Autocomplete.API.Consumer.EntityChangedConsumer

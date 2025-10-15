@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  commentId: N:DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  id: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  children:
+  - DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand
+  - DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  nameWithType: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  fullName: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand
+  commentId: T:DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand
+  parent: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  href: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand.html
+  name: AddKeywordToEmployeCommand
+  nameWithType: AddKeywordToEmployeCommand
+  fullName: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommand
+- uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler
+  commentId: T:DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler
+  href: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler.html
+  name: AddKeywordToEmployeCommandHandler
+  nameWithType: AddKeywordToEmployeCommandHandler
+  fullName: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.AddKeywordToEmployeCommandHandler
+- uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  commentId: N:DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  href: DB.html
+  name: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  nameWithType: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  fullName: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+    name: AddKeywordToEmploye
+    href: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Employees
+    name: Employees
+    href: DB.Application.Features.Employees.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands
+    name: Commands
+    href: DB.Application.Features.Employees.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Employees.Commands.AddKeywordToEmploye
+    name: AddKeywordToEmploye
+    href: DB.Application.Features.Employees.Commands.AddKeywordToEmploye.html

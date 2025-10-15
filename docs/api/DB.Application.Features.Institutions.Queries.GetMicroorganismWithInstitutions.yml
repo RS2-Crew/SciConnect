@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  commentId: N:DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  id: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  children:
+  - DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  nameWithType: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  fullName: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler
+  commentId: T:DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler
+  href: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler.html
+  name: GetInstitutionByMicroorganismQueryHandler
+  nameWithType: GetInstitutionByMicroorganismQueryHandler
+  fullName: DB.Application.Features.Institutions.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQueryHandler

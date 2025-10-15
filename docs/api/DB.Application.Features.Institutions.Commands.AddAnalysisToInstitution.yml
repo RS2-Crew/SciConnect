@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  id: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  children:
+  - DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+  - DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+  commentId: T:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+  parent: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand.html
+  name: AddAnalysisToInstitutionCommand
+  nameWithType: AddAnalysisToInstitutionCommand
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommand
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  commentId: T:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+  href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler.html
+  name: AddAnalysisToInstitutionCommandHandler
+  nameWithType: AddAnalysisToInstitutionCommandHandler
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.AddAnalysisToInstitutionCommandHandler
+- uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  commentId: N:DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  href: DB.html
+  name: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  nameWithType: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  fullName: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+    name: AddAnalysisToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Institutions
+    name: Institutions
+    href: DB.Application.Features.Institutions.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands
+    name: Commands
+    href: DB.Application.Features.Institutions.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution
+    name: AddAnalysisToInstitution
+    href: DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution.html

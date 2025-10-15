@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  commentId: N:DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  id: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  children:
+  - DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery
+  - DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  nameWithType: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  fullName: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery
+  commentId: T:DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery
+  parent: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  href: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery.html
+  name: GetEmployeesByKeywordQuery
+  nameWithType: GetEmployeesByKeywordQuery
+  fullName: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQuery
+- uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler
+  commentId: T:DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler
+  href: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler.html
+  name: GetEmployeesByKeywordQueryHandler
+  nameWithType: GetEmployeesByKeywordQueryHandler
+  fullName: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.GetEmployeesByKeywordQueryHandler
+- uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  commentId: N:DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  href: DB.html
+  name: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  nameWithType: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  fullName: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+    name: GetEmployeesByKeyword
+    href: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Keywords
+    name: Keywords
+    href: DB.Application.Features.Keywords.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries
+    name: Queries
+    href: DB.Application.Features.Keywords.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword
+    name: GetEmployeesByKeyword
+    href: DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword.html

@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Data
+  commentId: N:IdentityService.Data
+  id: IdentityService.Data
+  children:
+  - IdentityService.Data.ApplicationContext
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Data
+  nameWithType: IdentityService.Data
+  fullName: IdentityService.Data
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Data.ApplicationContext
+  commentId: T:IdentityService.Data.ApplicationContext
+  parent: IdentityService.Data
+  href: IdentityService.Data.ApplicationContext.html
+  name: ApplicationContext
+  nameWithType: ApplicationContext
+  fullName: IdentityService.Data.ApplicationContext
+- uid: IdentityService.Data
+  commentId: N:IdentityService.Data
+  href: IdentityService.html
+  name: IdentityService.Data
+  nameWithType: IdentityService.Data
+  fullName: IdentityService.Data
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Data
+    name: Data
+    href: IdentityService.Data.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Data
+    name: Data
+    href: IdentityService.Data.html

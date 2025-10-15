@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  commentId: N:DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  id: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  children:
+  - DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  nameWithType: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  fullName: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery
+  commentId: T:DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery
+  parent: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  href: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery.html
+  name: GetInstitutionByMicroorganismQuery
+  nameWithType: GetInstitutionByMicroorganismQuery
+  fullName: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.GetInstitutionByMicroorganismQuery
+- uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  commentId: N:DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  href: DB.html
+  name: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  nameWithType: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  fullName: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analysis
+    name: Analysis
+    href: DB.Application.Features.Analysis.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries
+    name: Queries
+    href: DB.Application.Features.Analysis.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+    name: GetMicroorganismWithInstitutions
+    href: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analysis
+    name: Analysis
+    href: DB.Application.Features.Analysis.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries
+    name: Queries
+    href: DB.Application.Features.Analysis.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions
+    name: GetMicroorganismWithInstitutions
+    href: DB.Application.Features.Analysis.Queries.GetMicroorganismWithInstitutions.html

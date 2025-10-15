@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+  id: IMicroorganismViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel(DB.Domain.Entities.Microorganism)
+  langs:
+  - csharp
+  - vb
+  name: IMicroorganismViewModelFactory
+  nameWithType: IMicroorganismViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IMicroorganismViewModelFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismViewModelFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IMicroorganismViewModelFactory
+    content.vb: Public Interface IMicroorganismViewModelFactory
+- uid: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel(DB.Domain.Entities.Microorganism)
+  commentId: M:DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel(DB.Domain.Entities.Microorganism)
+  id: CreateViewModel(DB.Domain.Entities.Microorganism)
+  parent: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateViewModel(Microorganism)
+  nameWithType: IMicroorganismViewModelFactory.CreateViewModel(Microorganism)
+  fullName: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel(DB.Domain.Entities.Microorganism)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateViewModel
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IMicroorganismViewModelFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: MicroorganismViewModel CreateViewModel(Microorganism microorganism)
+    parameters:
+    - id: microorganism
+      type: DB.Domain.Entities.Microorganism
+    return:
+      type: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+    content.vb: Function CreateViewModel(microorganism As Microorganism) As MicroorganismViewModel
+  overload: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel*
+  commentId: Overload:DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel
+  href: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.html#DB_Application_Contracts_Factories_IMicroorganismViewModelFactory_CreateViewModel_DB_Domain_Entities_Microorganism_
+  name: CreateViewModel
+  nameWithType: IMicroorganismViewModelFactory.CreateViewModel
+  fullName: DB.Application.Contracts.Factories.IMicroorganismViewModelFactory.CreateViewModel
+- uid: DB.Domain.Entities.Microorganism
+  commentId: T:DB.Domain.Entities.Microorganism
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Microorganism.html
+  name: Microorganism
+  nameWithType: Microorganism
+  fullName: DB.Domain.Entities.Microorganism
+- uid: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+  commentId: T:DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+  parent: DB.Application.Features.Microorganisms.Queries.ViewModels
+  href: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel.html
+  name: MicroorganismViewModel
+  nameWithType: MicroorganismViewModel
+  fullName: DB.Application.Features.Microorganisms.Queries.ViewModels.MicroorganismViewModel
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+- uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+  commentId: N:DB.Application.Features.Microorganisms.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Microorganisms.Queries.ViewModels
+  nameWithType: DB.Application.Features.Microorganisms.Queries.ViewModels
+  fullName: DB.Application.Features.Microorganisms.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Microorganisms.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms
+    name: Microorganisms
+    href: DB.Application.Features.Microorganisms.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries
+    name: Queries
+    href: DB.Application.Features.Microorganisms.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Microorganisms.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Microorganisms.Queries.ViewModels.html

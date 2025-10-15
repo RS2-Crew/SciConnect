@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  commentId: N:DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  id: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  children:
+  - DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand
+  - DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  nameWithType: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  fullName: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand
+  commentId: T:DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand
+  parent: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  href: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand.html
+  name: AddMicroorganismToAnalysisCommand
+  nameWithType: AddMicroorganismToAnalysisCommand
+  fullName: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommand
+- uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler
+  commentId: T:DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler
+  href: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler.html
+  name: AddMicroorganismToAnalysisCommandHandler
+  nameWithType: AddMicroorganismToAnalysisCommandHandler
+  fullName: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.AddMicroorganismToAnalysisCommandHandler
+- uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  commentId: N:DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  href: DB.html
+  name: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  nameWithType: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  fullName: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analysis
+    name: Analysis
+    href: DB.Application.Features.Analysis.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Commands
+    name: Commands
+    href: DB.Application.Features.Analysis.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+    name: AddMicroorganismToAnalysis
+    href: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analysis
+    name: Analysis
+    href: DB.Application.Features.Analysis.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Commands
+    name: Commands
+    href: DB.Application.Features.Analysis.Commands.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis
+    name: AddMicroorganismToAnalysis
+    href: DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis.html

@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Infrastructure.Repositories
+  commentId: N:DB.Infrastructure.Repositories
+  id: DB.Infrastructure.Repositories
+  children:
+  - DB.Infrastructure.Repositories.AnalysisRepository
+  - DB.Infrastructure.Repositories.EmployeeRepository
+  - DB.Infrastructure.Repositories.InstitutionRepository
+  - DB.Infrastructure.Repositories.InstrumentRepository
+  - DB.Infrastructure.Repositories.KeywordRepository
+  - DB.Infrastructure.Repositories.MicroorganismRepository
+  - DB.Infrastructure.Repositories.RepositoryBase`1
+  langs:
+  - csharp
+  - vb
+  name: DB.Infrastructure.Repositories
+  nameWithType: DB.Infrastructure.Repositories
+  fullName: DB.Infrastructure.Repositories
+  type: Namespace
+  assemblies:
+  - DB.Infrastructure
+references:
+- uid: DB.Infrastructure.Repositories.AnalysisRepository
+  commentId: T:DB.Infrastructure.Repositories.AnalysisRepository
+  href: DB.Infrastructure.Repositories.AnalysisRepository.html
+  name: AnalysisRepository
+  nameWithType: AnalysisRepository
+  fullName: DB.Infrastructure.Repositories.AnalysisRepository
+- uid: DB.Infrastructure.Repositories.EmployeeRepository
+  commentId: T:DB.Infrastructure.Repositories.EmployeeRepository
+  href: DB.Infrastructure.Repositories.EmployeeRepository.html
+  name: EmployeeRepository
+  nameWithType: EmployeeRepository
+  fullName: DB.Infrastructure.Repositories.EmployeeRepository
+- uid: DB.Infrastructure.Repositories.InstitutionRepository
+  commentId: T:DB.Infrastructure.Repositories.InstitutionRepository
+  href: DB.Infrastructure.Repositories.InstitutionRepository.html
+  name: InstitutionRepository
+  nameWithType: InstitutionRepository
+  fullName: DB.Infrastructure.Repositories.InstitutionRepository
+- uid: DB.Infrastructure.Repositories.InstrumentRepository
+  commentId: T:DB.Infrastructure.Repositories.InstrumentRepository
+  href: DB.Infrastructure.Repositories.InstrumentRepository.html
+  name: InstrumentRepository
+  nameWithType: InstrumentRepository
+  fullName: DB.Infrastructure.Repositories.InstrumentRepository
+- uid: DB.Infrastructure.Repositories.KeywordRepository
+  commentId: T:DB.Infrastructure.Repositories.KeywordRepository
+  href: DB.Infrastructure.Repositories.KeywordRepository.html
+  name: KeywordRepository
+  nameWithType: KeywordRepository
+  fullName: DB.Infrastructure.Repositories.KeywordRepository
+- uid: DB.Infrastructure.Repositories.MicroorganismRepository
+  commentId: T:DB.Infrastructure.Repositories.MicroorganismRepository
+  href: DB.Infrastructure.Repositories.MicroorganismRepository.html
+  name: MicroorganismRepository
+  nameWithType: MicroorganismRepository
+  fullName: DB.Infrastructure.Repositories.MicroorganismRepository
+- uid: DB.Infrastructure.Repositories.RepositoryBase`1
+  commentId: T:DB.Infrastructure.Repositories.RepositoryBase`1
+  href: DB.Infrastructure.Repositories.RepositoryBase-1.html
+  name: RepositoryBase<T>
+  nameWithType: RepositoryBase<T>
+  fullName: DB.Infrastructure.Repositories.RepositoryBase<T>
+  nameWithType.vb: RepositoryBase(Of T)
+  fullName.vb: DB.Infrastructure.Repositories.RepositoryBase(Of T)
+  name.vb: RepositoryBase(Of T)
+  spec.csharp:
+  - uid: DB.Infrastructure.Repositories.RepositoryBase`1
+    name: RepositoryBase
+    href: DB.Infrastructure.Repositories.RepositoryBase-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DB.Infrastructure.Repositories.RepositoryBase`1
+    name: RepositoryBase
+    href: DB.Infrastructure.Repositories.RepositoryBase-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

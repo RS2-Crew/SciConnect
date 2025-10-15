@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Infrastructure.Persistance.EntityConfigurations
+  commentId: N:DB.Infrastructure.Persistance.EntityConfigurations
+  id: DB.Infrastructure.Persistance.EntityConfigurations
+  children:
+  - DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration
+  - DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+  - DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration
+  - DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration
+  - DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration
+  - DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration
+  - DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DB.Infrastructure.Persistance.EntityConfigurations
+  nameWithType: DB.Infrastructure.Persistance.EntityConfigurations
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations
+  type: Namespace
+  assemblies:
+  - DB.Infrastructure
+references:
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration
+  href: DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration.html
+  name: AnalysisEntityTypeConfiguration
+  nameWithType: AnalysisEntityTypeConfiguration
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.AnalysisEntityTypeConfiguration
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+  href: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory.html
+  name: DesignTimeInstitutionContextFactory
+  nameWithType: DesignTimeInstitutionContextFactory
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.DesignTimeInstitutionContextFactory
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration
+  href: DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration.html
+  name: EmployeeEntityTypeConfiguration
+  nameWithType: EmployeeEntityTypeConfiguration
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.EmployeeEntityTypeConfiguration
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration
+  href: DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration.html
+  name: InstitutionEntityTypeConfiguration
+  nameWithType: InstitutionEntityTypeConfiguration
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.InstitutionEntityTypeConfiguration
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration
+  href: DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration.html
+  name: InstrumentEntityTypeConfiguration
+  nameWithType: InstrumentEntityTypeConfiguration
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.InstrumentEntityTypeConfiguration
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration
+  href: DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration.html
+  name: KeywordEntityTypeConfiguration
+  nameWithType: KeywordEntityTypeConfiguration
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.KeywordEntityTypeConfiguration
+- uid: DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration
+  commentId: T:DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration
+  href: DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration.html
+  name: MicroorganismEntityTypeConfiguration
+  nameWithType: MicroorganismEntityTypeConfiguration
+  fullName: DB.Infrastructure.Persistance.EntityConfigurations.MicroorganismEntityTypeConfiguration

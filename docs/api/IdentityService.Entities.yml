@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Entities
+  commentId: N:IdentityService.Entities
+  id: IdentityService.Entities
+  children:
+  - IdentityService.Entities.RefreshToken
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Entities
+  nameWithType: IdentityService.Entities
+  fullName: IdentityService.Entities
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Entities.RefreshToken
+  commentId: T:IdentityService.Entities.RefreshToken
+  href: IdentityService.Entities.RefreshToken.html
+  name: RefreshToken
+  nameWithType: RefreshToken
+  fullName: IdentityService.Entities.RefreshToken

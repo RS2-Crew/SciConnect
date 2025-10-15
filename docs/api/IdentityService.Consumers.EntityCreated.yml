@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Consumers.EntityCreated
+  commentId: N:IdentityService.Consumers.EntityCreated
+  id: IdentityService.Consumers.EntityCreated
+  children:
+  - IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  - IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer
+  - IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Consumers.EntityCreated
+  nameWithType: IdentityService.Consumers.EntityCreated
+  fullName: IdentityService.Consumers.EntityCreated
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  commentId: T:IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+  href: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer.html
+  name: EmployeeCreatedConsumer
+  nameWithType: EmployeeCreatedConsumer
+  fullName: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+- uid: IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer
+  commentId: T:IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer
+  href: IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer.html
+  name: InstitutionCreatedConsumer
+  nameWithType: InstitutionCreatedConsumer
+  fullName: IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer
+- uid: IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer
+  commentId: T:IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer
+  href: IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer.html
+  name: SimpleEntityCreatedConsumer
+  nameWithType: SimpleEntityCreatedConsumer
+  fullName: IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer

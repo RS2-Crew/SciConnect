@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  id: IAnalysisViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  children:
+  - DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel(DB.Domain.Entities.Analysis)
+  langs:
+  - csharp
+  - vb
+  name: IAnalysisViewModelFactory
+  nameWithType: IAnalysisViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IAnalysisViewModelFactory
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisViewModelFactory.cs
+    startLine: 10
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: public interface IAnalysisViewModelFactory
+    content.vb: Public Interface IAnalysisViewModelFactory
+- uid: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel(DB.Domain.Entities.Analysis)
+  commentId: M:DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel(DB.Domain.Entities.Analysis)
+  id: CreateViewModel(DB.Domain.Entities.Analysis)
+  parent: DB.Application.Contracts.Factories.IAnalysisViewModelFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateViewModel(Analysis)
+  nameWithType: IAnalysisViewModelFactory.CreateViewModel(Analysis)
+  fullName: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel(DB.Domain.Entities.Analysis)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisViewModelFactory.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: CreateViewModel
+    path: ../SciConnect/Services/DB/DB.Application/Contracts/Factories/IAnalysisViewModelFactory.cs
+    startLine: 12
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Contracts.Factories
+  syntax:
+    content: AnalysisViewModel CreateViewModel(Analysis analysis)
+    parameters:
+    - id: analysis
+      type: DB.Domain.Entities.Analysis
+    return:
+      type: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+    content.vb: Function CreateViewModel(analysis As Analysis) As AnalysisViewModel
+  overload: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel*
+references:
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel*
+  commentId: Overload:DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel
+  href: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.html#DB_Application_Contracts_Factories_IAnalysisViewModelFactory_CreateViewModel_DB_Domain_Entities_Analysis_
+  name: CreateViewModel
+  nameWithType: IAnalysisViewModelFactory.CreateViewModel
+  fullName: DB.Application.Contracts.Factories.IAnalysisViewModelFactory.CreateViewModel
+- uid: DB.Domain.Entities.Analysis
+  commentId: T:DB.Domain.Entities.Analysis
+  parent: DB.Domain.Entities
+  href: DB.Domain.Entities.Analysis.html
+  name: Analysis
+  nameWithType: Analysis
+  fullName: DB.Domain.Entities.Analysis
+- uid: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+  commentId: T:DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+  parent: DB.Application.Features.Analysis.Queries.ViewModels
+  href: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel.html
+  name: AnalysisViewModel
+  nameWithType: AnalysisViewModel
+  fullName: DB.Application.Features.Analysis.Queries.ViewModels.AnalysisViewModel
+- uid: DB.Domain.Entities
+  commentId: N:DB.Domain.Entities
+  href: DB.html
+  name: DB.Domain.Entities
+  nameWithType: DB.Domain.Entities
+  fullName: DB.Domain.Entities
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Domain
+    name: Domain
+    href: DB.Domain.html
+  - name: .
+  - uid: DB.Domain.Entities
+    name: Entities
+    href: DB.Domain.Entities.html
+- uid: DB.Application.Features.Analysis.Queries.ViewModels
+  commentId: N:DB.Application.Features.Analysis.Queries.ViewModels
+  href: DB.html
+  name: DB.Application.Features.Analysis.Queries.ViewModels
+  nameWithType: DB.Application.Features.Analysis.Queries.ViewModels
+  fullName: DB.Application.Features.Analysis.Queries.ViewModels
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analysis
+    name: Analysis
+    href: DB.Application.Features.Analysis.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries
+    name: Queries
+    href: DB.Application.Features.Analysis.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Analysis.Queries.ViewModels.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Analysis
+    name: Analysis
+    href: DB.Application.Features.Analysis.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries
+    name: Queries
+    href: DB.Application.Features.Analysis.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Analysis.Queries.ViewModels
+    name: ViewModels
+    href: DB.Application.Features.Analysis.Queries.ViewModels.html

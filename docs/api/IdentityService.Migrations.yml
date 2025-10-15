@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Migrations
+  commentId: N:IdentityService.Migrations
+  id: IdentityService.Migrations
+  children:
+  - IdentityService.Migrations.InitialMigration
+  langs:
+  - csharp
+  - vb
+  name: IdentityService.Migrations
+  nameWithType: IdentityService.Migrations
+  fullName: IdentityService.Migrations
+  type: Namespace
+  assemblies:
+  - IdentityService
+references:
+- uid: IdentityService.Migrations.InitialMigration
+  commentId: T:IdentityService.Migrations.InitialMigration
+  href: IdentityService.Migrations.InitialMigration.html
+  name: InitialMigration
+  nameWithType: InitialMigration
+  fullName: IdentityService.Migrations.InitialMigration

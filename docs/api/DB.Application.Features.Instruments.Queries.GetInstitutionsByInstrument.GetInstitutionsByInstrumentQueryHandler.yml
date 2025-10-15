@@ -1,0 +1,834 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  commentId: T:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  id: GetInstitutionsByInstrumentQueryHandler
+  parent: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  children:
+  - DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,DB.Application.Contracts.Factories.IInstitutionViewModelFactory)
+  - DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: GetInstitutionsByInstrumentQueryHandler
+  nameWithType: GetInstitutionsByInstrumentQueryHandler
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  type: Class
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Instruments/Queries/GetInstitutionsByInstrument/GetInstitutionsByInstrumentQueryHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: GetInstitutionsByInstrumentQueryHandler
+    path: ../SciConnect/Services/DB/DB.Application/Features/Instruments/Queries/GetInstitutionsByInstrument/GetInstitutionsByInstrumentQueryHandler.cs
+    startLine: 13
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  syntax:
+    content: 'public class GetInstitutionsByInstrumentQueryHandler : IRequestHandler<GetInstitutionsByInstrumentQuery, IReadOnlyCollection<InstitutionViewModel>>'
+    content.vb: Public Class GetInstitutionsByInstrumentQueryHandler Implements IRequestHandler(Of GetInstitutionsByInstrumentQuery, IReadOnlyCollection(Of InstitutionViewModel))
+  inheritance:
+  - System.Object
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,DB.Application.Contracts.Factories.IInstitutionViewModelFactory)
+  commentId: M:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,DB.Application.Contracts.Factories.IInstitutionViewModelFactory)
+  id: '#ctor(DB.Application.Contracts.Persistance.IInstrumentRepository,DB.Application.Contracts.Factories.IInstitutionViewModelFactory)'
+  parent: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: GetInstitutionsByInstrumentQueryHandler(IInstrumentRepository, IInstitutionViewModelFactory)
+  nameWithType: GetInstitutionsByInstrumentQueryHandler.GetInstitutionsByInstrumentQueryHandler(IInstrumentRepository, IInstitutionViewModelFactory)
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.GetInstitutionsByInstrumentQueryHandler(DB.Application.Contracts.Persistance.IInstrumentRepository, DB.Application.Contracts.Factories.IInstitutionViewModelFactory)
+  type: Constructor
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Instruments/Queries/GetInstitutionsByInstrument/GetInstitutionsByInstrumentQueryHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: .ctor
+    path: ../SciConnect/Services/DB/DB.Application/Features/Instruments/Queries/GetInstitutionsByInstrument/GetInstitutionsByInstrumentQueryHandler.cs
+    startLine: 18
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  syntax:
+    content: public GetInstitutionsByInstrumentQueryHandler(IInstrumentRepository instrumentRepository, IInstitutionViewModelFactory viewModelFactory)
+    parameters:
+    - id: instrumentRepository
+      type: DB.Application.Contracts.Persistance.IInstrumentRepository
+    - id: viewModelFactory
+      type: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+    content.vb: Public Sub New(instrumentRepository As IInstrumentRepository, viewModelFactory As IInstitutionViewModelFactory)
+  overload: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.#ctor*
+  nameWithType.vb: GetInstitutionsByInstrumentQueryHandler.New(IInstrumentRepository, IInstitutionViewModelFactory)
+  fullName.vb: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.New(DB.Application.Contracts.Persistance.IInstrumentRepository, DB.Application.Contracts.Factories.IInstitutionViewModelFactory)
+  name.vb: New(IInstrumentRepository, IInstitutionViewModelFactory)
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+  commentId: M:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+  id: Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+  parent: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(GetInstitutionsByInstrumentQuery, CancellationToken)
+  nameWithType: GetInstitutionsByInstrumentQueryHandler.Handle(GetInstitutionsByInstrumentQuery, CancellationToken)
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/Services/DB/DB.Application/Features/Instruments/Queries/GetInstitutionsByInstrument/GetInstitutionsByInstrumentQueryHandler.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Handle
+    path: ../SciConnect/Services/DB/DB.Application/Features/Instruments/Queries/GetInstitutionsByInstrument/GetInstitutionsByInstrumentQueryHandler.cs
+    startLine: 26
+  assemblies:
+  - DB.Application
+  namespace: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  summary: Handles a request
+  example: []
+  syntax:
+    content: public Task<IReadOnlyCollection<InstitutionViewModel>> Handle(GetInstitutionsByInstrumentQuery request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+      description: The request
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}
+      description: Response from the request
+    content.vb: Public Function Handle(request As GetInstitutionsByInstrumentQuery, cancellationToken As CancellationToken) As Task(Of IReadOnlyCollection(Of InstitutionViewModel))
+  overload: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle*
+  implements:
+  - MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+references:
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  commentId: N:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  href: DB.html
+  name: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  nameWithType: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+    name: GetInstitutionsByInstrument
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+    name: GetInstitutionsByInstrument
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}
+  commentId: T:MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}
+  parent: MediatR
+  definition: MediatR.IRequestHandler`2
+  href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  name: IRequestHandler<GetInstitutionsByInstrumentQuery, IReadOnlyCollection<InstitutionViewModel>>
+  nameWithType: IRequestHandler<GetInstitutionsByInstrumentQuery, IReadOnlyCollection<InstitutionViewModel>>
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery, System.Collections.Generic.IReadOnlyCollection<DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel>>
+  nameWithType.vb: IRequestHandler(Of GetInstitutionsByInstrumentQuery, IReadOnlyCollection(Of InstitutionViewModel))
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery, System.Collections.Generic.IReadOnlyCollection(Of DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel))
+  name.vb: IRequestHandler(Of GetInstitutionsByInstrumentQuery, IReadOnlyCollection(Of InstitutionViewModel))
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+    name: GetInstitutionsByInstrumentQuery
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    name: InstitutionViewModel
+    href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+    name: GetInstitutionsByInstrumentQuery
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    name: InstitutionViewModel
+    href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  - name: )
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MediatR.IRequestHandler`2
+  commentId: T:MediatR.IRequestHandler`2
+  isExternal: true
+  name: IRequestHandler<TRequest, TResponse>
+  nameWithType: IRequestHandler<TRequest, TResponse>
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse)
+  name.vb: IRequestHandler(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: <
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: '>'
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2
+    name: IRequestHandler
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - name: TResponse
+  - name: )
+- uid: MediatR
+  commentId: N:MediatR
+  isExternal: true
+  name: MediatR
+  nameWithType: MediatR
+  fullName: MediatR
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.#ctor*
+  commentId: Overload:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.#ctor
+  href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.html#DB_Application_Features_Instruments_Queries_GetInstitutionsByInstrument_GetInstitutionsByInstrumentQueryHandler__ctor_DB_Application_Contracts_Persistance_IInstrumentRepository_DB_Application_Contracts_Factories_IInstitutionViewModelFactory_
+  name: GetInstitutionsByInstrumentQueryHandler
+  nameWithType: GetInstitutionsByInstrumentQueryHandler.GetInstitutionsByInstrumentQueryHandler
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.GetInstitutionsByInstrumentQueryHandler
+  nameWithType.vb: GetInstitutionsByInstrumentQueryHandler.New
+  fullName.vb: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.New
+  name.vb: New
+- uid: DB.Application.Contracts.Persistance.IInstrumentRepository
+  commentId: T:DB.Application.Contracts.Persistance.IInstrumentRepository
+  parent: DB.Application.Contracts.Persistance
+  href: DB.Application.Contracts.Persistance.IInstrumentRepository.html
+  name: IInstrumentRepository
+  nameWithType: IInstrumentRepository
+  fullName: DB.Application.Contracts.Persistance.IInstrumentRepository
+- uid: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  commentId: T:DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+  parent: DB.Application.Contracts.Factories
+  href: DB.Application.Contracts.Factories.IInstitutionViewModelFactory.html
+  name: IInstitutionViewModelFactory
+  nameWithType: IInstitutionViewModelFactory
+  fullName: DB.Application.Contracts.Factories.IInstitutionViewModelFactory
+- uid: DB.Application.Contracts.Persistance
+  commentId: N:DB.Application.Contracts.Persistance
+  href: DB.html
+  name: DB.Application.Contracts.Persistance
+  nameWithType: DB.Application.Contracts.Persistance
+  fullName: DB.Application.Contracts.Persistance
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Persistance
+    name: Persistance
+    href: DB.Application.Contracts.Persistance.html
+- uid: DB.Application.Contracts.Factories
+  commentId: N:DB.Application.Contracts.Factories
+  href: DB.html
+  name: DB.Application.Contracts.Factories
+  nameWithType: DB.Application.Contracts.Factories
+  fullName: DB.Application.Contracts.Factories
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Contracts
+    name: Contracts
+    href: DB.Application.Contracts.html
+  - name: .
+  - uid: DB.Application.Contracts.Factories
+    name: Factories
+    href: DB.Application.Contracts.Factories.html
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle*
+  commentId: Overload:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle
+  href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.html#DB_Application_Features_Instruments_Queries_GetInstitutionsByInstrument_GetInstitutionsByInstrumentQueryHandler_Handle_DB_Application_Features_Instruments_Queries_GetInstitutionsByInstrument_GetInstitutionsByInstrumentQuery_System_Threading_CancellationToken_
+  name: Handle
+  nameWithType: GetInstitutionsByInstrumentQueryHandler.Handle
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.Handle
+- uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+  parent: MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}
+  definition: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  name: Handle(GetInstitutionsByInstrumentQuery, CancellationToken)
+  nameWithType: IRequestHandler<GetInstitutionsByInstrumentQuery, IReadOnlyCollection<InstitutionViewModel>>.Handle(GetInstitutionsByInstrumentQuery, CancellationToken)
+  fullName: MediatR.IRequestHandler<DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery, System.Collections.Generic.IReadOnlyCollection<DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel>>.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of GetInstitutionsByInstrumentQuery, IReadOnlyCollection(Of InstitutionViewModel)).Handle(GetInstitutionsByInstrumentQuery, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery, System.Collections.Generic.IReadOnlyCollection(Of DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel)).Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+    name: GetInstitutionsByInstrumentQuery
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler{DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}.Handle(DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+    name: GetInstitutionsByInstrumentQuery
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+  commentId: T:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+  parent: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  name: GetInstitutionsByInstrumentQuery
+  nameWithType: GetInstitutionsByInstrumentQuery
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyCollection{DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyCollection<InstitutionViewModel>>
+  nameWithType: Task<IReadOnlyCollection<InstitutionViewModel>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyCollection<DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel>>
+  nameWithType.vb: Task(Of IReadOnlyCollection(Of InstitutionViewModel))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyCollection(Of DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel))
+  name.vb: Task(Of IReadOnlyCollection(Of InstitutionViewModel))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: <
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    name: InstitutionViewModel
+    href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel
+    name: InstitutionViewModel
+    href: DB.Application.Features.Institutions.Queries.ViewModels.InstitutionViewModel.html
+  - name: )
+  - name: )
+- uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  commentId: M:MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: Handle(TRequest, CancellationToken)
+  nameWithType: IRequestHandler<TRequest, TResponse>.Handle(TRequest, CancellationToken)
+  fullName: MediatR.IRequestHandler<TRequest, TResponse>.Handle(TRequest, System.Threading.CancellationToken)
+  nameWithType.vb: IRequestHandler(Of TRequest, TResponse).Handle(TRequest, CancellationToken)
+  fullName.vb: MediatR.IRequestHandler(Of TRequest, TResponse).Handle(TRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: MediatR.IRequestHandler`2.Handle(`0,System.Threading.CancellationToken)
+    name: Handle
+    isExternal: true
+  - name: (
+  - name: TRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

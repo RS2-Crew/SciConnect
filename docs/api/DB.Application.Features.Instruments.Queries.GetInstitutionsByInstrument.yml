@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  commentId: N:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  id: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  children:
+  - DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+  - DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  langs:
+  - csharp
+  - vb
+  name: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  nameWithType: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  type: Namespace
+  assemblies:
+  - DB.Application
+references:
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+  commentId: T:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+  parent: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery.html
+  name: GetInstitutionsByInstrumentQuery
+  nameWithType: GetInstitutionsByInstrumentQuery
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQuery
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  commentId: T:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+  href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler.html
+  name: GetInstitutionsByInstrumentQueryHandler
+  nameWithType: GetInstitutionsByInstrumentQueryHandler
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.GetInstitutionsByInstrumentQueryHandler
+- uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  commentId: N:DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  href: DB.html
+  name: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  nameWithType: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  fullName: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+  spec.csharp:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+    name: GetInstitutionsByInstrument
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.html
+  spec.vb:
+  - uid: DB
+    name: DB
+    href: DB.html
+  - name: .
+  - uid: DB.Application
+    name: Application
+    href: DB.Application.html
+  - name: .
+  - uid: DB.Application.Features
+    name: Features
+    href: DB.Application.Features.html
+  - name: .
+  - uid: DB.Application.Features.Instruments
+    name: Instruments
+    href: DB.Application.Features.Instruments.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries
+    name: Queries
+    href: DB.Application.Features.Instruments.Queries.html
+  - name: .
+  - uid: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument
+    name: GetInstitutionsByInstrument
+    href: DB.Application.Features.Instruments.Queries.GetInstitutionsByInstrument.html

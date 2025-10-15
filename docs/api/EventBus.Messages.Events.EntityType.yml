@@ -1,0 +1,228 @@
+### YamlMime:ManagedReference
+items:
+- uid: EventBus.Messages.Events.EntityType
+  commentId: T:EventBus.Messages.Events.EntityType
+  id: EntityType
+  parent: EventBus.Messages.Events
+  children:
+  - EventBus.Messages.Events.EntityType.Analysis
+  - EventBus.Messages.Events.EntityType.Employee
+  - EventBus.Messages.Events.EntityType.Institution
+  - EventBus.Messages.Events.EntityType.Instrument
+  - EventBus.Messages.Events.EntityType.Keyword
+  - EventBus.Messages.Events.EntityType.Microorganism
+  langs:
+  - csharp
+  - vb
+  name: EntityType
+  nameWithType: EntityType
+  fullName: EventBus.Messages.Events.EntityType
+  type: Enum
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: EntityType
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 8
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: public enum EntityType
+    content.vb: Public Enum EntityType
+- uid: EventBus.Messages.Events.EntityType.Institution
+  commentId: F:EventBus.Messages.Events.EntityType.Institution
+  id: Institution
+  parent: EventBus.Messages.Events.EntityType
+  langs:
+  - csharp
+  - vb
+  name: Institution
+  nameWithType: EntityType.Institution
+  fullName: EventBus.Messages.Events.EntityType.Institution
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Institution
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 10
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Institution = 0
+    return:
+      type: EventBus.Messages.Events.EntityType
+- uid: EventBus.Messages.Events.EntityType.Instrument
+  commentId: F:EventBus.Messages.Events.EntityType.Instrument
+  id: Instrument
+  parent: EventBus.Messages.Events.EntityType
+  langs:
+  - csharp
+  - vb
+  name: Instrument
+  nameWithType: EntityType.Instrument
+  fullName: EventBus.Messages.Events.EntityType.Instrument
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Instrument
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 11
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Instrument = 1
+    return:
+      type: EventBus.Messages.Events.EntityType
+- uid: EventBus.Messages.Events.EntityType.Analysis
+  commentId: F:EventBus.Messages.Events.EntityType.Analysis
+  id: Analysis
+  parent: EventBus.Messages.Events.EntityType
+  langs:
+  - csharp
+  - vb
+  name: Analysis
+  nameWithType: EntityType.Analysis
+  fullName: EventBus.Messages.Events.EntityType.Analysis
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Analysis
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 12
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Analysis = 2
+    return:
+      type: EventBus.Messages.Events.EntityType
+- uid: EventBus.Messages.Events.EntityType.Microorganism
+  commentId: F:EventBus.Messages.Events.EntityType.Microorganism
+  id: Microorganism
+  parent: EventBus.Messages.Events.EntityType
+  langs:
+  - csharp
+  - vb
+  name: Microorganism
+  nameWithType: EntityType.Microorganism
+  fullName: EventBus.Messages.Events.EntityType.Microorganism
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Microorganism
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 13
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Microorganism = 3
+    return:
+      type: EventBus.Messages.Events.EntityType
+- uid: EventBus.Messages.Events.EntityType.Keyword
+  commentId: F:EventBus.Messages.Events.EntityType.Keyword
+  id: Keyword
+  parent: EventBus.Messages.Events.EntityType
+  langs:
+  - csharp
+  - vb
+  name: Keyword
+  nameWithType: EntityType.Keyword
+  fullName: EventBus.Messages.Events.EntityType.Keyword
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Keyword
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 14
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Keyword = 4
+    return:
+      type: EventBus.Messages.Events.EntityType
+- uid: EventBus.Messages.Events.EntityType.Employee
+  commentId: F:EventBus.Messages.Events.EntityType.Employee
+  id: Employee
+  parent: EventBus.Messages.Events.EntityType
+  langs:
+  - csharp
+  - vb
+  name: Employee
+  nameWithType: EntityType.Employee
+  fullName: EventBus.Messages.Events.EntityType.Employee
+  type: Field
+  source:
+    remote:
+      path: SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: Employee
+    path: ../SciConnect/Common/EventBus.Messages/Events/AutocompleteEntityChanged.cs
+    startLine: 15
+  assemblies:
+  - EventBus.Messages
+  namespace: EventBus.Messages.Events
+  syntax:
+    content: Employee = 5
+    return:
+      type: EventBus.Messages.Events.EntityType
+references:
+- uid: EventBus.Messages.Events
+  commentId: N:EventBus.Messages.Events
+  href: EventBus.html
+  name: EventBus.Messages.Events
+  nameWithType: EventBus.Messages.Events
+  fullName: EventBus.Messages.Events
+  spec.csharp:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html
+  spec.vb:
+  - uid: EventBus
+    name: EventBus
+    href: EventBus.html
+  - name: .
+  - uid: EventBus.Messages
+    name: Messages
+    href: EventBus.Messages.html
+  - name: .
+  - uid: EventBus.Messages.Events
+    name: Events
+    href: EventBus.Messages.Events.html
+- uid: EventBus.Messages.Events.EntityType
+  commentId: T:EventBus.Messages.Events.EntityType
+  parent: EventBus.Messages.Events
+  href: EventBus.Messages.Events.EntityType.html
+  name: EntityType
+  nameWithType: EntityType
+  fullName: EventBus.Messages.Events.EntityType

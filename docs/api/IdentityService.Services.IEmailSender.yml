@@ -1,0 +1,159 @@
+### YamlMime:ManagedReference
+items:
+- uid: IdentityService.Services.IEmailSender
+  commentId: T:IdentityService.Services.IEmailSender
+  id: IEmailSender
+  parent: IdentityService.Services
+  children:
+  - IdentityService.Services.IEmailSender.SendAsync(System.String,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IEmailSender
+  nameWithType: IEmailSender
+  fullName: IdentityService.Services.IEmailSender
+  type: Interface
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Services/IEmailSender.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: IEmailSender
+    path: ../SciConnect/IdentityServer/IdentityService/Services/IEmailSender.cs
+    startLine: 2
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Services
+  syntax:
+    content: public interface IEmailSender
+    content.vb: Public Interface IEmailSender
+- uid: IdentityService.Services.IEmailSender.SendAsync(System.String,System.String,System.String)
+  commentId: M:IdentityService.Services.IEmailSender.SendAsync(System.String,System.String,System.String)
+  id: SendAsync(System.String,System.String,System.String)
+  parent: IdentityService.Services.IEmailSender
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(string, string, string)
+  nameWithType: IEmailSender.SendAsync(string, string, string)
+  fullName: IdentityService.Services.IEmailSender.SendAsync(string, string, string)
+  type: Method
+  source:
+    remote:
+      path: SciConnect/IdentityServer/IdentityService/Services/IEmailSender.cs
+      branch: feature/autocomplete
+      repo: https://github.com/RS2-Crew/SciConnect.git
+    id: SendAsync
+    path: ../SciConnect/IdentityServer/IdentityService/Services/IEmailSender.cs
+    startLine: 4
+  assemblies:
+  - IdentityService
+  namespace: IdentityService.Services
+  syntax:
+    content: Task SendAsync(string to, string subject, string body)
+    parameters:
+    - id: to
+      type: System.String
+    - id: subject
+      type: System.String
+    - id: body
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SendAsync([to] As String, subject As String, body As String) As Task
+  overload: IdentityService.Services.IEmailSender.SendAsync*
+  nameWithType.vb: IEmailSender.SendAsync(String, String, String)
+  fullName.vb: IdentityService.Services.IEmailSender.SendAsync(String, String, String)
+  name.vb: SendAsync(String, String, String)
+references:
+- uid: IdentityService.Services
+  commentId: N:IdentityService.Services
+  href: IdentityService.html
+  name: IdentityService.Services
+  nameWithType: IdentityService.Services
+  fullName: IdentityService.Services
+  spec.csharp:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html
+  spec.vb:
+  - uid: IdentityService
+    name: IdentityService
+    href: IdentityService.html
+  - name: .
+  - uid: IdentityService.Services
+    name: Services
+    href: IdentityService.Services.html
+- uid: IdentityService.Services.IEmailSender.SendAsync*
+  commentId: Overload:IdentityService.Services.IEmailSender.SendAsync
+  href: IdentityService.Services.IEmailSender.html#IdentityService_Services_IEmailSender_SendAsync_System_String_System_String_System_String_
+  name: SendAsync
+  nameWithType: IEmailSender.SendAsync
+  fullName: IdentityService.Services.IEmailSender.SendAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
