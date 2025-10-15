@@ -15,22 +15,32 @@ services:
       - EmailSettings__UseSSL=false
       - EmailSettings__UseStartTls=true
     depends_on:
-      - mssql
-      - rabbitmq
-      - redis
+      mssql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      redis:
+        condition: service_started
     ports:
       - "4000:8080"
+
   mssql:
     container_name: mssql
     restart: always
-    ports:
-      - "1433:1433"
     environment:
       #NAPRAVITI ENVIRONMENT PROMENLJIVU ZA PASS
       - SA_PASSWORD=MATF12345678rs2
       - ACCEPT_EULA=Y
     volumes:
       - mssql_data:/var/opt/mssql/data
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P MATF12345678rs2 -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    ports:
+      - "1433:1433"
 
   rabbitmq:
     container_name: rabbitmq
@@ -49,12 +59,13 @@ services:
     container_name: mainservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "ConnectionStrings:EntityConnectionString=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
-      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
-
+      - ConnectionStrings:EntityConnectionString=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False
+      - EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672
     depends_on:
-      - mssql
-      - rabbitmq
+      mssql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
     ports:
       - "4001:8080"
 
@@ -74,10 +85,12 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - "ConnectionStrings:DefaultConnection=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False"
-      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
+      - ConnectionStrings:DefaultConnection=Server=mssql;Database=EntityDb;User Id=sa;Password=MATF12345678rs2;TrustServerCertificate=True;Encrypt=False
+      - EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672
     depends_on:
-      - mssql
-      - rabbitmq
+      mssql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
     ports:
       - "4002:8080"

@@ -1,9 +1,10 @@
 using IdentityService.Consumers;
 using IdentityService.Consumers.EntityCreated;
+using IdentityService.Data;
 using IdentityService.Extentions;
 using IdentityService.Services;
 using MassTransit;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,7 +78,25 @@ builder.Logging.AddConsole();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
+    var retries = 0;
+    while (retries++ < 10)
+    {
+        try
+        {
+            context.Database.Migrate();
+            break;
+        }
+        catch
+        {
+            if (retries >= 10) throw;
+            Thread.Sleep(3000);
+        }
+    }
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
