@@ -19,7 +19,7 @@ import { catchError } from 'rxjs/operators';
 import { AppStateService } from '../shared/app-state/app-state.service';
 import { DataService } from '../shared/services/data.service';
 import { TranslationService } from '../shared/services/translation.service';
-import { AnalyticsService, SummaryAnalyticsResponse } from '../shared/services/analytics.service';
+import { AnalyticsService, SummaryAnalyticsResponse, InstitutionBreakdownResponse, TopInstitutionResponse } from '../shared/services/analytics.service';
 
 import { TranslatePipe } from '../shared/pipes/translate.pipe';
 import {
@@ -139,6 +139,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   analyticsData: SummaryAnalyticsResponse | null = null;
   showAnalytics: boolean = false;
+  topInstitutionsData: TopInstitutionResponse[] = [];
+  institutionBreakdownData: InstitutionBreakdownResponse | null = null;
+  selectedInstitutionId: number | null = null;
 
   private destroy$ = new Subject<void>();
 
@@ -1670,7 +1673,37 @@ export class DashboardComponent implements OnInit, OnDestroy {
             console.error('Error loading analytics data:', error);
           }
         });
+      
+      this.loadTopInstitutions();
     }
+  }
+
+  private loadTopInstitutions(): void {
+    this.analyticsService.getTopInstitutions(10)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (data) => {
+          this.topInstitutionsData = data;
+        },
+        error: (error) => {
+          console.error('Error loading top institutions:', error);
+        }
+      });
+  }
+
+  public loadInstitutionBreakdown(institutionId: number): void {
+    this.selectedInstitutionId = institutionId;
+    this.analyticsService.getInstitutionBreakdown(institutionId)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (data) => {
+          this.institutionBreakdownData = data;
+        },
+        error: (error) => {
+          console.error('Error loading institution breakdown:', error);
+          this.institutionBreakdownData = null;
+        }
+      });
   }
 
   public createInstitution(): void {

@@ -24,7 +24,6 @@ builder.Services.AddCors(options =>
 builder.Services.AddMemoryCache();
 
 builder.Services.ConfigurePersistence(builder.Configuration);
-builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.ConfigureMiscellaneousServices();
 
 builder.Services.AddMassTransit(config => {
@@ -47,9 +46,6 @@ if (app.Environment.IsDevelopment())
 
 // Enable CORS
 app.UseCors("AllowAngularApp");
-
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.MapControllers();
 

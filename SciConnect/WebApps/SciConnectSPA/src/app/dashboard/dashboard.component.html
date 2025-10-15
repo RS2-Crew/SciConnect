@@ -1418,6 +1418,56 @@
               </div>
             </div>
           </div>
+          
+          <!-- Top Institutions Leaderboard -->
+          <div class="analytics-section">
+            <h4 class="analytics-section-title">
+              <i class="fas fa-trophy"></i> Top Institutions by Analyses
+            </h4>
+            <div class="top-institutions-list" *ngIf="topInstitutionsData.length > 0">
+              <div class="top-institution-item" *ngFor="let institution of topInstitutionsData; let i = index"
+                   (click)="loadInstitutionBreakdown(institution.institutionId)"
+                   [class.selected]="selectedInstitutionId === institution.institutionId">
+                <div class="institution-rank" [class.gold]="i === 0" [class.silver]="i === 1" [class.bronze]="i === 2">
+                  {{ i + 1 }}
+                </div>
+                <div class="institution-details">
+                  <span class="institution-name">{{ institution.institutionName }}</span>
+                  <span class="institution-count">{{ institution.analysisCount }} analyses</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Institution Breakdown -->
+          <div class="analytics-section" *ngIf="institutionBreakdownData">
+            <h4 class="analytics-section-title">
+              <i class="fas fa-building"></i> {{ institutionBreakdownData.institutionName }} - Detailed Breakdown
+            </h4>
+            <div class="breakdown-grid">
+              <div class="breakdown-item">
+                <i class="fas fa-flask breakdown-icon"></i>
+                <div class="breakdown-info">
+                  <span class="breakdown-label">Analyses</span>
+                  <span class="breakdown-value">{{ institutionBreakdownData.totalAnalyses }}</span>
+                </div>
+              </div>
+              <div class="breakdown-item">
+                <i class="fas fa-user-md breakdown-icon"></i>
+                <div class="breakdown-info">
+                  <span class="breakdown-label">Researchers</span>
+                  <span class="breakdown-value">{{ institutionBreakdownData.totalResearchers }}</span>
+                </div>
+              </div>
+              <div class="breakdown-item">
+                <i class="fas fa-microscope breakdown-icon"></i>
+                <div class="breakdown-info">
+                  <span class="breakdown-label">Instruments</span>
+                  <span class="breakdown-value">{{ institutionBreakdownData.totalInstruments }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="analytics-loading" *ngIf="!analyticsData">
           <i class="fas fa-spinner fa-spin"></i>

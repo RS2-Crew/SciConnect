@@ -1341,9 +1341,9 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   border: 1px solid #2d3748;
   width: 90%;
-  max-width: 600px;
-  max-height: 80vh;
-  overflow: hidden;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow-y: auto;
   animation: slideIn 0.3s ease-out;
 }
 
@@ -1489,6 +1489,148 @@
   color: #667eea;
 }
 
+/* Analytics Sections */
+.analytics-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #4a5568;
+}
+
+.analytics-section-title {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.analytics-section-title i {
+  color: #667eea;
+}
+
+/* Top Institutions Leaderboard */
+.top-institutions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.top-institution-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #2d3748;
+  border-radius: 10px;
+  border: 1px solid #4a5568;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.top-institution-item:hover {
+  background: #374151;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top-institution-item.selected {
+  background: #4a5568;
+  border-color: #667eea;
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+}
+
+.institution-rank {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4a5568;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.institution-rank.gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a202c;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.institution-rank.silver {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  color: #1a202c;
+  box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+}
+
+.institution-rank.bronze {
+  background: linear-gradient(135deg, #cd7f32 0%, #d4a574 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(205, 127, 50, 0.4);
+}
+
+.institution-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.institution-name {
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 1rem;
+}
+
+.institution-count {
+  font-size: 0.85rem;
+  color: #a0aec0;
+}
+
+/* Institution Breakdown */
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #2d3748;
+  border-radius: 10px;
+  border: 1px solid #4a5568;
+}
+
+.breakdown-icon {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+.breakdown-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.breakdown-label {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  font-weight: 500;
+}
+
+.breakdown-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
 @media (max-width: 768px) {
   .analytics-window {
     width: 95%;
@@ -1501,5 +1643,9 @@
   
   .analytics-content {
     padding: 1rem;
+  }
+  
+  .breakdown-grid {
+    grid-template-columns: 1fr;
   }
 }

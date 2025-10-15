@@ -38,83 +38,60 @@ namespace AnalyticsService.Services
             }
         }
 
-        public async Task<List<DetailedAnalyticsResponse>> GetDetailedAnalyticsAsync(string entityType)
+        public async Task<InstitutionBreakdownResponse?> GetInstitutionBreakdownAsync(int institutionId)
         {
             try
             {
-                var details = new List<DetailedAnalyticsResponse>();
+                var institution = await _context.Institutions
+                    .AsNoTracking()
+                    .Include(i => i.Analyses)
+                    .Include(i => i.Employees)
+                    .Include(i => i.Instruments)
+                    .FirstOrDefaultAsync(i => i.Id == institutionId);
 
-                switch (entityType.ToLower())
+                if (institution == null)
                 {
-                    case "institution":
-                        details = await _context.Institutions
-                            .Select(x => new DetailedAnalyticsResponse
-                            {
-                                EntityType = "Institution",
-                                EntityName = x.Name,
-                                Count = 1
-                            })
-                            .ToListAsync();
-                        break;
-                    case "analysis":
-                        details = await _context.Analyses
-                            .Select(x => new DetailedAnalyticsResponse
-                            {
-                                EntityType = "Analysis",
-                                EntityName = x.Name,
-                                Count = 1
-                            })
-                            .ToListAsync();
-                        break;
-                    case "researcher":
-                        details = await _context.Employees
-                            .Select(x => new DetailedAnalyticsResponse
-                            {
-                                EntityType = "Researcher",
-                                EntityName = $"{x.FirstName} {x.LastName}",
-                                Count = 1
-                            })
-                            .ToListAsync();
-                        break;
-                    case "instrument":
-                        details = await _context.Instruments
-                            .Select(x => new DetailedAnalyticsResponse
-                            {
-                                EntityType = "Instrument",
-                                EntityName = x.Name,
-                                Count = 1
-                            })
-                            .ToListAsync();
-                        break;
-                    case "keyword":
-                        details = await _context.Keywords
-                            .Select(x => new DetailedAnalyticsResponse
-                            {
-                                EntityType = "Keyword",
-                                EntityName = x.Name,
-                                Count = 1
-                            })
-                            .ToListAsync();
-                        break;
-                    case "microorganism":
-                        details = await _context.Microorganisms
-                            .Select(x => new DetailedAnalyticsResponse
-                            {
-                                EntityType = "Microorganism",
-                                EntityName = x.Name,
-                                Count = 1
-                            })
-                            .ToListAsync();
-                        break;
-                    default:
-                        throw new ArgumentException($"Unknown entity type: {entityType}");
+                    return null;
                 }
 
-                return details;
+                return new InstitutionBreakdownResponse
+                {
+                    InstitutionId = institution.Id,
+                    InstitutionName = institution.Name,
+                    TotalAnalyses = institution.Analyses.Count,
+                    TotalResearchers = institution.Employees.Count,
+                    TotalInstruments = institution.Instruments.Count
+                };
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error getting detailed analytics for {EntityType}", entityType);
+                _logger.LogError(ex, "Error getting institution breakdown for institution {InstitutionId}", institutionId);
+                throw;
+            }
+        }
+
+        public async Task<List<TopInstitutionResponse>> GetTopInstitutionsAsync(int limit)
+        {
+            try
+            {
+                var topInstitutions = await _context.Institutions
+                    .AsNoTracking()
+                    .Include(i => i.Analyses)
+                    .Select(i => new TopInstitutionResponse
+                    {
+                        InstitutionId = i.Id,
+                        InstitutionName = i.Name,
+                        AnalysisCount = i.Analyses.Count
+                    })
+                    .OrderByDescending(i => i.AnalysisCount)
+                    .Take(limit)
+                    .ToListAsync();
+
+                return topInstitutions;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting top institutions");
                 throw;
             }
         }

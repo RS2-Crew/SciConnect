@@ -13,6 +13,20 @@ export interface SummaryAnalyticsResponse {
   totalMicroorganisms: number;
 }
 
+export interface InstitutionBreakdownResponse {
+  institutionId: number;
+  institutionName: string;
+  totalAnalyses: number;
+  totalResearchers: number;
+  totalInstruments: number;
+}
+
+export interface TopInstitutionResponse {
+  institutionId: number;
+  institutionName: string;
+  analysisCount: number;
+}
+
 export interface DetailedAnalyticsResponse {
   entityType: string;
   entityName: string;
@@ -48,6 +62,14 @@ export class AnalyticsService {
 
   getAnalyticsSummary(): Observable<SummaryAnalyticsResponse> {
     return this.http.get<SummaryAnalyticsResponse>(`${this.baseUrl}/summary`, { headers: this.getHeaders() });
+  }
+
+  getInstitutionBreakdown(institutionId: number): Observable<InstitutionBreakdownResponse> {
+    return this.http.get<InstitutionBreakdownResponse>(`${this.baseUrl}/institution/${institutionId}/breakdown`, { headers: this.getHeaders() });
+  }
+
+  getTopInstitutions(limit: number = 5): Observable<TopInstitutionResponse[]> {
+    return this.http.get<TopInstitutionResponse[]>(`${this.baseUrl}/institutions/top?limit=${limit}`, { headers: this.getHeaders() });
   }
 
   getDetailedAnalytics(entityType: string): Observable<DetailedAnalyticsResponse[]> {

@@ -1,5 +1,4 @@
 using AnalyticsService.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnalyticsService.Controllers
@@ -34,28 +33,48 @@ namespace AnalyticsService.Controllers
             }
         }
 
-        [HttpGet("detailed/{entityType}")]
+        [HttpGet("institution/{institutionId}/breakdown")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetDetailedAnalytics(string entityType)
+        public async Task<IActionResult> GetInstitutionBreakdown(int institutionId)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(entityType))
+                var result = await _analyticsService.GetInstitutionBreakdownAsync(institutionId);
+                if (result == null)
                 {
-                    return BadRequest("Entity type is required");
+                    return NotFound($"Institution with ID {institutionId} not found");
                 }
-
-                var result = await _analyticsService.GetDetailedAnalyticsAsync(entityType);
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error getting detailed analytics for {EntityType}", entityType);
+                _logger.LogError(ex, "Error getting institution breakdown for {InstitutionId}", institutionId);
                 return StatusCode(500, "Internal server error");
             }
         }
 
+        [HttpGet("institutions/top")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetTopInstitutions([FromQuery] int limit = 5)
+        {
+            try
+            {
+                if (limit <= 0 || limit > 100)
+                {
+                    limit = 5;
+                }
+
+                var result = await _analyticsService.GetTopInstitutionsAsync(limit);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting top institutions");
+                return StatusCode(500, "Internal server error");
+            }
+        }
     }
 }
