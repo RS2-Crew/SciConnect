@@ -21,10 +21,15 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddMemoryCache();
-
 builder.Services.ConfigurePersistence(builder.Configuration);
+builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.ConfigureMiscellaneousServices();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ReadAccess", policy =>
+        policy.RequireRole("Guest", "Administrator", "PM"));
+});
 
 builder.Services.AddMassTransit(config => {
     config.UsingRabbitMq((ctx, cfg) => {
@@ -46,6 +51,9 @@ if (app.Environment.IsDevelopment())
 
 // Enable CORS
 app.UseCors("AllowAngularApp");
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

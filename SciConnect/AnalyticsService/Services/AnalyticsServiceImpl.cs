@@ -21,12 +21,12 @@ namespace AnalyticsService.Services
             {
                 var summary = new SummaryAnalyticsResponse
                 {
-                    TotalInstitutions = await _context.Institutions.CountAsync(),
-                    TotalAnalyses = await _context.Analyses.CountAsync(),
-                    TotalResearchers = await _context.Employees.CountAsync(),
-                    TotalInstruments = await _context.Instruments.CountAsync(),
-                    TotalKeywords = await _context.Keywords.CountAsync(),
-                    TotalMicroorganisms = await _context.Microorganisms.CountAsync()
+                    TotalInstitutions = await _context.Institutions.AsNoTracking().CountAsync(),
+                    TotalAnalyses = await _context.Analyses.AsNoTracking().CountAsync(),
+                    TotalResearchers = await _context.Employees.AsNoTracking().CountAsync(),
+                    TotalInstruments = await _context.Instruments.AsNoTracking().CountAsync(),
+                    TotalKeywords = await _context.Keywords.AsNoTracking().CountAsync(),
+                    TotalMicroorganisms = await _context.Microorganisms.AsNoTracking().CountAsync()
                 };
 
                 return summary;
