@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AuthentificationService } from "../infrastructure/authentification.service";
-import { catchError, map, Observable, of, switchMap } from "rxjs";
+import { catchError, map, Observable, of, switchMap, take } from "rxjs";
 import { ILoginRequest } from "../models/login-request";
 import { IRegisterRequest } from "../models/register-request";
 import { AppStateService } from "../../../shared/app-state/app-state.service";
@@ -92,6 +92,23 @@ export class AuthentificationFacadeService {
   }
 
   public logout(): void {
-    this.appStateService.clearAppState();
+    this.appStateService.getAppState().pipe(
+      take(1),
+      switchMap(appState => {
+        const userName = appState.username;
+        const refreshToken = appState.refreshToken;
+        
+        if (userName && refreshToken) {
+          return this.authentificationService.logout(userName, refreshToken);
+        }
+        return of(null);
+      }),
+      catchError((err) => {
+        console.error('Logout error:', err);
+        return of(null);
+      })
+    ).subscribe(() => {
+      this.appStateService.clearAppState();
+    });
   }
 }
