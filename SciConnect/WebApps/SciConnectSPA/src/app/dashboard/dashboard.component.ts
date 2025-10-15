@@ -1291,10 +1291,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
   }
 
-  /**
-   * Refresh all analytics data (summary, top institutions, and current breakdown)
-   * Called after CRUD operations to keep analytics in sync
-   */
+ 
   private refreshAnalyticsData(): void {
     if (this.canViewAnalytics() && this.showAnalytics) {
       // Reload summary analytics

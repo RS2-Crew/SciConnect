@@ -60,7 +60,6 @@ export interface Microorganism {
   institution?: Institution;
 }
 
-// View Models from backend
 export interface InstitutionViewModel {
   id: number;
   name: string;
@@ -115,7 +114,6 @@ export interface MicroorganismViewModel {
   type?: string;
 }
 
-// Filter state interface
 export interface FilterState {
   selectedInstitution?: Institution;
   selectedInstruments: Instrument[];

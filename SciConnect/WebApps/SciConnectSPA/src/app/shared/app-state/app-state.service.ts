@@ -77,27 +77,5 @@ export class AppStateService {
     this.appState.userId = userId;
     this.appStateSubject.next(this.appState);
     this.localStorageService.set(this.APP_STATE_KEY, this.appState);
-
-  }
-
-
-  private restoreFromLocalStorage(): void {
-    const appState: IAppState | null = this.localStorageService.get(this.APP_STATE_KEY);
-
-    if (appState !== null){
-      this.appState = new AppState(
-        appState.accessToken,
-        appState.refreshToken,
-        appState.username,
-        appState.email,
-        appState.roles,
-        appState.firstName,
-        appState.lastName,
-        appState.userId
-      );
-
-      this.appStateSubject.next(this.appState);
-    }
-
   }
 }

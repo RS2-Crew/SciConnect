@@ -71,7 +71,9 @@ export class RegisterFormComponent implements OnInit {
       verificationCode: new FormControl("")
     });
 
-    // Add custom validator after form creation
+
+
+    
     this.registerForm.setValidators(this.passwordMatchValidator);
   }
 

@@ -40,7 +40,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Clear any existing error/success messages
     this.clearMessages();
   }
 

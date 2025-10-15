@@ -65,3 +65,4 @@ export class AnalyticsService {
     return this.http.get<TopInstitutionResponse[]>(`${this.baseUrl}/institutions/top?limit=${limit}`, { headers: this.getHeaders() });
   }
 }
+
