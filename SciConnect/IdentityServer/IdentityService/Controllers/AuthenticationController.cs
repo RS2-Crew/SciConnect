@@ -36,7 +36,7 @@ namespace IdentityService.Controllers
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                return BadRequest("Email is required.");
+                return BadRequest(new { error = "Email is required." });
             }
 
             var verificationCode = Guid.NewGuid().ToString().Substring(0, 6); // Generisanje koda
@@ -53,7 +53,7 @@ namespace IdentityService.Controllers
             });
 
 
-            return Ok("Verification code generated, stored, and sent to the admin.");
+            return Ok(new { message = "Verification code generated, stored, and sent to the admin." });
         }
 
 
@@ -74,7 +74,7 @@ namespace IdentityService.Controllers
         public async Task<IActionResult> RequestAdminRegistration([FromBody] string email)
         {
             if (string.IsNullOrWhiteSpace(email))
-                return BadRequest("Email is required.");
+                return BadRequest(new { error = "Email is required." });
 
             try
             {
@@ -93,7 +93,7 @@ namespace IdentityService.Controllers
                 if (!pmEmails.Any())
                 {
                     _logger.LogWarning("No PMs found to send admin registration request.");
-                    return NotFound("No PM users found to notify.");
+                    return NotFound(new { error = "No PM users found to notify." });
                 }
 
                 var subject = "New Admin Registration Request";
@@ -109,12 +109,12 @@ namespace IdentityService.Controllers
                     });
                 }
 
-                return Ok("Registration request sent to PMs.");
+                return Ok(new { message = "Registration request sent to PMs." });
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while sending registration request to PMs.");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error occurred.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { error = "Internal server error occurred." });
             }
         }
 
@@ -126,7 +126,7 @@ namespace IdentityService.Controllers
 
             if (!ValidateVerificationCode(newUser.Email, newUser.VerificationCode))
             {
-                return BadRequest("Invalid or expired verification code.");
+                return BadRequest(new { error = "Invalid or expired verification code." });
             }
 
             return await RegisterNewUserWithRoles(newUser, new[] { "Administrator" });
@@ -142,7 +142,7 @@ namespace IdentityService.Controllers
 
             if (result != PasswordVerificationResult.Success)
             {
-                return BadRequest("Invalid registration password.");
+                return BadRequest(new { error = "Invalid registration password." });
             }
 
             return await RegisterNewUserWithRoles(newUser, new[] { "PM" });
