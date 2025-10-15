@@ -797,4 +797,131 @@ items:
   - uid: EventBus.Messages.Events.IntegrationEvent
     name: IntegrationEvent
     type: Class
+- uid: IdentityServer.Entities
+  name: IdentityServer.Entities
+  type: Namespace
+  items:
+  - uid: IdentityServer.Entities.User
+    name: User
+    type: Class
+- uid: IdentityService.Consumers
+  name: IdentityService.Consumers
+  type: Namespace
+  items:
+  - uid: IdentityService.Consumers.EmailConsumer
+    name: EmailConsumer
+    type: Class
+- uid: IdentityService.Consumers.EntityCreated
+  name: IdentityService.Consumers.EntityCreated
+  type: Namespace
+  items:
+  - uid: IdentityService.Consumers.EntityCreated.EmployeeCreatedConsumer
+    name: EmployeeCreatedConsumer
+    type: Class
+  - uid: IdentityService.Consumers.EntityCreated.InstitutionCreatedConsumer
+    name: InstitutionCreatedConsumer
+    type: Class
+  - uid: IdentityService.Consumers.EntityCreated.SimpleEntityCreatedConsumer
+    name: SimpleEntityCreatedConsumer
+    type: Class
+- uid: IdentityService.Controllers
+  name: IdentityService.Controllers
+  type: Namespace
+  items:
+  - uid: IdentityService.Controllers.AuthenticationController
+    name: AuthenticationController
+    type: Class
+  - uid: IdentityService.Controllers.UserController
+    name: UserController
+    type: Class
+- uid: IdentityService.Controllers.Base
+  name: IdentityService.Controllers.Base
+  type: Namespace
+  items:
+  - uid: IdentityService.Controllers.Base.RegistrationController
+    name: RegistrationController
+    type: Class
+- uid: IdentityService.DTOs
+  name: IdentityService.DTOs
+  type: Namespace
+  items:
+  - uid: IdentityService.DTOs.AuthenticationModel
+    name: AuthenticationModel
+    type: Class
+  - uid: IdentityService.DTOs.EmailMessage
+    name: EmailMessage
+    type: Class
+  - uid: IdentityService.DTOs.NewUserDTO
+    name: NewUserDTO
+    type: Class
+  - uid: IdentityService.DTOs.RefreshTokenModel
+    name: RefreshTokenModel
+    type: Class
+  - uid: IdentityService.DTOs.UserCredentialsDTO
+    name: UserCredentialsDTO
+    type: Class
+  - uid: IdentityService.DTOs.UserDetails
+    name: UserDetails
+    type: Class
+- uid: IdentityService.Data
+  name: IdentityService.Data
+  type: Namespace
+  items:
+  - uid: IdentityService.Data.ApplicationContext
+    name: ApplicationContext
+    type: Class
+- uid: IdentityService.Data.EntityTypeConfiguration
+  name: IdentityService.Data.EntityTypeConfiguration
+  type: Namespace
+  items:
+  - uid: IdentityService.Data.EntityTypeConfiguration.RoleConfiguration
+    name: RoleConfiguration
+    type: Class
+  - uid: IdentityService.Data.EntityTypeConfiguration.UserConfiguration
+    name: UserConfiguration
+    type: Class
+- uid: IdentityService.Entities
+  name: IdentityService.Entities
+  type: Namespace
+  items:
+  - uid: IdentityService.Entities.RefreshToken
+    name: RefreshToken
+    type: Class
+- uid: IdentityService.Extentions
+  name: IdentityService.Extentions
+  type: Namespace
+  items:
+  - uid: IdentityService.Extentions.IdentitiyExtentions
+    name: IdentitiyExtentions
+    type: Class
+- uid: IdentityService.Mapper
+  name: IdentityService.Mapper
+  type: Namespace
+  items:
+  - uid: IdentityService.Mapper.IdentityProfile
+    name: IdentityProfile
+    type: Class
+- uid: IdentityService.Migrations
+  name: IdentityService.Migrations
+  type: Namespace
+  items:
+  - uid: IdentityService.Migrations.InitialMigration
+    name: InitialMigration
+    type: Class
+- uid: IdentityService.Services
+  name: IdentityService.Services
+  type: Namespace
+  items:
+  - uid: IdentityService.Services.AuthenticationService
+    name: AuthenticationService
+    type: Class
+  - uid: IdentityService.Services.EmailSender
+    name: EmailSender
+    type: Class
+  - uid: IdentityService.Services.IAuthenticationService
+    name: IAuthenticationService
+    type: Interface
+  - uid: IdentityService.Services.IEmailSender
+    name: IEmailSender
+    type: Interface
 memberLayout: SamePage
