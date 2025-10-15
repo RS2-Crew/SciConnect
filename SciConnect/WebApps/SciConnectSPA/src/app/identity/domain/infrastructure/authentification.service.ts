@@ -52,6 +52,23 @@ export class AuthentificationService {
       })
     );
   }
+
+  public logout(userName: string, refreshToken: string): Observable<any> {
+    return this.appStateService.getAppState().pipe(
+      take(1),
+      switchMap(appState => {
+        const headers = new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${appState.accessToken}`
+        });
+        
+        return this.httpClient.post(`${this.url}/Logout`, {
+          userName: userName,
+          refreshToken: refreshToken
+        }, { headers: headers });
+      })
+    );
+  }
 }
 
 
