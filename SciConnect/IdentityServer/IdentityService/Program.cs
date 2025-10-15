@@ -3,6 +3,8 @@ using IdentityService.Consumers.EntityCreated;
 using IdentityService.Extentions;
 using IdentityService.Services;
 using MassTransit;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -24,7 +26,14 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddMemoryCache();
+//builder.Services.AddMemoryCache();
+
+builder.Services.AddStackExchangeRedisCache(
+opts => {
+    opts.Configuration = builder.Configuration.GetValue<string>("CacheSettings:ConnectionString");
+        }
+);
+
 
 //builder.Services.AddAuthentication();
 

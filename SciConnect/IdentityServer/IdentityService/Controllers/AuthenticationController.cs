@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace IdentityService.Controllers
 {
@@ -21,8 +21,8 @@ namespace IdentityService.Controllers
         private readonly IAuthenticationService _authService;
         private readonly IConfiguration _configuration;
         private readonly IPublishEndpoint _publishEndpoint;
-        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache memoryCache, IAuthenticationService authService, IConfiguration configuration, IPublishEndpoint publishEndpoint)
-       : base(logger, mapper, userManager, roleManager, memoryCache)
+        public AuthenticationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IDistributedCache cache, IAuthenticationService authService, IConfiguration configuration, IPublishEndpoint publishEndpoint)
+       : base(logger, mapper, userManager, roleManager, cache)
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
@@ -40,7 +40,7 @@ namespace IdentityService.Controllers
             }
 
             var verificationCode = Guid.NewGuid().ToString().Substring(0, 6); // Generisanje koda
-            StoreVerificationCode(email, verificationCode);
+            await StoreVerificationCode(email, verificationCode);
 
             // Simulacija slanja koda (možete povezati sa email servisom)
             _logger.LogInformation($"Verification code for {email}: {verificationCode}");
@@ -124,7 +124,7 @@ namespace IdentityService.Controllers
         public async Task<IActionResult> RegisterAdministrator([FromBody] NewUserDTO newUser)
         {
 
-            if (!ValidateVerificationCode(newUser.Email, newUser.VerificationCode))
+            if (!await ValidateVerificationCode(newUser.Email, newUser.VerificationCode))
             {
                 return BadRequest(new { error = "Invalid or expired verification code." });
             }

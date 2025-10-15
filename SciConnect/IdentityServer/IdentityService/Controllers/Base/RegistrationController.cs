@@ -3,7 +3,7 @@ using IdentityServer.Entities;
 using IdentityService.DTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Caching.Distributed;
 
 
 namespace IdentityService.Controllers.Base
@@ -14,16 +14,15 @@ namespace IdentityService.Controllers.Base
         protected readonly IMapper _mapper;
         protected readonly UserManager<User> _userManager;
         protected readonly RoleManager<IdentityRole> _roleManager;
-        protected readonly IMemoryCache _memoryCache;
+        protected readonly IDistributedCache _cache;
 
-        public RegistrationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IMemoryCache memoryCache)
+        public RegistrationController(ILogger<AuthenticationController> logger, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IDistributedCache cache)
         {
             _logger = logger;
             _mapper = mapper;
             _userManager = userManager;
             _roleManager = roleManager;
-            _memoryCache = memoryCache;
-
+            _cache = cache;
         }
 
         protected async Task<IActionResult> RegisterNewUserWithRoles(NewUserDTO newUser, IEnumerable<string> roles)
@@ -59,18 +58,19 @@ namespace IdentityService.Controllers.Base
 
             return StatusCode(StatusCodes.Status201Created);
         }
-        protected void StoreVerificationCode(string email, string verificationCode)
+        protected async Task StoreVerificationCode(string email, string verificationCode)
         {
-            _memoryCache.Set(email, verificationCode, TimeSpan.FromMinutes(60));
+            var options = new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(60)
+            };
+            await _cache.SetStringAsync(email.Trim().ToLowerInvariant(), verificationCode, options);
         }
 
-        protected bool ValidateVerificationCode(string email, string verificationCode)
+        protected async Task<bool> ValidateVerificationCode(string email, string verificationCode)
         {
-            if (_memoryCache.TryGetValue(email, out string storedCode))
-            {
-                return storedCode == verificationCode;
-            }
-            return false;
+            var storedCode = await _cache.GetStringAsync(email.Trim().ToLowerInvariant());
+            return storedCode != null && storedCode == verificationCode;
         }
     }
 

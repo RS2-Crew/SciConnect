@@ -11,6 +11,9 @@ services:
   rabbitmq:
     image: rabbitmq:4-management-alpine
 
+  redis:
+    image: redis:alpine
+
   db.api:
     image: ${DOCKER_REGISTRY-}dbapi
     build:
