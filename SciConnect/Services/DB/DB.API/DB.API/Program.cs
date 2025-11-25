@@ -23,15 +23,13 @@ builder.MigrateDatabase<SqlServerContext>((context, services) =>
     SqlServerContextSeed.SeedAsync(context, logger).Wait();
 });
 
-// Add CORS configuration
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("http://localhost:4200", "http://localhost:53216")
+        policy.AllowAnyOrigin()
               .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+              .AllowAnyMethod();
     });
 });
 
