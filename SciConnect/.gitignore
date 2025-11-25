@@ -1,0 +1,26 @@
+# Add .env files (contains sensitive credentials)
+.env
+*.env
+
+# Except example files
+!.env.example
+
+# SSL certificates
+nginx/ssl/*.pem
+nginx/ssl/*.key
+nginx/ssl/*.crt
+
+# Database backups
+*.bak
+backups/
+
+# Docker volumes
+volumes/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
