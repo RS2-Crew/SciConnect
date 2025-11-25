@@ -11,7 +11,7 @@ import { AppStateService } from "../../../shared/app-state/app-state.service";
   }
 )
 export class AuthentificationService {
-  private readonly url: string = 'http://localhost:4000/api/v1/authentication';
+  private readonly url: string = '/identity/v1/authentication';
 
   constructor(private httpClient: HttpClient, private appStateService: AppStateService){}
 

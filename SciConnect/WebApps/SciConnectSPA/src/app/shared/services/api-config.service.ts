@@ -4,21 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiConfigService {
-  private readonly baseUrl = 'http://localhost:4001/api/v1'; // DB API runs on port 4001
+  private readonly baseUrl = '/api/v1';
 
   getBaseUrl(): string {
     return this.baseUrl;
   }
 
   getDbApiUrl(): string {
-    return `${this.baseUrl}/db`;
+    return this.baseUrl;
   }
 
   getIdentityApiUrl(): string {
-    return `http://localhost:4000/api/v1/identity`; // Identity service runs on port 4000
+    return '/identity/v1';
   }
 
   getAnalyticsApiUrl(): string {
-    return `http://localhost:4002/api/v1/analytics`; // Analytics service runs on port 4002
+    return '/analytics/v1';
   }
 }
