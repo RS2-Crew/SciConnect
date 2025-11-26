@@ -85,6 +85,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings:EntityConnectionString=${ENTITY_CONNECTION_STRING}
       - EventBusSettings:HostAddress=${RABBITMQ_HOST}
+      - JwtSettings__validIssuer=${JWT_VALID_ISSUER}
+      - JwtSettings__validAudience=${JWT_VALID_AUDIENCE}
+      - JwtSettings__secretKey=${JWT_SECRET_KEY}
+      - JwtSettings__expires=${JWT_EXPIRES}
     depends_on:
       mssql:
         condition: service_healthy
