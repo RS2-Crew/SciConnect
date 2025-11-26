@@ -11,6 +11,12 @@ services:
       - ConnectionStrings:IdentityConnectionString=${IDENTITY_CONNECTION_STRING}
       - EventBusSettings:HostAddress=${RABBITMQ_HOST}
       - CacheSettings:ConnectionString=${REDIS_CONNECTION_STRING}
+      - JwtSettings__validIssuer=${JWT_VALID_ISSUER}
+      - JwtSettings__validAudience=${JWT_VALID_AUDIENCE}
+      - JwtSettings__secretKey=${JWT_SECRET_KEY}
+      - JwtSettings__expires=${JWT_EXPIRES}
+      - RefreshTokenExpires=${REFRESH_TOKEN_EXPIRES}
+      - PMSettings__RegistrationPassword=${PM_REGISTRATION_PASSWORD}
       - EmailSettings__From=${EMAIL_FROM}
       - EmailSettings__DisplayName=${EMAIL_DISPLAY_NAME}
       - EmailSettings__Password=${EMAIL_PASSWORD}
