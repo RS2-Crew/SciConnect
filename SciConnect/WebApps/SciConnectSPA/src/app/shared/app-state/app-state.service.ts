@@ -14,7 +14,12 @@ export class AppStateService {
   private appStateObservable: Observable<IAppState> =  this.appStateSubject.asObservable();
 
   constructor(private localStorageService: LocalStorageService){
-
+    // Load stored app state on service initialization
+    const storedState = this.localStorageService.get<IAppState>(this.APP_STATE_KEY);
+    if (storedState && storedState.accessToken) {
+      this.appState = storedState;
+      this.appStateSubject.next(this.appState);
+    }
   }
   public getAppState(): Observable<IAppState>{
     return this.appStateObservable;

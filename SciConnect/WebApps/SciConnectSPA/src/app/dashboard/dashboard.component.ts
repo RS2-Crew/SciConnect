@@ -151,7 +151,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadUserInfo();
-    this.loadInitialData();
+    
+    // Check authentication before loading data
+    this.appStateService.getAppState().subscribe(appState => {
+      if (!appState.accessToken) {
+        this.router.navigate(['/login']);
+        return;
+      }
+      this.loadInitialData();
+    });
   }
 
   ngOnDestroy(): void {
