@@ -1,10 +1,10 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 
-COPY package*.json ./
+COPY WebApps/SciConnectSPA/package*.json ./
 RUN npm ci
 
-COPY . .
+COPY WebApps/SciConnectSPA/ .
 RUN npm run build -- --output-hashing=all --aot --optimization
 
 FROM nginx:alpine AS runtime
