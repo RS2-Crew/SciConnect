@@ -63,21 +63,21 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-    ports:
-      - "1433:1433"
+    expose:
+      - "1433"
 
   rabbitmq:
     container_name: rabbitmq
     restart: always
-    ports:
-      - "5672:5672"
-      - "15672:15672"
+    expose:
+      - "5672"
+      - "15672"
 
   redis:
     container_name: redis
     restart: always
-    ports:
-      - "6379:6379"
+    expose:
+      - "6379"
 
   db.api:
     container_name: mainservice
