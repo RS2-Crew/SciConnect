@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, Inject, PLATFORM_ID } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
 import { ILoginRequest } from "../models/login-request";
 import { Observable, switchMap, take } from "rxjs";
 import { ILoginResponse } from "../models/login-response";
@@ -11,9 +12,22 @@ import { AppStateService } from "../../../shared/app-state/app-state.service";
   }
 )
 export class AuthentificationService {
-  private readonly url: string = 'http://localhost:4000/api/v1/authentication';
+  private readonly url: string;
 
-  constructor(private httpClient: HttpClient, private appStateService: AppStateService){}
+  constructor(
+    private httpClient: HttpClient, 
+    private appStateService: AppStateService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      const config = (window as any).__env || {};
+      const baseUrl = config.API_IDENTITY_URL || 'http://localhost:4000/api/v1/identity';
+      // Replace /identity with /authentication for auth endpoints
+      this.url = baseUrl.replace('/identity', '/authentication');
+    } else {
+      this.url = 'http://localhost:4000/api/v1/authentication';
+    }
+  }
 
   public login(request: ILoginRequest): Observable<ILoginResponse> {
     return this.httpClient.post<ILoginResponse>(`${this.url}/login`, request);
