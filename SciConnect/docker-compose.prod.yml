@@ -17,6 +17,9 @@ services:
       - analyticsservice
 
   identityservice:
+    build:
+      context: .
+      dockerfile: IdentityServer/IdentityService/Dockerfile
     container_name: identityservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
@@ -83,6 +86,9 @@ services:
       - "6379"
 
   db.api:
+    build:
+      context: .
+      dockerfile: Services/DB/DB.API/Dockerfile
     container_name: mainservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
@@ -103,6 +109,9 @@ services:
     restart: unless-stopped
 
   sciconnectspa:
+    build:
+      context: .
+      dockerfile: WebApps/SciConnectSPA/Dockerfile
     container_name: sciconnect-frontend
     environment:
       - NODE_ENV=production
@@ -117,6 +126,9 @@ services:
     restart: unless-stopped
 
   analyticsservice:
+    build:
+      context: .
+      dockerfile: AnalyticsService/Dockerfile
     container_name: analyticsservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
@@ -139,3 +151,4 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+  mssql_data:
