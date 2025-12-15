@@ -9,12 +9,29 @@ import { LocalStorageService } from '../local-storage/local-storage.service';
 })
 export class AppStateService {
   private readonly APP_STATE_KEY = 'sciConnectAppState';
-  private appState: IAppState = new AppState();
-  private appStateSubject: BehaviorSubject<IAppState> =  new BehaviorSubject<IAppState>(this.appState);
-  private appStateObservable: Observable<IAppState> =  this.appStateSubject.asObservable();
+  private appState: IAppState;
+  private appStateSubject: BehaviorSubject<IAppState>;
+  private appStateObservable: Observable<IAppState>;
 
   constructor(private localStorageService: LocalStorageService){
-
+    // Restore state from localStorage on initialization
+    const savedState = this.localStorageService.get<IAppState>(this.APP_STATE_KEY);
+    if (savedState) {
+      this.appState = new AppState(
+        savedState.accessToken,
+        savedState.refreshToken,
+        savedState.username,
+        savedState.email,
+        savedState.roles,
+        savedState.firstName,
+        savedState.lastName,
+        savedState.userId
+      );
+    } else {
+      this.appState = new AppState();
+    }
+    this.appStateSubject = new BehaviorSubject<IAppState>(this.appState);
+    this.appStateObservable = this.appStateSubject.asObservable();
   }
   public getAppState(): Observable<IAppState>{
     return this.appStateObservable;
