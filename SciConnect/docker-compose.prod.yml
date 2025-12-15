@@ -40,7 +40,7 @@ services:
       - EmailSettings__Port=${EMAIL_PORT}
       - EmailSettings__UseSSL=false
       - EmailSettings__UseStartTls=true
-      - "AllowedOrigins=https://${SERVER_IP},http://${SERVER_IP}"
+      - "AllowedOrigins=https://sciconnect.me,http://sciconnect.me"
     depends_on:
       mssql:
         condition: service_healthy
@@ -98,7 +98,7 @@ services:
       - "JwtSettings:validIssuer=SciConnect Identity"
       - "JwtSettings:validAudience=SciConnect"
       - "JwtSettings:secretKey=${JWT_SECRET_KEY}"
-      - "AllowedOrigins=https://${SERVER_IP},http://${SERVER_IP}"
+      - "AllowedOrigins=https://sciconnect.me,http://sciconnect.me"
     depends_on:
       mssql:
         condition: service_healthy
@@ -115,9 +115,9 @@ services:
     container_name: sciconnect-frontend
     environment:
       - NODE_ENV=production
-      - API_DB_URL=https://api-db.${SERVER_IP}/api/v1/db
-      - API_IDENTITY_URL=https://api-identity.${SERVER_IP}/api/v1/identity
-      - API_ANALYTICS_URL=https://api-analytics.${SERVER_IP}/api/v1/analytics
+      - API_DB_URL=https://api-db.sciconnect.me/api/v1/db
+      - API_IDENTITY_URL=https://api-identity.sciconnect.me/api/v1/identity
+      - API_ANALYTICS_URL=https://api-analytics.sciconnect.me/api/v1/analytics
     depends_on:
       - db.api
       - identityservice
@@ -138,7 +138,7 @@ services:
       - "JwtSettings:validIssuer=SciConnect Identity"
       - "JwtSettings:validAudience=SciConnect"
       - "JwtSettings:secretKey=${JWT_SECRET_KEY}"
-      - "AllowedOrigins=https://${SERVER_IP},http://${SERVER_IP}"
+      - "AllowedOrigins=https://sciconnect.me,http://sciconnect.me"
     depends_on:
       mssql:
         condition: service_healthy
