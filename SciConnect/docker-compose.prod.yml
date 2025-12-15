@@ -1,0 +1,117 @@
+services:
+  identityservice:
+    container_name: identityservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+      - "ConnectionStrings:IdentityConnectionString=Server=mssql;Database=IdentityDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
+      - "EventBusSettings:HostAddress=amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672"
+      - "CacheSettings:ConnectionString=redis:6379"
+      - "JwtSettings:validIssuer=SciConnect Identity"
+      - "JwtSettings:validAudience=SciConnect"
+      - "JwtSettings:secretKey=${JWT_SECRET_KEY}"
+      - "JwtSettings:expires=15"
+      - "RefreshTokenExpires=30"
+      - "PMSettings:RegistrationPassword=${PM_REGISTRATION_PASSWORD}"
+      - EmailSettings__From=${EMAIL_FROM}
+      - EmailSettings__DisplayName=${EMAIL_DISPLAY_NAME}
+      - EmailSettings__Password=${EMAIL_PASSWORD}
+      - EmailSettings__SmtpServer=${EMAIL_SMTP_SERVER}
+      - EmailSettings__Port=${EMAIL_PORT}
+      - EmailSettings__UseSSL=false
+      - EmailSettings__UseStartTls=true
+      - "AllowedOrigins=http://${SERVER_IP}:4200"
+    depends_on:
+      mssql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      redis:
+        condition: service_started
+    ports:
+      - "4000:8080"
+    restart: unless-stopped
+
+  mssql:
+    container_name: mssql
+    restart: always
+    environment:
+      - SA_PASSWORD=${SA_PASSWORD}
+      - ACCEPT_EULA=Y
+    volumes:
+      - mssql_data:/var/opt/mssql/data
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "${SA_PASSWORD}" -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    ports:
+      - "1433:1433"
+
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  redis:
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  db.api:
+    container_name: mainservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+      - "ConnectionStrings:EntityConnectionString=Server=mssql;Database=EntityDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
+      - "EventBusSettings:HostAddress=amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672"
+      - "JwtSettings:validIssuer=SciConnect Identity"
+      - "JwtSettings:validAudience=SciConnect"
+      - "JwtSettings:secretKey=${JWT_SECRET_KEY}"
+      - "AllowedOrigins=http://${SERVER_IP}:4200"
+    depends_on:
+      mssql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+    ports:
+      - "4001:8080"
+    restart: unless-stopped
+
+  sciconnectspa:
+    container_name: sciconnect-frontend
+    environment:
+      - NODE_ENV=production
+      - API_DB_URL=http://${SERVER_IP}:4001/api/v1/db
+      - API_IDENTITY_URL=http://${SERVER_IP}:4000/api/v1/identity
+      - API_ANALYTICS_URL=http://${SERVER_IP}:4002/api/v1/analytics
+    depends_on:
+      - db.api
+      - identityservice
+    ports:
+      - "4200:4000"
+    restart: unless-stopped
+
+  analyticsservice:
+    container_name: analyticsservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+      - "ConnectionStrings:DefaultConnection=Server=mssql;Database=EntityDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
+      - "EventBusSettings:HostAddress=amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672"
+      - "JwtSettings:validIssuer=SciConnect Identity"
+      - "JwtSettings:validAudience=SciConnect"
+      - "JwtSettings:secretKey=${JWT_SECRET_KEY}"
+      - "AllowedOrigins=http://${SERVER_IP}:4200"
+    depends_on:
+      mssql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+    ports:
+      - "4002:8080"
+    restart: unless-stopped
