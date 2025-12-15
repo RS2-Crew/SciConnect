@@ -1,0 +1,15 @@
+sciconnect.me {
+    reverse_proxy sciconnect-frontend:4000
+}
+
+api-identity.sciconnect.me {
+    reverse_proxy identityservice:8080
+}
+
+api-db.sciconnect.me {
+    reverse_proxy mainservice:8080
+}
+
+api-analytics.sciconnect.me {
+    reverse_proxy analyticsservice:8080
+}

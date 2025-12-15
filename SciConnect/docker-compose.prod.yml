@@ -1,4 +1,21 @@
 services:
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - sciconnectspa
+      - identityservice
+      - db.api
+      - analyticsservice
+
   identityservice:
     container_name: identityservice
     environment:
@@ -20,7 +37,7 @@ services:
       - EmailSettings__Port=${EMAIL_PORT}
       - EmailSettings__UseSSL=false
       - EmailSettings__UseStartTls=true
-      - "AllowedOrigins=http://${SERVER_IP},http://${SERVER_IP}:4200"
+      - "AllowedOrigins=https://${SERVER_IP},http://${SERVER_IP}"
     depends_on:
       mssql:
         condition: service_healthy
@@ -28,8 +45,8 @@ services:
         condition: service_started
       redis:
         condition: service_started
-    ports:
-      - "4000:8080"
+    expose:
+      - "8080"
     restart: unless-stopped
 
   mssql:
@@ -72,28 +89,28 @@ services:
       - "JwtSettings:validIssuer=SciConnect Identity"
       - "JwtSettings:validAudience=SciConnect"
       - "JwtSettings:secretKey=${JWT_SECRET_KEY}"
-      - "AllowedOrigins=http://${SERVER_IP},http://${SERVER_IP}:4200"
+      - "AllowedOrigins=https://${SERVER_IP},http://${SERVER_IP}"
     depends_on:
       mssql:
         condition: service_healthy
       rabbitmq:
         condition: service_started
-    ports:
-      - "4001:8080"
+    expose:
+      - "8080"
     restart: unless-stopped
 
   sciconnectspa:
     container_name: sciconnect-frontend
     environment:
       - NODE_ENV=production
-      - API_DB_URL=http://${SERVER_IP}:4001/api/v1/db
-      - API_IDENTITY_URL=http://${SERVER_IP}:4000/api/v1/identity
-      - API_ANALYTICS_URL=http://${SERVER_IP}:4002/api/v1/analytics
+      - API_DB_URL=https://api-db.${SERVER_IP}/api/v1/db
+      - API_IDENTITY_URL=https://api-identity.${SERVER_IP}/api/v1/identity
+      - API_ANALYTICS_URL=https://api-analytics.${SERVER_IP}/api/v1/analytics
     depends_on:
       - db.api
       - identityservice
-    ports:
-      - "80:4000"
+    expose:
+      - "4000"
     restart: unless-stopped
 
   analyticsservice:
@@ -106,12 +123,16 @@ services:
       - "JwtSettings:validIssuer=SciConnect Identity"
       - "JwtSettings:validAudience=SciConnect"
       - "JwtSettings:secretKey=${JWT_SECRET_KEY}"
-      - "AllowedOrigins=http://${SERVER_IP},http://${SERVER_IP}:4200"
+      - "AllowedOrigins=https://${SERVER_IP},http://${SERVER_IP}"
     depends_on:
       mssql:
         condition: service_healthy
       rabbitmq:
         condition: service_started
-    ports:
-      - "4002:8080"
+    expose:
+      - "8080"
     restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
