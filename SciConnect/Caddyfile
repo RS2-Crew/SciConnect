@@ -1,15 +1,29 @@
+(security_headers) {
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        -Server
+    }
+}
+
 sciconnect.me {
+    import security_headers
     reverse_proxy sciconnect-frontend:4000
 }
 
 api-identity.sciconnect.me {
+    import security_headers
     reverse_proxy identityservice:8080
 }
 
 api-db.sciconnect.me {
+    import security_headers
     reverse_proxy mainservice:8080
 }
 
 api-analytics.sciconnect.me {
+    import security_headers
     reverse_proxy analyticsservice:8080
 }

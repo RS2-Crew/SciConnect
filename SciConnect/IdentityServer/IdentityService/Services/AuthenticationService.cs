@@ -115,9 +115,6 @@ namespace IdentityService.Services
             rng.GetBytes(randomNumber);
             var refreshTokenExpires = _configuration.GetValue<string>("RefreshTokenExpires");
 
-            Console.WriteLine($"Configured refresh token expiration value: {refreshTokenExpires}");
-
-            Console.WriteLine($"Calculated Expiry Time: {DateTime.UtcNow.AddDays(Convert.ToDouble(refreshTokenExpires))}");
             var token = new RefreshToken
             {
 
@@ -125,7 +122,6 @@ namespace IdentityService.Services
                 ExpiryTime = DateTime.UtcNow.AddDays(Convert.ToDouble(refreshTokenExpires))
                 
             };
-            Console.WriteLine(token.ExpiryTime);
 
             _dbContext.RefreshTokens.Add(token);
             await _dbContext.SaveChangesAsync();
