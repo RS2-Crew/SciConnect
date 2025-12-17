@@ -1,3 +1,9 @@
+{
+    servers {
+        bind 0.0.0.0
+    }
+}
+
 (security_headers) {
     header {
         X-Content-Type-Options "nosniff"
