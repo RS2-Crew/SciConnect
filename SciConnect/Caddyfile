@@ -1,9 +1,3 @@
-{
-    servers {
-        bind 0.0.0.0
-    }
-}
-
 (security_headers) {
     header {
         X-Content-Type-Options "nosniff"
@@ -15,21 +9,25 @@
 }
 
 sciconnect.me {
+    bind 0.0.0.0 ::
     import security_headers
     reverse_proxy sciconnect-frontend:4000
 }
 
 api-identity.sciconnect.me {
+    bind 0.0.0.0 ::
     import security_headers
     reverse_proxy identityservice:8080
 }
 
 api-db.sciconnect.me {
+    bind 0.0.0.0 ::
     import security_headers
     reverse_proxy mainservice:8080
 }
 
 api-analytics.sciconnect.me {
+    bind 0.0.0.0 ::
     import security_headers
     reverse_proxy analyticsservice:8080
 }
