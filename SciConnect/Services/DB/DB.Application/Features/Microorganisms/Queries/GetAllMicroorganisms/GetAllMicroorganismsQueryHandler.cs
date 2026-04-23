@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DB.Application.Contracts.Factories;
+﻿using DB.Application.Contracts.Factories;
 using DB.Application.Contracts.Persistance;
 using DB.Application.Features.Microorganisms.Queries.ViewModels;
 using MediatR;
 
 namespace DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
 {
-    public class GetListOfMicroorganismsQueryHandler : IRequestHandler<GetAllMicroorganismsQuery, IReadOnlyList<MicroorganismViewModel>>
+    public class GetListOfMicroorganismsQueryHandler : IRequestHandler<GetAllMicroorganismsQuery, PagedResult<MicroorganismViewModel>>
     {
         private readonly IMicroorganismRepository _microorganismRepository;
         private readonly IMicroorganismViewModelFactory _viewModelFactory;
@@ -21,11 +16,11 @@ namespace DB.Application.Features.Microorganisms.Queries.GetAllMicroorganisms
             _viewModelFactory = viewModelFactory;
         }
 
-        public async Task<IReadOnlyList<MicroorganismViewModel>> Handle(GetAllMicroorganismsQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResult<MicroorganismViewModel>> Handle(GetAllMicroorganismsQuery request, CancellationToken cancellationToken)
         {
-            var microorganisms = await _microorganismRepository.GetAllAsync();
-            return microorganisms.Select(_viewModelFactory.CreateViewModel).ToList();
+            var pagedResult = await _microorganismRepository.GetPagedAsync(request.PageNumber, request.PageSize);
+            var viewModels = pagedResult.Items.Select(_viewModelFactory.CreateViewModel).ToList().AsReadOnly();
+            return new PagedResult<MicroorganismViewModel>(viewModels, pagedResult.TotalCount, pagedResult.PageNumber, pagedResult.PageSize);
         }
-
     }
 }

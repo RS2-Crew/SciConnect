@@ -14,7 +14,13 @@ export class AppStateService {
   private appStateObservable: Observable<IAppState> =  this.appStateSubject.asObservable();
 
   constructor(private localStorageService: LocalStorageService){
-
+    const saved = this.localStorageService.get<IAppState>(this.APP_STATE_KEY);
+    if (saved && saved.accessToken) {
+      const restored = new AppState();
+      Object.assign(restored, saved);
+      this.appState = restored;
+      this.appStateSubject.next(this.appState);
+    }
   }
   public getAppState(): Observable<IAppState>{
     return this.appStateObservable;

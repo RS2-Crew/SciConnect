@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DB.Application.Contracts.Factories;
+﻿using DB.Application.Contracts.Factories;
 using DB.Application.Contracts.Persistance;
 using DB.Application.Features.Instruments.Queries.ViewModels;
 using MediatR;
 
 namespace DB.Application.Features.Instruments.Queries.GetAllInstruments
 {
-    public class GetAllInstrumentsQueryHandler : IRequestHandler<GetAllInstrumentsQuery, IReadOnlyList<InstrumentViewModel>>
+    public class GetAllInstrumentsQueryHandler : IRequestHandler<GetAllInstrumentsQuery, PagedResult<InstrumentViewModel>>
     {
         private readonly IInstrumentRepository _instrumentRepository;
         private readonly IInstrumentViewModelFactory _viewModelFactory;
@@ -21,10 +16,11 @@ namespace DB.Application.Features.Instruments.Queries.GetAllInstruments
             _viewModelFactory = viewModelFactory;
         }
 
-        public async Task<IReadOnlyList<InstrumentViewModel>> Handle(GetAllInstrumentsQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResult<InstrumentViewModel>> Handle(GetAllInstrumentsQuery request, CancellationToken cancellationToken)
         {
-            var instruments = await _instrumentRepository.GetAllAsync();
-            return instruments.Select(_viewModelFactory.CreateViewModel).ToList();
+            var pagedResult = await _instrumentRepository.GetPagedAsync(request.PageNumber, request.PageSize);
+            var viewModels = pagedResult.Items.Select(_viewModelFactory.CreateViewModel).ToList().AsReadOnly();
+            return new PagedResult<InstrumentViewModel>(viewModels, pagedResult.TotalCount, pagedResult.PageNumber, pagedResult.PageSize);
         }
     }
 }

@@ -92,6 +92,17 @@ namespace DB.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
+        public virtual async Task<PagedResult<T>> GetPagedAsync(int pageNumber, int pageSize)
+        {
+            var totalCount = await _dbContext.Set<T>().CountAsync();
+            var items = await _dbContext.Set<T>()
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return new PagedResult<T>(items, totalCount, pageNumber, pageSize);
+        }
+
         public IQueryable<T> GetQueryable(bool disableTracking = true)
         {
             IQueryable<T> query = _dbContext.Set<T>();

@@ -1,3 +1,4 @@
+using AnalyticsService.Consumers;
 using AnalyticsService.Extensions;
 using AnalyticsService.Services;
 using MassTransit;
@@ -32,8 +33,18 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddMassTransit(config => {
+    config.AddConsumer<InstitutionCreatedConsumer>();
+    config.AddConsumer<EmployeeCreatedConsumer>();
+    config.AddConsumer<SimpleEntityCreatedConsumer>();
+
     config.UsingRabbitMq((ctx, cfg) => {
         cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
+
+        cfg.ReceiveEndpoint("analytics_entity_queue", e => {
+            e.ConfigureConsumer<InstitutionCreatedConsumer>(ctx);
+            e.ConfigureConsumer<EmployeeCreatedConsumer>(ctx);
+            e.ConfigureConsumer<SimpleEntityCreatedConsumer>(ctx);
+        });
     });
 });
 

@@ -26,6 +26,7 @@ namespace DB.Application.Contracts.Persistance
         Task<T> AddAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
+        Task<PagedResult<T>> GetPagedAsync(int pageNumber, int pageSize);
 
         public IQueryable<T> GetQueryable(bool disableTracking = true);
     }

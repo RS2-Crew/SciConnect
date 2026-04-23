@@ -56,8 +56,8 @@ export class DataService {
   }
 
   getAllInstitutions(): Observable<Institution[]> {
-    return this.http.get<InstitutionViewModel[]>(`${this.baseUrl}/institutions`, { headers: this.getHeaders() })
-      .pipe(map(institutions => institutions as Institution[]));
+    return this.http.get<any>(`${this.baseUrl}/institutions?pageNumber=1&pageSize=1000`, { headers: this.getHeaders() })
+      .pipe(map(response => (response.items ?? response) as Institution[]));
   }
 
   getAllInstitutionsWithRelatedData(): Observable<Institution[]> {
@@ -124,8 +124,8 @@ export class DataService {
   }
 
   getAllAnalyses(): Observable<Analysis[]> {
-    return this.http.get<AnalysisViewModel[]>(`${this.baseUrl}/analyses`, { headers: this.getHeaders() })
-      .pipe(map(analyses => analyses as Analysis[]));
+    return this.http.get<any>(`${this.baseUrl}/analyses?pageNumber=1&pageSize=1000`, { headers: this.getHeaders() })
+      .pipe(map(response => (response.items ?? response) as Analysis[]));
   }
 
   getAllAnalysesWithRelatedData(): Observable<Analysis[]> {
@@ -166,8 +166,8 @@ export class DataService {
   }
 
   getAllInstruments(): Observable<Instrument[]> {
-    return this.http.get<InstrumentViewModel[]>(`${this.baseUrl}/instruments`, { headers: this.getHeaders() })
-      .pipe(map(instruments => instruments as Instrument[]));
+    return this.http.get<any>(`${this.baseUrl}/instruments?pageNumber=1&pageSize=1000`, { headers: this.getHeaders() })
+      .pipe(map(response => (response.items ?? response) as Instrument[]));
   }
 
   getAllInstrumentsWithRelatedData(): Observable<Instrument[]> {
@@ -197,8 +197,8 @@ export class DataService {
   }
 
   getAllKeywords(): Observable<Keyword[]> {
-    return this.http.get<KeywordViewModel[]>(`${this.baseUrl}/keywords`, { headers: this.getHeaders() })
-      .pipe(map(keywords => keywords as Keyword[]));
+    return this.http.get<any>(`${this.baseUrl}/keywords?pageNumber=1&pageSize=1000`, { headers: this.getHeaders() })
+      .pipe(map(response => (response.items ?? response) as Keyword[]));
   }
 
   getAllKeywordsWithRelatedData(): Observable<Keyword[]> {
@@ -228,8 +228,8 @@ export class DataService {
   }
 
   getAllEmployees(): Observable<Employee[]> {
-    return this.http.get<EmployeeViewModel[]>(`${this.baseUrl}/employees`, { headers: this.getHeaders() })
-      .pipe(map(employees => employees as Employee[]));
+    return this.http.get<any>(`${this.baseUrl}/employees?pageNumber=1&pageSize=1000`, { headers: this.getHeaders() })
+      .pipe(map(response => (response.items ?? response) as Employee[]));
   }
 
   getAllEmployeesWithRelatedData(): Observable<Employee[]> {
@@ -270,8 +270,8 @@ export class DataService {
   }
 
   getAllMicroorganisms(): Observable<Microorganism[]> {
-    return this.http.get<MicroorganismViewModel[]>(`${this.baseUrl}/microorganisms`, { headers: this.getHeaders() })
-      .pipe(map(microorganisms => microorganisms as Microorganism[]));
+    return this.http.get<any>(`${this.baseUrl}/microorganisms?pageNumber=1&pageSize=1000`, { headers: this.getHeaders() })
+      .pipe(map(response => (response.items ?? response) as Microorganism[]));
   }
 
   getAllMicroorganismsWithRelatedData(): Observable<Microorganism[]> {

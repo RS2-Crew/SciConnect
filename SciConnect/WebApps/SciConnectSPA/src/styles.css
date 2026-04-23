@@ -14,13 +14,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
+  background-color: #f0f4f7;
   transition: background-color 0.3s ease;
 }
 
 /* Dark theme support */
 body.dark-theme {
-  background-color: #1a202c;
+  background-color: #111827;
   color: #e2e8f0;
 }
 
@@ -39,12 +39,12 @@ body.dark-theme {
 
 /* Focus styles for accessibility */
 *:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #0d9488;
   outline-offset: 2px;
 }
 
 body.dark-theme *:focus {
-  outline-color: #90cdf4;
+  outline-color: #5eead4;
 }
 
 /* Smooth scrolling */
@@ -54,30 +54,30 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #e5e7eb;
 }
 
 body.dark-theme ::-webkit-scrollbar-track {
-  background: #2d3748;
+  background: #1f2937;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: #9ca3af;
+  border-radius: 3px;
 }
 
 body.dark-theme ::-webkit-scrollbar-thumb {
-  background: #4a5568;
+  background: #4b5563;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #6b7280;
 }
 
 body.dark-theme ::-webkit-scrollbar-thumb:hover {
-  background: #718096;
+  background: #6b7280;
 }

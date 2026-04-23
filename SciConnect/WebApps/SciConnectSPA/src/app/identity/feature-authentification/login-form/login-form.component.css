@@ -1,6 +1,6 @@
 .login-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(160deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,13 +9,13 @@
 }
 
 .login-container.dark-theme {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);
 }
 
 .login-card {
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   padding: 40px;
   width: 100%;
   max-width: 400px;
@@ -25,9 +25,9 @@
 }
 
 .dark-theme .login-card {
-  background: #2d3748;
+  background: #1e293b;
   color: #e2e8f0;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .login-card::before {
@@ -36,90 +36,90 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  height: 3px;
+  background: linear-gradient(90deg, #0d9488, #14b8a6);
 }
 
 .theme-toggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   z-index: 10;
 }
 
 .theme-btn {
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  color: #667eea;
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  color: #0d9488;
   padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .dark-theme .theme-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
   color: #e2e8f0;
 }
 
 .theme-btn:hover {
-  background: rgba(102, 126, 234, 0.2);
-  transform: translateY(-1px);
+  background: rgba(13, 148, 136, 0.15);
 }
 
 .dark-theme .theme-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .login-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .login-logo {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 16px;
   overflow: hidden;
 }
 
 .logo-image {
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
 }
 
 .login-title {
-  color: #333;
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 8px;
+  color: #1e293b;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
   transition: color 0.3s ease;
 }
 
 .dark-theme .login-title {
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 
 .login-subtitle {
-  color: #666;
+  color: #64748b;
   font-size: 0.9rem;
   margin-bottom: 0;
   transition: color 0.3s ease;
 }
 
 .dark-theme .login-subtitle {
-  color: #a0aec0;
+  color: #94a3b8;
 }
 
 .form-group {
@@ -129,62 +129,62 @@
 
 .form-label {
   display: block;
-  margin-bottom: 8px;
-  color: #333;
+  margin-bottom: 6px;
+  color: #374151;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   transition: color 0.3s ease;
 }
 
 .dark-theme .form-label {
-  color: #e2e8f0;
+  color: #d1d5db;
 }
 
 .form-control {
   width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #e1e5e9;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background: #f8f9fa;
-  color: #333;
+  padding: 11px 14px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: #f9fafb;
+  color: #1e293b;
 }
 
 .dark-theme .form-control {
-  background: #4a5568;
-  border-color: #4a5568;
+  background: #374151;
+  border-color: #4b5563;
   color: #e2e8f0;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #0d9488;
   background: white;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
 
 .dark-theme .form-control:focus {
-  background: #2d3748;
-  border-color: #667eea;
+  background: #1e293b;
+  border-color: #14b8a6;
 }
 
 .form-control.ng-invalid.ng-touched {
-  border-color: #dc3545;
-  background: #fff5f5;
+  border-color: #ef4444;
+  background: #fef2f2;
 }
 
 .dark-theme .form-control.ng-invalid.ng-touched {
-  background: #4a1c1c;
+  background: #451a1a;
 }
 
 .form-control.ng-valid.ng-touched {
-  border-color: #28a745;
-  background: #f8fff9;
+  border-color: #22c55e;
+  background: #f0fdf4;
 }
 
 .dark-theme .form-control.ng-valid.ng-touched {
-  background: #1a4a1a;
+  background: #14532d;
 }
 
 .password-input-container {
@@ -200,19 +200,19 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #666;
+  color: #9ca3af;
   cursor: pointer;
   padding: 4px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .dark-theme .password-toggle {
-  color: #a0aec0;
+  color: #6b7280;
 }
 
 .password-toggle:hover {
-  color: #667eea;
+  color: #0d9488;
 }
 
 .input-icon {
@@ -220,57 +220,56 @@
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #999;
-  font-size: 1.1rem;
+  color: #9ca3af;
+  font-size: 1rem;
 }
 
 .btn-login {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 12px;
+  background: #0d9488;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 10px;
+  transition: all 0.2s ease;
+  margin-top: 8px;
 }
 
 .btn-login:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  background: #0f766e;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
 }
 
 .btn-login:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
-  transform: none;
 }
 
 .btn-login:disabled:hover {
-  transform: none;
+  background: #0d9488;
   box-shadow: none;
 }
 
 .error-message {
-  color: #dc3545;
-  font-size: 0.85rem;
-  margin-top: 5px;
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 6px;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
 .error-message i {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .success-message {
-  color: #28a745;
-  font-size: 0.85rem;
-  margin-top: 5px;
+  color: #22c55e;
+  font-size: 0.8rem;
+  margin-top: 6px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -283,7 +282,7 @@
   border: 2px solid #ffffff;
   border-radius: 50%;
   border-top-color: transparent;
-  animation: spin 1s ease-in-out infinite;
+  animation: spin 0.8s linear infinite;
   margin-right: 8px;
 }
 
@@ -297,81 +296,84 @@
 }
 
 .forgot-password a {
-  color: #667eea;
+  color: #0d9488;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
 }
 
 .forgot-password a:hover {
-  color: #764ba2;
+  color: #0f766e;
 }
 
 .dark-theme .forgot-password a {
-  color: #90cdf4;
+  color: #5eead4;
 }
 
 .dark-theme .forgot-password a:hover {
-  color: #63b3ed;
+  color: #2dd4bf;
 }
 
 .register-link {
   text-align: center;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #e1e5e9;
+  border-top: 1px solid #e5e7eb;
   transition: border-color 0.3s ease;
 }
 
 .dark-theme .register-link {
-  border-top-color: #4a5568;
+  border-top-color: #374151;
 }
 
 .register-link a {
-  color: #667eea;
+  color: #0d9488;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .register-link a:hover {
-  color: #764ba2;
+  color: #0f766e;
 }
 
 .dark-theme .register-link a {
-  color: #90cdf4;
+  color: #5eead4;
 }
 
 .dark-theme .register-link a:hover {
-  color: #63b3ed;
+  color: #2dd4bf;
 }
 
-/* Responsive design */
+/* Responsive */
 @media (max-width: 480px) {
   .login-card {
-    padding: 30px 20px;
-    margin: 10px;
+    padding: 28px 20px;
+    margin: 8px;
+    border-radius: 12px;
   }
-  
+
   .login-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
-  
+
   .login-logo {
     width: 60px;
     height: 60px;
-    font-size: 1.5rem;
+  }
+
+  .logo-image {
+    width: 44px;
+    height: 44px;
   }
 }
 
-
-
 /* Focus styles for accessibility */
 *:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #0d9488;
   outline-offset: 2px;
 }
 
 .dark-theme *:focus {
-  outline-color: #90cdf4;
+  outline-color: #5eead4;
 }

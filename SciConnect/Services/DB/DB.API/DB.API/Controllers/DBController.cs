@@ -47,6 +47,7 @@ using DB.Application.Features.Keywords.Queries.GetEmployeesByKeyword;
 using Microsoft.AspNetCore.Authorization;
 using DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution;
 using DB.Application.Features.Institutions.Commands.AddKeywordToInstitution;
+using DB.Application.Features.Institutions.Commands.AddMicroorganismToInstitution;
 using DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis;
 using DB.Application.Features.Employees.Commands.AddKeywordToEmploye;
 
@@ -89,11 +90,11 @@ namespace DB.API.Controllers
         [HttpGet("institutions")]
         [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<InstitutionViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<InstitutionViewModel>>> GetAllInstitutions()
+        public async Task<IActionResult> GetAllInstitutions([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var query = new GetAllInstitutionsQuery();
-            var institutions = await _mediator.Send(query);
-            return Ok(institutions);
+            var query = new GetAllInstitutionsQuery { PageNumber = pageNumber, PageSize = pageSize };
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpDelete("institutions/{name}")]
@@ -206,7 +207,7 @@ namespace DB.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> AddMicroorganismToInstitution(int institutionId, int microorganismId)
         {
-            var command = new AddInstrumentToInstitutionCommand(institutionId, microorganismId);
+            var command = new AddMicroorganismToInstitutionCommand(institutionId, microorganismId);
             await _mediator.Send(command);
 
             return Ok();
@@ -263,11 +264,11 @@ namespace DB.API.Controllers
         [HttpGet("instruments")]
         [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<InstrumentViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<InstrumentViewModel>>> GetAllInstruments()
+        public async Task<IActionResult> GetAllInstruments([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var query = new GetAllInstrumentsQuery();
-            var instruments = await _mediator.Send(query);
-            return Ok(instruments);
+            var query = new GetAllInstrumentsQuery { PageNumber = pageNumber, PageSize = pageSize };
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpPost("instruments")]
@@ -328,11 +329,11 @@ namespace DB.API.Controllers
         [HttpGet("microorganisms")]
         [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<MicroorganismViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<MicroorganismViewModel>>> GetAllMicroorganisms()
+        public async Task<IActionResult> GetAllMicroorganisms([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var query = new GetAllMicroorganismsQuery();
-            var microorganisms = await _mediator.Send(query);
-            return Ok(microorganisms);
+            var query = new GetAllMicroorganismsQuery { PageNumber = pageNumber, PageSize = pageSize };
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpPost("microorganisms")]
@@ -380,11 +381,11 @@ namespace DB.API.Controllers
         [HttpGet("keywords")]
         [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<KeywordViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<KeywordViewModel>>> GetAllKeywords()
+        public async Task<IActionResult> GetAllKeywords([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var query = new GetAllKeywordsQuery();
-            var keywords = await _mediator.Send(query);
-            return Ok(keywords);
+            var query = new GetAllKeywordsQuery { PageNumber = pageNumber, PageSize = pageSize };
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpPost("keywords")]
@@ -445,11 +446,11 @@ namespace DB.API.Controllers
         [HttpGet("employees")]
         [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<EmployeeViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<EmployeeViewModel>>> GetAllEmployees()
+        public async Task<IActionResult> GetAllEmployees([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var query = new GetAllEmployeesQuery();
-            var employees = await _mediator.Send(query);
-            return Ok(employees);
+            var query = new GetAllEmployeesQuery { PageNumber = pageNumber, PageSize = pageSize };
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpPost("employees")]
@@ -488,11 +489,11 @@ namespace DB.API.Controllers
         [HttpGet("analyses")]
         [Authorize(Policy = "ReadAccess")]
         [ProducesResponseType(typeof(IEnumerable<AnalysisViewModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<AnalysisViewModel>>> GetAllAnalyses()
+        public async Task<IActionResult> GetAllAnalyses([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var query = new GetAllAnalysesQuery();
-            var analyses = await _mediator.Send(query);
-            return Ok(analyses);
+            var query = new GetAllAnalysesQuery { PageNumber = pageNumber, PageSize = pageSize };
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
         [HttpGet("analyses/{name}")]
         [Authorize(Policy = "ReadAccess")]
