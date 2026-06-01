@@ -803,21 +803,27 @@
                 <div class="card-content">
                   <div class="form-group">
                     <input type="text" placeholder="Institution Name" [(ngModel)]="newInstitutionName" class="form-input">
-                    <input type="text" placeholder="Description" [(ngModel)]="newInstitutionDesc" class="form-input">
-                    <input type="text" placeholder="City" [(ngModel)]="newInstitutionCity" class="form-input">
                     <input type="text" placeholder="Street" [(ngModel)]="newInstitutionStreet" class="form-input">
                     <input type="text" placeholder="Street Number" [(ngModel)]="newInstitutionStreetNumber" class="form-input">
+                    <input type="text" placeholder="City" [(ngModel)]="newInstitutionCity" class="form-input">
                     <input type="text" placeholder="Country" [(ngModel)]="newInstitutionCountry" class="form-input">
                     <button class="btn-create" (click)="createInstitution()" [disabled]="!newInstitutionName || !newInstitutionCity || !newInstitutionStreet || !newInstitutionCountry || !newInstitutionStreetNumber">
                       <i class="fas fa-plus"></i> Create
                     </button>
                   </div>
+                  <div class="list-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search institutions..." [(ngModel)]="searchListInstitution" class="search-filter-input">
+                  </div>
                   <div class="item-list">
-                    <div class="item" *ngFor="let institution of allInstitutions">
+                    <div class="item" *ngFor="let institution of filterByName(allInstitutions, searchListInstitution)">
                       <span>{{ institution.name }}</span>
                       <button class="btn-delete" (click)="deleteInstitution(institution.name)">
                         <i class="fas fa-trash"></i>
                       </button>
+                    </div>
+                    <div class="no-items-message" *ngIf="filterByName(allInstitutions, searchListInstitution).length === 0">
+                      No institutions found
                     </div>
                   </div>
                 </div>
@@ -831,17 +837,23 @@
                 <div class="card-content">
                   <div class="form-group">
                     <input type="text" placeholder="Instrument Name" [(ngModel)]="newInstrumentName" class="form-input">
-                    <input type="text" placeholder="Description" [(ngModel)]="newInstrumentDesc" class="form-input">
                     <button class="btn-create" (click)="createInstrument()" [disabled]="!newInstrumentName">
                       <i class="fas fa-plus"></i> Create
                     </button>
                   </div>
+                  <div class="list-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search instruments..." [(ngModel)]="searchListInstrument" class="search-filter-input">
+                  </div>
                   <div class="item-list">
-                    <div class="item" *ngFor="let instrument of allInstruments">
+                    <div class="item" *ngFor="let instrument of filterByName(allInstruments, searchListInstrument)">
                       <span>{{ instrument.name }}</span>
                       <button class="btn-delete" (click)="deleteInstrument(instrument.name)">
                         <i class="fas fa-trash"></i>
                       </button>
+                    </div>
+                    <div class="no-items-message" *ngIf="filterByName(allInstruments, searchListInstrument).length === 0">
+                      No instruments found
                     </div>
                   </div>
                 </div>
@@ -859,12 +871,19 @@
                       <i class="fas fa-plus"></i> Create
                     </button>
                   </div>
+                  <div class="list-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search keywords..." [(ngModel)]="searchListKeyword" class="search-filter-input">
+                  </div>
                   <div class="item-list">
-                    <div class="item" *ngFor="let keyword of allKeywords">
+                    <div class="item" *ngFor="let keyword of filterByName(allKeywords, searchListKeyword)">
                       <span>{{ keyword.name }}</span>
                       <button class="btn-delete" (click)="deleteKeyword(keyword.name)">
                         <i class="fas fa-trash"></i>
                       </button>
+                    </div>
+                    <div class="no-items-message" *ngIf="filterByName(allKeywords, searchListKeyword).length === 0">
+                      No keywords found
                     </div>
                   </div>
                 </div>
@@ -878,17 +897,23 @@
                 <div class="card-content">
                   <div class="form-group">
                     <input type="text" placeholder="Analysis Name" [(ngModel)]="newAnalysisName" class="form-input">
-                    <input type="text" placeholder="Description" [(ngModel)]="newAnalysisDesc" class="form-input">
                     <button class="btn-create" (click)="createAnalysis()" [disabled]="!newAnalysisName">
                       <i class="fas fa-plus"></i> Create
                     </button>
                   </div>
+                  <div class="list-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search analyses..." [(ngModel)]="searchListAnalysis" class="search-filter-input">
+                  </div>
                   <div class="item-list">
-                    <div class="item" *ngFor="let analysis of allAnalyses">
+                    <div class="item" *ngFor="let analysis of filterByName(allAnalyses, searchListAnalysis)">
                       <span>{{ analysis.name }}</span>
                       <button class="btn-delete" (click)="deleteAnalysis(analysis.name)">
                         <i class="fas fa-trash"></i>
                       </button>
+                    </div>
+                    <div class="no-items-message" *ngIf="filterByName(allAnalyses, searchListAnalysis).length === 0">
+                      No analyses found
                     </div>
                   </div>
                 </div>
@@ -903,23 +928,29 @@
                   <div class="form-group">
                     <input type="text" placeholder="First Name" [(ngModel)]="newEmployeeFirstName" class="form-input">
                     <input type="text" placeholder="Last Name" [(ngModel)]="newEmployeeLastName" class="form-input">
-                    <input type="email" placeholder="Email" [(ngModel)]="newEmployeeEmail" class="form-input">
                     <select [(ngModel)]="newEmployeeInstitutionId" class="form-input">
                       <option value="">Select Institution</option>
                       <option *ngFor="let institution of allInstitutions" [value]="institution.id">
                         {{ institution.name }}
                       </option>
                     </select>
-                    <button class="btn-create" (click)="createEmployee()" [disabled]="!newEmployeeFirstName || !newEmployeeLastName || !newEmployeeEmail || !newEmployeeInstitutionId">
+                    <button class="btn-create" (click)="createEmployee()" [disabled]="!newEmployeeFirstName || !newEmployeeLastName || !newEmployeeInstitutionId">
                       <i class="fas fa-plus"></i> Create
                     </button>
                   </div>
+                  <div class="list-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search employees..." [(ngModel)]="searchListEmployee" class="search-filter-input">
+                  </div>
                   <div class="item-list">
-                    <div class="item" *ngFor="let employee of allResearchers">
-                      <span>{{ employee.firstName }} {{ employee.lastName }} ({{ employee.email }})</span>
+                    <div class="item" *ngFor="let employee of filterByName(allResearchers, searchListEmployee)">
+                      <span>{{ employee.firstName }} {{ employee.lastName }}</span>
                       <button class="btn-delete" (click)="deleteEmployee(employee.id)">
                         <i class="fas fa-trash"></i>
                       </button>
+                    </div>
+                    <div class="no-items-message" *ngIf="filterByName(allResearchers, searchListEmployee).length === 0">
+                      No employees found
                     </div>
                   </div>
                 </div>
@@ -937,12 +968,19 @@
                       <i class="fas fa-plus"></i> Create
                     </button>
                   </div>
+                  <div class="list-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search microorganisms..." [(ngModel)]="searchListMicroorganism" class="search-filter-input">
+                  </div>
                   <div class="item-list">
-                    <div class="item" *ngFor="let microorganism of allMicroorganisms">
+                    <div class="item" *ngFor="let microorganism of filterByName(allMicroorganisms, searchListMicroorganism)">
                       <span>{{ microorganism.name }}</span>
                       <button class="btn-delete" (click)="deleteMicroorganism(microorganism.name)">
                         <i class="fas fa-trash"></i>
                       </button>
+                    </div>
+                    <div class="no-items-message" *ngIf="filterByName(allMicroorganisms, searchListMicroorganism).length === 0">
+                      No microorganisms found
                     </div>
                   </div>
                 </div>
@@ -962,19 +1000,25 @@
                     <div class="connection-form">
                       <h5>Connect Institution to Analysis</h5>
                       <div class="form-row">
-                        <select [(ngModel)]="selectedConnectionInstitution" class="form-input">
-                          <option [value]="null">Select Institution</option>
-                          <option *ngFor="let institution of allInstitutions" [value]="institution.id">
-                            {{ institution.name }}
-                          </option>
-                        </select>
-                        <select [(ngModel)]="selectedConnectionAnalysis" class="form-input">
-                          <option [value]="null">Select Analysis</option>
-                          <option *ngFor="let analysis of allAnalyses" [value]="analysis.id">
-                            {{ analysis.name }}
-                          </option>
-                        </select>
-                        <button class="btn-connect" (click)="connectInstitutionToAnalysis()" [disabled]="!selectedConnectionInstitution || !selectedConnectionAnalysis">
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter institutions..." [(ngModel)]="searchConnInstAnalysisInst" class="select-search-input">
+                          <select [(ngModel)]="connInstAnalysis_inst" class="form-input">
+                            <option [value]="null">Select Institution</option>
+                            <option *ngFor="let institution of filterByName(allInstitutions, searchConnInstAnalysisInst)" [value]="institution.id">
+                              {{ institution.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter analyses..." [(ngModel)]="searchConnInstAnalysisAnalysis" class="select-search-input">
+                          <select [(ngModel)]="connInstAnalysis_analysis" class="form-input">
+                            <option [value]="null">Select Analysis</option>
+                            <option *ngFor="let analysis of filterByName(allAnalyses, searchConnInstAnalysisAnalysis)" [value]="analysis.id">
+                              {{ analysis.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <button class="btn-connect" (click)="connectInstitutionToAnalysis()" [disabled]="!connInstAnalysis_inst || !connInstAnalysis_analysis">
                           <i class="fas fa-link"></i> Connect
                         </button>
                       </div>
@@ -983,19 +1027,25 @@
                     <div class="connection-form">
                       <h5>Connect Institution to Instrument</h5>
                       <div class="form-row">
-                        <select [(ngModel)]="selectedConnectionInstitution" class="form-input">
-                          <option [value]="null">Select Institution</option>
-                          <option *ngFor="let institution of allInstitutions" [value]="institution.id">
-                            {{ institution.name }}
-                          </option>
-                        </select>
-                        <select [(ngModel)]="selectedConnectionInstrument" class="form-input">
-                          <option [value]="null">Select Instrument</option>
-                          <option *ngFor="let instrument of allInstruments" [value]="instrument.id">
-                            {{ instrument.name }}
-                          </option>
-                        </select>
-                        <button class="btn-connect" (click)="connectInstitutionToInstrument()" [disabled]="!selectedConnectionInstitution || !selectedConnectionInstrument">
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter institutions..." [(ngModel)]="searchConnInstInstrumentInst" class="select-search-input">
+                          <select [(ngModel)]="connInstInstrument_inst" class="form-input">
+                            <option [value]="null">Select Institution</option>
+                            <option *ngFor="let institution of filterByName(allInstitutions, searchConnInstInstrumentInst)" [value]="institution.id">
+                              {{ institution.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter instruments..." [(ngModel)]="searchConnInstInstrumentInstrument" class="select-search-input">
+                          <select [(ngModel)]="connInstInstrument_instrument" class="form-input">
+                            <option [value]="null">Select Instrument</option>
+                            <option *ngFor="let instrument of filterByName(allInstruments, searchConnInstInstrumentInstrument)" [value]="instrument.id">
+                              {{ instrument.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <button class="btn-connect" (click)="connectInstitutionToInstrument()" [disabled]="!connInstInstrument_inst || !connInstInstrument_instrument">
                           <i class="fas fa-link"></i> Connect
                         </button>
                       </div>
@@ -1004,19 +1054,25 @@
                     <div class="connection-form">
                       <h5>Connect Institution to Microorganism</h5>
                       <div class="form-row">
-                        <select [(ngModel)]="selectedConnectionInstitution" class="form-input">
-                          <option [value]="null">Select Institution</option>
-                          <option *ngFor="let institution of allInstitutions" [value]="institution.id">
-                            {{ institution.name }}
-                          </option>
-                        </select>
-                        <select [(ngModel)]="selectedConnectionMicroorganism" class="form-input">
-                          <option [value]="null">Select Microorganism</option>
-                          <option *ngFor="let microorganism of allMicroorganisms" [value]="microorganism.id">
-                            {{ microorganism.name }}
-                          </option>
-                        </select>
-                        <button class="btn-connect" (click)="connectInstitutionToMicroorganism()" [disabled]="!selectedConnectionInstitution || !selectedConnectionMicroorganism">
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter institutions..." [(ngModel)]="searchConnInstMicroInst" class="select-search-input">
+                          <select [(ngModel)]="connInstMicro_inst" class="form-input">
+                            <option [value]="null">Select Institution</option>
+                            <option *ngFor="let institution of filterByName(allInstitutions, searchConnInstMicroInst)" [value]="institution.id">
+                              {{ institution.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter microorganisms..." [(ngModel)]="searchConnInstMicroMicro" class="select-search-input">
+                          <select [(ngModel)]="connInstMicro_micro" class="form-input">
+                            <option [value]="null">Select Microorganism</option>
+                            <option *ngFor="let microorganism of filterByName(allMicroorganisms, searchConnInstMicroMicro)" [value]="microorganism.id">
+                              {{ microorganism.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <button class="btn-connect" (click)="connectInstitutionToMicroorganism()" [disabled]="!connInstMicro_inst || !connInstMicro_micro">
                           <i class="fas fa-link"></i> Connect
                         </button>
                       </div>
@@ -1033,19 +1089,25 @@
                     <div class="connection-form">
                       <h5>Connect Researcher to Keyword</h5>
                       <div class="form-row">
-                        <select [(ngModel)]="selectedConnectionResearcher" class="form-input">
-                          <option [value]="null">Select Researcher</option>
-                          <option *ngFor="let researcher of allResearchers" [value]="researcher.id">
-                            {{ researcher.firstName }} {{ researcher.lastName }}
-                          </option>
-                        </select>
-                        <select [(ngModel)]="selectedConnectionKeyword" class="form-input">
-                          <option [value]="null">Select Keyword</option>
-                          <option *ngFor="let keyword of allKeywords" [value]="keyword.id">
-                            {{ keyword.name }}
-                          </option>
-                        </select>
-                        <button class="btn-connect" (click)="connectResearcherToKeyword()" [disabled]="!selectedConnectionResearcher || !selectedConnectionKeyword">
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter researchers..." [(ngModel)]="searchConnResKeywordRes" class="select-search-input">
+                          <select [(ngModel)]="connResKeyword_researcher" class="form-input">
+                            <option [value]="null">Select Researcher</option>
+                            <option *ngFor="let researcher of filterByName(allResearchers, searchConnResKeywordRes)" [value]="researcher.id">
+                              {{ researcher.firstName }} {{ researcher.lastName }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter keywords..." [(ngModel)]="searchConnResKeywordKw" class="select-search-input">
+                          <select [(ngModel)]="connResKeyword_keyword" class="form-input">
+                            <option [value]="null">Select Keyword</option>
+                            <option *ngFor="let keyword of filterByName(allKeywords, searchConnResKeywordKw)" [value]="keyword.id">
+                              {{ keyword.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <button class="btn-connect" (click)="connectResearcherToKeyword()" [disabled]="!connResKeyword_researcher || !connResKeyword_keyword">
                           <i class="fas fa-link"></i> Connect
                         </button>
                       </div>
@@ -1062,40 +1124,25 @@
                     <div class="connection-form">
                       <h5>Connect Analysis to Microorganism</h5>
                       <div class="form-row">
-                        <select [(ngModel)]="selectedConnectionAnalysis" class="form-input">
-                          <option [value]="null">Select Analysis</option>
-                          <option *ngFor="let analysis of allAnalyses" [value]="analysis.id">
-                            {{ analysis.name }}
-                          </option>
-                        </select>
-                        <select [(ngModel)]="selectedConnectionMicroorganism" class="form-input">
-                          <option [value]="null">Select Microorganism</option>
-                          <option *ngFor="let microorganism of allMicroorganisms" [value]="microorganism.id">
-                            {{ microorganism.name }}
-                          </option>
-                        </select>
-                        <button class="btn-connect" (click)="connectAnalysisToMicroorganism()" [disabled]="!selectedConnectionAnalysis || !selectedConnectionMicroorganism">
-                          <i class="fas fa-link"></i> Connect
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="connection-form">
-                      <h5>Connect Analysis to Instrument</h5>
-                      <div class="form-row">
-                        <select [(ngModel)]="selectedConnectionAnalysis" class="form-input">
-                          <option [value]="null">Select Analysis</option>
-                          <option *ngFor="let analysis of allAnalyses" [value]="analysis.id">
-                            {{ analysis.name }}
-                          </option>
-                        </select>
-                        <select [(ngModel)]="selectedConnectionInstrument" class="form-input">
-                          <option [value]="null">Select Instrument</option>
-                          <option *ngFor="let instrument of allInstruments" [value]="instrument.id">
-                            {{ instrument.name }}
-                          </option>
-                        </select>
-                        <button class="btn-connect" (click)="connectAnalysisToInstrument()" [disabled]="!selectedConnectionAnalysis || !selectedConnectionInstrument">
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter analyses..." [(ngModel)]="searchConnAnalysisMicroAnalysis" class="select-search-input">
+                          <select [(ngModel)]="connAnalysisMicro_analysis" class="form-input">
+                            <option [value]="null">Select Analysis</option>
+                            <option *ngFor="let analysis of filterByName(allAnalyses, searchConnAnalysisMicroAnalysis)" [value]="analysis.id">
+                              {{ analysis.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter microorganisms..." [(ngModel)]="searchConnAnalysisMicroMicro" class="select-search-input">
+                          <select [(ngModel)]="connAnalysisMicro_micro" class="form-input">
+                            <option [value]="null">Select Microorganism</option>
+                            <option *ngFor="let microorganism of filterByName(allMicroorganisms, searchConnAnalysisMicroMicro)" [value]="microorganism.id">
+                              {{ microorganism.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <button class="btn-connect" (click)="connectAnalysisToMicroorganism()" [disabled]="!connAnalysisMicro_analysis || !connAnalysisMicro_micro">
                           <i class="fas fa-link"></i> Connect
                         </button>
                       </div>

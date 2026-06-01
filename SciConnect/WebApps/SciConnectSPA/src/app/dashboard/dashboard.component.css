@@ -74,22 +74,24 @@
 }
 
 .management-card {
-  background: white;
+  background: #f8f9fa;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
 }
 
 .management-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: #667eea;
 }
 
 .management-card .card-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -118,6 +120,8 @@
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
+  background: white;
+  color: #333;
 }
 
 .form-input:focus {
@@ -156,8 +160,9 @@
 .item-list {
   max-height: 300px;
   overflow-y: auto;
-  border: 1px solid #e1e5e9;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
+  background: white;
 }
 
 .item {
@@ -165,7 +170,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #f8f9fa;
+  border-bottom: 1px solid #f1f3f5;
+  color: #333;
+  font-size: 0.95rem;
 }
 
 .item:last-child {
@@ -173,7 +180,13 @@
 }
 
 .item:hover {
-  background-color: #f8f9fa;
+  background-color: #eef2ff;
+}
+
+.item span {
+  flex: 1;
+  margin-right: 0.5rem;
+  word-break: break-word;
 }
 
 .btn-delete {
@@ -187,11 +200,176 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .btn-delete:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.dark-theme .management-card {
+  background: #2d3748;
+  border-color: #4a5568;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .management-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .management-card .card-content {
+  background: #2d3748;
+}
+
+.dark-theme .form-input {
+  background: #4a5568;
+  color: #f7fafc;
+  border-color: #4a5568;
+}
+
+.dark-theme .form-input:focus {
+  background: #1a202c;
+  border-color: #667eea;
+  color: #f7fafc;
+}
+
+.dark-theme .form-input option {
+  background: #2d3748;
+  color: #f7fafc;
+}
+
+.dark-theme .item-list {
+  background: #374151;
+  border-color: #4a5568;
+}
+
+.dark-theme .item {
+  color: #e2e8f0;
+  border-bottom-color: #4a5568;
+}
+
+.dark-theme .item:hover {
+  background-color: #4a5568;
+}
+
+.dark-theme .database-management-section h3 {
+  color: #f7fafc;
+}
+
+.list-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.list-search i {
+  position: absolute;
+  left: 0.75rem;
+  color: #999;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.search-filter-input {
+  width: 100%;
+  padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #333;
+}
+
+.search-filter-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-filter-input::placeholder {
+  color: #aab;
+}
+
+.dark-theme .list-search i {
+  color: #a0aec0;
+}
+
+.dark-theme .search-filter-input {
+  background: #4a5568;
+  color: #f7fafc;
+  border-color: #4a5568;
+}
+
+.dark-theme .search-filter-input:focus {
+  background: #1a202c;
+  border-color: #667eea;
+}
+
+.dark-theme .search-filter-input::placeholder {
+  color: #a0aec0;
+}
+
+.searchable-select {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.select-search-input {
+  width: 100%;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.select-search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.select-search-input::placeholder {
+  color: #aab;
+  font-size: 0.78rem;
+}
+
+.dark-theme .select-search-input {
+  background: #374151;
+  color: #f7fafc;
+  border-color: #4a5568;
+}
+
+.dark-theme .select-search-input:focus {
+  background: #1a202c;
+  border-color: #667eea;
+}
+
+.dark-theme .select-search-input::placeholder {
+  color: #a0aec0;
+}
+
+.no-items-message {
+  text-align: center;
+  padding: 1rem;
+  color: #999;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.dark-theme .no-items-message {
+  color: #a0aec0;
 }
 
 @media (max-width: 768px) {
@@ -1135,6 +1313,11 @@
   min-width: 150px;
 }
 
+.form-row .searchable-select .form-input {
+  flex: unset;
+  width: 100%;
+}
+
 .btn-connect {
   background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
   color: white;
@@ -1242,8 +1425,12 @@
 }
 
 .dark-theme .connection-card {
-  background: #4a5568;
-  border-color: #718096;
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+.dark-theme .connection-card .card-content {
+  background: #2d3748;
 }
 
 .dark-theme .connection-form h5 {
@@ -1279,6 +1466,10 @@
   }
   
   .form-row .form-input {
+    min-width: auto;
+  }
+
+  .form-row .searchable-select {
     min-width: auto;
   }
   

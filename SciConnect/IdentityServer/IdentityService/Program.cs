@@ -69,6 +69,7 @@ builder.Services.AddMassTransit(config => {
 });
 
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddScoped<UserSeeder>();
 
 Console.WriteLine("MassTransit + Consumer configuration complete.");
 
@@ -95,6 +96,9 @@ using (var scope = app.Services.CreateScope())
             Thread.Sleep(3000);
         }
     }
+
+    var seeder = scope.ServiceProvider.GetRequiredService<UserSeeder>();
+    await seeder.SeedAsync();
 }
 
 if (app.Environment.IsDevelopment())

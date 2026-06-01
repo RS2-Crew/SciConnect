@@ -109,28 +109,46 @@ export class DashboardComponent implements OnInit, OnDestroy {
   allKeywords: Keyword[] = [];
 
   newInstitutionName: string = '';
-  newInstitutionDesc: string = '';
   newInstitutionCity: string = '';
   newInstitutionStreet: string = '';
   newInstitutionCountry: string = '';
   newInstitutionStreetNumber: string = '';
   newInstrumentName: string = '';
-  newInstrumentDesc: string = '';
   newKeywordName: string = '';
   newAnalysisName: string = '';
-  newAnalysisDesc: string = '';
   newEmployeeFirstName: string = '';
   newEmployeeLastName: string = '';
-  newEmployeeEmail: string = '';
   newEmployeeInstitutionId: number | null = null;
   newMicroorganismName: string = '';
 
-  selectedConnectionInstitution: number | null = null;
-  selectedConnectionAnalysis: number | null = null;
-  selectedConnectionInstrument: number | null = null;
-  selectedConnectionMicroorganism: number | null = null;
-  selectedConnectionResearcher: number | null = null;
-  selectedConnectionKeyword: number | null = null;
+  searchListInstitution = '';
+  searchListInstrument = '';
+  searchListKeyword = '';
+  searchListAnalysis = '';
+  searchListEmployee = '';
+  searchListMicroorganism = '';
+
+  connInstAnalysis_inst: number | null = null;
+  connInstAnalysis_analysis: number | null = null;
+  connInstInstrument_inst: number | null = null;
+  connInstInstrument_instrument: number | null = null;
+  connInstMicro_inst: number | null = null;
+  connInstMicro_micro: number | null = null;
+  connResKeyword_researcher: number | null = null;
+  connResKeyword_keyword: number | null = null;
+  connAnalysisMicro_analysis: number | null = null;
+  connAnalysisMicro_micro: number | null = null;
+
+  searchConnInstAnalysisInst = '';
+  searchConnInstAnalysisAnalysis = '';
+  searchConnInstInstrumentInst = '';
+  searchConnInstInstrumentInstrument = '';
+  searchConnInstMicroInst = '';
+  searchConnInstMicroMicro = '';
+  searchConnResKeywordRes = '';
+  searchConnResKeywordKw = '';
+  searchConnAnalysisMicroAnalysis = '';
+  searchConnAnalysisMicroMicro = '';
 
   analyticsData: SummaryAnalyticsResponse | null = null;
   showAnalytics: boolean = false;
@@ -1173,6 +1191,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.modalType = '';
   }
 
+  filterByName(items: any[], search: string): any[] {
+    if (!search || !search.trim()) return items;
+    const term = search.toLowerCase().trim();
+    return items.filter(item => {
+      const name = item.name
+        ? item.name.toLowerCase()
+        : `${item.firstName || ''} ${item.lastName || ''}`.toLowerCase();
+      return name.includes(term);
+    });
+  }
+
   getDisplayName(item: any): string {
     if (item.name) return item.name;
     if (item.firstName && item.lastName)
@@ -1339,10 +1368,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (!this.newInstitutionName || !this.newInstitutionCity || !this.newInstitutionStreet || !this.newInstitutionCountry || !this.newInstitutionStreetNumber) return;
     
     this.handleCrudOperation(
-      this.dataService.createInstitution(this.newInstitutionName, this.newInstitutionDesc, this.newInstitutionCity, this.newInstitutionStreet, this.newInstitutionCountry, this.newInstitutionStreetNumber),
+      this.dataService.createInstitution(this.newInstitutionName, this.newInstitutionCity, this.newInstitutionStreet, this.newInstitutionCountry, this.newInstitutionStreetNumber),
       () => {
         this.newInstitutionName = '';
-        this.newInstitutionDesc = '';
         this.newInstitutionCity = '';
         this.newInstitutionStreet = '';
         this.newInstitutionCountry = '';
@@ -1359,11 +1387,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (!this.newInstrumentName) return;
     
     this.handleCrudOperation(
-      this.dataService.createInstrument(this.newInstrumentName, this.newInstrumentDesc),
-      () => {
-        this.newInstrumentName = '';
-        this.newInstrumentDesc = '';
-      }
+      this.dataService.createInstrument(this.newInstrumentName),
+      () => { this.newInstrumentName = ''; }
     );
   }
 
@@ -1388,11 +1413,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (!this.newAnalysisName) return;
     
     this.handleCrudOperation(
-      this.dataService.createAnalysis(this.newAnalysisName, this.newAnalysisDesc),
-      () => {
-        this.newAnalysisName = '';
-        this.newAnalysisDesc = '';
-      }
+      this.dataService.createAnalysis(this.newAnalysisName),
+      () => { this.newAnalysisName = ''; }
     );
   }
 
@@ -1401,14 +1423,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   public createEmployee(): void {
-    if (!this.newEmployeeFirstName || !this.newEmployeeLastName || !this.newEmployeeEmail || !this.newEmployeeInstitutionId) return;
+    if (!this.newEmployeeFirstName || !this.newEmployeeLastName || !this.newEmployeeInstitutionId) return;
     
     this.handleCrudOperation(
-      this.dataService.createEmployee(this.newEmployeeFirstName, this.newEmployeeLastName, this.newEmployeeEmail, this.newEmployeeInstitutionId),
+      this.dataService.createEmployee(this.newEmployeeFirstName, this.newEmployeeLastName, this.newEmployeeInstitutionId),
       () => {
         this.newEmployeeFirstName = '';
         this.newEmployeeLastName = '';
-        this.newEmployeeEmail = '';
         this.newEmployeeInstitutionId = null;
       }
     );
@@ -1432,50 +1453,42 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   public connectInstitutionToAnalysis(): void {
-    if (!this.selectedConnectionInstitution || !this.selectedConnectionAnalysis) return;
+    if (!this.connInstAnalysis_inst || !this.connInstAnalysis_analysis) return;
     this.connect(
-      this.dataService.connectInstitutionToAnalysis(this.selectedConnectionInstitution, this.selectedConnectionAnalysis),
-      () => { this.selectedConnectionInstitution = null; this.selectedConnectionAnalysis = null; }
+      this.dataService.connectInstitutionToAnalysis(this.connInstAnalysis_inst, this.connInstAnalysis_analysis),
+      () => { this.connInstAnalysis_inst = null; this.connInstAnalysis_analysis = null; }
     );
   }
 
   public connectInstitutionToInstrument(): void {
-    if (!this.selectedConnectionInstitution || !this.selectedConnectionInstrument) return;
+    if (!this.connInstInstrument_inst || !this.connInstInstrument_instrument) return;
     this.connect(
-      this.dataService.connectInstitutionToInstrument(this.selectedConnectionInstitution, this.selectedConnectionInstrument),
-      () => { this.selectedConnectionInstitution = null; this.selectedConnectionInstrument = null; }
+      this.dataService.connectInstitutionToInstrument(this.connInstInstrument_inst, this.connInstInstrument_instrument),
+      () => { this.connInstInstrument_inst = null; this.connInstInstrument_instrument = null; }
     );
   }
 
   public connectInstitutionToMicroorganism(): void {
-    if (!this.selectedConnectionInstitution || !this.selectedConnectionMicroorganism) return;
+    if (!this.connInstMicro_inst || !this.connInstMicro_micro) return;
     this.connect(
-      this.dataService.connectInstitutionToMicroorganism(this.selectedConnectionInstitution, this.selectedConnectionMicroorganism),
-      () => { this.selectedConnectionInstitution = null; this.selectedConnectionMicroorganism = null; }
+      this.dataService.connectInstitutionToMicroorganism(this.connInstMicro_inst, this.connInstMicro_micro),
+      () => { this.connInstMicro_inst = null; this.connInstMicro_micro = null; }
     );
   }
 
   public connectResearcherToKeyword(): void {
-    if (!this.selectedConnectionResearcher || !this.selectedConnectionKeyword) return;
+    if (!this.connResKeyword_researcher || !this.connResKeyword_keyword) return;
     this.connect(
-      this.dataService.connectResearcherToKeyword(this.selectedConnectionResearcher, this.selectedConnectionKeyword),
-      () => { this.selectedConnectionResearcher = null; this.selectedConnectionKeyword = null; }
+      this.dataService.connectResearcherToKeyword(this.connResKeyword_researcher, this.connResKeyword_keyword),
+      () => { this.connResKeyword_researcher = null; this.connResKeyword_keyword = null; }
     );
   }
 
   public connectAnalysisToMicroorganism(): void {
-    if (!this.selectedConnectionAnalysis || !this.selectedConnectionMicroorganism) return;
+    if (!this.connAnalysisMicro_analysis || !this.connAnalysisMicro_micro) return;
     this.connect(
-      this.dataService.connectAnalysisToMicroorganism(this.selectedConnectionAnalysis, this.selectedConnectionMicroorganism),
-      () => { this.selectedConnectionAnalysis = null; this.selectedConnectionMicroorganism = null; }
-    );
-  }
-
-  public connectAnalysisToInstrument(): void {
-    if (!this.selectedConnectionAnalysis || !this.selectedConnectionInstrument) return;
-    this.connect(
-      this.dataService.connectAnalysisToInstrument(this.selectedConnectionAnalysis, this.selectedConnectionInstrument),
-      () => { this.selectedConnectionAnalysis = null; this.selectedConnectionInstrument = null; }
+      this.dataService.connectAnalysisToMicroorganism(this.connAnalysisMicro_analysis, this.connAnalysisMicro_micro),
+      () => { this.connAnalysisMicro_analysis = null; this.connAnalysisMicro_micro = null; }
     );
   }
 }

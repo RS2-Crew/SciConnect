@@ -321,8 +321,8 @@ export class DataService {
     return this.filterStateSubject.value;
   }
 
-  createInstitution(name: string, description: string, city: string, street: string, country: string, streetNumber: string): Observable<number> {
-    const command = { name, description, city, street, country, streetNumber };
+  createInstitution(name: string, city: string, street: string, country: string, streetNumber: string): Observable<number> {
+    const command = { name, street, streetNumber, city, country };
     return this.http.post<number>(`${this.baseUrl}/institutions`, command, { headers: this.getHeaders() });
   }
 
@@ -330,8 +330,8 @@ export class DataService {
     return this.http.delete(`${this.baseUrl}/institutions/${name}`, { headers: this.getHeaders() });
   }
 
-  createInstrument(name: string, description: string): Observable<number> {
-    const command = { name, description };
+  createInstrument(name: string): Observable<number> {
+    const command = { name };
     return this.http.post<number>(`${this.baseUrl}/instruments`, command, { headers: this.getHeaders() });
   }
 
@@ -348,8 +348,8 @@ export class DataService {
     return this.http.delete(`${this.baseUrl}/keywords/${name}`, { headers: this.getHeaders() });
   }
 
-  createEmployee(firstName: string, lastName: string, email: string, institutionId: number): Observable<number> {
-    const command = { firstName, lastName, email, institutionId };
+  createEmployee(firstName: string, lastName: string, institutionId: number): Observable<number> {
+    const command = { firstName, lastName, institutionId };
     return this.http.post<number>(`${this.baseUrl}/employees`, command, { headers: this.getHeaders() });
   }
 
@@ -357,8 +357,8 @@ export class DataService {
     return this.http.delete(`${this.baseUrl}/employees/${id}`, { headers: this.getHeaders() });
   }
 
-  createAnalysis(name: string, description: string): Observable<number> {
-    const command = { name, description };
+  createAnalysis(name: string): Observable<number> {
+    const command = { name };
     return this.http.post<number>(`${this.baseUrl}/analyses`, command, { headers: this.getHeaders() });
   }
 
@@ -400,7 +400,4 @@ export class DataService {
     return this.http.post(`${this.baseUrl}/analysis/${analysisId}/microorganism/${microorganismId}`, {}, { headers: this.getHeaders() });
   }
 
-  connectAnalysisToInstrument(analysisId: number, instrumentId: number): Observable<any> {
-    return this.http.post(`${this.baseUrl}/analysis/${analysisId}/instrument/${instrumentId}`, {}, { headers: this.getHeaders() });
-  }
 }
