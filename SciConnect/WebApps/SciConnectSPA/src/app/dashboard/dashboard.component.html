@@ -1165,6 +1165,17 @@
           </button>
         </div>
         <div class="modal-body">
+          <div class="filter-context" *ngIf="modalFilterContext.length > 0">
+            <div class="filter-context-label">
+              <i class="fas fa-filter"></i> Shown because of active filters
+            </div>
+            <div class="filter-context-tags">
+              <span class="filter-context-tag" *ngFor="let ctx of modalFilterContext">
+                <i [class]="ctx.icon"></i> {{ ctx.label }}: {{ ctx.value }}
+              </span>
+            </div>
+          </div>
+
           <ng-container [ngSwitch]="modalType">
             <div *ngSwitchCase="'institution'" class="institution-details">
               <div class="detail-row">
@@ -1173,10 +1184,7 @@
               </div>
               <div class="detail-row">
                 <i class="fas fa-map-marker-alt"></i>
-                <span
-                  >{{ selectedItem.address }}, {{ selectedItem.city }},
-                  {{ selectedItem.country }}</span
-                >
+                <span>{{ selectedItem.address }}, {{ selectedItem.city }}, {{ selectedItem.country }}</span>
               </div>
               <div class="detail-row" *ngIf="selectedItem.phone">
                 <i class="fas fa-phone"></i>
@@ -1188,31 +1196,36 @@
               </div>
               <div class="detail-row" *ngIf="selectedItem.website">
                 <i class="fas fa-globe"></i>
-                <a [href]="selectedItem.website" target="_blank">{{
-                  selectedItem.website
-                }}</a>
+                <a [href]="selectedItem.website" target="_blank">{{ selectedItem.website }}</a>
               </div>
-              <div class="detail-section" *ngIf="selectedItem.analyses?.length">
-                <h4>Analyses</h4>
+              <div class="detail-relation" *ngIf="selectedItem.analyses?.length">
+                <h4><i class="fas fa-flask"></i> Analyses ({{ selectedItem.analyses.length }})</h4>
                 <div class="tag-list">
-                  <span
-                    class="tag"
-                    *ngFor="let analysis of selectedItem.analyses"
-                    >{{ analysis.name }}</span
-                  >
+                  <span class="tag" *ngFor="let analysis of selectedItem.analyses">{{ analysis.name }}</span>
                 </div>
               </div>
-              <div
-                class="detail-section"
-                *ngIf="selectedItem.instruments?.length"
-              >
-                <h4>Instruments</h4>
+              <div class="detail-relation" *ngIf="selectedItem.instruments?.length">
+                <h4><i class="fas fa-microscope"></i> Instruments ({{ selectedItem.instruments.length }})</h4>
                 <div class="tag-list">
-                  <span
-                    class="tag"
-                    *ngFor="let instrument of selectedItem.instruments"
-                    >{{ instrument.name }}</span
-                  >
+                  <span class="tag" *ngFor="let instrument of selectedItem.instruments">{{ instrument.name }}</span>
+                </div>
+              </div>
+              <div class="detail-relation" *ngIf="selectedItem.microorganisms?.length">
+                <h4><i class="fas fa-bug"></i> Microorganisms ({{ selectedItem.microorganisms.length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let micro of selectedItem.microorganisms">{{ micro.name }}</span>
+                </div>
+              </div>
+              <div class="detail-relation" *ngIf="getInstitutionEmployeesList(selectedItem).length > 0">
+                <h4><i class="fas fa-user-md"></i> Researchers ({{ getInstitutionEmployeesList(selectedItem).length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let emp of getInstitutionEmployeesList(selectedItem)">{{ emp.firstName }} {{ emp.lastName }}</span>
+                </div>
+              </div>
+              <div class="detail-relation" *ngIf="selectedItem.keywords?.length">
+                <h4><i class="fas fa-tags"></i> Keywords ({{ selectedItem.keywords.length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let kw of selectedItem.keywords">{{ kw.name }}</span>
                 </div>
               </div>
             </div>
@@ -1220,10 +1233,7 @@
             <div *ngSwitchCase="'researcher'" class="researcher-details">
               <div class="detail-row">
                 <i class="fas fa-user-md"></i>
-                <span
-                  >{{ selectedItem.firstName }}
-                  {{ selectedItem.lastName }}</span
-                >
+                <span>{{ selectedItem.firstName }} {{ selectedItem.lastName }}</span>
               </div>
               <div class="detail-row" *ngIf="selectedItem.title">
                 <i class="fas fa-user-tie"></i>
@@ -1231,10 +1241,7 @@
               </div>
               <div class="detail-row" *ngIf="selectedItem.institution?.name">
                 <i class="fas fa-hospital"></i>
-                <span
-                  >Institution:
-                  {{ selectedItem.institution.name }}</span
-                >
+                <span>Institution: {{ selectedItem.institution.name }}</span>
               </div>
               <div class="detail-row" *ngIf="selectedItem.email">
                 <i class="fas fa-envelope"></i>
@@ -1244,14 +1251,16 @@
                 <i class="fas fa-phone"></i>
                 <span>{{ selectedItem.phone }}</span>
               </div>
-              <div class="detail-section" *ngIf="selectedItem.keywords?.length">
-                <h4>Keywords</h4>
+              <div class="detail-relation" *ngIf="selectedItem.keywords?.length">
+                <h4><i class="fas fa-tags"></i> Keywords ({{ selectedItem.keywords.length }})</h4>
                 <div class="tag-list">
-                  <span
-                    class="tag"
-                    *ngFor="let keyword of selectedItem.keywords"
-                    >{{ keyword.name }}</span
-                  >
+                  <span class="tag" *ngFor="let keyword of selectedItem.keywords">{{ keyword.name }}</span>
+                </div>
+              </div>
+              <div class="detail-relation" *ngIf="getResearcherAnalysesList(selectedItem).length > 0">
+                <h4><i class="fas fa-flask"></i> Analyses at Institution ({{ getResearcherAnalysesList(selectedItem).length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let analysis of getResearcherAnalysesList(selectedItem)">{{ analysis.name }}</span>
                 </div>
               </div>
             </div>
@@ -1269,30 +1278,22 @@
                 <i class="fas fa-tag"></i>
                 <span>Type: {{ selectedItem.type }}</span>
               </div>
-              <div
-                class="detail-section"
-                *ngIf="selectedItem.institutions?.length"
-              >
-                <h4>Performed at</h4>
+              <div class="detail-relation" *ngIf="selectedItem.institutions?.length">
+                <h4><i class="fas fa-hospital"></i> Performed at ({{ selectedItem.institutions.length }})</h4>
                 <div class="tag-list">
-                  <span
-                    class="tag"
-                    *ngFor="let institution of selectedItem.institutions"
-                    >{{ institution.name }}</span
-                  >
+                  <span class="tag" *ngFor="let institution of selectedItem.institutions">{{ institution.name }}</span>
                 </div>
               </div>
-              <div
-                class="detail-section"
-                *ngIf="selectedItem.microorganisms?.length"
-              >
-                <h4>Microorganisms</h4>
+              <div class="detail-relation" *ngIf="selectedItem.microorganisms?.length">
+                <h4><i class="fas fa-bug"></i> Microorganisms ({{ selectedItem.microorganisms.length }})</h4>
                 <div class="tag-list">
-                  <span
-                    class="tag"
-                    *ngFor="let microorganism of selectedItem.microorganisms"
-                    >{{ microorganism.name }}</span
-                  >
+                  <span class="tag" *ngFor="let microorganism of selectedItem.microorganisms">{{ microorganism.name }}</span>
+                </div>
+              </div>
+              <div class="detail-relation" *ngIf="getAnalysisInstrumentsList(selectedItem).length > 0">
+                <h4><i class="fas fa-microscope"></i> Instruments ({{ getAnalysisInstrumentsList(selectedItem).length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let instrument of getAnalysisInstrumentsList(selectedItem)">{{ instrument.name }}</span>
                 </div>
               </div>
             </div>
@@ -1306,24 +1307,21 @@
                 <i class="fas fa-info-circle"></i>
                 <span>{{ selectedItem.description }}</span>
               </div>
-              <div
-                class="detail-section"
-                *ngIf="selectedItem.researchers?.length"
-              >
-                <h4>Researchers</h4>
+              <div class="detail-relation" *ngIf="selectedItem.researchers?.length">
+                <h4><i class="fas fa-user-md"></i> Researchers ({{ selectedItem.researchers.length }})</h4>
                 <div class="tag-list">
-                  <span
-                    class="tag"
-                    *ngFor="let researcher of selectedItem.researchers"
-                  >
+                  <span class="tag" *ngFor="let researcher of selectedItem.researchers">
                     {{ researcher.firstName }} {{ researcher.lastName }}
                   </span>
                 </div>
               </div>
-              <div
-                class="detail-section"
-                *ngIf="!selectedItem.researchers?.length"
-              >
+              <div class="detail-relation" *ngIf="getKeywordInstitutionsList(selectedItem).length > 0">
+                <h4><i class="fas fa-hospital"></i> Institutions ({{ getKeywordInstitutionsList(selectedItem).length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let inst of getKeywordInstitutionsList(selectedItem)">{{ inst.name }}</span>
+                </div>
+              </div>
+              <div class="detail-relation" *ngIf="!selectedItem.researchers?.length">
                 <h4>No Researchers</h4>
                 <p>No researchers are currently associated with this keyword.</p>
               </div>
@@ -1342,6 +1340,18 @@
                 <i class="fas fa-tag"></i>
                 <span>Type: {{ selectedItem.type }}</span>
               </div>
+              <div class="detail-relation" *ngIf="getMicroorganismInstitutionsList(selectedItem).length > 0">
+                <h4><i class="fas fa-hospital"></i> Studied at ({{ getMicroorganismInstitutionsList(selectedItem).length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let inst of getMicroorganismInstitutionsList(selectedItem)">{{ inst.name }}</span>
+                </div>
+              </div>
+              <div class="detail-relation" *ngIf="getMicroorganismAnalysesList(selectedItem).length > 0">
+                <h4><i class="fas fa-flask"></i> Used in Analyses ({{ getMicroorganismAnalysesList(selectedItem).length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let analysis of getMicroorganismAnalysesList(selectedItem)">{{ analysis.name }}</span>
+                </div>
+              </div>
             </div>
 
             <div *ngSwitchCase="'instrument'" class="instrument-details">
@@ -1355,14 +1365,17 @@
               </div>
               <div class="detail-row" *ngIf="selectedItem.manufacturer">
                 <i class="fas fa-industry"></i>
-                <span
-                  >Manufacturer:
-                  {{ selectedItem.manufacturer }}</span
-                >
+                <span>Manufacturer: {{ selectedItem.manufacturer }}</span>
               </div>
               <div class="detail-row" *ngIf="selectedItem.model">
                 <i class="fas fa-cog"></i>
                 <span>Model: {{ selectedItem.model }}</span>
+              </div>
+              <div class="detail-relation" *ngIf="getInstrumentInstitutionsList(selectedItem).length > 0">
+                <h4><i class="fas fa-hospital"></i> Available at ({{ getInstrumentInstitutionsList(selectedItem).length }})</h4>
+                <div class="tag-list">
+                  <span class="tag" *ngFor="let inst of getInstrumentInstitutionsList(selectedItem)">{{ inst.name }}</span>
+                </div>
               </div>
             </div>
           </ng-container>

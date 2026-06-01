@@ -1170,11 +1170,82 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.updateResults();
   }
 
+  modalFilterContext: { icon: string; label: string; value: string }[] = [];
+
   private showDetails(item: any, type: string): void {
     this.selectedItem = item;
     this.modalTitle = this.getDisplayName(item);
     this.modalType = type;
+    this.modalFilterContext = this.buildFilterContext(item, type);
     this.showModal = true;
+  }
+
+  private buildFilterContext(item: any, type: string): { icon: string; label: string; value: string }[] {
+    const context: { icon: string; label: string; value: string }[] = [];
+    const filters: { id: number | null; label: string; icon: string; list: any[]; nameKey?: string }[] = [
+      { id: this.selectedInstitution ? FilterUtils.parseId(this.selectedInstitution) : null, label: 'Institution', icon: 'fas fa-hospital', list: this.allInstitutions },
+      { id: this.selectedAnalysis ? FilterUtils.parseId(this.selectedAnalysis) : null, label: 'Analysis', icon: 'fas fa-flask', list: this.allAnalyses },
+      { id: this.selectedMicroorganism ? FilterUtils.parseId(this.selectedMicroorganism) : null, label: 'Microorganism', icon: 'fas fa-bug', list: this.allMicroorganisms },
+      { id: this.selectedInstrument ? FilterUtils.parseId(this.selectedInstrument) : null, label: 'Instrument', icon: 'fas fa-microscope', list: this.allInstruments },
+      { id: this.selectedResearcher ? FilterUtils.parseId(this.selectedResearcher) : null, label: 'Researcher', icon: 'fas fa-user-md', list: this.allResearchers, nameKey: 'fullName' },
+      { id: this.selectedKeyword ? FilterUtils.parseId(this.selectedKeyword) : null, label: 'Keyword', icon: 'fas fa-tags', list: this.allKeywords },
+    ];
+    for (const f of filters) {
+      if (f.id === null) continue;
+      const found = f.list.find((e: any) => e.id === f.id);
+      if (!found) continue;
+      if (found.id === item.id && f.label.toLowerCase() === type) continue;
+      const name = f.nameKey === 'fullName' ? `${found.firstName} ${found.lastName}` : found.name;
+      context.push({ icon: f.icon, label: f.label, value: name });
+    }
+    return context;
+  }
+
+  getInstrumentInstitutionsList(instrument: any): Institution[] {
+    return this.allInstitutions.filter(inst =>
+      inst.instruments?.some(i => i.id === instrument.id)
+    );
+  }
+
+  getMicroorganismInstitutionsList(microorganism: any): Institution[] {
+    return this.allInstitutions.filter(inst =>
+      inst.microorganisms?.some(m => m.id === microorganism.id)
+    );
+  }
+
+  getMicroorganismAnalysesList(microorganism: any): Analysis[] {
+    return this.allAnalyses.filter(analysis =>
+      analysis.microorganisms?.some(m => m.id === microorganism.id)
+    );
+  }
+
+  getInstitutionEmployeesList(institution: any): Employee[] {
+    return this.allResearchers.filter(r => r.institution?.id === institution.id);
+  }
+
+  getAnalysisInstrumentsList(analysis: any): Instrument[] {
+    const instIds = analysis.institutions?.map((i: any) => i.id) || [];
+    const instruments = new Map<number, Instrument>();
+    this.allInstitutions
+      .filter(inst => instIds.includes(inst.id))
+      .forEach(inst => inst.instruments?.forEach(instr => instruments.set(instr.id, instr)));
+    return Array.from(instruments.values());
+  }
+
+  getKeywordInstitutionsList(keyword: any): Institution[] {
+    const researcherIds = keyword.researchers?.map((r: any) => r.id) || [];
+    const instIds = new Set<number>();
+    this.allResearchers
+      .filter(r => researcherIds.includes(r.id) && r.institution)
+      .forEach(r => instIds.add(r.institution!.id));
+    return this.allInstitutions.filter(inst => instIds.has(inst.id));
+  }
+
+  getResearcherAnalysesList(researcher: any): Analysis[] {
+    if (!researcher.institution) return [];
+    return this.allAnalyses.filter(a =>
+      a.institutions?.some((inst: any) => inst.id === researcher.institution.id)
+    );
   }
 
   showInstitutionDetails = (institution: Institution) => this.showDetails(institution, 'institution');
