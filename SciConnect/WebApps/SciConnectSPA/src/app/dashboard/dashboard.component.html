@@ -1112,6 +1112,33 @@
                         </button>
                       </div>
                     </div>
+
+                    <div class="connection-form">
+                      <h5>Connect Researcher to Institution</h5>
+                      <div class="form-row">
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter researchers..." [(ngModel)]="searchConnResInstRes" class="select-search-input">
+                          <select [(ngModel)]="connResInst_researcher" class="form-input">
+                            <option [value]="null">Select Researcher</option>
+                            <option *ngFor="let researcher of filterByName(allResearchers, searchConnResInstRes)" [value]="researcher.id">
+                              {{ researcher.firstName }} {{ researcher.lastName }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="searchable-select">
+                          <input type="text" placeholder="Filter institutions..." [(ngModel)]="searchConnResInstInst" class="select-search-input">
+                          <select [(ngModel)]="connResInst_institution" class="form-input">
+                            <option [value]="null">Select Institution</option>
+                            <option *ngFor="let institution of filterByName(allInstitutions, searchConnResInstInst)" [value]="institution.id">
+                              {{ institution.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <button class="btn-connect" (click)="connectResearcherToInstitution()" [disabled]="!connResInst_researcher || !connResInst_institution">
+                          <i class="fas fa-link"></i> Connect
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

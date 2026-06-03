@@ -49,6 +49,7 @@ using DB.Application.Features.Institutions.Commands.AddAnalysisToInstitution;
 using DB.Application.Features.Institutions.Commands.AddKeywordToInstitution;
 using DB.Application.Features.Analysis.Commands.AddMicroorganismToAnalysis;
 using DB.Application.Features.Employees.Commands.AddKeywordToEmploye;
+using DB.Application.Features.Employees.Commands.ChangeEmployeeInstitution;
 
 
 namespace DB.API.Controllers
@@ -246,7 +247,16 @@ namespace DB.API.Controllers
             return Ok();
         }
 
+        [HttpPost("employee/{employeeId}/institution/{institutionId}")]
+        [Authorize(Policy = "WriteAccess")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> ChangeEmployeeInstitution(int employeeId, int institutionId)
+        {
+            var command = new ChangeEmployeeInstitutionCommand(employeeId, institutionId);
+            await _mediator.Send(command);
 
+            return Ok();
+        }
 
 
         // ---------- INSTRUMENTS ----------

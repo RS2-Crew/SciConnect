@@ -136,6 +136,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   connInstMicro_micro: number | null = null;
   connResKeyword_researcher: number | null = null;
   connResKeyword_keyword: number | null = null;
+  connResInst_researcher: number | null = null;
+  connResInst_institution: number | null = null;
   connAnalysisMicro_analysis: number | null = null;
   connAnalysisMicro_micro: number | null = null;
 
@@ -147,6 +149,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   searchConnInstMicroMicro = '';
   searchConnResKeywordRes = '';
   searchConnResKeywordKw = '';
+  searchConnResInstRes = '';
+  searchConnResInstInst = '';
   searchConnAnalysisMicroAnalysis = '';
   searchConnAnalysisMicroMicro = '';
 
@@ -1552,6 +1556,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.connect(
       this.dataService.connectResearcherToKeyword(this.connResKeyword_researcher, this.connResKeyword_keyword),
       () => { this.connResKeyword_researcher = null; this.connResKeyword_keyword = null; }
+    );
+  }
+
+  public connectResearcherToInstitution(): void {
+    if (!this.connResInst_researcher || !this.connResInst_institution) return;
+    this.connect(
+      this.dataService.connectEmployeeToInstitution(this.connResInst_researcher, this.connResInst_institution),
+      () => { this.connResInst_researcher = null; this.connResInst_institution = null; }
     );
   }
 

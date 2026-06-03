@@ -28,5 +28,10 @@ namespace DB.Domain.Entities
             if (!_keywords.Contains(keyword))
                 _keywords.Add(keyword);
         }
+
+        public void ChangeInstitution(Institution institution)
+        {
+            Institution = institution ?? throw new ArgumentNullException(nameof(institution));
+        }
     }
 }

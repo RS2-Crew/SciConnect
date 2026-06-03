@@ -396,6 +396,10 @@ export class DataService {
     return this.http.post(`${this.baseUrl}/employee/${researcherId}/keyword/${keywordId}`, {}, { headers: this.getHeaders() });
   }
 
+  connectEmployeeToInstitution(employeeId: number, institutionId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/employee/${employeeId}/institution/${institutionId}`, {}, { headers: this.getHeaders() });
+  }
+
   connectAnalysisToMicroorganism(analysisId: number, microorganismId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/analysis/${analysisId}/microorganism/${microorganismId}`, {}, { headers: this.getHeaders() });
   }
